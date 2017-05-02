@@ -37,7 +37,7 @@ var HeroDetailComponent = (function () {
 }());
 HeroDetailComponent = __decorate([
     core_1.Component({
-        selector: 'hero-detail',
+        selector: 'app-hero-detail',
         templateUrl: './hero-detail.component.html',
         styleUrls: ['./hero-detail.component.css']
     }),
@@ -46,4 +46,4 @@ HeroDetailComponent = __decorate([
         common_1.Location])
 ], HeroDetailComponent);
 exports.HeroDetailComponent = HeroDetailComponent;
-//# sourceMappingURL=hero-detail.component.js.map
+//# sourceMappingURL=app-hero-detail.component.js.map

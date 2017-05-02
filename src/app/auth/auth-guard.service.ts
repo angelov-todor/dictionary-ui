@@ -6,22 +6,22 @@ import {Auth} from './auth.service';
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-    loginRouteRegExp = /^\/(|login)([\/#?].*)?$/;
+  loginRouteRegExp = /^\/(|login)([\/#?].*)?$/;
 
-    constructor(private auth: Auth, private router: Router) {
-    }
+  constructor(private auth: Auth, private router: Router) {
+  }
 
-    canActivate(route: ActivatedRouteSnapshot,
-                state: RouterStateSnapshot) {
-        const url: string = state.url;
-        const isLoginPage = this.loginRouteRegExp.test(url);
-        if (isLoginPage && !this.auth.loggedIn()) {
-            return true;
-        }
-        if (this.auth.loggedIn()) {
-            return true;
-        }
-        this.router.navigate(['/dashboard']);
-        return false;
+  canActivate(route: ActivatedRouteSnapshot,
+              state: RouterStateSnapshot) {
+    const url: string = state.url;
+    const isLoginPage = this.loginRouteRegExp.test(url);
+    if (isLoginPage && !this.auth.loggedIn()) {
+      return true;
     }
+    if (this.auth.loggedIn()) {
+      return true;
+    }
+    this.router.navigate(['/dashboard']);
+    return false;
+  }
 }

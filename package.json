@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prod:build": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +22,9 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "angular2-jwt": "^0.2.3",
+    "bootstrap": "next",
     "core-js": "^2.4.1",
+    "ngx-bootstrap": "next",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
