@@ -42,11 +42,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-# Blackbox related files
-/keyrings/live/pubring.gpg~
-/keyrings/live/pubring.kbx~
-/keyrings/live/secring.gpg
-/ci/credentials.yaml
-/secrets/values-staging.yaml
-/secrets/values-production.yaml
