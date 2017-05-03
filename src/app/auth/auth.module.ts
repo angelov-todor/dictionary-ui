@@ -3,16 +3,16 @@ import {CommonModule} from '@angular/common';
 
 import {AuthRoutingModule} from './auth-routing.module';
 import {LoginPageComponent} from './login-page/login-page.component';
-import {Auth} from './auth.service';
+import {AuthService} from './auth.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import {Http, RequestOptions} from '@angular/http';
 import {AuthConfig, AuthHttp} from 'angular2-jwt';
-import {AuthGuard} from './auth-guard.service';
+import {AuthGuardService} from './auth-guard.service';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     return new AuthHttp(new AuthConfig({
         tokenName: 'token',
-        tokenGetter: (() => sessionStorage.getItem('token')),
+        tokenGetter: (() => localStorage.getItem('token')),
         globalHeaders: [{'Content-Type': 'application/json'}],
     }), http, options);
 }
@@ -29,13 +29,13 @@ export class AuthModule {
         return {
             ngModule: AuthModule,
             providers: [
-                Auth,
+                AuthService,
                 {
                     provide: AuthHttp,
                     useFactory: authHttpServiceFactory,
                     deps: [Http, RequestOptions]
                 },
-                AuthGuard
+                AuthGuardService
             ]
         };
     }

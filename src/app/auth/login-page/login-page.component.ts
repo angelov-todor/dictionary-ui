@@ -1,18 +1,18 @@
 import {Component} from '@angular/core';
 
-import {Auth} from '../auth.service';
+import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
-    selector: 'aur-login-page',
+    selector: 'app-login-page',
     templateUrl: './login-page.component.html',
     styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent {
     loginForm: FormGroup;
 
-    constructor(private userAuth: Auth,
+    constructor(private userAuth: AuthService,
                 private router: Router,
                 fb: FormBuilder) {
         this.loginForm = fb.group({

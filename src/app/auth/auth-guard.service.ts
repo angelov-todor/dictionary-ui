@@ -1,27 +1,30 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
 import {CanActivate} from '@angular/router';
-import {Auth} from './auth.service';
+import {AuthService} from './auth.service';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuardService implements CanActivate {
 
-  loginRouteRegExp = /^\/(|login)([\/#?].*)?$/;
+    loginRouteRegExp = /^\/(|login)([\/#?].*)?$/;
 
-  constructor(private auth: Auth, private router: Router) {
-  }
-
-  canActivate(route: ActivatedRouteSnapshot,
-              state: RouterStateSnapshot) {
-    const url: string = state.url;
-    const isLoginPage = this.loginRouteRegExp.test(url);
-    if (isLoginPage && !this.auth.loggedIn()) {
-      return true;
+    constructor(private auth: AuthService, private router: Router) {
     }
-    if (this.auth.loggedIn()) {
-      return true;
+
+    canActivate(route: ActivatedRouteSnapshot,
+                state: RouterStateSnapshot) {
+        const url: string = state.url;
+        const isLoginPage = this.loginRouteRegExp.test(url);
+        const loggedIn = this.auth.loggedIn();
+
+        //  login page and not logged in
+        if (isLoginPage && false === loggedIn) {
+            return true;
+        }
+        if (loggedIn && !isLoginPage) {
+            return true;
+        }
+        this.router.navigate(['/dashboard']);
+        return false;
     }
-    this.router.navigate(['/dashboard']);
-    return false;
-  }
 }

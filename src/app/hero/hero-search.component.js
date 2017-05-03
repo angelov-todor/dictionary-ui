@@ -51,7 +51,7 @@ var HeroSearchComponent = (function () {
 }());
 HeroSearchComponent = __decorate([
     core_1.Component({
-        selector: 'hero-search',
+        selector: 'app-hero-search',
         templateUrl: './hero-search.component.html',
         styleUrls: ['./hero-search.component.css'],
         providers: [hero_search_service_1.HeroSearchService]
@@ -60,4 +60,4 @@ HeroSearchComponent = __decorate([
         router_1.Router])
 ], HeroSearchComponent);
 exports.HeroSearchComponent = HeroSearchComponent;
-//# sourceMappingURL=hero-search.component.js.map
+//# sourceMappingURL=app-hero-search.component.js.map
