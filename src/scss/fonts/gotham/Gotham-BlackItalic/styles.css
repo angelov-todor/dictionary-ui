@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Gotham-BlackItalic';
+  src: url('Gotham-BlackItalic.eot?#iefix') format('embedded-opentype'),  url('Gotham-BlackItalic.otf')  format('opentype'),
+	     url('Gotham-BlackItalic.woff') format('woff'), url('Gotham-BlackItalic.ttf')  format('truetype'), url('Gotham-BlackItalic.svg#Gotham-BlackItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

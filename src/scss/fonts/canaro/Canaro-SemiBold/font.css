@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Canaro SemiBold';
+  src: url('Canaro-SemiBold.eot'); /* IE9 Compat Modes */
+  src: url('Canaro-SemiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Canaro-SemiBold.woff') format('woff'), /* Modern Browsers */
+       url('Canaro-SemiBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Canaro-SemiBold.svg#930283d661fa4b688c39a9e26ee01431') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+

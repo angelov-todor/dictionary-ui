@@ -1,7 +1,12 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
-  <a routerLink="/logout" routerLinkActive="active">Logout</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="page-wrap">
+  <app-site-header></app-site-header>
+  <router-outlet></router-outlet>
+</div>
+<app-site-footer></app-site-footer>
+<!--<h1>{{title}}</h1>-->
+<!--<nav>-->
+  <!--<a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>-->
+  <!--<a routerLink="/heroes" routerLinkActive="active">Heroes</a>-->
+  <!--<a routerLink="/logout" routerLinkActive="active">Logout</a>-->
+<!--</nav>-->
+<!--<router-outlet></router-outlet>-->

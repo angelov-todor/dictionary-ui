@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include common-font;
+  background: $white;
+  color: $body-color;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+h1,
+h2,
+h3 {
+  @include brand-font;
+  color: $brand-primary;
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+a {
+  color: $link-color;
+
+  p & {
+    &:not(.btn) {
+      text-decoration: underline;
+      @include common-bold;
+      color: $body-color;
+    }
+  }
+
+
+  nav & {
+    color: $gray-base;
+  }
+
+  &:hover,
+  &:focus {
+    color: $link-color;
+    text-decoration: underline;
+
+    nav & {
+      color: $gray-base;
+      text-decoration: none;
+    }
+
+  }
+
+}
+
+b, strong, dt, th {
+  @include common-bold;
+}
+
+ul {
+  list-style: none;
+}
+
+.brand-color {
+  color: $brand-primary;
+}
+
+.page-wrap {
+  margin-bottom: -150px;
+  min-height: 100%;
+
+  &:after {
+    content: '';
+    float: none;
+    clear: both;
+    display: block;
+    height: 150px;
+  }
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+
+  &:hover {
+    color: $gray-base;
+    text-decoration: none;
+
+    .brand-color {
+      color: $brand-primary;
+    }
+  }
+}
+
+.external-logo {
+  width: 120px;
+  margin: 12px 0;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.max-width {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $max-width;
+  width: 100%;
+
+  &.external-page,
+  .external-page & {
+    max-width: 544px;
+  }
+}
+
+.site-header {
+  background: $gray;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+
+  .top-header {
+    box-sizing: border-box;
+  }
+
+  .site-title {
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .main-navigation {
+    @include brand-light;
+    height: 80px;
+
+    a {
+      box-sizing: border-box;
+      display: inline-block;
+      height: 80px;
+      line-height: 80px;
+      margin: 0 -4px 0 0;
+      padding: 0 15px;
+
+
+      &:hover,
+      &.active-nav-link {
+        background: $gray-dark;
+        color: $brand-primary;
+      }
+
+      &.active-nav-link {
+        border-bottom: 3px solid $brand-primary;
+      }
+    }
+
+    .external-page & {
+      display: none;
+    }
+  }
+}
+
+.center-content {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $center-width;
+  width: 90%;
+}
+
+.page-content {
+  margin-bottom: 140px;
+  padding: 50px 0 0;
+}
+
+.site-footer {
+  @include brand-light;
+  height: 150px;
+  padding: 20px;
+  background: $gray;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo {
+  margin: 0 0 8px;
+  max-width: 50%;
+  width: 100px;
+}
+
+.social-nav {
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.loading {
+  position: fixed;
+  z-index: 9;
+  @include square(100%);
+  top: 0;
+  left: 0;
+  background: rgba(20, 20, 20, 0.75);
+
+  .fa-spinner {
+    @include center-element;
+    font-size: 54px;
+    color: $white;
+    opacity: .75;
+  }
+}

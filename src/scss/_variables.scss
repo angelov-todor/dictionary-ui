@@ -1,0 +1,43 @@
+//Boostrap overide
+$gray-base:              #646464; // text
+$gray-border:            #8b8b8b; // forms / other elements with borders
+$gray-darker:            #969696; // disable
+$gray-dark:              #c8c8c8; // hover highlight
+$gray:                   #e1e1e1; // header/footer
+$gray-light:             #efefef; // table cells
+$gray-lighter:           #fbf6f3; // content
+
+
+$brand-primary:         #ff3700;
+$brand-success:         #32b496;
+$brand-info:            #cadbd3;
+$brand-info-light:      #eff9f7;
+$brand-warning-light:   #fdffcc;
+$brand-warning:         #ff9b7f;
+$brand-danger:          #eb632c;
+$brand-error:           #a9263c;
+
+$white:                 #fff;
+
+$body-color:            $gray-base;
+$link-color:            $brand-primary;
+
+$font-path:             './scss/fonts';
+$gotham-font-path:      '#{$font-path}/gotham/';
+$canaro-font-path:      '#{$font-path}/canaro/';
+
+// theme
+$max-width:             1280px;
+$center-width:          800px;
+$common-font:           'Gotham-Book', Arial, Verdana;
+$common-italic:         'Gotham-BookItalic', Arial, Verdana;
+$common-bold:           'Gotham-Medium', Arial, Verdana;
+$common-bold-italic:    'Gotham-MediumItalic', Arial, Verdana;
+
+$brand-font:            'Canaro Medium', monospace;
+$brand-bold:            'Canaro SemiBold', monospace;
+$brand-light:           'Canaro Light', monospace;
+
+
+
+

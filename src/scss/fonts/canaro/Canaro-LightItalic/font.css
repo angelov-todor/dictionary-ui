@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Canaro Light';
+  src: url('Canaro-LightItalic.eot'); /* IE9 Compat Modes */
+  src: url('Canaro-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Canaro-LightItalic.woff') format('woff'), /* Modern Browsers */
+       url('Canaro-LightItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Canaro-LightItalic.svg#66bdf3eb47be0d845080b67126c11dfc') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  200;
+}
+

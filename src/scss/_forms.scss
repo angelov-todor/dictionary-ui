@@ -1,0 +1,124 @@
+input,
+textarea,
+.common-border,
+.form-control {
+  border: 1px solid $gray-base;
+}
+
+input,
+textarea {
+  background: $white;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.form-control,
+select.form-control:not([size]):not([multiple]) {
+  height: 50px;
+  border-radius: 0;
+
+  &:focus {
+    border-color: lighten($gray-base, 1%);
+    background: $gray-lighter;
+  }
+  // if any form-group or form-array is touched e.g. on failed submit
+  .ng-touched &.ng-invalid,
+  // or if the form-control itself is touched
+  &.ng-invalid.ng-touched{
+    // then show the errors
+    border: 1px solid $red;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background: $gray-dark;
+  }
+}
+
+.control-label {
+  padding: 15px 0 0;
+}
+
+.custom-select-wrap {
+  position: relative;
+
+  &:after {
+    content: '\f04b';
+    display: block;
+    @include square(48px);
+    background: $gray-base;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    font: normal normal normal 15px/1 'FontAwesome';
+    box-sizing: border-box;
+    position: absolute;
+    text-align: center;
+    padding: 16px;
+    color: $gray-dark;
+    transform: rotate(90deg);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  select.custom-select {
+    height: 50px;
+    background: transparent;
+    @include square(100%);
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+}
+
+
+.custom-checkbox[type="checkbox"] {
+  opacity: 0;
+  @include square(0);
+  overflow: hidden;
+  position: absolute;
+
+  &:not(:checked),
+  &:checked {
+    & + label {
+      position: relative;
+      padding-left: 60px;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include square(50px);
+        border: 1px solid $gray-base;
+        background: $white;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 10px;
+      }
+    }
+  }
+
+  &:checked {
+    & + label {
+      &:before {
+        content: "\f00c";
+        color: $brand-success;
+        font: normal normal normal 28px/1 'FontAwesome';
+      }
+    }
+  }
+
+  &:disabled {
+    & + label {
+      &:before {
+        background: $gray-dark;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.manage-property {
+  margin: 0 15px 24px;
+}
+

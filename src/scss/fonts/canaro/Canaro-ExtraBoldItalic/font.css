@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Canaro ExtraBold';
+  src: url('Canaro-ExtraBoldItalic.eot'); /* IE9 Compat Modes */
+  src: url('Canaro-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Canaro-ExtraBoldItalic.woff') format('woff'), /* Modern Browsers */
+       url('Canaro-ExtraBoldItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Canaro-ExtraBoldItalic.svg#a0414441cbef873739aade4bf5f0fa5e') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  700;
+}
+

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Canaro Medium';
+  src: url('Canaro-Medium.eot'); /* IE9 Compat Modes */
+  src: url('Canaro-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Canaro-Medium.woff') format('woff'), /* Modern Browsers */
+       url('Canaro-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Canaro-Medium.svg#9e72f6f5c8504de6ba00ef6f4f089f83') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
