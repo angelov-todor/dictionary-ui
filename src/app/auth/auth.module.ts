@@ -30,12 +30,12 @@ export class AuthModule {
             ngModule: AuthModule,
             providers: [
                 AuthService,
+                AuthGuardService,
                 {
                     provide: AuthHttp,
                     useFactory: authHttpServiceFactory,
                     deps: [Http, RequestOptions]
-                },
-                AuthGuardService
+                }
             ]
         };
     }

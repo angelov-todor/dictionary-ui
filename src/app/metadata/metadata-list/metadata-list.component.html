@@ -1,0 +1,30 @@
+<div class="wrap">
+    <table class="table table-bordered">
+        <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>actions</th>
+        </tr>
+        <tr *ngFor="let meta of metadata">
+
+            <td>{{meta.name}}</td>
+            <td>{{meta.type}}</td>
+            <td>
+                <button class="btn btn-danger"
+                        (click)="delete(meta); $event.stopPropagation()">delete
+                </button>
+            </td>
+
+        </tr>
+        <tr>
+            <td><input #metadataName/></td>
+            <td><input type="hidden" #metadataType value="text"></td>
+            <td>
+                <button class="btn btn-success"
+                        (click)="add(metadataName.value, metadataType.value); metadataName.value=''">
+                    add
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

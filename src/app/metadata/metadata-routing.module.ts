@@ -1,11 +1,12 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {MetadataComponent} from './metadata.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { MetadataListComponent } from './metadata-list/metadata-list.component';
+import { AuthGuardService } from '../auth/auth-guard.service';
 
 const routes: Routes = [
-    {
-        path: 'metadata', component: MetadataComponent
-    }
+    // {
+    //     path: 'metadata', component: MetadataListComponent, canActivate: [AuthGuardService]
+    // }
 ];
 
 @NgModule({
