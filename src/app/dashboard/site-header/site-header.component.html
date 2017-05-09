@@ -1,25 +1,38 @@
-<header class="site-header">
-  <div class="max-width">
-    <div class="top-header row">
-      <div class="col-sm-8">
-        <nav class="main-navigation text-right" role="navigation">
-          <div *ngIf="isValid(); then authTokenValid else authTokenInvalid"></div>
-          <ng-template #authTokenValid>
-            <a routerLink="/dashboard" routerLinkActive="active-nav-link">Dashboard</a>
-            <a routerLink="/metadata" routerLinkActive="active-nav-link">Metadata</a>
-            <!--<a routerLink="/timeline" routerLinkActive="active-nav-link">Timeline</a>-->
-            <!--<a routerLink="/properties" routerLinkActive="active-nav-link">Properties</a>-->
-            <a href="javascript:;" (click)="onLogout()">Log Out</a>
-          </ng-template>
-          <ng-template #authTokenInvalid>
-            <!--<a routerLink="/pricing" routerLinkActive="active-nav-link">pricing</a>-->
-            <!--<a routerLink="/features" routerLinkActive="active-nav-link">features</a>-->
-            <!--<a routerLink="/about-us" routerLinkActive="active-nav-link">about us</a>-->
-            <!--<a routerLink="/signup" routerLinkActive="active-nav-link">Sign Up</a>-->
-            <a routerLink="/login" routerLinkActive="active-nav-link">Log In</a>
-          </ng-template>
-        </nav>
-      </div>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded sticky-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <div *ngIf="isValid(); then authTokenValid else authTokenInvalid"></div>
+            <ng-template #authTokenValid>
+                <a class="nav-item nav-link" routerLink="/dashboard" routerLinkActive="active-nav-link">Dashboard</a>
+                <a class="nav-item nav-link" routerLink="/metadata" routerLinkActive="active-nav-link">Metadata</a>
+                <a class="nav-item nav-link" routerLink="/images" routerLinkActive="active-nav-link">Images</a>
+                <a class="nav-item nav-link" href="javascript:;" (click)="onLogout()">Log Out</a>
+            </ng-template>
+            <ng-template #authTokenInvalid>
+                <a class="nav-item nav-link float-right" routerLink="/login" routerLinkActive="active-nav-link">Log In</a>
+            </ng-template>
+
+<!--            <div class="btn-group" dropdown>
+                <button dropdownToggle type="button" class="btn btn-secondary btn-sm dropdown-toggle">
+                    Button dropdown <span class="caret"></span>
+                </button>
+                <ul *dropdownMenu class="dropdown-menu" role="menu">
+                    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li class="divider dropdown-divider"></li>
+                    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                    </li>
+                </ul>
+            </div>-->
+
+        </div>
     </div>
-  </div>
-</header>
+</nav>
+

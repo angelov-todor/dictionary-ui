@@ -1,5 +1,4 @@
 import { AuthHttp } from 'angular2-jwt';
-import { Metadata } from './metadata';
 import 'rxjs/add/operator/toPromise';
 import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
@@ -44,4 +43,10 @@ export class MetadataService {
             .then(() => null)
             .catch(this.handleError);
     }
+}
+
+export class Metadata {
+    id: number;
+    name: string;
+    type: string;
 }

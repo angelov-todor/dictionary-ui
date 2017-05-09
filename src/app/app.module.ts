@@ -12,6 +12,7 @@ import { HeroSearchComponent } from './hero/hero-search.component';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { MetadataModule } from './metadata/metadata.module';
+import { ImagesModule } from './images/images.module';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { MetadataModule } from './metadata/metadata.module';
         AppRoutingModule,
         AuthModule.forRoot(),
         DashboardModule.forRoot(),
-        MetadataModule.forRoot()
+        MetadataModule.forRoot(),
+        ImagesModule.forRoot()
     ],
     providers: [HeroService],
     bootstrap: [AppComponent]

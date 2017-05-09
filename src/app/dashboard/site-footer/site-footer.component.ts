@@ -1,5 +1,5 @@
-import {Component, OnDestroy} from '@angular/core';
-import {tokenNotExpired} from 'angular2-jwt';
+import { Component } from '@angular/core';
+import { tokenNotExpired } from 'angular2-jwt';
 
 @Component({
     selector: 'app-site-footer',

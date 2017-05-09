@@ -1,6 +1,5 @@
-import { Metadata } from '../metadata';
 import { Router } from '@angular/router';
-import { MetadataService } from '../metadata.service';
+import { Metadata, MetadataService } from '../metadata.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

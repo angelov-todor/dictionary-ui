@@ -2,7 +2,6 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MetadataRoutingModule } from './metadata-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MetadataComponent } from './metadata.component';
 import { MetadataListComponent } from './metadata-list/metadata-list.component';
 import { MetadataService } from './metadata.service';
 
@@ -13,7 +12,6 @@ import { MetadataService } from './metadata.service';
         ReactiveFormsModule
     ],
     declarations: [
-        MetadataComponent,
         MetadataListComponent
     ],
     providers: [MetadataService]
