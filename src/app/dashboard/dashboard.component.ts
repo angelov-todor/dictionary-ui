@@ -6,13 +6,14 @@ import { HeroService } from '../hero/hero.service';
 @Component({
   selector: 'app-my-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService) {
+  }
 
   ngOnInit(): void {
     // this.heroService.getHeroes()

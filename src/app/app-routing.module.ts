@@ -7,15 +7,14 @@ import { AuthGuardService } from './auth/auth-guard.service';
 import { MetadataListComponent } from './metadata/metadata-list/metadata-list.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-    {path: 'detail/:id', component: HeroDetailComponent, canActivate: [AuthGuardService]},
-    {path: 'heroes', component: HeroesComponent, canActivate: [AuthGuardService]},
-    {path: 'metadata', component: MetadataListComponent, canActivate: [AuthGuardService]}
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: 'detail/:id', component: HeroDetailComponent, canActivate: [AuthGuardService]},
+  {path: 'heroes', component: HeroesComponent, canActivate: [AuthGuardService]}
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {
 }

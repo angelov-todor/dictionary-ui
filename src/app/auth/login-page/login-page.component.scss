@@ -1,11 +1,14 @@
-@import "~bootstrap/scss/bootstrap";
+@import '~scss/variables';
+
 .login {
   padding: 20px 10px;
 }
+
 .page-content {
   margin-bottom: 140px;
   padding: 50px 0 0;
 }
+
 .center-content {
   box-sizing: border-box;
   margin: 0 auto;
