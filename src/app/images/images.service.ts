@@ -22,7 +22,6 @@ export class ImagesService {
     }
 
     search(term: string): Observable<Image[]> {
-        console.log(term);
         return this.http
             .get(`${this.imagesUrl}/search?term=${term}`)
             .map(response => response.json().data as Image[]);
