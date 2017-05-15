@@ -19,8 +19,13 @@ export class ImageAddComponent implements OnInit, OnDestroy {
   images: Image[];
   private searchTerms = new Subject<string>();
   private imagesSubscription: Subscription;
+  private selectedImage: Image;
 
   constructor(private imagesService: ImagesService) {
+  }
+
+  select(image: Image) {
+    this.selectedImage = image;
   }
 
   ngOnInit(): void {
@@ -31,7 +36,6 @@ export class ImageAddComponent implements OnInit, OnDestroy {
         ? this.imagesService.search(term)
         : Observable.of<Image[]>([]))
       .catch((error, caught) => {
-        // TODO: add real error handling
         console.log(error);
         return caught;
       })

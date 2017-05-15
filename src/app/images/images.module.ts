@@ -7,21 +7,21 @@ import { ImagesListComponent } from './images-list/images-list.component';
 import { ImageAddComponent } from './image-add/image-add.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ImagesRoutingModule,
-        ReactiveFormsModule
-    ],
-    declarations: [
-        ImagesListComponent,
-        ImageAddComponent
-    ],
-    providers: [ImagesService]
+  imports: [
+    CommonModule,
+    ImagesRoutingModule,
+    ReactiveFormsModule
+  ],
+  declarations: [
+    ImagesListComponent,
+    ImageAddComponent
+  ],
+  providers: [ImagesService]
 })
 export class ImagesModule {
-    static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: ImagesModule
-        };
-    }
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: ImagesModule
+    };
+  }
 }
