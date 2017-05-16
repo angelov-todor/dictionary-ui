@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4">
+    <input type="file" #file/>
+  </div>
+
+  <div class="col-md-4">
+    <button type="button" class="btn btn-primary" (click)="upload(file.files.item(0))">
+      <i class="fa fa-american-sign-language-interpreting" aria-hidden="true"></i> Upload
+    </button>
+  </div>
+
+
+  <div>
+    <input type="file" (change)="onChange($event)"/>
+  </div>
+</div>

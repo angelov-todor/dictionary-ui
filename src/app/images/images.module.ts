@@ -5,6 +5,8 @@ import { ImagesService } from './images.service';
 import { ImagesRoutingModule } from './images-routing.module';
 import { ImagesListComponent } from './images-list/images-list.component';
 import { ImageAddComponent } from './image-add/image-add.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
+import { ImageRootComponent } from './image-root/image-root.component';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { ImageAddComponent } from './image-add/image-add.component';
   ],
   declarations: [
     ImagesListComponent,
-    ImageAddComponent
+    ImageAddComponent,
+    ImageUploadComponent,
+    ImageRootComponent
   ],
   providers: [ImagesService]
 })
