@@ -52,4 +52,9 @@ export class ImageAddComponent implements OnInit, OnDestroy {
   search(term: string): void {
     this.searchTerms.next(term);
   }
+
+  save(): void {
+    console.log(this.selectedImage);
+    this.selectedImage = null;
+  }
 }
