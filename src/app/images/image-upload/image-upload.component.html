@@ -1,6 +1,7 @@
 <div class="row">
+  <label for="input-file" class="col-2 col-form-label">Upload an image</label>
   <div class="col-md-4">
-    <input type="file" #file/>
+    <input id="input-file" type="file" #file class="inputfile"/>
   </div>
 
   <div class="col-md-4">
@@ -10,7 +11,7 @@
   </div>
 
 
-  <div>
-    <input type="file" (change)="onChange($event)"/>
-  </div>
+  <!--<div>-->
+    <!--<input type="file" (change)="onChange($event)"/>-->
+  <!--</div>-->
 </div>
