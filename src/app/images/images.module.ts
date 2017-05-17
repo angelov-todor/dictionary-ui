@@ -4,9 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ImagesService } from './images.service';
 import { ImagesRoutingModule } from './images-routing.module';
 import { ImagesListComponent } from './images-list/images-list.component';
-import { ImageAddComponent } from './image-add/image-add.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageRootComponent } from './image-root/image-root.component';
+import { ImageSearchComponent } from './image-search/image-search.component';
 
 @NgModule({
   imports: [
@@ -16,9 +16,9 @@ import { ImageRootComponent } from './image-root/image-root.component';
   ],
   declarations: [
     ImagesListComponent,
-    ImageAddComponent,
     ImageUploadComponent,
-    ImageRootComponent
+    ImageRootComponent,
+    ImageSearchComponent
   ],
   providers: [ImagesService]
 })

@@ -11,11 +11,12 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
 @Component({
-  selector: 'app-image-add',
-  templateUrl: './image-add.component.html',
-  styleUrls: ['./image-add.component.scss']
+  selector: 'app-image-search',
+  templateUrl: './image-search.component.html',
+  styleUrls: ['./image-search.component.scss']
 })
-export class ImageAddComponent implements OnInit, OnDestroy {
+export class ImageSearchComponent implements OnInit, OnDestroy {
+
   images: Image[];
   private searchTerms = new Subject<string>();
   private imagesSubscription: Subscription;

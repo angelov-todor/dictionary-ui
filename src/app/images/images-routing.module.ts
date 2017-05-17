@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from '../auth/auth-guard.service';
 import { ImagesListComponent } from './images-list/images-list.component';
-import { ImageAddComponent } from './image-add/image-add.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageRootComponent } from './image-root/image-root.component';
+import { ImageSearchComponent } from './image-search/image-search.component';
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
         path: 'list', component: ImagesListComponent
       },
       {
-        path: 'add', component: ImageAddComponent
+        path: 'search', component: ImageSearchComponent
       },
       {
         path: 'upload', component: ImageUploadComponent
