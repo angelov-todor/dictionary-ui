@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-md-4">
-    <input id="input-file" type="file" #file class="inputfile"/>
+    <input id="input-file" type="file" #file class="inputfile" (change)="changeSelected(file.files.item(0))"/>
   </div>
-  <label for="input-file" class="btn btn-primary col-2 col-form-label">Choose an image</label>
+  <label for="input-file" class="btn btn-primary col-2 col-form-label">{{selected}}</label>
 
   <div class="col-md-4">
-    <button type="button" class="btn btn-primary" (click)="upload(file.files.item(0))">
-      <i class="fa fa-american-sign-language-interpreting" aria-hidden="true"></i> Upload
+    <button type="button" [ngClass]="{disabled:!isSelected}" class="btn btn-primary" (click)="upload(file.files.item(0))">
+      <i class="fa fa-upload" aria-hidden="true"></i> Upload
     </button>
   </div>
 </div>

@@ -10,7 +10,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ImageUploadComponent implements OnInit {
 
-  observableBatch: any = [];
+  selected = 'Choose an image';
+  isSelected = false;
 
   constructor(private imagesService: ImagesService, private router: Router) {
   }
@@ -18,7 +19,10 @@ export class ImageUploadComponent implements OnInit {
   ngOnInit() {
   }
 
-  upload(file: File) {
+  upload(file?: File): void {
+    if (!file) {
+      return;
+    }
     const reader = new FileReader();
     const fileObservable = Observable.create((observer: any) => {
       reader.onload = function (e: any) {
@@ -37,5 +41,15 @@ export class ImageUploadComponent implements OnInit {
     );
 
     reader.readAsDataURL(file);
+  }
+
+  changeSelected(file?: File): void {
+    this.isSelected = true;
+    if (!file) {
+      this.selected = 'Choose an image';
+      this.isSelected = false;
+      return;
+    }
+    this.selected = file.name;
   }
 }
