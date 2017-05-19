@@ -31,9 +31,10 @@ export class ImageUploadComponent implements OnInit {
       };
     }).subscribe(
       (m) => {
-        this.imagesService.upload({'file': m}).subscribe(() => {
-          console.log('sent');
-        });
+        this.imagesService.upload({'filename': file.name, 'data': m})
+          .subscribe(() => {
+            console.log('sent');
+          });
       },
       (e) => {
         console.log('error: ', e);
