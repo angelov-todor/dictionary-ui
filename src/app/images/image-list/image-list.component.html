@@ -1,0 +1,8 @@
+<div class="row align-items-center">
+  <div *ngFor="let image of images;let i = index;" class="search-result mx-auto  col-xs-4">
+    <!--<ng-container *ngIf="i % 5 == 0;then separator"></ng-container>-->
+    <div class="img-thumbnail">
+      <img class="img-fluid" [src]="image.absoluteUrl"/>
+    </div>
+  </div>
+</div>

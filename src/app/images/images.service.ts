@@ -4,13 +4,14 @@ import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/share';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ImagesService {
-  private imagesUrl = 'http://85.187.92.66:8080/images';  // URL to web api
+  private imagesUrl = environment.baseAPIEndpoint + '/images';  // URL to web api
   private headers = new Headers({
-    'Content-Type': 'application/hal+json',
-    'Accept': 'application/json'
+    'Content-Type': 'application/json',
+    'Accept': 'application/hal+json'
   });
   progress;
   progressObserver;
@@ -34,12 +35,17 @@ export class ImagesService {
   }
 
   upload(req): Observable<Image> {
-    console.log(req);
     return this.http
       .post(`${this.imagesUrl}-upload`, JSON.stringify(req))
       .map(response => response.json() as Image);
   }
 
+  /**
+   * Not used
+   * @param params
+   * @param files
+   * @returns {any}
+   */
   makeFileRequest(params: string[], files: File[]): Observable<any> {
     const url = `${this.imagesUrl}-upload`;
 
@@ -72,11 +78,33 @@ export class ImagesService {
       xhr.send(formData);
     });
   }
+
+  getImages(): Observable<Image[]> {
+    return this.http
+      .get(this.imagesUrl, {headers: this.headers})
+      .map((res) => res.json())
+      .map(imagesResponse => {
+        imagesResponse = imagesResponse._embedded.item.map(
+          imageData => new Image(imageData)
+        );
+        return imagesResponse;
+      });
+      // //  TODO: make an object
+      // .map(response => response.json()._embedded.item as Image[])
+  }
 }
 
-export interface Image {
-  image: {
+export class Image {
+  public src: string;
+  public image: {
     thumbnailLink: string;
   };
-  thumbnailLink: string;
+
+  get absoluteUrl(): string {
+    return 'http://85.187.92.66:8080/' + this.src;
+  }
+
+  constructor(data?: Partial<Image>) {
+    Object.assign(this, data || {});
+  }
 }

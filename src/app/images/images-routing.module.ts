@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from '../auth/auth-guard.service';
-import { ImagesListComponent } from './images-list/images-list.component';
+import { ImageListComponent } from './image-list/image-list.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageRootComponent } from './image-root/image-root.component';
 import { ImageSearchComponent } from './image-search/image-search.component';
@@ -14,7 +14,7 @@ const routes: Routes = [
         path: '', redirectTo: 'list', pathMatch: 'full'
       },
       {
-        path: 'list', component: ImagesListComponent
+        path: 'list', component: ImageListComponent
       },
       {
         path: 'search', component: ImageSearchComponent

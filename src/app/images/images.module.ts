@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ImagesService } from './images.service';
 import { ImagesRoutingModule } from './images-routing.module';
-import { ImagesListComponent } from './images-list/images-list.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageRootComponent } from './image-root/image-root.component';
 import { ImageSearchComponent } from './image-search/image-search.component';
+import { ImageListComponent } from './image-list/image-list.component';
 
 @NgModule({
   imports: [
@@ -15,10 +15,10 @@ import { ImageSearchComponent } from './image-search/image-search.component';
     ReactiveFormsModule
   ],
   declarations: [
-    ImagesListComponent,
     ImageUploadComponent,
     ImageRootComponent,
-    ImageSearchComponent
+    ImageSearchComponent,
+    ImageListComponent
   ],
   providers: [ImagesService]
 })
