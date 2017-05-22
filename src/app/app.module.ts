@@ -19,7 +19,7 @@ import { ImagesModule } from './images/images.module';
         AppComponent,
         HeroDetailComponent,
         HeroesComponent,
-        HeroSearchComponent
+        HeroSearchComponent,
     ],
     imports: [
         BrowserModule,

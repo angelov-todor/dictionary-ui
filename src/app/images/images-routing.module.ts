@@ -5,6 +5,7 @@ import { ImageListComponent } from './image-list/image-list.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageRootComponent } from './image-root/image-root.component';
 import { ImageSearchComponent } from './image-search/image-search.component';
+import { ImageViewComponent } from './image-view/image-view.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
       },
       {
         path: 'upload', component: ImageUploadComponent
+      },
+      {
+        path: 'view/:id', component: ImageViewComponent
       }
     ]
   }

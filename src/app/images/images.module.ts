@@ -7,6 +7,8 @@ import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageRootComponent } from './image-root/image-root.component';
 import { ImageSearchComponent } from './image-search/image-search.component';
 import { ImageListComponent } from './image-list/image-list.component';
+import { ImageViewComponent } from './image-view/image-view.component';
+import { ImagesMetadataService } from './images-metadata.service';
 
 @NgModule({
   imports: [
@@ -18,9 +20,10 @@ import { ImageListComponent } from './image-list/image-list.component';
     ImageUploadComponent,
     ImageRootComponent,
     ImageSearchComponent,
-    ImageListComponent
+    ImageListComponent,
+    ImageViewComponent
   ],
-  providers: [ImagesService]
+  providers: [ImagesService, ImagesMetadataService]
 })
 export class ImagesModule {
   static forRoot(): ModuleWithProviders {
