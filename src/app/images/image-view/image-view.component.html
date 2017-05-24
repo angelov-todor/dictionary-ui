@@ -3,26 +3,45 @@
   <img class="d-flex mr-3" [src]="currentImage.large"/>
 
   <div class="media-body">
-    <h5 class="mt-0">Media heading</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
-    vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-    congue felis in faucibus.
+    <h3>Metadata</h3>
+    <div *ngFor="let imageMeta of currentImage.imageMetadata" class="row">
+      <div class="font-weight-bold col">{{imageMeta.metadata.name}}</div>
+      <div class="align-content-center col">{{imageMeta.value}}</div>
+      <div class="col"><a class="remove fa fa-trash" aria-hidden="true" (click)="removeMetadata(imageMeta)"></a></div>
+    </div>
+    <hr/>
+
     <form action="post" class="mx-auto" [formGroup]="metadataForm" (submit)="onSubmit()">
       <input type="hidden" value="{{currentImage.id}}" id="image" formControlName="image"/>
-      <input type="text" class="form-control" id="value" formControlName="value">
-
-      <select class="form-control" id="metadata" formControlName="metadata">
-        <option *ngFor="let meta of allMetadata" [value]="meta['@id']">{{meta.name}}</option>
-      </select>
+      <div class="form-group row">
+        <label for="metadata" class="col-2 col-form-label">Metadata</label>
+        <div class="col-10">
+          <select class="form-control" id="metadata" formControlName="metadata">
+            <option *ngFor="let meta of allMetadata" [value]="meta['@id']">{{meta.name}}</option>
+          </select>
+          <div class="form-control-feedback"
+               *ngIf="metadataForm.get('metadata').touched && metadataForm.get('metadata').hasError('required')">
+            This field is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="value" class="col-2 col-form-label">Value</label>
+        <div class="col-10">
+          <input type="text" class="form-control" id="value" formControlName="value">
+          <div class="form-control-feedback"
+               *ngIf="metadataForm.get('value').touched && metadataForm.get('value').hasError('required')">
+            This field is required
+          </div>
+        </div>
+      </div>
 
       <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="text-center col-sm-8">
+        <div class="text-right col-4 offset-8">
           <button class="btn btn-primary" type="submit">Add</button>
         </div>
       </div>
     </form>
-
   </div>
 </div>
 

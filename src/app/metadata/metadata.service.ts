@@ -3,6 +3,7 @@ import 'rxjs/add/operator/toPromise';
 import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class MetadataService {
@@ -28,12 +29,10 @@ export class MetadataService {
     return Promise.reject(error.message || error);
   }
 
-  create(name: string, type: string): Promise<Metadata> {
+  create(metadata: any): Observable<Metadata> {
     return this.http
-      .post(this.metadataUrl, JSON.stringify({name: name, type: type}), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json() as Metadata)
-      .catch(this.handleError);
+      .post(this.metadataUrl, metadata, {headers: this.headers})
+      .map(res => res.json() as Metadata);
   }
 
   delete(id: number): Promise<void> {
@@ -50,4 +49,8 @@ export class Metadata {
   id: number;
   name: string;
   type: string;
+
+  constructor(data?: Partial<Metadata>) {
+    Object.assign(this, data || {});
+  }
 }

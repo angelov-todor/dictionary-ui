@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Image, ImagesService } from '../images.service';
+import { Image, ImageMetadata, ImagesService } from '../images.service';
 import { Metadata, MetadataService } from '../../metadata/metadata.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ImagesMetadataService } from '../images-metadata.service';
@@ -44,15 +44,25 @@ export class ImageViewComponent implements OnInit {
   }
 
   onSubmit() {
-    this.metadataForm.markAsTouched({onlySelf: true});
+    // this.metadataForm.markAsTouched({onlySelf: true});
+    this.metadataForm.markAsTouched();
     if (!this.metadataForm.valid) {
-      console.log(this.metadataForm.value);
-      console.log('not valid');
       return;
     }
     this.imageMetadataService
       .create(this.metadataForm.value)
-      .subscribe(() => console.log('sent'));
+      .subscribe((imageMetadata) => {
+        this.currentImage.imageMetadata.push(imageMetadata);
+        this.metadataForm.reset({});
+      });
+  }
+
+  removeMetadata(imageMeta: ImageMetadata): void {
+    this.imageMetadataService.delete(imageMeta.id)
+      .subscribe(() => {
+        const index = this.currentImage.imageMetadata.indexOf(imageMeta);
+        this.currentImage.imageMetadata.splice(index, 1);
+      });
   }
 
 }

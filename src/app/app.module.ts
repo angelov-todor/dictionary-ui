@@ -13,26 +13,28 @@ import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { MetadataModule } from './metadata/metadata.module';
 import { ImagesModule } from './images/images.module';
+import { WordsModule } from './words/words.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeroDetailComponent,
-        HeroesComponent,
-        HeroSearchComponent,
-    ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        AppRoutingModule,
-        AuthModule.forRoot(),
-        DashboardModule.forRoot(),
-        MetadataModule.forRoot(),
-        ImagesModule.forRoot()
-    ],
-    providers: [HeroService],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HeroDetailComponent,
+    HeroesComponent,
+    HeroSearchComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule,
+    AuthModule.forRoot(),
+    DashboardModule.forRoot(),
+    MetadataModule.forRoot(),
+    ImagesModule.forRoot(),
+    WordsModule.forRoot()
+  ],
+  providers: [HeroService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

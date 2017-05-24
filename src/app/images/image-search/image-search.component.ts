@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Image, ImagesService } from '../images.service';
+import { FoundImage, ImagesService } from '../images.service';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
@@ -17,15 +17,15 @@ import 'rxjs/add/operator/distinctUntilChanged';
 })
 export class ImageSearchComponent implements OnInit, OnDestroy {
 
-  images: Image[];
+  images: FoundImage[];
   private searchTerms = new Subject<string>();
   private imagesSubscription: Subscription;
-  private selectedImage: Image;
+  private selectedImage: FoundImage;
 
   constructor(private imagesService: ImagesService) {
   }
 
-  select(image: Image) {
+  select(image: FoundImage) {
     this.selectedImage = image;
   }
 
@@ -35,7 +35,7 @@ export class ImageSearchComponent implements OnInit, OnDestroy {
       .distinctUntilChanged()
       .switchMap(term => term
         ? this.imagesService.search(term)
-        : Observable.of<Image[]>([]))
+        : Observable.of<FoundImage[]>([]))
       .catch((error, caught) => {
         console.log(error);
         return caught;

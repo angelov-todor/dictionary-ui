@@ -5,6 +5,7 @@ import { Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/share';
 import { environment } from '../../environments/environment';
+import { Metadata } from '../metadata/metadata.service';
 
 @Injectable()
 export class ImagesService {
@@ -28,10 +29,10 @@ export class ImagesService {
     return Promise.reject(error.message || error);
   }
 
-  search(term: string): Observable<Image[]> {
+  search(term: string): Observable<FoundImage[]> {
     return this.http
       .get(`${this.imagesUrl}-search?term=${term}`)
-      .map(response => response.json().items as Image[]);
+      .map(response => response.json().items as FoundImage[]);
   }
 
   upload(req): Observable<Image> {
@@ -61,14 +62,17 @@ export class ImagesService {
       });
   }
 }
-
-export class Image {
+export class FoundImage {
   public image: {
     thumbnailLink: string;
   };
+}
+
+export class Image {
   public id: number;
   public src: string;
   public '@id': string;
+  public imageMetadata: ImageMetadata[];
 
   get thumb(): string {
     return environment.baseAPIEndpoint + '/image/thumb/' + this.src;
@@ -79,6 +83,15 @@ export class Image {
   }
 
   constructor(data?: Partial<Image>) {
+    Object.assign(this, data || {});
+  }
+}
+export class ImageMetadata {
+  public id: number;
+  public metadata: Metadata;
+  public value: string;
+
+  constructor(data?: Partial<ImageMetadata>) {
     Object.assign(this, data || {});
   }
 }
