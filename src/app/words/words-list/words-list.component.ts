@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Word, WordsService } from '../words.service';
+import { PartialCollectionView, Word, WordsService } from '../words.service';
 
 @Component({
   selector: 'app-words-list',
@@ -9,6 +9,8 @@ import { Word, WordsService } from '../words.service';
 export class WordsListComponent implements OnInit {
 
   words: Word[];
+  collectionView: PartialCollectionView;
+  selectedWord: Word = null;
 
   constructor(private wordsService: WordsService) {
   }
@@ -16,13 +18,23 @@ export class WordsListComponent implements OnInit {
   ngOnInit() {
     this.wordsService.getWords().subscribe(
       (wordsResponse) => {
-        this.words = wordsResponse;
+        this.words = wordsResponse.words;
+        this.collectionView = wordsResponse.view;
       }
     );
   }
 
   showWord(word: Word): void {
     console.log(word);
+  }
+
+  setPage(page: string) {
+    this.wordsService.getWords(page).subscribe(
+      (wordsResponse) => {
+        this.words = wordsResponse.words;
+        this.collectionView = wordsResponse.view;
+      }
+    );
   }
 
 }

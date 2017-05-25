@@ -16,7 +16,25 @@
     <td>{{word.nameStressed}}</td>
     <td>{{word.nameBroken}}</td>
     <td>{{word.classification}}</td>
-    <td class="info"><i class="fa fa-info" aria-hidden="true" (click)="showWord(word)"></i></td>
+    <td class="info pointer"><i class="fa fa-info" aria-hidden="true" (click)="showWord(word)"></i></td>
   </tr>
   </tbody>
 </table>
+
+<nav aria-label="Page navigation example" *ngIf="collectionView">
+  <ul class="pagination justify-content-center">
+    <li [ngClass]="{'active disabled': collectionView['@id'] == collectionView.first}" class="page-item">
+      <a class="page-link pointer" (click)="setPage(collectionView.first)">First</a>
+    </li>
+    <li *ngIf="collectionView.previous" class="page-item">
+      <a class="page-link pointer" (click)="setPage(collectionView.previous)">Previous</a>
+    </li>
+    <li *ngIf="collectionView.next" class="page-item">
+      <a class="page-link pointer" (click)="setPage(collectionView.next)">Next</a>
+    </li>
+    <li [ngClass]="{'active disabled': collectionView['@id'] == collectionView.last}" class="page-item">
+      <a class="page-link pointer" (click)="setPage(collectionView.last)">Last</a>
+    </li>
+  </ul>
+</nav>
+<!--<app-word-view [word]="selectedWord" (onCompleted)="selectedWord = null"></app-word-view>-->
