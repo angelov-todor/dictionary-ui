@@ -25,7 +25,7 @@ export class WordsListComponent implements OnInit {
   }
 
   showWord(word: Word): void {
-    console.log(word);
+    this.selectedWord = word;
   }
 
   setPage(page: string) {
@@ -35,6 +35,10 @@ export class WordsListComponent implements OnInit {
         this.collectionView = wordsResponse.view;
       }
     );
+  }
+
+  filterByName(term: string): void {
+
   }
 
 }

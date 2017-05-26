@@ -9,6 +9,11 @@ import { ModalDirective } from 'ngx-bootstrap';
 })
 export class WordViewComponent implements OnInit {
 
+  @ViewChild('wordViewModal') public wordViewModal: ModalDirective;
+
+  @Output()
+  onCompleted = new EventEmitter<false>();
+
   @Input()
   get word() {
     return this._word;
@@ -17,7 +22,7 @@ export class WordViewComponent implements OnInit {
   set word(value: Word | null) {
     this._word = value;
     if (value) {
-      this.onNewPriceModalOpen();
+      this.onViewWordModalOpen();
     } else {
       this.wordViewModal.hide();
     }
@@ -25,22 +30,17 @@ export class WordViewComponent implements OnInit {
 
   protected _word: Word;
 
-  @ViewChild('wordViewModal') wordViewModal: ModalDirective;
-
-  @Output()
-  onCompleted = new EventEmitter<false>();
-
   constructor() {
   }
 
   ngOnInit() {
   }
 
-  onNewPriceModalOpen() {
+  onViewWordModalOpen(): void {
     this.wordViewModal.show();
   }
 
-  handleClose() {
+  handleClose(): void {
     this.wordViewModal.hide();
     this.onCompleted.emit(false);
   }
