@@ -12,8 +12,12 @@
   <tbody>
   <tr>
     <td></td>
-    <td><input class="form-control form-control-sm" #nameFilter id="name-filter"
-               (keyup)="filterByName(nameFilter.value)" type="text" placeholder="name"></td>
+    <td>
+      <div class="col-6">
+        <input class="form-control form-control-sm" #nameFilter id="name-filter"
+               (keyup)="filterByName(nameFilter.value)" type="text" placeholder="name">
+      </div>
+    </td>
     <td></td>
     <td></td>
     <td></td>
@@ -25,14 +29,22 @@
     <td>{{word.nameStressed}}</td>
     <td>{{word.nameBroken}}</td>
     <td>{{word.classification}}</td>
-    <td class="info pointer"><i class="fa fa-info" aria-hidden="true" (click)="showWord(word)"></i></td>
+    <td class="info">
+      <button class="btn btn-info btn-sm pointer" (click)="showWord(word)">
+        <i class="fa fa-info" aria-hidden="true"></i>
+      </button>
+    </td>
+  </tr>
+  <tr *ngIf="!words?.length">
+    <td colspan="6" class="text-center">No results found</td>
   </tr>
   </tbody>
 </table>
 
 <nav aria-label="Page navigation example" *ngIf="collectionView">
   <ul class="pagination justify-content-center">
-    <li [ngClass]="{'active disabled': collectionView['@id'] == collectionView.first}" class="page-item">
+    <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView['@id'] == collectionView.first}"
+        class="page-item">
       <a class="page-link pointer" (click)="setPage(collectionView.first)">First</a>
     </li>
     <li *ngIf="collectionView.previous" class="page-item">
@@ -41,7 +53,8 @@
     <li *ngIf="collectionView.next" class="page-item">
       <a class="page-link pointer" (click)="setPage(collectionView.next)">Next</a>
     </li>
-    <li [ngClass]="{'active disabled': collectionView['@id'] == collectionView.last}" class="page-item">
+    <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView['@id'] == collectionView.last}"
+        class="page-item">
       <a class="page-link pointer" (click)="setPage(collectionView.last)">Last</a>
     </li>
   </ul>

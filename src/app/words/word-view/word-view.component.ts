@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { Word } from '../words.service';
+import { Word, WordsService } from '../words.service';
 import { ModalDirective } from 'ngx-bootstrap';
 
 @Component({
@@ -28,20 +28,30 @@ export class WordViewComponent implements OnInit {
     }
   }
 
+  private currentWord: Word;
+
   protected _word: Word;
 
-  constructor() {
+  constructor(private wordsService: WordsService) {
   }
 
   ngOnInit() {
   }
 
   onViewWordModalOpen(): void {
-    this.wordViewModal.show();
+    this.wordsService.getWord(this.word.id)
+      .subscribe((word) => {
+        this.currentWord = word;
+        this.wordViewModal.show();
+      });
   }
 
-  handleClose(): void {
+  onClose(): void {
     this.wordViewModal.hide();
+  }
+
+  onHide(): void {
+    this.currentWord = null;
     this.onCompleted.emit(false);
   }
 }

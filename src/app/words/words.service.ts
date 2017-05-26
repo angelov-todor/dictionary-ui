@@ -25,6 +25,32 @@ export class WordsService {
         return wordsResponse;
       });
   }
+
+  filterByName(name: string): Observable<WordListResponse> {
+    const url = this.wordsUrl;
+    return this.http.get(url,
+      {
+        params: {
+          name
+        }
+      })
+      .map(res => res.json())
+      .map(wordsResponse => {
+        wordsResponse = new WordListResponse(wordsResponse);
+        // wordsResponse = wordsResponse.map(
+        //   wordData => new Word(wordData['hydra:member'])
+        // );
+        return wordsResponse;
+      });
+  }
+
+  getWord(id: number): Observable<Word> {
+    const url = this.wordsUrl + `/${id}`;
+    return this.http.get(url).map(res => res.json()).map(wordResponse => {
+      wordResponse = new Word(wordResponse);
+      return wordResponse;
+    });
+  }
 }
 
 export class Word {

@@ -6,20 +6,45 @@
   role="dialog"
   aria-labelledby="viewWordModalLabel"
   aria-hidden="true"
+  (onHide)="onHide()"
 >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title pull-left">Modal header</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="handleClose()">
+        <h4 class="modal-title pull-left">{{currentWord?.name}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="onClose()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body text-center">
-        <p>here...</p>
-      </div>
-      <div class="modal-footer text-center">
-        <p>modal footer</p>
+        <table class="table">
+          <tbody>
+          <tr>
+            <th>Word</th>
+            <td>{{currentWord?.name}}</td>
+          </tr>
+          <tr>
+            <th>Meaning</th>
+            <td><code>{{currentWord?.meaning}}</code></td>
+          </tr>
+          <tr>
+            <th>Classification</th>
+            <td>{{currentWord?.classification}}</td>
+          </tr>
+          <tr>
+            <th>Synonyms</th>
+            <td>{{currentWord?.synonyms}}</td>
+          </tr>
+          <tr>
+            <th>Stressed</th>
+            <td>{{currentWord?.nameStressed}}</td>
+          </tr>
+          <tr>
+            <th>Broken</th>
+            <td>{{currentWord?.nameBroken}}</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
