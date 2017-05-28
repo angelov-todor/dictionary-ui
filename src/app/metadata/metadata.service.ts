@@ -46,9 +46,10 @@ export class MetadataService {
 
 export class Metadata {
   '@id': string;
-  id: number;
-  name: string;
-  type: string;
+  public id: number;
+  public name: string;
+  public type: string;
+  public parent?: Metadata;
 
   constructor(data?: Partial<Metadata>) {
     Object.assign(this, data || {});

@@ -62,6 +62,24 @@ export class Word {
   public synonyms: string;
   public nameStressed: string;
   public nameBroken: string;
+  public etymology: string;
+  public nameCondensed: string;
+
+  public incorrectForms: IncorrectForm[];
+  public derivativeForms: DerivativeForm[];
+  public type;
+
+  get incorrectFormsNames() {
+    return this.incorrectForms.map((f) => {
+      return f.name;
+    }).join(', ');
+  }
+
+  get derivativeFormsNames() {
+    return this.derivativeForms.map((f) => {
+      return f.name;
+    }).join(', ');
+  }
 
   constructor(data?: Partial<Word>) {
     Object.assign(this, data || {});
@@ -72,7 +90,7 @@ export class WordListResponse {
   public view: PartialCollectionView;
   public totalItems: number;
 
-  constructor(data?: Partial<Word>) {
+  constructor(data?: Partial<WordListResponse>) {
     this.words = data['hydra:member'].map(
       (wordData) => new Word(wordData)
     );
@@ -88,7 +106,7 @@ export class PartialCollectionView {
   public previous: string;
   public '@id': string;
 
-  constructor(data?: Partial<Word>) {
+  constructor(data?: Partial<PartialCollectionView>) {
     this.first = data['hydra:first'];
     this.last = data['hydra:last'];
     this.next = data['hydra:next'];
@@ -96,3 +114,27 @@ export class PartialCollectionView {
     this['@id'] = data['@id'];
   }
 }
+export class DerivativeForm {
+  public id: string;
+  public isInfinitive: boolean;
+  public name: string;
+  public nameBroken: string;
+  public nameCondensed: string;
+
+  constructor(data?: Partial<DerivativeForm>) {
+    Object.assign(this, data || {});
+  }
+}
+export class IncorrectForm {
+  public id: string;
+  public name: string;
+
+  constructor(data?: Partial<DerivativeForm>) {
+    Object.assign(this, data || {});
+  }
+
+  toString() {
+    return this.name;
+  }
+}
+

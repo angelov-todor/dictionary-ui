@@ -8,16 +8,16 @@
   aria-hidden="true"
   (onHide)="onHide()"
 >
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title pull-left">{{currentWord?.name}}</h4>
+        <h4 class="modal-title">{{currentWord?.name}}</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="onClose()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body text-center">
-        <table class="table">
+        <table class="table table-hover table-sm">
           <tbody>
           <tr>
             <th>Word</th>
@@ -25,7 +25,7 @@
           </tr>
           <tr>
             <th>Meaning</th>
-            <td><code>{{currentWord?.meaning}}</code></td>
+            <td><code *ngIf="currentWord?.meaning">{{currentWord?.meaning}}</code></td>
           </tr>
           <tr>
             <th>Classification</th>
@@ -43,9 +43,18 @@
             <th>Broken</th>
             <td>{{currentWord?.nameBroken}}</td>
           </tr>
+          <tr>
+            <th>Derivative forms</th>
+            <td> {{currentWord?.derivativeFormsNames}}</td>
+          </tr>
+          <tr>
+            <th>Incorrect forms</th>
+            <td> {{currentWord?.incorrectFormsNames}}</td>
+          </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
+
