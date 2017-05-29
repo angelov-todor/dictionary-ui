@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+  app:
+    image: 'nginx:1.11-alpine'
+    ports:
+      - '8081:80'
+    volumes:
+      - './docker/nginx/conf.d:/etc/nginx/conf.d:ro'
+      - './dist:/srv/app/web:ro'
+  base:
+    build: .
+    volumes:
+      - ./:/srv/app
+    working_dir: /srv/app
+    command: /bin/sh -c "yarn install && yarn build"
