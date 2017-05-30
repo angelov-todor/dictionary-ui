@@ -20,7 +20,7 @@ export class ImageSearchComponent implements OnInit, OnDestroy {
   images: FoundImage[];
   private searchTerms = new Subject<string>();
   private imagesSubscription: Subscription;
-  private selectedImage: FoundImage;
+  public selectedImage: FoundImage;
 
   constructor(private imagesService: ImagesService) {
   }

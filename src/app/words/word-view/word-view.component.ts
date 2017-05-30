@@ -28,7 +28,7 @@ export class WordViewComponent implements OnInit {
     }
   }
 
-  private currentWord: Word;
+  public currentWord: Word;
 
   protected _word: Word;
 
