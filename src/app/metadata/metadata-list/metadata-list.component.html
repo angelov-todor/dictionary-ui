@@ -1,3 +1,17 @@
+<div class="btn-group" dropdown>
+  <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+    Button dropdown <span class="caret"></span>
+  </button>
+  <ul *dropdownMenu class="dropdown-menu" role="menu">
+    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+    <li class="divider dropdown-divider"></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+    </li>
+  </ul>
+</div>
+
 <div class="container">
   <table class="table">
     <thead>
@@ -15,14 +29,14 @@
     <tr *ngFor="let meta of metadata">
       <td>{{meta.name}}</td>
       <td>{{meta.type}}</td>
-      <td>{{meta.parent}} | {{meta.parent?.name}}</td>
+      <td>{{meta.parent?.name}}</td>
       <td><a title="Remove" (click)="delete(meta)" class="remove fa fa-trash" aria-hidden="true"></a></td>
     </tr>
     </tbody>
   </table>
   <hr/>
-  <div class="row">
-    <div class="col offset-4">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
       <form action="post" class="form-inline mx-auto" [formGroup]="createForm" (submit)="onSubmit()">
         <label class="sr-only" for="name">Name</label>
         <input id="name"
@@ -30,7 +44,12 @@
                type="text"
                placeholder="Name"
                formControlName="name"/>
-        <input id="type" type="hidden" formControlName="type"/>
+        <label class="sr-only" for="type">Type</label>
+        <select id="type"
+                class="form-control mb-2 mr-sm-2 mb-sm-0"
+                formControlName="type">
+          <option *ngFor="let type of types.types;" [value]="type.type">{{type.label}}</option>
+        </select>
 
         <label class="sr-only" for="parent">Parent</label>
         <select id="parent"

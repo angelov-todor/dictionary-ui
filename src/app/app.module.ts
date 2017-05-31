@@ -14,6 +14,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { MetadataModule } from './metadata/metadata.module';
 import { ImagesModule } from './images/images.module';
 import { WordsModule } from './words/words.module';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { WordsModule } from './words/words.module';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    BsDropdownModule.forRoot(),
     AuthModule.forRoot(),
     DashboardModule.forRoot(),
     MetadataModule.forRoot(),

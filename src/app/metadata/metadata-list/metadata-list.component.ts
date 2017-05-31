@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Metadata, MetadataService } from '../metadata.service';
+import { Metadata, MetadataService, MetadataTypes } from '../metadata.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class MetadataListComponent implements OnInit {
   metadata: Metadata[];
   createForm: FormGroup;
+  public types = MetadataTypes;
 
   constructor(private router: Router,
               private metadataService: MetadataService,
@@ -48,3 +49,5 @@ export class MetadataListComponent implements OnInit {
       });
   }
 }
+
+

@@ -11,22 +11,18 @@ export class SiteHeaderComponent {
 
   isCollapsed = true;
 
+  constructor(private userAuth: AuthService) {
+  }
+
   toggleCollapse(): void {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  constructor(private userAuth: AuthService) {
-  }
-
   onLogout() {
     this.userAuth.logout();
-    // NOTE: redirect to /login is handled by AuthGuardService!
-    // this.router.navigate(['/login']);
   }
-
 
   isValid() {
     return tokenNotExpired();
   }
-
 }

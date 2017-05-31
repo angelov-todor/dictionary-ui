@@ -55,3 +55,18 @@ export class Metadata {
     Object.assign(this, data || {});
   }
 }
+
+export class MetadataTypes {
+  static types = [
+    {
+      type: 'text',
+      label: 'Text'
+    }, {
+      type: 'bool',
+      label: 'Boolean'
+    }, {
+      type: 'number',
+      label: 'Number'
+    }
+  ];
+}
