@@ -2,11 +2,13 @@
   <div class="col-md-4">
     <input id="input-file" type="file" #file class="inputfile" (change)="changeSelected(file.files.item(0))"/>
   </div>
-  <label for="input-file" class="btn btn-primary col-2 col-form-label">{{selected}}</label>
 
+  <label *ngIf="!selected" for="input-file" class="btn btn-primary col-2 col-form-label" i18n>Choose an image</label>
+  <label *ngIf="selected" for="input-file" class="btn btn-primary col-2 col-form-label">{{selected}}</label>
   <div class="col-md-4">
-    <button type="button" [ngClass]="{disabled:!isSelected}" class="btn btn-primary" (click)="upload(file.files.item(0))">
-      <i class="fa fa-upload" aria-hidden="true"></i> Upload
+    <button type="button" [ngClass]="{disabled:!isSelected}" class="btn btn-primary"
+            (click)="upload(file.files.item(0))">
+      <i class="fa fa-upload" aria-hidden="true"></i> <span i18n>Upload</span>
     </button>
   </div>
 </div>

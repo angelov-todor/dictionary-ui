@@ -7,7 +7,7 @@
           aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="/">Menu</a>
+  <a class="navbar-brand" href="/" i18n>Menu</a>
   <div class="navbar-collapse collapse" id="navbarNavAltMarkup" [collapse]="isCollapsed">
     <div class="navbar-nav">
       <div *ngIf="isValid(); then authTokenValid else authTokenInvalid"></div>
@@ -17,9 +17,7 @@
 
         <div class="nav-item dropdown" dropdown>
           <a dropdownToggle class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-             aria-haspopup="true" aria-expanded="false" href="javascript:">
-            Images
-          </a>
+             aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Images</a>
           <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="nav-item nav-link dropdown-item" routerLink="/images/list" routerLinkActive="active-nav-link"
                i18n>Images</a>

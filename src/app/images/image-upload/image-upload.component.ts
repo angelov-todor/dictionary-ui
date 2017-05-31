@@ -10,8 +10,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ImageUploadComponent implements OnInit {
 
-  selected = 'Choose an image';
-  isSelected = false;
+  public selected: string;
+  public isSelected = false;
 
   constructor(private imagesService: ImagesService, private router: Router) {
   }
@@ -47,7 +47,6 @@ export class ImageUploadComponent implements OnInit {
   changeSelected(file?: File): void {
     this.isSelected = true;
     if (!file) {
-      this.selected = 'Choose an image';
       this.isSelected = false;
       return;
     }
