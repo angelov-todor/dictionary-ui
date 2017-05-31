@@ -1,16 +1,19 @@
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded sticky-top">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-          data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+  <button class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          (click)="toggleCollapse()"
           aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="/">Menu</a>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-collapse collapse" id="navbarNavAltMarkup" [collapse]="isCollapsed">
     <div class="navbar-nav">
       <div *ngIf="isValid(); then authTokenValid else authTokenInvalid"></div>
       <ng-template #authTokenValid>
-        <a class="nav-item nav-link" routerLink="/dashboard" routerLinkActive="active-nav-link">Dashboard</a>
-        <a class="nav-item nav-link" routerLink="/metadata" routerLinkActive="active-nav-link">Metadata</a>
+        <a class="nav-item nav-link" routerLink="/dashboard" routerLinkActive="active-nav-link" i18n>Dashboard</a>
+        <a class="nav-item nav-link" routerLink="/metadata" routerLinkActive="active-nav-link" i18n>Metadata</a>
 
         <div class="nav-item dropdown" dropdown>
           <a dropdownToggle class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -18,40 +21,24 @@
             Images
           </a>
           <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="nav-item nav-link dropdown-item" routerLink="/images/list" routerLinkActive="active-nav-link">Images</a>
-            <a class="nav-item nav-link dropdown-item" routerLink="/images/search" routerLinkActive="active-nav-link">Search</a>
-            <a class="nav-item nav-link dropdown-item" routerLink="/images/upload" routerLinkActive="active-nav-link">Upload</a>
+            <a class="nav-item nav-link dropdown-item" routerLink="/images/list" routerLinkActive="active-nav-link"
+               i18n>Images</a>
+            <a class="nav-item nav-link dropdown-item" routerLink="/images/search" routerLinkActive="active-nav-link"
+               i18n>Search</a>
+            <a class="nav-item nav-link dropdown-item" routerLink="/images/upload" routerLinkActive="active-nav-link"
+               i18n>Upload</a>
           </div>
         </div>
-        <a class="nav-item nav-link" routerLink="/dictionary" routerLinkActive="active-nav-link">Dictionary</a>
-        <a class="nav-item nav-link" href="javascript:" (click)="onLogout()">Log Out</a>
+        <a class="nav-item nav-link" routerLink="/dictionary" routerLinkActive="active-nav-link" i18n>Dictionary</a>
+        <a class="nav-item nav-link" href="javascript:" (click)="onLogout()" i18n>Log Out</a>
+        <a href="/bg/" class="badge nav-item nav-link text-primary" aria-hidden="true" i18n>bg</a>
+        <a href="/en/" class="badge nav-item nav-link text-danger" aria-hidden="true" i18n>en</a>
       </ng-template>
       <ng-template #authTokenInvalid>
-        <a class="nav-item nav-link float-right" routerLink="/login" routerLinkActive="active-nav-link">Log In</a>
+        <a class="nav-item nav-link float-right" routerLink="/login" routerLinkActive="active-nav-link" i18n>Log In</a>
+        <a href="/bg/" class="badge nav-item nav-link text-primary" aria-hidden="true" i18n>bg</a>
+        <a href="/en/" class="badge nav-item nav-link text-danger" aria-hidden="true" i18n>en</a>
       </ng-template>
     </div>
   </div>
 </nav>
-
-<!--
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded sticky-top">
-  &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-            [attr.aria-expanded]="!isCollapsed" (click)="toggleCollapse()" [ngClass]="{'collapsed': isCollapsed}">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">Brand</a>
-  </div>
-  <div class="navbar-nav">
-    &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" [ngClass]="{'in': !isCollapsed}">
-      <a class="nav-item nav-link dropdown-item" routerLink="/images" routerLinkActive="active-nav-link">Base</a>
-      <a class="nav-item nav-link dropdown-item" routerLink="/images/add" routerLinkActive="active-nav-link">Search</a>
-      <a class="nav-item nav-link dropdown-item" routerLink="/images/list" routerLinkActive="active-nav-link">Images</a>
-    </div>
-  </div>
-</nav>
--->
-

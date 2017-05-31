@@ -30,10 +30,11 @@ import { BsDropdownModule } from 'ngx-bootstrap';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     AuthModule.forRoot(),
-    DashboardModule.forRoot(),
     MetadataModule.forRoot(),
     ImagesModule.forRoot(),
-    WordsModule.forRoot()
+    WordsModule.forRoot(),
+    //  should be last in order to catch not found
+    DashboardModule.forRoot()
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]

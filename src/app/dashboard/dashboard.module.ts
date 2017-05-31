@@ -5,19 +5,22 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, CollapseModule } from 'ngx-bootstrap';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 @NgModule({
   imports: [
     CommonModule,
     DashboardRoutingModule,
     ReactiveFormsModule,
-    BsDropdownModule
+    BsDropdownModule,
+    CollapseModule
   ],
   declarations: [
     SiteFooterComponent,
     SiteHeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    NotFoundPageComponent
   ],
   exports: [
     SiteHeaderComponent,

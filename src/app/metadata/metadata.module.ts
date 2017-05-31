@@ -4,14 +4,12 @@ import { MetadataRoutingModule } from './metadata-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MetadataListComponent } from './metadata-list/metadata-list.component';
 import { MetadataService } from './metadata.service';
-import { BsDropdownModule } from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     MetadataRoutingModule,
-    ReactiveFormsModule,
-    BsDropdownModule
+    ReactiveFormsModule
   ],
   declarations: [
     MetadataListComponent
