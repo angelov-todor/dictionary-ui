@@ -7,6 +7,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { BsDropdownModule, CollapseModule } from 'ngx-bootstrap';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { ImagesModule } from '../images/images.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
     DashboardRoutingModule,
     ReactiveFormsModule,
     BsDropdownModule,
-    CollapseModule
+    CollapseModule,
+    ImagesModule
   ],
   declarations: [
     SiteFooterComponent,

@@ -9,6 +9,7 @@ import { ImageSearchComponent } from './image-search/image-search.component';
 import { ImageListComponent } from './image-list/image-list.component';
 import { ImageViewComponent } from './image-view/image-view.component';
 import { ImagesMetadataService } from './images-metadata.service';
+import { ImageEnrichComponent } from './image-enrich/image-enrich.component';
 
 @NgModule({
   imports: [
@@ -21,14 +22,22 @@ import { ImagesMetadataService } from './images-metadata.service';
     ImageRootComponent,
     ImageSearchComponent,
     ImageListComponent,
-    ImageViewComponent
+    ImageViewComponent,
+    ImageEnrichComponent
   ],
-  providers: [ImagesService, ImagesMetadataService]
+  providers: [
+    ImagesService,
+    ImagesMetadataService
+  ],
+  exports: [
+    ImageEnrichComponent
+  ]
 })
 export class ImagesModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: ImagesModule
+      ngModule: ImagesModule,
+      providers: []
     };
   }
 }

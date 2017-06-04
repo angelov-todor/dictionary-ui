@@ -38,7 +38,6 @@ export class ImageViewComponent implements OnInit {
         }
       );
 
-
     this.metadataService.getMetadataList()
       .then(metadata => this.allMetadata = metadata);
   }

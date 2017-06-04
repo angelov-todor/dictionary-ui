@@ -10,7 +10,6 @@ export class MetadataService {
   private metadataUrl = environment.baseAPIEndpoint + '/metadatas';
   private headers = new Headers({
     'Content-Type': 'application/json'
-    // 'Accept': 'application/json'
   });
 
   constructor(private http: AuthHttp) {

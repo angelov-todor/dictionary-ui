@@ -21,5 +21,4 @@ export class ImageListComponent implements OnInit {
       }
     );
   }
-
 }

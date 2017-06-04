@@ -10,6 +10,7 @@ import { Metadata } from '../metadata/metadata.service';
 @Injectable()
 export class ImagesService {
   private imagesUrl = environment.baseAPIEndpoint + '/images';  // URL to web api
+  private imagesEnrichUrl = environment.baseAPIEndpoint + '/images-enrich';
   private headers = new Headers({
     'Content-Type': 'application/json'
     // 'Accept': 'application/hal+json'
@@ -60,6 +61,27 @@ export class ImagesService {
       .map(imageData => {
         return new Image(imageData);
       });
+  }
+
+  getEnrichment() {
+    return this.http
+      .get(this.imagesEnrichUrl)
+      .map((res) => res.json())
+      .map(data => {
+        return new EnrichmentResponse(data);
+      });
+  }
+}
+
+export class EnrichmentResponse {
+  public image: Image;
+  public metadata: Metadata;
+  public question: string;
+
+  constructor(data?: Partial<EnrichmentResponse>) {
+    this.image = new Image(data.image);
+    this.metadata = new Metadata(data.metadata);
+    this.question = data.question;
   }
 }
 export class FoundImage {
