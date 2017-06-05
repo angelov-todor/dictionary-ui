@@ -27,8 +27,8 @@
       </div>
 
       <div class="form-group row">
-        <label for="value" class="col-2 col-form-label" i18n>Value</label>
-        <div class="col-10">
+        <label for="value" class="col col-form-label" i18n>Value</label>
+        <div class="col">
           <input type="text" class="form-control" id="value" formControlName="value">
           <div class="form-control-feedback"
                *ngIf="metadataForm.get('value').touched && metadataForm.get('value').hasError('required')"

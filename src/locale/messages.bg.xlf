@@ -123,7 +123,7 @@
         <target>Търси</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4b3972c3e9485218508a95f7a4ce7758e3f09ced" datatype="html">
@@ -131,7 +131,7 @@
         <target>Качи</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
@@ -143,7 +143,7 @@
         <target>Речник</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d0227a069d21cc5c6951d829cbf135be5b5bc767" datatype="html">
@@ -151,7 +151,7 @@
         <target>Изход</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8403f1596e641a1747cad977fab09ee8a77d894e" datatype="html">
@@ -159,11 +159,11 @@
         <target>бг</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e4caa85607483a250cf6eb521bc21e561b9829f1" datatype="html">
@@ -171,11 +171,11 @@
         <target>ан</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">33</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dcd47f4d6b26b045a1b041b2fc73123bc0cfc118" datatype="html">
@@ -183,7 +183,7 @@
         <target>Вход</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="03354b2489337882c5a4fd033fec9b9f4b8d109f" datatype="html">
@@ -199,7 +199,7 @@
         <target>Прегледай</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c84903b02fcad0b9ab897b080e38e0bddc2b1aa7" datatype="html">
@@ -210,18 +210,96 @@
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9bbb9be366d95205bcaa7d71552aea2b7abc55a9" datatype="html">
-        <source>
-            This field is required
-          </source>
+      <trans-unit id="d9b8309be7e20ac8088e562c6937ee70d1897819" datatype="html">
+        <source>Search image</source>
+        <target>Търси изображение</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+        <source>Save</source>
+        <target>Запиши</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f79611b9cc78f612ae8cc2cce08ff9f14581aeb3" datatype="html">
+        <source>Selected</source>
+        <target>Избрано</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5e6548eb9cbb0467c307b4079bc989cd21f44355" datatype="html">
+        <source>This field is required</source>
         <target>Полето е задължително</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-view/image-view.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-view/image-view.component.ts</context>
           <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5049e204c14c648691ac775a64fb504467aeb549" datatype="html">
+        <source>Value</source>
+        <target>Стойност</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-view/image-view.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0493e3cc3a5682d971ef1a6eb735364d6997d044" datatype="html">
+        <source>Is this an &apos;<x id="INTERPOLATION"/>&apos; ?</source>
+        <target>Може ли изображението да се оприличи като &apos;<x id="INTERPOLATION"/>&apos; ?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4f20f2d5a6882190892e58b85f6ccbedfa737952" datatype="html">
+        <source>Yes</source>
+        <target>Да</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3d3ae7deebc5949b0c1c78b9847886a94321d9fd" datatype="html">
+        <source>No</source>
+        <target>Не</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="24a33789a7f3f1c315670f9251088be26a32bb6b" datatype="html">
+        <source>What &apos;<x id="INTERPOLATION"/>&apos; is on the image?</source>
+        <target>Опишете &apos;<x id="INTERPOLATION"/>&apos; на картинката.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7e6c975ebea8b5f8b120905ca7acf9f8edf59d8e" datatype="html">
+        <source>OK</source>
+        <target>ОК</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eb075d0450deb6f381616f7da4b9244ced843053" datatype="html">
+        <source>Skip</source>
+        <target>Пропусни</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9b0a085531b3557c1a2c0b98276fb31d6b0682bb" datatype="html">
