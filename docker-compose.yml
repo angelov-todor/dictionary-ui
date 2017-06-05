@@ -4,7 +4,7 @@ services:
   app:
     image: 'nginx:1.11-alpine'
     ports:
-      - '8081:80'
+      - '8082:80'
     volumes:
       - './docker/nginx/conf.d:/etc/nginx/conf.d:ro'
       - './dist:/srv/app/web:ro'
