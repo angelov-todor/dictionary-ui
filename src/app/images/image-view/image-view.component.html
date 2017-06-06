@@ -1,8 +1,11 @@
 <div class="media" *ngIf="currentImage">
 
+  <button title="Delete" type="button" class="close remove-button" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
   <img class="img-fluid img-thumbnail m-2" [src]="currentImage.large"/>
 
-  <div class="media-body">
+  <div class="media-body m-2">
     <h3 i18n>Metadata</h3>
     <div *ngFor="let imageMeta of currentImage.imageMetadata" class="row">
       <div class="font-weight-bold col">{{imageMeta.metadata.name}}</div>
@@ -15,14 +18,15 @@
       <input type="hidden" value="{{currentImage.id}}" id="image" formControlName="image"/>
 
       <div class="form-group row">
-        <label for="metadata" class="col-2 col-form-label" i18n>Metadata</label>
-        <div class="col-10">
+        <label for="metadata" class="col col-form-label" i18n>Metadata</label>
+        <div class="col">
           <select class="form-control" id="metadata" formControlName="metadata">
             <option *ngFor="let meta of allMetadata" [value]="meta['@id']">{{meta.name}}</option>
           </select>
           <div class="form-control-feedback"
                *ngIf="metadataForm.get('metadata').touched && metadataForm.get('metadata').hasError('required')"
-               i18n>This field is required</div>
+               i18n>This field is required
+          </div>
         </div>
       </div>
 
@@ -32,7 +36,8 @@
           <input type="text" class="form-control" id="value" formControlName="value">
           <div class="form-control-feedback"
                *ngIf="metadataForm.get('value').touched && metadataForm.get('value').hasError('required')"
-               i18n>This field is required</div>
+               i18n>This field is required
+          </div>
         </div>
       </div>
 

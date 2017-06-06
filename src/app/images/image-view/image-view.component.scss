@@ -4,3 +4,13 @@
   cursor: pointer;
   color: $red !important;
 }
+
+.remove-button {
+  position: relative;
+  top: 13px;
+  left: 33px;
+}
+
+.remove-button:hover {
+  color: $red !important;
+}
