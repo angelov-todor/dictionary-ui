@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
+import { PartialCollectionView } from '../words/words.service';
 
 @Injectable()
 export class MetadataService {
@@ -15,12 +16,30 @@ export class MetadataService {
   constructor(private http: AuthHttp) {
   }
 
-  getMetadataList(): Promise<Metadata[]> {
-    return this.http.get(
-      this.metadataUrl, {headers: this.headers}
-    ).toPromise()
-      .then(response => response.json()['hydra:member'] as Metadata[])
-      .catch(this.handleError);
+  getMetadataList(page?: string): Observable<MetadataListResponse> {
+    const url = page ? environment.baseAPIEndpoint + page : this.metadataUrl;
+
+    return this.http.get(url)
+      .map(res => res.json())
+      .map(metadataResponse => {
+        metadataResponse = new MetadataListResponse(metadataResponse);
+        return metadataResponse;
+      });
+  }
+
+  filterByName(name: string): Observable<MetadataListResponse> {
+    const url = this.metadataUrl;
+    return this.http.get(url,
+      {
+        params: {
+          name
+        }
+      })
+      .map(res => res.json())
+      .map(metadataResponse => {
+        metadataResponse = new MetadataListResponse(metadataResponse);
+        return metadataResponse;
+      });
   }
 
   private handleError(error: any): Promise<any> {
@@ -42,7 +61,21 @@ export class MetadataService {
       .catch(this.handleError);
   }
 }
+export class MetadataListResponse {
+  public metadata: Metadata[];
+  public view: PartialCollectionView;
+  public totalItems: number;
 
+  constructor(data?: Partial<MetadataListResponse>) {
+    this.metadata = data['hydra:member'].map(
+      (meta) => new Metadata(meta)
+    );
+    if (data['hydra:view']) {
+      this.view = new PartialCollectionView(data['hydra:view']);
+    }
+    this.totalItems = data['hydra:totalItems'];
+  }
+}
 export class Metadata {
   '@id': string;
   public id: number;

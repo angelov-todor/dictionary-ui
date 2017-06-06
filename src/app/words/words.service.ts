@@ -6,9 +6,6 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class WordsService {
   private wordsUrl = environment.baseAPIEndpoint + '/words';  // URL to web api
-  private headers = new Headers({
-    'Content-Type': 'application/json'
-  });
 
   constructor(private http: AuthHttp) {
   }
@@ -19,9 +16,6 @@ export class WordsService {
       .map(res => res.json())
       .map(wordsResponse => {
         wordsResponse = new WordListResponse(wordsResponse);
-        // wordsResponse = wordsResponse.map(
-        //   wordData => new Word(wordData['hydra:member'])
-        // );
         return wordsResponse;
       });
   }
@@ -37,9 +31,6 @@ export class WordsService {
       .map(res => res.json())
       .map(wordsResponse => {
         wordsResponse = new WordListResponse(wordsResponse);
-        // wordsResponse = wordsResponse.map(
-        //   wordData => new Word(wordData['hydra:member'])
-        // );
         return wordsResponse;
       });
   }
@@ -116,10 +107,7 @@ export class PartialCollectionView {
 }
 export class DerivativeForm {
   public id: string;
-  public isInfinitive: boolean;
   public name: string;
-  public nameBroken: string;
-  public nameCondensed: string;
 
   constructor(data?: Partial<DerivativeForm>) {
     Object.assign(this, data || {});

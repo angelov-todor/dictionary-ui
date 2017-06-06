@@ -17,7 +17,6 @@ import 'rxjs/add/operator/distinctUntilChanged';
 })
 export class WordsListComponent implements OnInit, OnDestroy {
 
-
   private nameFilter = new Subject<string>();
   private wordsSubscription: Subscription;
   words: Word[];

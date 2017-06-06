@@ -1,5 +1,5 @@
 <div class="container">
-  <table class="table">
+  <table class="table table-sm">
     <thead>
     <tr>
       <th colspan="3" class="text-center" i18n>Metadata</th>
@@ -12,6 +12,17 @@
     </tr>
     </thead>
     <tbody>
+    <tr>
+      <td>
+        <div class="col-4">
+          <input class="form-control form-control-sm" #nameFilter id="name-filter"
+                 (keyup)="filterByName(nameFilter.value)" type="text" placeholder="name" i18n-placeholder>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
     <tr *ngFor="let meta of metadata">
       <td>{{meta.name}}</td>
       <td>{{meta.type}}</td>
@@ -20,6 +31,24 @@
     </tr>
     </tbody>
   </table>
+  <nav *ngIf="collectionView">
+    <ul class="pagination justify-content-center">
+      <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView['@id'] == collectionView.first}"
+          class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.first)" i18n>First</a>
+      </li>
+      <li *ngIf="collectionView.previous" class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.previous)" i18n>Previous</a>
+      </li>
+      <li *ngIf="collectionView.next" class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.next)" i18n>Next</a>
+      </li>
+      <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView['@id'] == collectionView.last}"
+          class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.last)" i18n>Last</a>
+      </li>
+    </ul>
+  </nav>
   <hr/>
   <div class="row justify-content-md-center">
     <div class="col-md-auto">
@@ -42,6 +71,7 @@
         <select id="parent"
                 class="form-control mb-2 mr-sm-2 mb-sm-0"
                 formControlName="parent">
+          <option selected value="null">-</option>
           <option *ngFor="let meta of metadata" [value]="meta['@id']">{{meta.name}}</option>
         </select>
         <button class="btn btn-primary" type="submit" i18n>Add</button>
