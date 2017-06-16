@@ -1,17 +1,19 @@
 <div class="media" *ngIf="currentImage">
 
-  <button title="Delete" type="button" class="close remove-button" aria-label="Close">
+  <button title="Delete" type="button" class="close remove-button" aria-label="Close" (click)="removeImage()">
     <span aria-hidden="true">&times;</span>
   </button>
   <img class="img-fluid img-thumbnail m-2" [src]="currentImage.large"/>
 
   <div class="media-body m-2">
     <h3 i18n>Metadata</h3>
-    <div *ngFor="let imageMeta of currentImage.imageMetadata" class="row">
-      <div class="font-weight-bold col">{{imageMeta.metadata.name}}</div>
-      <div class="align-content-center col">{{imageMeta.value}}</div>
-      <div class="col"><a class="remove fa fa-trash" aria-hidden="true" (click)="removeMetadata(imageMeta)"></a></div>
-    </div>
+    <table>
+      <tr *ngFor="let imageMeta of currentImage.imageMetadata" class="row">
+        <td class="font-weight-bold col">{{imageMeta.metadata.name}}</td>
+        <td class="col">{{imageMeta.value}}</td>
+        <td class="col"><a class="remove fa fa-trash" aria-hidden="true" (click)="removeMetadata(imageMeta)"></a></td>
+      </tr>
+    </table>
     <hr/>
 
     <form action="post" class="mx-auto" [formGroup]="metadataForm" (submit)="onSubmit()">

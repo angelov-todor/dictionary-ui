@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Image, ImageMetadata, ImagesService } from '../images.service';
 import { Metadata, MetadataService } from '../../metadata/metadata.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -20,6 +20,7 @@ export class ImageViewComponent implements OnInit {
               private metadataService: MetadataService,
               private imageMetadataService: ImagesMetadataService,
               private route: ActivatedRoute,
+              private router: Router,
               fb: FormBuilder) {
 
     this.metadataForm = fb.group({
@@ -64,4 +65,11 @@ export class ImageViewComponent implements OnInit {
       });
   }
 
+  removeImage(): void {
+    this.imagesService
+      .remove(this.currentImage)
+      .subscribe(() => {
+        this.router.navigate(['/images']);
+      });
+  }
 }

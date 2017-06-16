@@ -13,7 +13,6 @@ export class ImagesService {
   private imagesEnrichUrl = environment.baseAPIEndpoint + '/images-enrich';
   private headers = new Headers({
     'Content-Type': 'application/json'
-    // 'Accept': 'application/hal+json'
   });
   progress;
   progressObserver;
@@ -70,6 +69,14 @@ export class ImagesService {
       .map(data => {
         return new EnrichmentResponse(data);
       });
+  }
+
+  remove(image: Image): Observable<Boolean> {
+    return this.http.delete(environment.baseAPIEndpoint + image['@id'], {headers: this.headers})
+      .do({
+        error: console.log
+      })
+      .map(() => true);
   }
 }
 
