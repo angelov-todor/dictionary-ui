@@ -14,3 +14,9 @@ services:
       - ./:/srv/app
     working_dir: /srv/app
     command: /bin/sh -c "yarn install && yarn build:client:en && yarn build:client:bg"
+  i18n:
+    build: .
+    volumes:
+      - ./:/srv/app
+    working_dir: /srv/app
+    command: /bin/sh -c "yarn install && yarn xi18n"
