@@ -13,7 +13,8 @@ export class ImageUploadComponent implements OnInit {
   public selected: string;
   public isSelected = false;
 
-  constructor(private imagesService: ImagesService, private router: Router) {
+  constructor(private imagesService: ImagesService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -32,8 +33,8 @@ export class ImageUploadComponent implements OnInit {
     }).subscribe(
       (m) => {
         this.imagesService.upload({'filename': file.name, 'data': m})
-          .subscribe(() => {
-            console.log('sent');
+          .subscribe((image) => {
+            this.router.navigate(['images/view/' + image.id]);
           });
       },
       (e) => {
