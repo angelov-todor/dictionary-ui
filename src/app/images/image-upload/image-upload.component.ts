@@ -25,7 +25,7 @@ export class ImageUploadComponent implements OnInit {
       return;
     }
     const reader = new FileReader();
-    const fileObservable = Observable.create((observer: any) => {
+    Observable.create((observer: any) => {
       reader.onload = function (e: any) {
         observer.next(e.target.result);
         observer.complete();
@@ -34,7 +34,7 @@ export class ImageUploadComponent implements OnInit {
       (m) => {
         this.imagesService.upload({'filename': file.name, 'data': m})
           .subscribe((image) => {
-            this.router.navigate(['images/view/' + image.id]);
+            this.router.navigate(['/images/view', image.id]);
           });
       },
       (e) => {

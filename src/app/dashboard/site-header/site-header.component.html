@@ -16,9 +16,9 @@
         <a class="nav-item nav-link" routerLink="/metadata" routerLinkActive="active-nav-link" i18n>Metadata</a>
 
         <div class="nav-item dropdown" dropdown>
-          <a dropdownToggle class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          <a dropdownToggle class="nav-link dropdown-toggle" id="imagesNavbarDropdown" data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Images</a>
-          <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <div *dropdownMenu class="dropdown-menu" aria-labelledby="imagesNavbarDropdown">
             <a class="nav-item nav-link dropdown-item pl-2" routerLink="/images/list" routerLinkActive="active-nav-link"
                i18n>Images</a>
             <a class="nav-item nav-link dropdown-item pl-2" routerLink="/images/search" routerLinkActive="active-nav-link"
@@ -27,6 +27,18 @@
                i18n>Upload</a>
           </div>
         </div>
+
+        <div class="nav-item dropdown" dropdown>
+          <a dropdownToggle class="nav-link dropdown-toggle" id="unitsNavbarDropdown" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Units</a>
+          <div *dropdownMenu class="dropdown-menu" aria-labelledby="unitsNavbarDropdown">
+            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/units/list" routerLinkActive="active-nav-link"
+               i18n>Units</a>
+            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/units/generate" routerLinkActive="active-nav-link"
+               i18n>Generate</a>
+          </div>
+        </div>
+
         <a class="nav-item nav-link" routerLink="/dictionary" routerLinkActive="active-nav-link" i18n>Dictionary</a>
         <a class="nav-item nav-link" href="javascript:" (click)="onLogout()" i18n>Log Out</a>
         <a href="/bg/" class="badge nav-item nav-link text-primary" aria-hidden="true" i18n>bg</a>

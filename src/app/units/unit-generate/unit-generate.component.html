@@ -1,0 +1,15 @@
+<form action="post" class="mx-auto" [formGroup]="generateForm" (ngSubmit)="onSubmit()">
+  <div class="form-group row no-gutters">
+    <label class="col-sm-4 control-label" for="imagesCount" i18n>Images count</label>
+    <div class="col-sm-8">
+      <input type="text" name="imagesCount" class="form-control" id="imagesCount" formControlName="imagesCount">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="text-center col-sm-8">
+      <button class="btn btn-primary" type="submit" i18n>Generate</button>
+    </div>
+  </div>
+</form>

@@ -15,6 +15,7 @@ import { MetadataModule } from './metadata/metadata.module';
 import { ImagesModule } from './images/images.module';
 import { WordsModule } from './words/words.module';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { UnitsModule } from './units/units.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BsDropdownModule } from 'ngx-bootstrap';
     MetadataModule.forRoot(),
     ImagesModule.forRoot(),
     WordsModule.forRoot(),
+    UnitsModule.forRoot(),
     //  should be last in order to catch not found
     DashboardModule.forRoot()
   ],

@@ -24,5 +24,7 @@ export class SiteHeaderComponent {
 
   isValid() {
     return tokenNotExpired();
+
+    // listen router.navigated
   }
 }
