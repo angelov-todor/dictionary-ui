@@ -1,0 +1,52 @@
+<div
+  bsModal
+  #wordViewModal="bs-modal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="viewWordModalLabel"
+  aria-hidden="true"
+  (onHide)="onHide()"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="onClose()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <table class="table table-hover table-sm">
+          <tbody>
+          <form action="post" class="form-inline mx-auto" [formGroup]="editForm" (submit)="onSubmit()" *ngIf="metadata">
+            <label class="sr-only" for="name">Name</label>
+            <input id="name"
+                   class="form-control mb-2 mr-sm-2 mb-sm-0"
+                   type="text"
+                   placeholder="Name"
+                   formControlName="name"
+                   i18n-placeholder
+                   value="{{metadata.name}}"/>
+            <label class="sr-only" for="type" i18n>Type</label>
+            <select id="type"
+                    class="form-control mb-2 mr-sm-2 mb-sm-0"
+                    formControlName="type">
+              <option *ngFor="let type of types.types;" [value]="type.type">{{type.label}}</option>
+            </select>
+
+            <label class="sr-only" for="parent" i18n>Parent</label>
+            <select id="parent"
+                    class="form-control mb-2 mr-sm-2 mb-sm-0"
+                    formControlName="parent">
+              <option selected value="null">-</option>
+              <option *ngFor="let meta of metadataList" [value]="meta['@id']">{{meta.name}}</option>
+            </select>
+            <button class="btn btn-primary" type="submit" i18n>Update</button>
+          </form>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

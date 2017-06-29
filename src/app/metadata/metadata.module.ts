@@ -4,15 +4,19 @@ import { MetadataRoutingModule } from './metadata-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MetadataListComponent } from './metadata-list/metadata-list.component';
 import { MetadataService } from './metadata.service';
+import { MetadataEditComponent } from './metadata-edit/metadata-edit.component';
+import { ModalModule } from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     MetadataRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule
   ],
   declarations: [
-    MetadataListComponent
+    MetadataListComponent,
+    MetadataEditComponent
   ],
   providers: [MetadataService]
 })

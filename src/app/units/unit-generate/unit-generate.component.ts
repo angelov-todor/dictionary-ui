@@ -12,7 +12,11 @@ export class UnitGenerateComponent implements OnInit {
 
   constructor(fb: FormBuilder) {
     this.generateForm = fb.group({
-      imagesCount: [null, [Validators.required, Validators.email]]
+      unitText: [null, [Validators.required]],
+      imagesCount: [null, [Validators.required]],
+      gridRows: [null, [Validators.required]],
+      gridCols: [null, [Validators.required]],
+      criteria: [null, [Validators.required]]
     });
   }
 

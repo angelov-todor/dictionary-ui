@@ -27,7 +27,8 @@
       <td>{{meta.name}}</td>
       <td>{{meta.type}}</td>
       <td>{{meta.parent?.name}}</td>
-      <td><a i18n-title title="Remove" (click)="delete(meta)" class="remove fa fa-trash" aria-hidden="true"></a></td>
+      <td><a i18n-title title="Edit" (click)="edit(meta)" class="edit fa fa-edit" aria-hidden="true"></a>
+        <a i18n-title title="Remove" (click)="delete(meta)" class="remove fa fa-trash" aria-hidden="true"></a></td>
     </tr>
     </tbody>
   </table>
@@ -79,3 +80,5 @@
     </div>
   </div>
 </div>
+
+<app-metadata-edit [metadata]="selectedMetadata" (onCompleted)="selectedMetadata = null"></app-metadata-edit>

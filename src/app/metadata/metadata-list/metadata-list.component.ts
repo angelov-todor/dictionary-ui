@@ -16,7 +16,7 @@ export class MetadataListComponent implements OnInit {
 
   private nameFilter = new Subject<string>();
   private metadataSubscription: Subscription;
-
+  selectedMetadata: Metadata = null;
   metadata: Metadata[];
   createForm: FormGroup;
   public types = MetadataTypes;
@@ -75,6 +75,10 @@ export class MetadataListComponent implements OnInit {
         this.collectionView = metadataListResponse.view;
       }
     );
+  }
+
+  edit(metadata: Metadata): void {
+    this.selectedMetadata = metadata;
   }
 
   setPage(page: string) {
