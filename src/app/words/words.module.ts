@@ -7,6 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { WordsService } from './words.service';
 import { WordViewComponent } from './word-view/word-view.component';
 import { ModalModule } from 'ngx-bootstrap';
+import { DictionaryComponent } from './dictionary/dictionary.component';
+import { DictionaryService } from './dictionary.service';
 
 @NgModule({
   imports: [
@@ -19,8 +21,9 @@ import { ModalModule } from 'ngx-bootstrap';
     WordsRootComponent,
     WordsListComponent,
     WordViewComponent,
+    DictionaryComponent
   ],
-  providers: [WordsService]
+  providers: [WordsService, DictionaryService]
 })
 export class WordsModule {
   static forRoot(): ModuleWithProviders {

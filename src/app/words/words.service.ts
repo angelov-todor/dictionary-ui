@@ -37,37 +37,38 @@ export class WordsService {
 
   getWord(id: number): Observable<Word> {
     const url = this.wordsUrl + `/${id}`;
-    return this.http.get(url).map(res => res.json()).map(wordResponse => {
-      wordResponse = new Word(wordResponse);
-      return wordResponse;
-    });
+    return this.http.get(url)
+      .map(res => res.json())
+      .map(wordResponse => {
+        wordResponse = new Word(wordResponse);
+        return wordResponse;
+      });
   }
 }
 
 export class Word {
   public id: number;
   public name: string;
-  public '@id': string;
   public meaning: string;
   public classification: string;
   public synonyms: string;
-  public nameStressed: string;
-  public nameBroken: string;
+  public name_stressed: string;
+  public name_broken: string;
   public etymology: string;
-  public nameCondensed: string;
+  public name_condensed: string;
 
-  public incorrectForms: IncorrectForm[];
-  public derivativeForms: DerivativeForm[];
+  public incorrect_forms: IncorrectForm[];
+  public derivative_forms: DerivativeForm[];
   public type;
 
   get incorrectFormsNames() {
-    return this.incorrectForms.map((f) => {
+    return this.incorrect_forms.map((f) => {
       return f.name;
     }).join(', ');
   }
 
   get derivativeFormsNames() {
-    return this.derivativeForms.map((f) => {
+    return this.derivative_forms.map((f) => {
       return f.name;
     }).join(', ');
   }
@@ -76,35 +77,43 @@ export class Word {
     Object.assign(this, data || {});
   }
 }
+
 export class WordListResponse {
   public words: Word[];
   public view: PartialCollectionView;
   public totalItems: number;
 
-  constructor(data?: Partial<WordListResponse>) {
-    this.words = data['hydra:member'].map(
+  constructor(data?: Partial<any>) {
+    this.words = data._embedded.words.map(
       (wordData) => new Word(wordData)
     );
-    this.view = new PartialCollectionView(data['hydra:view']);
-    this.totalItems = data['hydra:totalItems'];
+    this.view = new PartialCollectionView({
+      count: data.count, limit: data.limit, page: data.page, pages: data.pages, total: data.total,
+      first: data._links.first.href,
+      last: data._links.last.href,
+      next: data._links.next ? data._links.next.href : null,
+      previous: data._links.previous ? data._links.previous.href : null
+    });
+    this.totalItems = data.total;
   }
 }
 
 export class PartialCollectionView {
+  public count: string;
+  public limit: string;
+  public page: string;
+  public pages: string;
+  public total: string;
   public first: string;
   public last: string;
   public next: string;
   public previous: string;
-  public '@id': string;
 
   constructor(data?: Partial<PartialCollectionView>) {
-    this.first = data['hydra:first'];
-    this.last = data['hydra:last'];
-    this.next = data['hydra:next'];
-    this.previous = data['hydra:previous'];
-    this['@id'] = data['@id'];
+    Object.assign(this, data || {});
   }
 }
+
 export class DerivativeForm {
   public id: string;
   public name: string;
@@ -113,6 +122,7 @@ export class DerivativeForm {
     Object.assign(this, data || {});
   }
 }
+
 export class IncorrectForm {
   public id: string;
   public name: string;

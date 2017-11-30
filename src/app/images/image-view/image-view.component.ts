@@ -32,15 +32,17 @@ export class ImageViewComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-      .switchMap((params: Params) => this.imagesService.getImage(+params['id']))
+      .switchMap((params: Params) => this.imagesService.getImage(+params.id))
       .subscribe(image => {
           this.currentImage = image;
-          this.metadataForm.reset({image: image['@id']});
+          this.metadataForm.reset({image: image.id});
         }
       );
 
     this.metadataService.getMetadataList()
-      .subscribe(metadata => this.allMetadata = metadata.metadata);
+      .subscribe(metadataListResponse => {
+        this.allMetadata = metadataListResponse.metadata;
+      });
   }
 
   onSubmit() {
@@ -52,16 +54,16 @@ export class ImageViewComponent implements OnInit {
     this.imageMetadataService
       .create(this.metadataForm.value)
       .subscribe((imageMetadata) => {
-        this.currentImage.imageMetadata.push(imageMetadata);
+        this.currentImage.image_metadata.push(imageMetadata);
         this.metadataForm.reset({});
       });
   }
 
-  removeMetadata(imageMeta: ImageMetadata): void {
-    this.imageMetadataService.delete(imageMeta.id)
+  removeMetadata(image_meta: ImageMetadata): void {
+    this.imageMetadataService.delete(image_meta.id)
       .subscribe(() => {
-        const index = this.currentImage.imageMetadata.indexOf(imageMeta);
-        this.currentImage.imageMetadata.splice(index, 1);
+        const index = this.currentImage.image_metadata.indexOf(image_meta);
+        this.currentImage.image_metadata.splice(index, 1);
       });
   }
 

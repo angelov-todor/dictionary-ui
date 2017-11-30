@@ -1,8 +1,8 @@
-version: '2.1'
+version: '3'
 
 services:
   app:
-    image: 'nginx:1.11-alpine'
+    image: 'nginx:1.12-alpine'
     ports:
       - '8082:80'
     volumes:

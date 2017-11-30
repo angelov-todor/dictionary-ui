@@ -38,8 +38,17 @@
                i18n>Generate</a>
           </div>
         </div>
+        <div class="nav-item dropdown" dropdown>
+          <a dropdownToggle class="nav-link dropdown-toggle" id="wordsNavbarDropdown" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Dictionaries</a>
+          <div *dropdownMenu class="dropdown-menu" aria-labelledby="wordsNavbarDropdown">
+            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/dictionary" routerLinkActive="active-nav-link" i18n>Dictionary 1</a>
+            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/words" routerLinkActive="active-nav-link" i18n>Dictionary 2</a>
+            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/tools" routerLinkActive="active-nav-link" i18n>Tools</a>
+          </div>
+        </div>
 
-        <a class="nav-item nav-link" routerLink="/dictionary" routerLinkActive="active-nav-link" i18n>Dictionary</a>
+
         <a class="nav-item nav-link" href="javascript:" (click)="onLogout()" i18n>Log Out</a>
         <a href="/bg/" class="badge nav-item nav-link text-primary" aria-hidden="true" i18n>bg</a>
         <a href="/en/" class="badge nav-item nav-link text-danger" aria-hidden="true" i18n>en</a>

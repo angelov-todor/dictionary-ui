@@ -1,5 +1,4 @@
 import { AuthHttp } from 'angular2-jwt';
-import 'rxjs/add/operator/toPromise';
 import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
 import { environment } from '../../environments/environment';
@@ -8,7 +7,7 @@ import { PartialCollectionView } from '../words/words.service';
 
 @Injectable()
 export class MetadataService {
-  private metadataUrl = environment.baseAPIEndpoint + '/metadatas';
+  private metadataUrl = environment.baseAPIEndpoint + '/metadata';
   private headers = new Headers({
     'Content-Type': 'application/json'
   });
@@ -35,16 +34,7 @@ export class MetadataService {
           name
         }
       })
-      .map(res => res.json())
-      .map(metadataResponse => {
-        metadataResponse = new MetadataListResponse(metadataResponse);
-        return metadataResponse;
-      });
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
+      .map(res => res.json());
   }
 
   create(metadata: any): Observable<Metadata> {
@@ -53,31 +43,38 @@ export class MetadataService {
       .map(res => res.json() as Metadata);
   }
 
-  delete(id: number): Promise<void> {
+  remove(id: number): Observable<boolean> {
     const url = `${this.metadataUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
-      .toPromise()
-      .then(() => null)
-      .catch(this.handleError);
+      .do({
+        error: console.log
+      })
+      .map(() => true);
   }
 }
+
 export class MetadataListResponse {
   public metadata: Metadata[];
   public view: PartialCollectionView;
   public totalItems: number;
 
-  constructor(data?: Partial<MetadataListResponse>) {
-    this.metadata = data['hydra:member'].map(
+  constructor(data?: Partial<any>) {
+    this.metadata = data._embedded.metadata.map(
       (meta) => new Metadata(meta)
     );
-    if (data['hydra:view']) {
-      this.view = new PartialCollectionView(data['hydra:view']);
-    }
-    this.totalItems = data['hydra:totalItems'];
+
+    this.view = new PartialCollectionView({
+      count: data.count, limit: data.limit, page: data.page, pages: data.pages, total: data.total,
+      first: data._links.first.href,
+      last: data._links.last.href,
+      next: data._links.next ? data._links.next.href : null,
+      previous: data._links.previous ? data._links.previous.href : null
+    });
+    this.totalItems = data.total;
   }
 }
+
 export class Metadata {
-  '@id': string;
   public id: number;
   public name: string;
   public type: string;

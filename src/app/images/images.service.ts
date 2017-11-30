@@ -31,7 +31,7 @@ export class ImagesService {
 
   search(term: string): Observable<FoundImage[]> {
     return this.http
-      .get(`${this.imagesUrl}-search?term=${term}`)
+      .get(`${this.imagesUrl}/search?term=${term}`)
       .map(response => response.json().items as FoundImage[]);
   }
 
@@ -41,16 +41,10 @@ export class ImagesService {
       .map(response => response.json() as Image);
   }
 
-  getImages(): Observable<Image[]> {
+  getImages(): Observable<any> {
     return this.http
       .get(this.imagesUrl, {headers: this.headers})
-      .map((res) => res.json())
-      .map(imagesResponse => {
-        imagesResponse = imagesResponse['hydra:member'].map(
-          imageData => new Image(imageData)
-        );
-        return imagesResponse;
-      });
+      .map((res) => res.json());
   }
 
   getImage(id: number): Observable<Image> {
@@ -72,7 +66,7 @@ export class ImagesService {
   }
 
   remove(image: Image): Observable<Boolean> {
-    return this.http.delete(environment.baseAPIEndpoint + image['@id'], {headers: this.headers})
+    return this.http.delete(this.imagesUrl + '/' + image.id, {headers: this.headers})
       .do({
         error: console.log
       })
@@ -91,6 +85,7 @@ export class EnrichmentResponse {
     this.question = data.question;
   }
 }
+
 export class FoundImage {
   public image: {
     thumbnailLink: string;
@@ -100,8 +95,7 @@ export class FoundImage {
 export class Image {
   public id: number;
   public src: string;
-  public '@id': string;
-  public imageMetadata: ImageMetadata[];
+  public image_metadata: ImageMetadata[];
 
   get thumb(): string {
     return environment.baseAPIEndpoint + '/image/thumb/' + this.src;
@@ -115,6 +109,7 @@ export class Image {
     Object.assign(this, data || {});
   }
 }
+
 export class ImageMetadata {
   public id: number;
   public metadata: Metadata;

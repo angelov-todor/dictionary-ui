@@ -1,5 +1,4 @@
-import { Router } from '@angular/router';
-import { Metadata, MetadataListResponse, MetadataService, MetadataTypes } from '../metadata.service';
+import { Metadata, MetadataService, MetadataTypes } from '../metadata.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PartialCollectionView } from '../../words/words.service';
@@ -22,8 +21,7 @@ export class MetadataListComponent implements OnInit {
   public types = MetadataTypes;
   collectionView: PartialCollectionView;
 
-  constructor(private router: Router,
-              private metadataService: MetadataService,
+  constructor(private metadataService: MetadataService,
               private fb: FormBuilder) {
     this.createForm = fb.group({
       name: [null, [Validators.required]],
@@ -39,8 +37,8 @@ export class MetadataListComponent implements OnInit {
       .distinctUntilChanged()
       .switchMap(term => term
         ? this.metadataService.filterByName(term)
-        : Observable.of<MetadataListResponse>())
-      .catch((error, caught) => {
+        : this.metadataService.getMetadataList()
+      ).catch((error, caught) => {
         return caught;
       })
       .subscribe(
@@ -60,10 +58,10 @@ export class MetadataListComponent implements OnInit {
       .subscribe((metadata) => this.metadata.push(metadata));
   }
 
-  delete(meta: Metadata): void {
+  remove(meta: Metadata): void {
     this.metadataService
-      .delete(meta.id)
-      .then(() => {
+      .remove(meta.id)
+      .do(() => {
         this.metadata = this.metadata.filter(h => h !== meta);
       });
   }

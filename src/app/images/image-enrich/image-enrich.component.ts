@@ -40,8 +40,8 @@ export class ImageEnrichComponent implements OnInit {
       (enrichment) => {
         this.enrichment = enrichment;
         this.metadataForm.reset({
-          image: enrichment.image['@id'],
-          metadata: enrichment.metadata['@id']
+          image: enrichment.image.id,
+          metadata: enrichment.metadata.id
         });
       }
     );

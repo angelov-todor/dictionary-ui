@@ -24,7 +24,8 @@ export class ImagesMetadataService {
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(this.imageMetadataUrl, data)
+    const url = environment.baseAPIEndpoint + `/images/${data.image}/metadata`;
+    return this.http.post(url, data)
       .map(response => response.json())
       .map(imageMetadata => {
         return new ImageMetadata(imageMetadata);
@@ -32,7 +33,7 @@ export class ImagesMetadataService {
   }
 
   delete(id: number): Observable<any> {
-    const url = `${this.imageMetadataUrl}/${id}`;
+    const url = environment.baseAPIEndpoint + `/images/${id}/metadata`;
     return this.http.delete(url, {headers: this.headers})
       .do({
         error: console.log

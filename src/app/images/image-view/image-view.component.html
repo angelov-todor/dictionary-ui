@@ -8,10 +8,10 @@
   <div class="media-body m-2">
     <h3 i18n>Metadata</h3>
     <table class="table table-sm table-striped">
-      <tr *ngFor="let imageMeta of currentImage.imageMetadata" class="row">
-        <td class="font-weight-bold col">{{imageMeta.metadata.name}}</td>
-        <td class="col">{{imageMeta.value}}</td>
-        <td class="col"><a class="remove fa fa-trash" aria-hidden="true" (click)="removeMetadata(imageMeta)"></a></td>
+      <tr *ngFor="let image_meta of currentImage.image_metadata" class="row">
+        <td class="font-weight-bold col">{{image_meta.metadata.name}}</td>
+        <td class="col">{{image_meta.value}}</td>
+        <td class="col"><a class="remove fa fa-trash" aria-hidden="true" (click)="removeMetadata(image_meta)"></a></td>
       </tr>
     </table>
     <hr/>
@@ -23,7 +23,7 @@
         <label for="metadata" class="col col-form-label" i18n>Metadata</label>
         <div class="col">
           <select class="form-control" id="metadata" formControlName="metadata">
-            <option *ngFor="let meta of allMetadata" [value]="meta['@id']">{{meta.name}}</option>
+            <option *ngFor="let meta of allMetadata" [value]="meta.id">{{meta.name}}</option>
           </select>
           <div class="form-control-feedback"
                *ngIf="metadataForm.get('metadata').touched && metadataForm.get('metadata').hasError('required')"

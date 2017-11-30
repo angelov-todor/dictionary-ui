@@ -9,6 +9,7 @@ import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-words-list',
@@ -38,7 +39,8 @@ export class WordsListComponent implements OnInit, OnDestroy {
       .distinctUntilChanged()
       .switchMap(term => term
         ? this.wordsService.filterByName(term)
-        : Observable.of<WordListResponse>())
+        : this.wordsService.getWords()
+      )
       .catch((error, caught) => {
         return caught;
       })

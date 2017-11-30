@@ -23,4 +23,7 @@ export class UnitGenerateComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+
+  }
 }

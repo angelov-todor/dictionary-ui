@@ -1,0 +1,77 @@
+<form action="post" class="form-inline mx-auto" [formGroup]="syllablesForm" (submit)="showSyllables()">
+  <div>Syllables:</div>
+  <label class="sr-only" for="s_word">Word</label>
+  <input id="s_word"
+         class="form-control mb-2 mr-sm-2 mb-sm-0"
+         type="text"
+         placeholder="Word"
+         formControlName="word"
+         i18n-placeholder/>
+  <button class="btn btn-primary" type="submit" i18n>Check</button>
+  <span>{{ syllables }}</span>
+</form>
+
+<form action="post" class="form-inline mx-auto" [formGroup]="transcriptionForm" (submit)="showTranscription()">
+  <div>Transcription:</div>
+  <label class="sr-only" for="t_name">Word</label>
+  <input id="t_name"
+         class="form-control mb-2 mr-sm-2 mb-sm-0"
+         type="text"
+         placeholder="Word"
+         formControlName="word"
+         i18n-placeholder/>
+  <button class="btn btn-primary" type="submit" i18n>Check</button>
+  <span><em>{{ transcription }}</em></span>
+</form>
+
+<form action="post" class="form-inline mx-auto" [formGroup]="rhymeformForm" (submit)="showRhymeform()">
+  <div>Rhymeform:</div>
+  <label class="sr-only" for="r_name">Word</label>
+  <input id="r_name"
+         class="form-control mb-2 mr-sm-2 mb-sm-0"
+         type="text"
+         placeholder="Word"
+         formControlName="word"
+         i18n-placeholder/>
+  <button class="btn btn-primary" type="submit" i18n>Check</button>
+  <span>{{ rhymeform }}</span>
+</form>
+
+<form action="post" class="form-inline mx-auto" [formGroup]="reductionForm" (submit)="showReduction()">
+  <div>Reduction:</div>
+  <label class="sr-only" for="re_name">Word</label>
+  <input id="re_name"
+         class="form-control mb-2 mr-sm-2 mb-sm-0"
+         type="text"
+         placeholder="Word"
+         formControlName="word"
+         i18n-placeholder/>
+  <button class="btn btn-primary" type="submit" i18n>Check</button>
+  <span>{{ reduction }}</span>
+</form>
+
+<form action="post" class="form-inline mx-auto" [formGroup]="phonemesForm" (submit)="showPhonemes()">
+  <div>Phonemes:</div>
+  <label class="sr-only" for="ph_name">Word</label>
+  <input id="ph_name"
+         class="form-control mb-2 mr-sm-2 mb-sm-0"
+         type="text"
+         placeholder="Word"
+         formControlName="word"
+         i18n-placeholder/>
+  <button class="btn btn-primary" type="submit" i18n>Check</button>
+  <div>{{ phonemes }}</div>
+</form>
+
+<form action="post" class="form-inline mx-auto" [formGroup]="rhymesForm" (submit)="showRhymes()">
+  <div>Rhymes:&nbsp;</div>
+  <label class="sr-only" for="rh_name">Word</label>
+  <input id="rh_name"
+         class="form-control mb-2 mr-sm-2 mb-sm-0"
+         type="text"
+         placeholder="Word"
+         formControlName="word"
+         i18n-placeholder/>
+  <button class="btn btn-primary" type="submit" i18n>Check</button>
+  <span *ngFor="let rhyme of rhymes"><span>{{ rhyme.normalized }},&nbsp;</span></span>
+</form>

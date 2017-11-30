@@ -28,7 +28,7 @@
       <td>{{meta.type}}</td>
       <td>{{meta.parent?.name}}</td>
       <td><a i18n-title title="Edit" (click)="edit(meta)" class="edit fa fa-edit" aria-hidden="true"></a>
-        <a i18n-title title="Remove" (click)="delete(meta)" class="remove fa fa-trash" aria-hidden="true"></a></td>
+        <a i18n-title title="Remove" (click)="remove(meta)" class="remove fa fa-trash" aria-hidden="true"></a></td>
     </tr>
     </tbody>
   </table>
@@ -73,7 +73,7 @@
                 class="form-control mb-2 mr-sm-2 mb-sm-0"
                 formControlName="parent">
           <option selected value="null">-</option>
-          <option *ngFor="let meta of metadata" [value]="meta['@id']">{{meta.name}}</option>
+          <option *ngFor="let meta of metadata" [value]="meta.id">{{meta.name}}</option>
         </select>
         <button class="btn btn-primary" type="submit" i18n>Add</button>
       </form>

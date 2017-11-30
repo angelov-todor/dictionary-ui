@@ -21,12 +21,10 @@ export class AuthService {
 
   authenticate(username: string, password: string): Observable<boolean> {
     return this.http.post(this.baseUrl + '/authenticate',
-      JSON.stringify({username: username, password: password}))
+      {email: username, password: password})
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
-        const token = response.json() && response.json().token;
-        // TODO: check sessionStorage vs localStorage
-
+        const token = response.json() && response.json().jwt;
         if (token) {
           // set token property
           this.token = token;
