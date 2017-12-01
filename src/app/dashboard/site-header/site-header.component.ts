@@ -3,28 +3,22 @@ import { AuthService } from '../../auth/auth.service';
 import { tokenNotExpired } from 'angular2-jwt';
 
 @Component({
-  selector: 'app-site-header',
-  templateUrl: './site-header.component.html',
-  styleUrls: ['./site-header.component.scss']
+    selector: 'app-site-header',
+    templateUrl: './site-header.component.html',
+    styleUrls: ['./site-header.component.scss']
 })
 export class SiteHeaderComponent {
 
-  isCollapsed = true;
+    isActive: boolean = true;
 
-  constructor(private userAuth: AuthService) {
-  }
+    constructor(private userAuth: AuthService) {
+    }
 
-  toggleCollapse(): void {
-    this.isCollapsed = !this.isCollapsed;
-  }
+    onLogout() {
+        this.userAuth.logout();
+    }
 
-  onLogout() {
-    this.userAuth.logout();
-  }
-
-  isValid() {
-    return tokenNotExpired();
-
-    // listen router.navigated
-  }
+    isValid() {
+        return tokenNotExpired();
+    }
 }

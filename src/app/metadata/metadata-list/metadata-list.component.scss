@@ -1,11 +1,12 @@
-@import '~bootstrap/scss/_variables.scss';
+$red:     #dc3545 !default;
+$blue:    #007bff !default;
 
 .remove {
   cursor: pointer;
-  color: $red !important;
+  color: $red;
 }
 
 .edit {
   cursor: pointer;
-  color: $blue !important;
+  color: $blue;
 }
