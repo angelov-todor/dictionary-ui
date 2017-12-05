@@ -6009,6 +6009,10 @@ xmlbuilder@>=1.0.0, xmlbuilder@^4.1.0:
   dependencies:
     lodash "^4.0.0"
 
+"xmldom@https://github.com/smoke/xmldom/tarball/smoke-xmldom/0.1.28-p1":
+  version "0.1.28"
+  resolved "https://github.com/smoke/xmldom/tarball/smoke-xmldom/0.1.28-p1#3bcd0f72e8449b9581313027b1f9fc2f477c1629"
+
 xmlhttprequest-ssl@1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.3.tgz#185a888c04eca46c3e4070d99f7b49de3528992d"

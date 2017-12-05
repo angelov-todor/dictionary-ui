@@ -1,77 +1,107 @@
 <form action="post" class="form-inline mx-auto" [formGroup]="syllablesForm" (submit)="showSyllables()">
-  <div>Syllables:</div>
-  <label class="sr-only" for="s_word">Word</label>
-  <input id="s_word"
-         class="form-control mb-2 mr-sm-2 mb-sm-0"
-         type="text"
-         placeholder="Word"
-         formControlName="word"
-         i18n-placeholder/>
-  <button class="btn btn-primary" type="submit" i18n>Check</button>
-  <span>{{ syllables }}</span>
-</form>
+    <div class="col-auto">
+        <label class="sr-only" for="s_word" i18n>Word</label>
+        <div class="input-group mb-2 mb-sm-0">
+            <div class="input-group-addon" i18n>Syllables</div>
+            <input type="text" class="form-control" id="s_word" formControlName="word" placeholder="Word"
+                   i18n-placeholder>
+        </div>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary" i18n>Submit</button>
+    </div>
 
+    <label class="sr-only" i18n>Word</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" value="{{ syllables }}">
+</form>
+<hr/>
 <form action="post" class="form-inline mx-auto" [formGroup]="transcriptionForm" (submit)="showTranscription()">
-  <div>Transcription:</div>
-  <label class="sr-only" for="t_name">Word</label>
-  <input id="t_name"
-         class="form-control mb-2 mr-sm-2 mb-sm-0"
-         type="text"
-         placeholder="Word"
-         formControlName="word"
-         i18n-placeholder/>
-  <button class="btn btn-primary" type="submit" i18n>Check</button>
-  <span><em>{{ transcription }}</em></span>
-</form>
+    <div class="col-auto">
+        <label class="sr-only" for="s_word" i18n>Word</label>
+        <div class="input-group mb-2 mb-sm-0">
+            <div class="input-group-addon" i18n>Transcription</div>
+            <input type="text" class="form-control" id="t_name" formControlName="word" placeholder="Word"
+                   i18n-placeholder>
+        </div>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary" i18n>Submit</button>
+    </div>
 
+    <label class="sr-only" i18n>Word</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" value="{{ transcription }}">
+</form>
+<hr/>
 <form action="post" class="form-inline mx-auto" [formGroup]="rhymeformForm" (submit)="showRhymeform()">
-  <div>Rhymeform:</div>
-  <label class="sr-only" for="r_name">Word</label>
-  <input id="r_name"
-         class="form-control mb-2 mr-sm-2 mb-sm-0"
-         type="text"
-         placeholder="Word"
-         formControlName="word"
-         i18n-placeholder/>
-  <button class="btn btn-primary" type="submit" i18n>Check</button>
-  <span>{{ rhymeform }}</span>
-</form>
+    <div class="col-auto">
+        <label class="sr-only" for="r_name" i18n>Word</label>
+        <div class="input-group mb-2 mb-sm-0">
+            <div class="input-group-addon" i18n>Rhymeform</div>
+            <input type="text" class="form-control" id="r_name" formControlName="word" placeholder="Word"
+                   i18n-placeholder>
+        </div>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary" i18n>Submit</button>
+    </div>
 
+    <label class="sr-only" i18n>Word</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" value="{{ rhymeform }}">
+</form>
+<hr/>
 <form action="post" class="form-inline mx-auto" [formGroup]="reductionForm" (submit)="showReduction()">
-  <div>Reduction:</div>
-  <label class="sr-only" for="re_name">Word</label>
-  <input id="re_name"
-         class="form-control mb-2 mr-sm-2 mb-sm-0"
-         type="text"
-         placeholder="Word"
-         formControlName="word"
-         i18n-placeholder/>
-  <button class="btn btn-primary" type="submit" i18n>Check</button>
-  <span>{{ reduction }}</span>
-</form>
+    <div class="col-auto">
+        <label class="sr-only" for="re_name" i18n>Word</label>
+        <div class="input-group mb-2 mb-sm-0">
+            <div class="input-group-addon" i18n>Reduction</div>
+            <input type="text" class="form-control" id="re_name" formControlName="word" placeholder="Word"
+                   i18n-placeholder>
+        </div>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary" i18n>Submit</button>
+    </div>
 
+    <label class="sr-only" i18n>Word</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" value="{{ reduction }}">
+</form>
+<hr/>
 <form action="post" class="form-inline mx-auto" [formGroup]="phonemesForm" (submit)="showPhonemes()">
-  <div>Phonemes:</div>
-  <label class="sr-only" for="ph_name">Word</label>
-  <input id="ph_name"
-         class="form-control mb-2 mr-sm-2 mb-sm-0"
-         type="text"
-         placeholder="Word"
-         formControlName="word"
-         i18n-placeholder/>
-  <button class="btn btn-primary" type="submit" i18n>Check</button>
-  <div>{{ phonemes }}</div>
-</form>
+    <div class="col-auto">
+        <label class="sr-only" for="ph_name" i18n>Word</label>
+        <div class="input-group mb-2 mb-sm-0">
+            <div class="input-group-addon" i18n>Phonemes</div>
+            <input type="text" class="form-control" id="ph_name" formControlName="word" placeholder="Word"
+                   i18n-placeholder>
+        </div>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary" i18n>Submit</button>
+    </div>
 
+    <label class="sr-only" i18n>Word</label>
+    <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" value="{{ phonemes }}">
+</form>
+<hr/>
 <form action="post" class="form-inline mx-auto" [formGroup]="rhymesForm" (submit)="showRhymes()">
-  <div>Rhymes:&nbsp;</div>
-  <label class="sr-only" for="rh_name">Word</label>
-  <input id="rh_name"
-         class="form-control mb-2 mr-sm-2 mb-sm-0"
-         type="text"
-         placeholder="Word"
-         formControlName="word"
-         i18n-placeholder/>
-  <button class="btn btn-primary" type="submit" i18n>Check</button>
-  <span *ngFor="let rhyme of rhymes"><span>{{ rhyme.normalized }},&nbsp;</span></span>
+    <div class="col-auto">
+        <label class="sr-only" for="rh_name" i18n>Word</label>
+        <div class="input-group mb-2 mb-sm-0">
+            <div class="input-group-addon" i18n>Rhymes</div>
+            <input type="text" class="form-control" id="rh_name" formControlName="word" placeholder="Word"
+                   i18n-placeholder>
+        </div>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary" i18n>Submit</button>
+    </div>
+
+    <label class="sr-only" i18n>Word</label>
+    <div class="form-control mb-2 mr-sm-2 mb-sm-0">
+        <div class="row" *ngFor="let rhyme of rhymes">
+            <div class="col">
+                <ng-container>{{ rhyme.normalized }}</ng-container>
+            </div>
+        </div>
+    </div>
 </form>

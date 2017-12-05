@@ -10,8 +10,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prod:build": "ng build --prod",
-    "xi18n": "ng xi18n --locale en --output-path src/locale",
-    "build:client:en": "ng build --aot --locale en --base-href /en/ --i18nFile=./src/locale/messages.en.xlf --i18nFormat=xlf --output-path ./dist/en",
+    "xi18n": "ng xi18n --locale en --i18n-format xlf --output-path src/locale",
+    "xi18n-all": "npm-run-all xi18n:ng-xi18n xi18n:xliff-to-tpl-xliff xi18n:xliff-merge-to-lang",
+    "xliff-to-tpl-xliff": "ts-node scripts/i18n/xliff-to-tpl-xliff.ts",
+    "xliff-merge-to-lang": "ts-node scripts/i18n/xliff-merge-to-lang.ts",
+    "build:client:en": "ng build --aot --locale en --base-href /en/ --i18nFile=./src/locale/messages.en.xlf --missing-translation ignore --i18nFormat=xlf --output-path ./dist/en",
     "build:client:bg": "ng build --aot --locale bg --base-href /bg/ --i18nFile=./src/locale/messages.bg.xlf --i18nFormat=xlf --output-path ./dist/bg"
   },
   "private": true,
@@ -48,6 +51,7 @@
     "protractor": "^5.2.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
-    "typescript": "~2.4.2"
+    "typescript": "~2.4.2",
+    "xmldom": "https://github.com/smoke/xmldom/tarball/smoke-xmldom/0.1.28-p1"
   }
 }
