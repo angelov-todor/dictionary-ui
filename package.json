@@ -14,8 +14,8 @@
     "xi18n-all": "npm-run-all xi18n:ng-xi18n xi18n:xliff-to-tpl-xliff xi18n:xliff-merge-to-lang",
     "xliff-to-tpl-xliff": "ts-node scripts/i18n/xliff-to-tpl-xliff.ts",
     "xliff-merge-to-lang": "ts-node scripts/i18n/xliff-merge-to-lang.ts",
-    "build:client:en": "ng build --aot --locale en --base-href /en/ --i18nFile=./src/locale/messages.en.xlf --missing-translation ignore --i18nFormat=xlf --output-path ./dist/en",
-    "build:client:bg": "ng build --aot --locale bg --base-href /bg/ --i18nFile=./src/locale/messages.bg.xlf --i18nFormat=xlf --output-path ./dist/bg"
+    "build:client:en": "ng build --prod --aot --locale en --base-href /en/ --i18nFile=./src/locale/messages.en.xlf --missing-translation ignore --i18nFormat=xlf --output-path ./dist/en",
+    "build:client:bg": "ng build --prod --aot --locale bg --base-href /bg/ --i18nFile=./src/locale/messages.bg.xlf --i18nFormat=xlf --output-path ./dist/bg"
   },
   "private": true,
   "dependencies": {

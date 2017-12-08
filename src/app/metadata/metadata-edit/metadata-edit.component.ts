@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angu
 import { ModalDirective } from 'ngx-bootstrap';
 import { Metadata, MetadataTypes } from '../metadata.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { switchMap } from 'rxjs/operator/switchMap';
 
 @Component({
   selector: 'app-metadata-edit',
@@ -45,10 +46,38 @@ export class MetadataEditComponent implements OnInit {
 
   ngOnInit() {
   }
+  /*fetchMetadata() {
+    // TODO: Integrate https://valor-software.com/ngx-bootstrap/#/typeahead or similar for Properties and PropetyUnits selects
+    // For now due to lack of better component e.g. https://valor-software.com/ngx-bootstrap/#/typeahead
+    // we load all the pages of Properties one after the other
+    this.propertiesService.getProperties()
+      .pipe(
+        switchMap((propertiesResponse) => {
+          const paginationDefaults = {
+            limit: propertiesResponse.limit
+          };
+          return concat(
+            of(propertiesResponse),
+            ...(
+              // given `page=1` is loaded, for the rest of `pagesToLoad=[2,3,4,...]`
+              (Array.from(Array(propertiesResponse.pages && (propertiesResponse.pages - 1)).keys()).map((i) => i + 2))
+              // do a sequential request for each page of Properties
+                .map((page) => this.propertiesService.getProperties({...paginationDefaults, page}))
+            )
+          );
+        })
+      )
+      .subscribe((propertiesResponse) => {
+        this.properties = (this.properties || []).concat(
+          propertiesResponse._embedded.properties
+        );
+      });
+  }*/
 
   onSubmit() {
     this.editForm.markAsTouched();
     if (!this.editForm.valid) {
+      console.log('not valid');
       return;
     }
     // this.metadataService.create(this.editForm.value)

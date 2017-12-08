@@ -1,12 +1,9 @@
-$red:     #dc3545 !default;
-$blue:    #007bff !default;
+@import "~scss/variables";
 
-.remove {
-  cursor: pointer;
-  color: $red;
+.info {
+  color: $blue;
 }
 
-.edit {
+.pointer {
   cursor: pointer;
-  color: $blue;
 }

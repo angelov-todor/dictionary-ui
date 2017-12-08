@@ -11,7 +11,6 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Modal</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="onClose()">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -20,7 +19,7 @@
         <table class="table table-hover table-sm">
           <tbody>
           <form action="post" class="form-inline mx-auto" [formGroup]="editForm" (submit)="onSubmit()" *ngIf="metadata">
-            <label class="sr-only" for="name">Name</label>
+            <label class="sr-only" for="name" i18n>Name</label>
             <input id="name"
                    class="form-control mb-2 mr-sm-2 mb-sm-0"
                    type="text"
@@ -39,8 +38,8 @@
             <select id="parent"
                     class="form-control mb-2 mr-sm-2 mb-sm-0"
                     formControlName="parent">
-              <option selected value="null">-</option>
-              <option *ngFor="let meta of metadataList" [value]="meta['@id']">{{meta.name}}</option>
+              <option selected value="{{metadata.parent}}">-</option>
+              <option *ngFor="let meta of metadataList" [value]="meta.id">{{meta.name}}</option>
             </select>
             <button class="btn btn-primary" type="submit" i18n>Update</button>
           </form>

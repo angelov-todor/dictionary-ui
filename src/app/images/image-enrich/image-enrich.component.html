@@ -1,10 +1,9 @@
 <div *ngIf="enrichment" class="app-enrichment-component w-50">
-
   <ng-container *ngIf="enrichment.image.id && enrichment.metadata">
     <img class="mx-auto d-block img-fluid img-thumbnail" [src]="enrichment.image.large"/>
 
     <br/>
-    <form class="d-flex mx-auto form-inline" [formGroup]="metadataForm" (submit)="onSubmit()">
+    <form class="d-flex mx-auto form-inline" [formGroup]="metadataForm" (submit)="submit()">
       <input type="hidden" value="{{enrichment.image.id}}" id="image" formControlName="image"/>
       <input type="hidden" value="{{enrichment.metadata.id}}" id="metadata" formControlName="metadata"/>
 
@@ -28,8 +27,6 @@
       <div class="p-2">
         <button class="btn btn-primary btn-sm" i18n type="button" (click)="next()">Skip</button>
       </div>
-
     </form>
   </ng-container>
-
 </div>
