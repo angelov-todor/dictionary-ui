@@ -39,8 +39,14 @@ export class AuthService {
       });
   }
 
-  login(username: string, password: string) {
+  login(username: string, password: string): Observable<boolean> {
     return this.authenticate(username, password);
+  }
+
+  signup(username: string, password: string) {
+    return this.http.post(this.baseUrl + '/users',
+      {email: username, password: password})
+      .map(() => true);
   }
 
   logout(): void {

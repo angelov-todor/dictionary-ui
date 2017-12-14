@@ -34,7 +34,11 @@ export class MetadataService {
           name
         }
       })
-      .map(res => res.json());
+      .map(res => res.json())
+      .map(metadataResponse => {
+        metadataResponse = new MetadataListResponse(metadataResponse);
+        return metadataResponse;
+      });
   }
 
   create(metadata: any): Observable<Metadata> {

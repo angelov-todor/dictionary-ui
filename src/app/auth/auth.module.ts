@@ -8,6 +8,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {Http, RequestOptions} from '@angular/http';
 import {AuthConfig, AuthHttp} from 'angular2-jwt';
 import {AuthGuardService} from './auth-guard.service';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     return new AuthHttp(new AuthConfig({
@@ -22,7 +23,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
         AuthRoutingModule,
         ReactiveFormsModule
     ],
-    declarations: [LoginPageComponent]
+    declarations: [LoginPageComponent, SignupPageComponent]
 })
 export class AuthModule {
     static forRoot(): ModuleWithProviders {

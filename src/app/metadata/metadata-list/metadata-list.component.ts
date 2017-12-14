@@ -1,10 +1,11 @@
-import { Metadata, MetadataService, MetadataTypes } from '../metadata.service';
+import { Metadata, MetadataListResponse, MetadataService, MetadataTypes } from '../metadata.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PartialCollectionView } from '../../words/words.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'app-metadata-list',
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class MetadataListComponent implements OnInit {
 
-  private nameFilter = new Subject<string>();
+  private nameFilter = new BehaviorSubject<string>('');
   private metadataSubscription: Subscription;
   selectedMetadata: Metadata = null;
   metadata: Metadata[];
@@ -42,7 +43,8 @@ export class MetadataListComponent implements OnInit {
         return caught;
       })
       .subscribe(
-        (metadataResponse) => {
+        (metadataResponse: MetadataListResponse) => {
+          console.log(metadataResponse);
           this.metadata = metadataResponse.metadata;
           this.collectionView = metadataResponse.view;
         }
@@ -55,7 +57,10 @@ export class MetadataListComponent implements OnInit {
       return;
     }
     this.metadataService.create(this.createForm.value)
-      .subscribe((metadata) => this.metadata.push(metadata));
+      .subscribe((metadata) => {
+        this.nameFilter.next(this.nameFilter.value);
+        this.createForm.reset();
+      });
   }
 
   remove(meta: Metadata): void {

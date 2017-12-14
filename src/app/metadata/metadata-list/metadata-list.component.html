@@ -30,6 +30,9 @@
       <td><a i18n-title title="Edit" (click)="edit(meta)" class="edit fa fa-edit" aria-hidden="true"></a>
         <a i18n-title title="Remove" (click)="remove(meta)" class="remove fa fa-trash" aria-hidden="true"></a></td>
     </tr>
+    <tr *ngIf="!metadata?.length">
+      <td colspan="4" class="text-center" i18n>No results found</td>
+    </tr>
     </tbody>
   </table>
   <nav *ngIf="collectionView">

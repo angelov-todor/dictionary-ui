@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginPageComponent } from './login-page/login-page.component';
-import {AuthGuardService} from './auth-guard.service';
+import { AuthGuardService } from './auth-guard.service';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,9 @@ const routes: Routes = [
   },
   {
     path: 'logout', component: LoginPageComponent, canActivate: [AuthGuardService]
+  },
+  {
+    path: 'signup', component: SignupPageComponent, canActivate: [AuthGuardService]
   }
 ];
 
@@ -17,4 +21,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {
+}
