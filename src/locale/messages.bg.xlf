@@ -98,6 +98,26 @@
         <source>Password</source>
         <target>Парола</target>
       </trans-unit>
+      <trans-unit id="1546199512c2ad8ec5849473f1a9e2d4a617fcc0" datatype="html">
+        <source>Invalid username or password</source>
+        <target>Невалиндо потр. име или парола</target>
+      </trans-unit>
+      <trans-unit id="30e58483e7549a0b896bd69dcdffce7c15074644" datatype="html">
+        <source>An error occurred</source>
+        <target>Възникна грешка</target>
+      </trans-unit>
+      <trans-unit id="3bb93d5b02f1f29b3940d4608c8289fff5a82220" datatype="html">
+        <source>Don't have an account?</source>
+        <target>Нямате акаунт?</target>
+      </trans-unit>
+      <trans-unit id="ff0fc5962df9e787394142819d9655647922432b" datatype="html">
+        <source>Sign up now</source>
+        <target>Регистрирайте се</target>
+      </trans-unit>
+      <trans-unit id="717a5e3574fec754fbeb348c2d5561c4d81facc4" datatype="html">
+        <source>Signup</source>
+        <target>Регистрация</target>
+      </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
         <source>Name</source>
         <target>Име</target>
@@ -125,6 +145,10 @@
       <trans-unit id="019d4bd6a5690f0cfa0ecf346a4e6bf7f0d8debb" datatype="html">
         <source>Remove</source>
         <target>Изтрий</target>
+      </trans-unit>
+      <trans-unit id="f871b41bfbdb193507cce2cd848c2d02bde77a03" datatype="html">
+        <source>No results found</source>
+        <target>Няма намерени резултати</target>
       </trans-unit>
       <trans-unit id="f2f852318759c6396b5d3d17031d53817d7b38cc" datatype="html">
         <source>First</source>
@@ -198,10 +222,6 @@
         <source>Info</source>
         <target>Информация</target>
       </trans-unit>
-      <trans-unit id="f871b41bfbdb193507cce2cd848c2d02bde77a03" datatype="html">
-        <source>No results found</source>
-        <target>Няма намерени резултати</target>
-      </trans-unit>
       <trans-unit id="f2081dbd0b230b2e61d03f870d85af5b54aed1ba" datatype="html">
         <source>Meaning</source>
         <target>Значение</target>
@@ -273,6 +293,10 @@
       <trans-unit id="212c51f2a168657821e5979aefcab7b3121061d5" datatype="html">
         <source>Rhymes</source>
         <target>Рими</target>
+      </trans-unit>
+      <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">
+        <source>System for automated generation of cognitive test units</source>
+        <target>Система за автоматизирано генериране на когнитивни тестови единици</target>
       </trans-unit>
       <trans-unit id="03354b2489337882c5a4fd033fec9b9f4b8d109f" datatype="html">
         <source>Page Not Found</source>
