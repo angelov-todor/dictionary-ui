@@ -12,6 +12,8 @@ export class ImageUploadComponent implements OnInit {
 
   public selected: string;
   public isSelected = false;
+  public targetResult = '#';
+  public serverError: any;
 
   constructor(private imagesService: ImagesService,
               private router: Router) {
@@ -39,6 +41,7 @@ export class ImageUploadComponent implements OnInit {
       },
       (e) => {
         console.log('error: ', e);
+        this.serverError = e;
       }
     );
 
@@ -52,5 +55,21 @@ export class ImageUploadComponent implements OnInit {
       return;
     }
     this.selected = file.name;
+    const reader = new FileReader();
+    Observable.create((observer: any) => {
+      reader.onload = function (e: any) {
+        observer.next(e.target.result);
+        observer.complete();
+      };
+    }).subscribe(
+      (m) => {
+        this.targetResult = m;
+      },
+      (e) => {
+        console.log('error: ', e);
+      }
+    );
+
+    reader.readAsDataURL(file);
   }
 }

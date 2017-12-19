@@ -35,6 +35,12 @@ export class ImagesService {
       .map(response => response.json().items as FoundImage[]);
   }
 
+  uploadFoundImage(req): Observable<Image> {
+    return this.http
+      .post(`${this.imagesUrl}-upload-external`, req)
+      .map(response => response.json() as Image);
+  }
+
   upload(req): Observable<Image> {
     return this.http
       .post(`${this.imagesUrl}-upload`, JSON.stringify(req))

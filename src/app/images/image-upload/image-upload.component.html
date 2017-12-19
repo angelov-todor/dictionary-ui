@@ -12,3 +12,20 @@
     </button>
   </div>
 </div>
+<div class="row">
+  <div class="col">
+    <div class="alert alert-danger" *ngIf="serverError">
+      <ng-container [ngSwitch]="serverError.status">
+        <ng-container *ngSwitchCase="404" i18n>Invalid username or password</ng-container>
+        <ng-container *ngSwitchDefault i18n>An error occurred</ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="text-center">
+      <img id="your_image" [src]="targetResult" class="rounded"/>
+    </div>
+  </div>
+</div>

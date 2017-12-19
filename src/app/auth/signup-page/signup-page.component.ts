@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignupPageComponent {
 
   signupForm: FormGroup;
+  serverError: any;
 
   constructor(private userAuth: AuthService,
               private router: Router,
@@ -18,6 +19,10 @@ export class SignupPageComponent {
     this.signupForm = fb.group({
       username: [null, [Validators.required, Validators.email]],
       password: [null, Validators.required]
+    });
+
+    this.signupForm.valueChanges.subscribe(() => {
+      this.serverError = null;
     });
   }
 
@@ -30,6 +35,9 @@ export class SignupPageComponent {
       .subscribe(
         () => {
           this.router.navigate(['/dashboard']);
+        },
+        (error) => {
+          this.serverError = error;
         }
       );
   }

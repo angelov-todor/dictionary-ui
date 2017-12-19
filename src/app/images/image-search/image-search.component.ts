@@ -11,6 +11,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/of';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-image-search',
@@ -24,7 +25,7 @@ export class ImageSearchComponent implements OnInit, OnDestroy {
   private imagesSubscription: Subscription;
   public selectedImage: FoundImage;
 
-  constructor(private imagesService: ImagesService) {
+  constructor(private imagesService: ImagesService, private router: Router) {
   }
 
   select(image: FoundImage) {
@@ -57,7 +58,10 @@ export class ImageSearchComponent implements OnInit, OnDestroy {
   }
 
   save(): void {
-    console.log(this.selectedImage);
+    this.imagesService.uploadFoundImage(this.selectedImage)
+      .subscribe((image) => {
+        this.router.navigate(['/images/view', image.id]);
+      });
     this.selectedImage = null;
   }
 }

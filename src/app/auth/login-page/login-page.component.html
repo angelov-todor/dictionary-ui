@@ -13,6 +13,12 @@
         <input type="password" name="password" class="form-control" id="password" formControlName="password">
       </div>
     </div>
+    <div class="alert alert-danger" *ngIf="serverError">
+      <ng-container [ngSwitch]="serverError.status">
+        <ng-container *ngSwitchCase="404" i18n>Invalid username or password</ng-container>
+        <ng-container *ngSwitchDefault i18n>An error occurred</ng-container>
+      </ng-container>
+    </div>
     <div class="row">
       <div class="col-sm-4"></div>
       <div class="text-center col-sm-8">
@@ -20,4 +26,7 @@
       </div>
     </div>
   </form>
+  <div class="text-center user-options">
+    <ng-container i18n>Don't have an account?</ng-container> <a [routerLink]="['/signup']" i18n>Sign up now</a>
+  </div>
 </main>

@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginPageComponent {
   loginForm: FormGroup;
+  serverError: any;
 
   constructor(private userAuth: AuthService,
               private router: Router,
@@ -18,6 +19,9 @@ export class LoginPageComponent {
       username: [null, [Validators.required, Validators.email]],
       password: [null, Validators.required]
     });
+    this.loginForm.valueChanges.subscribe(() => {
+      this.serverError = null;
+    });
   }
 
   onSubmit() {
@@ -25,10 +29,14 @@ export class LoginPageComponent {
     if (!this.loginForm.valid) {
       return;
     }
-    this.userAuth.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(
-      () => {
-        this.router.navigate(['/dashboard']);
-      }
-    );
+    this.userAuth.login(this.loginForm.value.username, this.loginForm.value.password)
+      .subscribe(
+        () => {
+          this.router.navigate(['/dashboard']);
+        },
+        (error) => {
+          this.serverError = error;
+        }
+      );
   }
 }
