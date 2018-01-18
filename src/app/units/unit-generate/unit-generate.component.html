@@ -2,28 +2,23 @@
   <div class="form-group row no-gutters">
     <label class="col control-label" for="unitText" i18n>Text</label>
     <div class="col">
-      <input type="text" name="unitText" class="form-control" id="unitText" formControlName="unitText">
+      <input type="text" name="unitText" class="form-control" id="unitText" formControlName="text">
     </div>
   </div>
 
   <div class="form-group row no-gutters">
-    <label class="col control-label" for="imagesCount" i18n>Images count</label>
-    <div class="col">
-      <input type="number" name="imagesCount" class="form-control" id="imagesCount" formControlName="imagesCount">
-    </div>
-  </div>
-
-  <div class="form-group row no-gutters">
-    <label class="col control-label" for="gridRows" i18n>Grid</label>
+    <label class="col control-label" for="rows" i18n>Grid</label>
     <div class="col">
       <div class="row">
-        <label class="col control-label" for="gridRows" i18n>Rows</label>
+        <label class="col control-label" for="rows" i18n>Rows</label>
         <div class="col">
-          <input type="number" name="gridRows" class="form-control" id="gridRows" formControlName="gridRows">
+          <input type="number" name="gridRows" max="5" min="1" class="form-control" id="rows"
+                 formControlName="rows">
         </div>
-        <label class="col control-label" for="gridCols" i18n>Cols</label>
+        <label class="col control-label" for="cols" i18n>Cols</label>
         <div class="col">
-          <input type="number" name="gridCols" class="form-control" id="gridCols" formControlName="gridCols">
+          <input type="number" name="gridCols" max="5" min="1" class="form-control" id="cols"
+                 formControlName="cols">
         </div>
       </div>
     </div>

@@ -44,6 +44,17 @@
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
+        <source>View</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="f65253954b66e929a8b4d5ecaf61f9129f8cec64" datatype="html">
         <source>Dashboard</source>
         <context-group purpose="location">
@@ -84,6 +95,10 @@
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
         <source>Search</source>
@@ -122,7 +137,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d20ef216628af1ed06cd9541aa71258f9e1031ce" datatype="html">
@@ -368,6 +383,10 @@
           <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
           <context context-type="linenumber">29</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="f2f852318759c6396b5d3d17031d53817d7b38cc" datatype="html">
         <source>First</source>
@@ -473,13 +492,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
           <context context-type="linenumber">25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
-        <source>View</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
-          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5e6548eb9cbb0467c307b4079bc989cd21f44355" datatype="html">
@@ -676,43 +688,54 @@
       <trans-unit id="8ba143716c2da6e4120c0c1a804f0bdd9a7e5f5b" datatype="html">
         <source>Text</source>
         <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="d19ef274bf7120fc8cf9cce5cb65034537cb87a6" datatype="html">
-        <source>Images count</source>
+      <trans-unit id="a71ddb57c68ee19272ab2df27e666d3586d0e1ed" datatype="html">
+        <source>Number of images</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e0b996bf8fdc049279ea410a0d3955f732731e41" datatype="html">
         <source>Grid</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="79765b4b2ed87b05e0fd5d6937cec32d1995645f" datatype="html">
         <source>Rows</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d2f0f2cb8a9b9d5e59907d050a73f24579ceb9cd" datatype="html">
         <source>Cols</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3afbf0e268816db2bcc70638d61281e6c8b39a5d" datatype="html">
         <source>Criteria</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4e64252276e8e97acbb20976eaa0cb9fc11dd628" datatype="html">
+        <source>Text: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
+          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
       <trans-unit id="24f0e8a639c5f56010899209edf271a084fe3a26" datatype="html">

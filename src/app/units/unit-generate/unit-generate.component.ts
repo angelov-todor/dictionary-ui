@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UnitsService } from '../units.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-unit-generate',
@@ -10,12 +12,11 @@ export class UnitGenerateComponent implements OnInit {
 
   generateForm: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private unitsService: UnitsService, private router: Router) {
     this.generateForm = fb.group({
-      unitText: [null, [Validators.required]],
-      imagesCount: [null, [Validators.required]],
-      gridRows: [null, [Validators.required]],
-      gridCols: [null, [Validators.required]],
+      text: [null, [Validators.required]],
+      rows: [null, [Validators.required]],
+      cols: [null, [Validators.required]],
       criteria: [null, [Validators.required]]
     });
   }
@@ -24,6 +25,9 @@ export class UnitGenerateComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.unitsService.generate(this.generateForm.value)
+      .subscribe(
+        (unit) => this.router.navigate(['/units/view', unit.id])
+      );
   }
 }

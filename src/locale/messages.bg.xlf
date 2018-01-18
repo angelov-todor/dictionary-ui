@@ -26,6 +26,10 @@
         <source>Skip</source>
         <target>Пропусни</target>
       </trans-unit>
+      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
+        <source>View</source>
+        <target>Прегледай</target>
+      </trans-unit>
       <trans-unit id="f65253954b66e929a8b4d5ecaf61f9129f8cec64" datatype="html">
         <source>Dashboard</source>
         <target>Работен плот</target>
@@ -190,10 +194,6 @@
         <source>Selected</source>
         <target>Избрано</target>
       </trans-unit>
-      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
-        <source>View</source>
-        <target>Прегледай</target>
-      </trans-unit>
       <trans-unit id="5e6548eb9cbb0467c307b4079bc989cd21f44355" datatype="html">
         <source>This field is required</source>
         <target>Полето е задължително</target>
@@ -250,8 +250,8 @@
         <source>Text</source>
         <target>Текст</target>
       </trans-unit>
-      <trans-unit id="d19ef274bf7120fc8cf9cce5cb65034537cb87a6" datatype="html">
-        <source>Images count</source>
+      <trans-unit id="a71ddb57c68ee19272ab2df27e666d3586d0e1ed" datatype="html">
+        <source>Number of images</source>
         <target>Брой изображения</target>
       </trans-unit>
       <trans-unit id="e0b996bf8fdc049279ea410a0d3955f732731e41" datatype="html">
@@ -269,6 +269,10 @@
       <trans-unit id="3afbf0e268816db2bcc70638d61281e6c8b39a5d" datatype="html">
         <source>Criteria</source>
         <target>Критерий</target>
+      </trans-unit>
+      <trans-unit id="4e64252276e8e97acbb20976eaa0cb9fc11dd628" datatype="html">
+        <source>Text: </source>
+        <target>Текст: </target>
       </trans-unit>
       <trans-unit id="24f0e8a639c5f56010899209edf271a084fe3a26" datatype="html">
         <source>Syllables</source>

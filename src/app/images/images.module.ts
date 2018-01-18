@@ -30,7 +30,7 @@ import { ImageEnrichComponent } from './image-enrich/image-enrich.component';
     ImagesMetadataService
   ],
   exports: [
-    ImageEnrichComponent
+    ImageEnrichComponent, ImageListComponent
   ]
 })
 export class ImagesModule {

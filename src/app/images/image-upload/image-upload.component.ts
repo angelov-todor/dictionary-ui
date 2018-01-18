@@ -12,7 +12,7 @@ export class ImageUploadComponent implements OnInit {
 
   public selected: string;
   public isSelected = false;
-  public targetResult = '#';
+  public targetResult = '';
   public serverError: any;
 
   constructor(private imagesService: ImagesService,

@@ -5,24 +5,29 @@ import { UnitRootComponent } from './unit-root/unit-root.component';
 import { UnitListComponent } from './unit-list/unit-list.component';
 import { UnitGenerateComponent } from './unit-generate/unit-generate.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UnitsService } from './units.service';
+import { UnitViewComponent } from './unit-view/unit-view.component';
+import { ImagesModule } from '../images/images.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    UnitsRoutingModule
+    UnitsRoutingModule,
+    ImagesModule
   ],
   declarations: [
     UnitRootComponent,
     UnitListComponent,
-    UnitGenerateComponent
+    UnitGenerateComponent,
+    UnitViewComponent
   ]
 })
 export class UnitsModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: UnitsModule,
-      providers: []
+      providers: [UnitsService]
     };
   }
 }

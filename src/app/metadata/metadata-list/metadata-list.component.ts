@@ -44,7 +44,6 @@ export class MetadataListComponent implements OnInit {
       })
       .subscribe(
         (metadataResponse: MetadataListResponse) => {
-          console.log(metadataResponse);
           this.metadata = metadataResponse.metadata;
           this.collectionView = metadataResponse.view;
         }

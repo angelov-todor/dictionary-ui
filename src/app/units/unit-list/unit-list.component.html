@@ -1,3 +1,22 @@
-<p>
-  unit-list works!
-</p>
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th i18n>Text</th>
+    <th i18n>Number of images</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let unit of units;let i = index;">
+    <th scope="row">{{i+1}}</th>
+    <td>{{unit.text}}</td>
+    <td>{{unit.unit_images.length}}</td>
+    <td><a [routerLink]="['/units/view', unit.id]" class="btn btn-small" i18n>View</a>
+      <a class="remove fa fa-trash" aria-hidden="true" (click)="removeUnit(unit)"></a></td>
+  </tr>
+  <tr *ngIf="!units?.length">
+    <td colspan="6" class="text-center" i18n>No results found</td>
+  </tr>
+  </tbody>
+</table>
