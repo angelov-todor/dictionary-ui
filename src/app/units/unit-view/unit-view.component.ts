@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Unit, UnitImage, UnitsService } from '../units.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Image } from '../../images/images.service';
 
 @Component({
   selector: 'app-unit-view',
@@ -36,7 +37,9 @@ export class UnitViewComponent implements OnInit {
           this.images = images;
         }
       );
-
   }
-  log(val) { console.log(val); }
+
+  onImageSelect(image: Image) {
+    console.log(image);
+  }
 }

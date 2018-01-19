@@ -10,6 +10,7 @@ import { ImageListComponent } from './image-list/image-list.component';
 import { ImageViewComponent } from './image-view/image-view.component';
 import { ImagesMetadataService } from './images-metadata.service';
 import { ImageEnrichComponent } from './image-enrich/image-enrich.component';
+import { ImageListPageComponent } from './image-list-page/image-list-page.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { ImageEnrichComponent } from './image-enrich/image-enrich.component';
     ImageSearchComponent,
     ImageListComponent,
     ImageViewComponent,
-    ImageEnrichComponent
+    ImageEnrichComponent,
+    ImageListPageComponent
   ],
   providers: [
     ImagesService,

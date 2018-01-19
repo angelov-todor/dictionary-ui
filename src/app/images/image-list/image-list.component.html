@@ -1,8 +1,7 @@
 <div class="row align-items-center">
   <div *ngFor="let image of images" class="search-result mx-auto col-xs-4 my-1">
     <div class="img-thumbnail">
-      <img class="img-fluid" [src]="image.thumb"/>
-      <a [routerLink]="['/images/view', image.id]" class="btn btn-small" i18n>View</a>
+      <img class="img-fluid" [src]="image.thumb" (click)="onClick(image)"/>
     </div>
   </div>
 </div>

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from '../auth/auth-guard.service';
-import { ImageListComponent } from './image-list/image-list.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageRootComponent } from './image-root/image-root.component';
 import { ImageSearchComponent } from './image-search/image-search.component';
 import { ImageViewComponent } from './image-view/image-view.component';
+import { ImageListPageComponent } from './image-list-page/image-list-page.component';
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
         path: '', redirectTo: 'list', pathMatch: 'full'
       },
       {
-        path: 'list', component: ImageListComponent
+        path: 'list', component: ImageListPageComponent
       },
       {
         path: 'search', component: ImageSearchComponent

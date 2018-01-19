@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Image, ImagesService } from '../images.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-image-list',
@@ -8,9 +9,10 @@ import { Image, ImagesService } from '../images.service';
 })
 export class ImageListComponent implements OnInit {
 
+  @Output() onImageClicked = new EventEmitter<Image>();
   images: Image[];
 
-  constructor(private imageService: ImagesService) {
+  constructor(private imageService: ImagesService, private router: Router) {
   }
 
   ngOnInit() {
@@ -19,5 +21,9 @@ export class ImageListComponent implements OnInit {
         this.images = imagesResponse.map(imageData => new Image(imageData));
       }
     );
+  }
+
+  onClick(image: Image) {
+    this.onImageClicked.emit(image);
   }
 }
