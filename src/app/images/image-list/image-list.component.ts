@@ -1,6 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Image, ImagesService } from '../images.service';
+import { Image, ImageListResponse, ImagesService } from '../images.service';
 import { Router } from '@angular/router';
+import { PartialCollectionView } from '../../words/words.service';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-image-list',
@@ -12,18 +15,50 @@ export class ImageListComponent implements OnInit {
   @Output() onImageClicked = new EventEmitter<Image>();
   images: Image[];
 
+  collectionView: PartialCollectionView;
+  private termFilter = new BehaviorSubject<string>('');
+  private imagesSubscription: Subscription;
+
   constructor(private imageService: ImagesService, private router: Router) {
   }
 
   ngOnInit() {
-    this.imageService.getImages().subscribe(
-      (imagesResponse) => {
-        this.images = imagesResponse.map(imageData => new Image(imageData));
-      }
-    );
+    this.getImages();
+    this.imagesSubscription = this.termFilter
+      .debounceTime(300)
+      .distinctUntilChanged()
+      .switchMap(term => term
+        ? this.imageService.filterByTerm(term)
+        : this.imageService.getImagesList()
+      ).catch((error, caught) => {
+        return caught;
+      })
+      .subscribe(
+        (imagesResponse: ImageListResponse) => {
+          this.images = imagesResponse.images;
+          this.collectionView = imagesResponse.view;
+        }
+      );
   }
 
   onClick(image: Image) {
     this.onImageClicked.emit(image);
+  }
+
+  getImages(page?: string): void {
+    this.imageService.getImagesList(page).subscribe(
+      (imagesListResponse) => {
+        this.images = imagesListResponse.images;
+        this.collectionView = imagesListResponse.view;
+      }
+    );
+  }
+
+  setPage(page: string) {
+    this.getImages(page);
+  }
+
+  filterByName(term: string): void {
+    this.termFilter.next(term);
   }
 }

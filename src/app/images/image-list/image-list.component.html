@@ -1,3 +1,7 @@
+<div class="col">
+  <input class="form-control form-control-sm" #nameFilter id="name-filter"
+         (keyup)="filterByName(nameFilter.value)" type="text" placeholder="term" i18n-placeholder>
+</div>
 <div class="row align-items-center">
   <div *ngFor="let image of images" class="search-result mx-auto col-xs-4 my-1">
     <div class="img-thumbnail">
@@ -5,3 +9,22 @@
     </div>
   </div>
 </div>
+
+<nav *ngIf="collectionView">
+  <ul class="pagination justify-content-center">
+    <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView['@id'] == collectionView.first}"
+        class="page-item">
+      <a class="page-link pointer" (click)="setPage(collectionView.first)" i18n>First</a>
+    </li>
+    <li *ngIf="collectionView.previous" class="page-item">
+      <a class="page-link pointer" (click)="setPage(collectionView.previous)" i18n>Previous</a>
+    </li>
+    <li *ngIf="collectionView.next" class="page-item">
+      <a class="page-link pointer" (click)="setPage(collectionView.next)" i18n>Next</a>
+    </li>
+    <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView['@id'] == collectionView.last}"
+        class="page-item">
+      <a class="page-link pointer" (click)="setPage(collectionView.last)" i18n>Last</a>
+    </li>
+  </ul>
+</nav>

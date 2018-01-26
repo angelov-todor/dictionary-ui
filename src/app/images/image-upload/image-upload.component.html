@@ -6,8 +6,23 @@
   <label *ngIf="!selected" for="input-file" class="btn btn-primary col col-form-label" i18n>Choose an image</label>
   <label *ngIf="selected" for="input-file" class="btn btn-primary col col-form-label">{{selected}}</label>
   <div class="col">
-    <button type="button" [ngClass]="{disabled:!isSelected}" class="btn btn-primary"
+    <button type="button" [ngClass]="{disabled:!isSelectedSingle}" class="btn btn-primary"
             (click)="upload(file.files.item(0))">
+      <i class="fa fa-upload" aria-hidden="true"></i> <span i18n>Upload</span>
+    </button>
+  </div>
+</div>
+<hr/>
+<div class="row">
+  <div class="col">
+    <input id="input-files" type="file" #files class="inputfile" multiple (change)="changeSelectedFiles(files.files)"/>
+  </div>
+
+  <label *ngIf="!selectedFiles" for="input-files" class="btn btn-primary col col-form-label" i18n>Choose multiple images</label>
+  <label *ngIf="selectedFiles" for="input-files" class="btn btn-primary col col-form-label">{{selectedFiles}}</label>
+  <div class="col">
+    <button type="button" [ngClass]="{disabled:!isSelectedMultiple}" class="btn btn-primary"
+            (click)="uploadBulk(files.files)">
       <i class="fa fa-upload" aria-hidden="true"></i> <span i18n>Upload</span>
     </button>
   </div>

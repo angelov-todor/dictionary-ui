@@ -5,7 +5,8 @@ import { Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/share';
 import { environment } from '../../environments/environment';
-import { Metadata } from '../metadata/metadata.service';
+import { Metadata, MetadataListResponse } from '../metadata/metadata.service';
+import { PartialCollectionView } from '../words/words.service';
 
 @Injectable()
 export class ImagesService {
@@ -78,6 +79,33 @@ export class ImagesService {
       })
       .map(() => true);
   }
+
+  getImagesList(page?: string): Observable<ImageListResponse> {
+    const url = page ? environment.baseAPIEndpoint + page : this.imagesUrl;
+
+    return this.http.get(url)
+      .map(res => res.json())
+      .map(imageResponse => {
+        imageResponse = new ImageListResponse(imageResponse);
+        return imageResponse;
+      });
+  }
+
+  filterByTerm(term: string): Observable<ImageListResponse> {
+    const url = this.imagesUrl;
+    return this.http.get(url,
+      {
+        params: {
+          term
+        }
+      })
+      .map(res => res.json())
+      .map(imagesResponse => {
+        imagesResponse = new ImageListResponse(imagesResponse);
+        return imagesResponse;
+      });
+  }
+
 }
 
 export class EnrichmentResponse {
@@ -123,5 +151,26 @@ export class ImageMetadata {
 
   constructor(data?: Partial<ImageMetadata>) {
     Object.assign(this, data || {});
+  }
+}
+
+export class ImageListResponse {
+  public images: Image[];
+  public view: PartialCollectionView;
+  public totalItems: number;
+
+  constructor(data?: Partial<any>) {
+    this.images = data._embedded.images.map(
+      (image) => new Image(image)
+    );
+
+    this.view = new PartialCollectionView({
+      count: data.count, limit: data.limit, page: data.page, pages: data.pages, total: data.total,
+      first: data._links.first.href,
+      last: data._links.last.href,
+      next: data._links.next ? data._links.next.href : null,
+      previous: data._links.previous ? data._links.previous.href : null
+    });
+    this.totalItems = data.total;
   }
 }
