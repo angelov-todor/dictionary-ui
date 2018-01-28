@@ -27,8 +27,10 @@
       <td>{{meta.name}}</td>
       <td>{{meta.type}}</td>
       <td>{{meta.parent?.name}}</td>
-      <td><a i18n-title title="Edit" (click)="edit(meta)" class="edit fa fa-edit" aria-hidden="true"></a>
-        <a i18n-title title="Remove" (click)="remove(meta)" class="remove fa fa-trash" aria-hidden="true"></a></td>
+      <td>
+        <a i18n-title title="Edit" (click)="edit(meta)" class="edit fa fa-edit pointer"></a>
+        <a i18n-title title="Remove" (click)="remove(meta)" class="remove fa fa-trash"></a>
+      </td>
     </tr>
     <tr *ngIf="!metadata?.length">
       <td colspan="4" class="text-center" i18n>No results found</td>

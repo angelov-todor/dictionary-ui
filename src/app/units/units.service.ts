@@ -106,8 +106,8 @@ export class UnitListResponse {
 export class PartialCollectionView {
   public count: string;
   public limit: string;
-  public page: string;
-  public pages: string;
+  public page: number;
+  public pages: number;
   public total: string;
   public first: string;
   public last: string;

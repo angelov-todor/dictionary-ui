@@ -47,6 +47,12 @@ export class MetadataService {
       .map(res => res.json() as Metadata);
   }
 
+  update(metadata: any): Observable<Metadata> {
+    return this.http
+      .put(this.metadataUrl, metadata, {headers: this.headers})
+      .map(res => res.json() as Metadata);
+  }
+
   remove(id: number): Observable<boolean> {
     const url = `${this.metadataUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
@@ -68,7 +74,11 @@ export class MetadataListResponse {
     );
 
     this.view = new PartialCollectionView({
-      count: data.count, limit: data.limit, page: data.page, pages: data.pages, total: data.total,
+      count: data.count,
+      limit: data.limit,
+      page: data.page,
+      pages: data.pages,
+      total: data.total,
       first: data._links.first.href,
       last: data._links.last.href,
       next: data._links.next ? data._links.next.href : null,

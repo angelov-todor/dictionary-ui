@@ -1,13 +1,32 @@
-<div *ngIf="unit?.text">
-  <div i18n>Text: </div><div>{{unit.text}}</div>
-</div>
+<!--<div *ngIf="unit?.text">-->
+<!--<div i18n>Text:</div>-->
+<!--<div>{{unit.text}}</div>-->
+<!--</div>-->
 <div class="container">
   <div class="row" *ngFor="let rows of images">
     <div class="col" *ngFor="let unit_image of rows">
-      <img [src]="unit_image.image.thumb" alt="..." class="img-thumbnail">
+      <img [src]="unit_image.image.thumb" alt="..." class="img-thumbnail"
+           [ngClass]="{selected: selected === unit_image.image}"
+      (click)="changeSelected(unit_image.image)">
     </div>
   </div>
 </div>
-
+<hr/>
+<form action="post" class="mx-auto" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <div class="form-group row no-gutters">
+    <label class="col control-label" for="unitText" i18n>Text</label>
+    <div class="col">
+      <input type="text" name="unitText" class="form-control" id="unitText" formControlName="text">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="text-center col-sm-8">
+        <button class="btn btn-primary" type="submit" i18n>Save</button>
+      </div>
+    </div>
+  </div>
+</form>
 <span i18n>Images</span>
 <app-image-list (onImageClicked)="onImageSelect($event)"></app-image-list>

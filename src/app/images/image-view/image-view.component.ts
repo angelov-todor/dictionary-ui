@@ -4,6 +4,8 @@ import { Image, ImageMetadata, ImagesService } from '../images.service';
 import { Metadata, MetadataService } from '../../metadata/metadata.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ImagesMetadataService } from '../images-metadata.service';
+import { concat } from 'rxjs/observable/concat';
+import { of } from 'rxjs/observable/of';
 
 @Component({
   selector: 'app-image-view',
@@ -40,8 +42,22 @@ export class ImageViewComponent implements OnInit {
       );
 
     this.metadataService.getMetadataList()
+      .switchMap(metadataListResponse => {
+        return concat(
+          of(metadataListResponse),
+          ...(
+            // given `page=1` is loaded, for the rest of `pagesToLoad=[2,3,4,...]`
+            (Array.from(Array(metadataListResponse.view.pages && (metadataListResponse.view.pages - 1)).keys()).map((i) => i + 2))
+            // do a sequential request for each page of Properties
+              .map((page) => this.metadataService.getMetadataList(metadataListResponse.view.next))
+          )
+        );
+      })
       .subscribe(metadataListResponse => {
-        this.allMetadata = metadataListResponse.metadata;
+        // this.allMetadata = metadataListResponse.metadata;
+        this.allMetadata = (this.allMetadata || []).concat(
+          metadataListResponse.metadata
+        );
       });
   }
 

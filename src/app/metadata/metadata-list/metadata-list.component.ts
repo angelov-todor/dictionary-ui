@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PartialCollectionView } from '../../words/words.service';
 import { Subscription } from 'rxjs/Subscription';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
@@ -56,7 +54,7 @@ export class MetadataListComponent implements OnInit {
       return;
     }
     this.metadataService.create(this.createForm.value)
-      .subscribe((metadata) => {
+      .subscribe(() => {
         this.nameFilter.next(this.nameFilter.value);
         this.createForm.reset();
       });
@@ -65,9 +63,12 @@ export class MetadataListComponent implements OnInit {
   remove(meta: Metadata): void {
     this.metadataService
       .remove(meta.id)
-      .do(() => {
-        this.metadata = this.metadata.filter(h => h !== meta);
-      });
+      .subscribe(
+        () => {
+          this.metadata = this.metadata.filter(h => h !== meta);
+        },
+        (error) => console.log(error)
+      );
   }
 
   getMetadata(page?: string): void {

@@ -32,3 +32,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 * images show by row in 5 - flex box, isotop, css, split by 5
 * translations update the files - manual, smartcat
+
+
+Build the application:
+
+$ docker-compose up --build base
+
+Deploy:
+$ docker-compose up -d --build app
+

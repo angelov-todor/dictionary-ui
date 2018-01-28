@@ -17,6 +17,7 @@ export class UnitGenerateComponent implements OnInit {
       text: [null, [Validators.required]],
       rows: [null, [Validators.required]],
       cols: [null, [Validators.required]],
+      incorrect: [0, [Validators.required, Validators.min(0), Validators.max(5)]],
       criteria: [null, [Validators.required]]
     });
   }
