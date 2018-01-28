@@ -48,8 +48,9 @@ export class MetadataService {
   }
 
   update(metadata: any): Observable<Metadata> {
+    const url = `${this.metadataUrl}/${metadata.id}`;
     return this.http
-      .put(this.metadataUrl, metadata, {headers: this.headers})
+      .put(url, metadata, {headers: this.headers})
       .map(res => res.json() as Metadata);
   }
 

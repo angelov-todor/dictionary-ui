@@ -30,17 +30,26 @@ export class MetadataEditComponent implements OnInit {
     }
   }
 
+  @Input()
+  get metadataList() {
+    return this._metadataList;
+  }
+
+  set metadataList(value: Metadata[] | null) {
+    this._metadataList = value;
+  }
+
   editForm: FormGroup;
   public types = MetadataTypes;
-  public currentMetadata: Metadata;
-  metadataList: Metadata[];
+  protected _metadataList: Metadata[];
   protected _metadata: Metadata;
 
   constructor(private fb: FormBuilder, private metadataService: MetadataService) {
     this.editForm = fb.group({
+      id: [null, Validators.required],
       name: [null, [Validators.required]],
       type: ['text', Validators.required],
-      parent: [null]
+      parent: [null] // TODO: fix the parent, it is an object
     });
   }
 
@@ -65,7 +74,6 @@ export class MetadataEditComponent implements OnInit {
   }
 
   onHide(): void {
-    this.currentMetadata = null;
     this.onCompleted.emit(false);
   }
 }

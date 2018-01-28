@@ -78,7 +78,7 @@
                 class="form-control mb-2 mr-sm-2 mb-sm-0"
                 formControlName="parent">
           <option selected value="null">-</option>
-          <option *ngFor="let meta of metadata" [value]="meta.id">{{meta.name}}</option>
+          <option *ngFor="let meta of allMetadata" [value]="meta.id">{{meta.name}}</option>
         </select>
         <button class="btn btn-primary" type="submit" i18n>Add</button>
       </form>
@@ -86,4 +86,6 @@
   </div>
 </div>
 
-<app-metadata-edit [metadata]="selectedMetadata" (onCompleted)="selectedMetadata = null"></app-metadata-edit>
+<app-metadata-edit [metadataList]="allMetadata"
+                   [metadata]="selectedMetadata"
+                   (onCompleted)="selectedMetadata = null"></app-metadata-edit>

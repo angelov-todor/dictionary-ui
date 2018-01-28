@@ -19,6 +19,9 @@
         <table class="table table-hover table-sm">
           <tbody>
           <form action="post" class="form-inline mx-auto" [formGroup]="editForm" (submit)="onSubmit()" *ngIf="metadata">
+            <input type="hidden"
+                   formControlName="id"
+                   value="{{metadata.id}}"/>
             <label class="sr-only" for="name" i18n>Name</label>
             <input id="name"
                    class="form-control mb-2 mr-sm-2 mb-sm-0"
@@ -38,8 +41,10 @@
             <select id="parent"
                     class="form-control mb-2 mr-sm-2 mb-sm-0"
                     formControlName="parent">
-              <option selected value="{{metadata.parent}}">-</option>
-              <option *ngFor="let meta of metadataList" [value]="meta.id">{{meta.name}}</option>
+              <option value=''>-</option>
+              <option *ngFor="let meta of metadataList" [value]="meta.id">
+                {{meta.name}}
+              </option>
             </select>
             <button class="btn btn-primary" type="submit" i18n>Update</button>
           </form>

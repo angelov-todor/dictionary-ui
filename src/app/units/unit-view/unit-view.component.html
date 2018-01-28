@@ -6,8 +6,8 @@
   <div class="row" *ngFor="let rows of images">
     <div class="col" *ngFor="let unit_image of rows">
       <img [src]="unit_image.image.thumb" alt="..." class="img-thumbnail"
-           [ngClass]="{selected: selected === unit_image.image}"
-      (click)="changeSelected(unit_image.image)">
+           [ngClass]="{selected: selected === unit_image}"
+      (click)="changeSelected(unit_image)">
     </div>
   </div>
 </div>

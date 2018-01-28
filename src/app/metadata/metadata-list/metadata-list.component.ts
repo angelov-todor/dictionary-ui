@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PartialCollectionView } from '../../words/words.service';
 import { Subscription } from 'rxjs/Subscription';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { concat } from 'rxjs/observable/concat';
+import { of } from 'rxjs/observable/of';
 
 @Component({
   selector: 'app-metadata-list',
@@ -16,6 +18,7 @@ export class MetadataListComponent implements OnInit {
   private metadataSubscription: Subscription;
   selectedMetadata: Metadata = null;
   metadata: Metadata[];
+  allMetadata: Metadata[];
   createForm: FormGroup;
   public types = MetadataTypes;
   collectionView: PartialCollectionView;
@@ -31,6 +34,7 @@ export class MetadataListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMetadata();
+    this.getAllMetadata();
     this.metadataSubscription = this.nameFilter
       .debounceTime(300)
       .distinctUntilChanged()
@@ -46,6 +50,27 @@ export class MetadataListComponent implements OnInit {
           this.collectionView = metadataResponse.view;
         }
       );
+  }
+
+  getAllMetadata() {
+    this.metadataService.getMetadataList()
+      .switchMap(metadataListResponse => {
+        return concat(
+          of(metadataListResponse),
+          ...(
+            // given `page=1` is loaded, for the rest of `pagesToLoad=[2,3,4,...]`
+            (Array.from(Array(metadataListResponse.view.pages && (metadataListResponse.view.pages - 1)).keys()).map((i) => i + 2))
+            // do a sequential request for each page of Properties
+              .map(() => this.metadataService.getMetadataList(metadataListResponse.view.next))
+          )
+        );
+      })
+      .subscribe(metadataListResponse => {
+        // this.allMetadata = metadataListResponse.metadata;
+        this.allMetadata = (this.allMetadata || []).concat(
+          metadataListResponse.metadata
+        );
+      });
   }
 
   onSubmit() {

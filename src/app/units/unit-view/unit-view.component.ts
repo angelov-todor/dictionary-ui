@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Unit, UnitsService } from '../units.service';
+import { Unit, UnitImage, UnitsService } from '../units.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Image } from '../../images/images.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -14,7 +14,7 @@ export class UnitViewComponent implements OnInit {
   unit: Unit;
   images;
   updateForm: FormGroup;
-  selected: Image;
+  selected: UnitImage;
 
   constructor(private unitsService: UnitsService,
               private route: ActivatedRoute,
@@ -48,14 +48,18 @@ export class UnitViewComponent implements OnInit {
   }
 
   onImageSelect(image: Image) {
-    console.log(image);
+    if (this.selected) {
+      // no op
+      this.selected.image = image;
+    }
   }
 
-  changeSelected(image: Image): void {
-    this.selected = image;
+  changeSelected(unitImage: UnitImage): void {
+    this.selected = unitImage;
   }
 
   onSubmit() {
     console.log(this.updateForm.value);
+    console.log(this.unit);
   }
 }
