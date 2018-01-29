@@ -26,7 +26,8 @@ export class MetadataEditComponent implements OnInit {
       const data = {
         id: this._metadata.id,
         name: this._metadata.name,
-        type: this._metadata.type
+        type: this._metadata.type,
+        values: this._metadata.values
       };
 
       if (this._metadata.parent) {
@@ -59,7 +60,8 @@ export class MetadataEditComponent implements OnInit {
       id: [null, Validators.required],
       name: [null, [Validators.required]],
       type: ['text', Validators.required],
-      parent: [null] // TODO: fix the parent, it is an object
+      parent: [null], // TODO: fix the parent, it is an object
+      values: [null]
     });
   }
 

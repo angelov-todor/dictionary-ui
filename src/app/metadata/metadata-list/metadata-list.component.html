@@ -2,12 +2,13 @@
   <table class="table">
     <thead>
     <tr>
-      <th colspan="3" class="text-center" i18n>Metadata</th>
+      <th colspan="5" class="text-center" i18n>Metadata</th>
     </tr>
     <tr>
       <th i18n>Name</th>
       <th i18n>Type</th>
       <th i18n>Parent</th>
+      <th i18n>Values</th>
       <th i18n>Actions</th>
     </tr>
     </thead>
@@ -22,11 +23,13 @@
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
     </tr>
     <tr *ngFor="let meta of metadata">
       <td>{{meta.name}}</td>
       <td>{{meta.type}}</td>
       <td>{{meta.parent?.name}}</td>
+      <td>{{meta.values}}</td>
       <td>
         <a i18n-title title="Edit" (click)="edit(meta)" class="edit fa fa-edit pointer"></a>
         <a i18n-title title="Remove" (click)="remove(meta)" class="remove fa fa-trash"></a>
@@ -80,6 +83,13 @@
           <option selected value="null">-</option>
           <option *ngFor="let meta of allMetadata" [value]="meta.id">{{meta.name}}</option>
         </select>
+        <label class="sr-only" for="values">Values</label>
+        <input id="values"
+               class="form-control mb-2 mr-sm-2 mb-sm-0"
+               type="text"
+               placeholder="Values"
+               formControlName="values"
+               i18n-placeholder/>
         <button class="btn btn-primary" type="submit" i18n>Add</button>
       </form>
     </div>

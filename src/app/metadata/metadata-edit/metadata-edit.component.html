@@ -15,38 +15,62 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-center">
+      <div class="modal-body">
         <table class="table table-hover table-sm">
           <tbody>
-          <form action="post" class="form-inline mx-auto" [formGroup]="editForm" (submit)="onSubmit()" *ngIf="metadata">
-            <input type="hidden"
-                   formControlName="id"
-                   value="{{metadata.id}}"/>
-            <label class="sr-only" for="name" i18n>Name</label>
-            <input id="name"
-                   class="form-control mb-2 mr-sm-2 mb-sm-0"
-                   type="text"
-                   placeholder="Name"
-                   formControlName="name"
-                   i18n-placeholder
-                   value="{{metadata.name}}"/>
-            <label class="sr-only" for="type" i18n>Type</label>
-            <select id="type"
-                    class="form-control mb-2 mr-sm-2 mb-sm-0"
-                    formControlName="type">
-              <option *ngFor="let type of types.types;" [value]="type.type">{{type.label}}</option>
-            </select>
-
-            <label class="sr-only" for="parent" i18n>Parent</label>
-            <select id="parent"
-                    class="form-control mb-2 mr-sm-2 mb-sm-0"
-                    formControlName="parent">
-              <option value=''>-</option>
-              <option *ngFor="let meta of metadataList" [value]="meta.id">
-                {{meta.name}}
-              </option>
-            </select>
-            <button class="btn btn-primary" type="submit" i18n>Update</button>
+          <form action="post" class="mx-auto" [formGroup]="editForm" (submit)="onSubmit()" *ngIf="metadata">
+            <div class="form-group row">
+              <input type="hidden"
+                     formControlName="id"
+                     value="{{metadata.id}}"/>
+              <label for="name" class="col-sm-2 col-form-label" i18n>Name</label>
+              <div class="col-sm-10">
+                <input id="name"
+                       class="form-control mb-2 mr-sm-2 mb-sm-0"
+                       type="text"
+                       placeholder="Name"
+                       formControlName="name"
+                       i18n-placeholder
+                       value="{{metadata.name}}"/>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="type" i18n class="col-sm-2 col-form-label">Type</label>
+              <div class="col-sm-10">
+                <select id="type"
+                        class="form-control mb-2 mr-sm-2 mb-sm-0"
+                        formControlName="type">
+                  <option *ngFor="let type of types.types;" [value]="type.type">{{type.label}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="parent" class="col-sm-2 col-form-label" i18n>Parent</label>
+              <div class="col-sm-10">
+                <select id="parent"
+                        class="form-control mb-2 mr-sm-2 mb-sm-0"
+                        formControlName="parent">
+                  <option value=''>-</option>
+                  <option *ngFor="let meta of metadataList" [value]="meta.id">
+                    {{meta.name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="values" class="col-sm-2 col-form-label">Values</label>
+              <div class="col-sm-10">
+                <input id="values"
+                       class="form-control mb-2 mr-sm-2 mb-sm-0"
+                       type="text"
+                       placeholder="Values"
+                       formControlName="values"
+                       i18n-placeholder/>
+              </div>
+            </div>
+            <div class="form-group text-right">
+              <button class="btn btn-primary" type="submit" i18n>Update</button>
+            </div>
           </form>
           </tbody>
         </table>

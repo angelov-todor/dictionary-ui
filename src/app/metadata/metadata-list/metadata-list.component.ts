@@ -28,7 +28,8 @@ export class MetadataListComponent implements OnInit {
     this.createForm = fb.group({
       name: [null, [Validators.required]],
       type: ['text', Validators.required],
-      parent: [null]
+      parent: [null],
+      values: [null]
     });
   }
 

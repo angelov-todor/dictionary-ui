@@ -94,6 +94,7 @@ export class Metadata {
   public name: string;
   public type: string;
   public parent?: Metadata;
+  public values?: string;
 
   constructor(data?: Partial<Metadata>) {
     Object.assign(this, data || {});

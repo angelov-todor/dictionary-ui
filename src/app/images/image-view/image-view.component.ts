@@ -17,6 +17,7 @@ export class ImageViewComponent implements OnInit {
   id: string;
   currentImage: Image;
   allMetadata: Metadata[];
+  placeholder = '';
 
   constructor(private imagesService: ImagesService,
               private metadataService: MetadataService,
@@ -59,6 +60,21 @@ export class ImageViewComponent implements OnInit {
           metadataListResponse.metadata
         );
       });
+
+    this.metadataForm.get('metadata').valueChanges.subscribe(
+      (metadata) => {
+        this.placeholder = '';
+        if (metadata) {
+          console.log(metadata);
+          this.allMetadata.forEach((meta) => {
+            if (meta.id === +metadata) {
+              this.placeholder = meta.values;
+            }
+          });
+        }
+        console.log(this.placeholder);
+      }
+    );
   }
 
   onSubmit() {

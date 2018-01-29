@@ -1,50 +1,51 @@
-<div class="media" *ngIf="currentImage">
-
-  <button title="Delete" type="button" class="close remove-button" aria-label="Close" (click)="removeImage()">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <img class="img-fluid img-thumbnail m-2" [src]="currentImage.large"/>
-
-  <div class="media-body m-2">
-    <h3 i18n>Metadata</h3>
-    <table class="table table-sm table-striped">
-      <tr *ngFor="let image_meta of currentImage.image_metadata" class="row">
-        <td class="font-weight-bold col">{{image_meta.metadata.name}}</td>
-        <td class="col">{{image_meta.value}}</td>
-        <td class="col"><a class="remove fa fa-trash" aria-hidden="true" (click)="removeMetadata(image_meta)"></a></td>
-      </tr>
-    </table>
-    <hr/>
-
-    <form action="post" class="mx-auto" [formGroup]="metadataForm" (submit)="onSubmit()">
-      <input type="hidden" value="{{currentImage.id}}" id="image" formControlName="image"/>
-
-      <div class="form-group row">
-        <label for="metadata" class="col col-form-label" i18n>Metadata</label>
-        <div class="col">
+<div class="container" *ngIf="currentImage">
+  <div class="row">
+    <div class="col-md-8">
+      <button title="Delete" type="button" class="close remove-button" aria-label="Close" (click)="removeImage()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <img class="img-fluid img-thumbnail" [src]="currentImage.large"/>
+    </div>
+    <div class="col-md-4">
+      <h3 i18n>Metadata</h3>
+      <table class="table table-sm table-striped">
+        <tr *ngFor="let image_meta of currentImage.image_metadata" class="row">
+          <td class="font-weight-bold col">{{image_meta.metadata.name}}</td>
+          <td class="col">{{image_meta.value}}</td>
+          <td class="col"><a class="remove fa fa-trash" aria-hidden="true" (click)="removeMetadata(image_meta)"></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <hr/>
+  <div>
+    <form action="post" [formGroup]="metadataForm" (submit)="onSubmit()">
+      <div class="form-group row justify-content-end">
+        <input type="hidden" value="{{currentImage.id}}" id="image" formControlName="image"/>
+        <label for="metadata" class="col-sm-2 col-form-label" i18n>Metadata</label>
+        <div class="col-sm-6">
           <select class="form-control" id="metadata" formControlName="metadata">
             <option *ngFor="let meta of allMetadata" [value]="meta.id">{{meta.name}}</option>
           </select>
           <div class="form-control-feedback"
                *ngIf="metadataForm.get('metadata').touched && metadataForm.get('metadata').hasError('required')"
-               i18n>This field is required</div>
+               i18n>This field is required
+          </div>
         </div>
       </div>
-
-      <div class="form-group row">
-        <label for="value" class="col col-form-label" i18n>Value</label>
-        <div class="col">
-          <input type="text" class="form-control" id="value" formControlName="value">
+      <div class="form-group row justify-content-end">
+        <label for="value" class="col-sm-2 col-form-label" i18n>Value</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="value" formControlName="value" placeholder="{{placeholder}}">
           <div class="form-control-feedback"
                *ngIf="metadataForm.get('value').touched && metadataForm.get('value').hasError('required')"
-               i18n>This field is required</div>
+               i18n>This field is required
+          </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="text-right col-4 offset-8">
-          <button class="btn btn-primary" type="submit" i18n>Add</button>
-        </div>
+      <div class="form-group row justify-content-end">
+        <button class="btn btn-primary" type="submit" i18n>Add</button>
       </div>
     </form>
   </div>
