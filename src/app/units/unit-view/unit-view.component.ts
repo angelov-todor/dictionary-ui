@@ -49,8 +49,9 @@ export class UnitViewComponent implements OnInit {
 
   onImageSelect(image: Image) {
     if (this.selected) {
-      // no op
       this.selected.image = image;
+      this.unitsService.updateUnitImage(this.selected, image)
+        .subscribe(() => console.log('success'));
     }
   }
 

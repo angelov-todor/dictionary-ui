@@ -44,6 +44,14 @@ export class UnitsService {
       .delete(this.unitsUrl + `/${unit.id}`)
       .map(() => true);
   }
+
+  updateUnitImage(unitImage: UnitImage, image: Image): Observable<boolean> {
+    const url = environment.baseAPIEndpoint + `/unit_images/${unitImage.id}`;
+
+    return this.http
+      .put(url, {image: image})
+      .map(() => true);
+  }
 }
 
 export class Unit {
