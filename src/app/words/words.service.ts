@@ -92,7 +92,8 @@ export class WordListResponse {
       first: data._links.first.href,
       last: data._links.last.href,
       next: data._links.next ? data._links.next.href : null,
-      previous: data._links.previous ? data._links.previous.href : null
+      previous: data._links.previous ? data._links.previous.href : null,
+      current: data._links.self ? data._links.self.href : null
     });
     this.totalItems = data.total;
   }
@@ -108,6 +109,7 @@ export class PartialCollectionView {
   public last: string;
   public next: string;
   public previous: string;
+  public current: string;
 
   constructor(data?: Partial<PartialCollectionView>) {
     Object.assign(this, data || {});

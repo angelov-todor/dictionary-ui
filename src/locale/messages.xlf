@@ -44,15 +44,105 @@
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
-        <source>View</source>
+      <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1126c186e965afd51aab45b4a0a37e75ebb60f0c" datatype="html">
+        <source>term</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
           <context context-type="linenumber">5</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="1ad7d3c6ff8e7bff86588a8d0cda23dec7ae91ad" datatype="html">
+        <source>No images found</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f2f852318759c6396b5d3d17031d53817d7b38cc" datatype="html">
+        <source>First</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
+        <source>Previous</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
+        <source>Next</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c729788ba138508aca1bec050b610f7bf81db3e" datatype="html">
+        <source>Last</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f65253954b66e929a8b4d5ecaf61f9129f8cec64" datatype="html">
@@ -78,11 +168,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-view/image-view.component.ts</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-view/image-view.component.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b73f7f5060fb22a1e9ec462b1bb02493fa3ab866" datatype="html">
@@ -97,14 +187,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
-        <source>Search</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4b3972c3e9485218508a95f7a4ce7758e3f09ced" datatype="html">
@@ -116,6 +199,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
           <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="be537f4ddb09e1a2856314f2cbe84063ab6b4170" datatype="html">
@@ -137,7 +224,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d20ef216628af1ed06cd9541aa71258f9e1031ce" datatype="html">
@@ -241,7 +328,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="30e58483e7549a0b896bd69dcdffce7c15074644" datatype="html">
@@ -256,7 +343,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3bb93d5b02f1f29b3940d4608c8289fff5a82220" datatype="html">
@@ -292,15 +379,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">64</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/metadata/metadata-edit/metadata-edit.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">69</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-edit/metadata-edit.component.ts</context>
           <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/metadata/metadata-edit/metadata-edit.component.ts</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f61c6867295f3b53d23557021f2f4e0aa1d0b8fc" datatype="html">
@@ -311,11 +398,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-edit/metadata-edit.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3a4c2a9e76634ff14a60d52a718296f722d47c67" datatype="html">
@@ -326,25 +413,40 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">79</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-edit/metadata-edit.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="809b0c848932a41318f77a2aace904ef429c13f4" datatype="html">
+        <source>Values</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/metadata/metadata-edit/metadata-edit.component.ts</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="030b4423b92167200e39519599f9b863b4f7c62c" datatype="html">
         <source>Actions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6fc2c1a8969bb0645d798d2066d264882d206fcc" datatype="html">
         <source>name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
@@ -359,21 +461,21 @@
         <source>Edit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="019d4bd6a5690f0cfa0ecf346a4e6bf7f0d8debb" datatype="html">
         <source>Remove</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f871b41bfbdb193507cce2cd848c2d02bde77a03" datatype="html">
         <source>No results found</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
@@ -388,71 +490,11 @@
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="f2f852318759c6396b5d3d17031d53817d7b38cc" datatype="html">
-        <source>First</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
-          <context context-type="linenumber">48</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
-          <context context-type="linenumber">38</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
-        <source>Previous</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
-          <context context-type="linenumber">51</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
-          <context context-type="linenumber">41</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
-        <source>Next</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">48</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
-          <context context-type="linenumber">54</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
-          <context context-type="linenumber">44</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5c729788ba138508aca1bec050b610f7bf81db3e" datatype="html">
-        <source>Last</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">52</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/words/words-list/words-list.component.ts</context>
-          <context context-type="linenumber">58</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
-          <context context-type="linenumber">48</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9" datatype="html">
         <source>Add</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">93</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-view/image-view.component.ts</context>
@@ -463,7 +505,7 @@
         <source>Update</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-edit/metadata-edit.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c84903b02fcad0b9ab897b080e38e0bddc2b1aa7" datatype="html">
@@ -471,6 +513,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
           <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7af2d60f6a2be5d23acc6df1df3a8681dc51c6be" datatype="html">
+        <source>Choose multiple images</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d9b8309be7e20ac8088e562c6937ee70d1897819" datatype="html">
@@ -486,6 +535,10 @@
           <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
           <context context-type="linenumber">10</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="f79611b9cc78f612ae8cc2cce08ff9f14581aeb3" datatype="html">
         <source>Selected</source>
@@ -498,18 +551,18 @@
         <source>This field is required</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-view/image-view.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">33</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-view/image-view.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5049e204c14c648691ac775a64fb504467aeb549" datatype="html">
         <source>Value</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-view/image-view.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9b0a085531b3557c1a2c0b98276fb31d6b0682bb" datatype="html">
@@ -695,12 +748,23 @@
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
           <context context-type="linenumber">3</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="a71ddb57c68ee19272ab2df27e666d3586d0e1ed" datatype="html">
         <source>Number of images</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
           <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
+        <source>View</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e0b996bf8fdc049279ea410a0d3955f732731e41" datatype="html">
@@ -724,18 +788,18 @@
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3afbf0e268816db2bcc70638d61281e6c8b39a5d" datatype="html">
-        <source>Criteria</source>
+      <trans-unit id="3ce7a71ef2484b0fd193518178d6dacb0ff6054f" datatype="html">
+        <source>Number incorrect answers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4e64252276e8e97acbb20976eaa0cb9fc11dd628" datatype="html">
-        <source>Text: </source>
+      <trans-unit id="3afbf0e268816db2bcc70638d61281e6c8b39a5d" datatype="html">
+        <source>Criteria</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="24f0e8a639c5f56010899209edf271a084fe3a26" datatype="html">

@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { AuthHttp } from 'angular2-jwt';
 import { Observable } from 'rxjs/Observable';
 import { Image } from '../images/images.service';
+import { PartialCollectionView } from '../words/words.service';
 
 @Injectable()
 export class UnitsService {
@@ -105,25 +106,9 @@ export class UnitListResponse {
       first: data._links.first.href,
       last: data._links.last.href,
       next: data._links.next ? data._links.next.href : null,
-      previous: data._links.previous ? data._links.previous.href : null
+      previous: data._links.previous ? data._links.previous.href : null,
+      current: data._links.self.href
     });
     this.totalItems = data.total;
   }
 }
-
-export class PartialCollectionView {
-  public count: string;
-  public limit: string;
-  public page: number;
-  public pages: number;
-  public total: string;
-  public first: string;
-  public last: string;
-  public next: string;
-  public previous: string;
-
-  constructor(data?: Partial<PartialCollectionView>) {
-    Object.assign(this, data || {});
-  }
-}
-

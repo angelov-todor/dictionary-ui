@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" *ngIf="images?.length">
   <div *ngFor="let image of images" class="item">
     <div class="img-thumbnail">
       <img class="img-fluid" [src]="image.thumb" (click)="onClick(image)"/>
@@ -14,13 +14,13 @@
   </div>
 </div>
 
-<div class="row text-center mb-4 mt-4" *ngIf="!images.length">
+<div class="row text-center mb-4 mt-4" *ngIf="!images?.length">
   <div class="col-md-12" i18n>No images found</div>
 </div>
 
 <nav *ngIf="collectionView">
   <ul class="pagination justify-content-center">
-    <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView['@id'] == collectionView.first}"
+    <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView.current == collectionView.first}"
         class="page-item">
       <a class="page-link pointer" (click)="setPage(collectionView.first)" i18n>First</a>
     </li>
@@ -30,7 +30,7 @@
     <li *ngIf="collectionView.next" class="page-item">
       <a class="page-link pointer" (click)="setPage(collectionView.next)" i18n>Next</a>
     </li>
-    <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView['@id'] == collectionView.last}"
+    <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView.current == collectionView.last}"
         class="page-item">
       <a class="page-link pointer" (click)="setPage(collectionView.last)" i18n>Last</a>
     </li>

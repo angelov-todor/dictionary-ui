@@ -26,9 +26,33 @@
         <source>Skip</source>
         <target>Пропусни</target>
       </trans-unit>
-      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
-        <source>View</source>
-        <target>Прегледай</target>
+      <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
+        <source>Search</source>
+        <target>Търси</target>
+      </trans-unit>
+      <trans-unit id="1126c186e965afd51aab45b4a0a37e75ebb60f0c" datatype="html">
+        <source>term</source>
+        <target>критерий</target>
+      </trans-unit>
+      <trans-unit id="1ad7d3c6ff8e7bff86588a8d0cda23dec7ae91ad" datatype="html">
+        <source>No images found</source>
+        <target>Няма намерени изображения</target>
+      </trans-unit>
+      <trans-unit id="f2f852318759c6396b5d3d17031d53817d7b38cc" datatype="html">
+        <source>First</source>
+        <target>Първа</target>
+      </trans-unit>
+      <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
+        <source>Previous</source>
+        <target>Предишна</target>
+      </trans-unit>
+      <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
+        <source>Next</source>
+        <target>Следваща</target>
+      </trans-unit>
+      <trans-unit id="5c729788ba138508aca1bec050b610f7bf81db3e" datatype="html">
+        <source>Last</source>
+        <target>Последна</target>
       </trans-unit>
       <trans-unit id="f65253954b66e929a8b4d5ecaf61f9129f8cec64" datatype="html">
         <source>Dashboard</source>
@@ -41,10 +65,6 @@
       <trans-unit id="b73f7f5060fb22a1e9ec462b1bb02493fa3ab866" datatype="html">
         <source>Images</source>
         <target>Изображения</target>
-      </trans-unit>
-      <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
-        <source>Search</source>
-        <target>Търси</target>
       </trans-unit>
       <trans-unit id="4b3972c3e9485218508a95f7a4ce7758e3f09ced" datatype="html">
         <source>Upload</source>
@@ -134,6 +154,10 @@
         <source>Parent</source>
         <target>Родител</target>
       </trans-unit>
+      <trans-unit id="809b0c848932a41318f77a2aace904ef429c13f4" datatype="html">
+        <source>Values</source>
+        <target>Стойности</target>
+      </trans-unit>
       <trans-unit id="030b4423b92167200e39519599f9b863b4f7c62c" datatype="html">
         <source>Actions</source>
         <target>Действия</target>
@@ -154,22 +178,6 @@
         <source>No results found</source>
         <target>Няма намерени резултати</target>
       </trans-unit>
-      <trans-unit id="f2f852318759c6396b5d3d17031d53817d7b38cc" datatype="html">
-        <source>First</source>
-        <target>Първа</target>
-      </trans-unit>
-      <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
-        <source>Previous</source>
-        <target>Предишна</target>
-      </trans-unit>
-      <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
-        <source>Next</source>
-        <target>Следваща</target>
-      </trans-unit>
-      <trans-unit id="5c729788ba138508aca1bec050b610f7bf81db3e" datatype="html">
-        <source>Last</source>
-        <target>Последна</target>
-      </trans-unit>
       <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9" datatype="html">
         <source>Add</source>
         <target>Добави</target>
@@ -181,6 +189,10 @@
       <trans-unit id="c84903b02fcad0b9ab897b080e38e0bddc2b1aa7" datatype="html">
         <source>Choose an image</source>
         <target>Избери изображение</target>
+      </trans-unit>
+      <trans-unit id="7af2d60f6a2be5d23acc6df1df3a8681dc51c6be" datatype="html">
+        <source>Choose multiple images</source>
+        <target>Избери множество изображения</target>
       </trans-unit>
       <trans-unit id="d9b8309be7e20ac8088e562c6937ee70d1897819" datatype="html">
         <source>Search image</source>
@@ -254,6 +266,10 @@
         <source>Number of images</source>
         <target>Брой изображения</target>
       </trans-unit>
+      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
+        <source>View</source>
+        <target>Прегледай</target>
+      </trans-unit>
       <trans-unit id="e0b996bf8fdc049279ea410a0d3955f732731e41" datatype="html">
         <source>Grid</source>
         <target>Таблица</target>
@@ -266,13 +282,13 @@
         <source>Cols</source>
         <target>Колони</target>
       </trans-unit>
+      <trans-unit id="3ce7a71ef2484b0fd193518178d6dacb0ff6054f" datatype="html">
+        <source>Number incorrect answers</source>
+        <target>Брой неверни отговори</target>
+      </trans-unit>
       <trans-unit id="3afbf0e268816db2bcc70638d61281e6c8b39a5d" datatype="html">
         <source>Criteria</source>
         <target>Критерий</target>
-      </trans-unit>
-      <trans-unit id="4e64252276e8e97acbb20976eaa0cb9fc11dd628" datatype="html">
-        <source>Text: </source>
-        <target>Текст: </target>
       </trans-unit>
       <trans-unit id="24f0e8a639c5f56010899209edf271a084fe3a26" datatype="html">
         <source>Syllables</source>
