@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Image, ImageListResponse, ImagesService } from '../images.service';
-import { Router } from '@angular/router';
 import { PartialCollectionView } from '../../words/words.service';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Subscription } from 'rxjs/Subscription';
@@ -19,7 +18,7 @@ export class ImageListComponent implements OnInit {
   private termFilter = new BehaviorSubject<string>('');
   private imagesSubscription: Subscription;
 
-  constructor(private imageService: ImagesService, private router: Router) {
+  constructor(private imageService: ImagesService) {
   }
 
   ngOnInit() {

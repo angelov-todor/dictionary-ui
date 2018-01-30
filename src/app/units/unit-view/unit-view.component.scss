@@ -1,5 +1,5 @@
-.selected {
-  border: 2px solid black;
+.selected.image-item {
+  border: 2px solid #06d652;
 }
 
 .image-item {
@@ -13,12 +13,14 @@
   border: 1px solid #ddd;
   border-radius: 0.25rem;
 }
-.image-container{
+
+.image-container {
   display: flex;
   flex-flow: row wrap;
   align-content: space-between;
   justify-content: center;
 }
+
 .unit-container {
   justify-content: center;
 }

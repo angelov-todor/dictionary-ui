@@ -1,20 +1,16 @@
 import { AuthHttp } from 'angular2-jwt';
 import 'rxjs/add/operator/toPromise';
 import { Injectable } from '@angular/core';
-import { Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/share';
 import { environment } from '../../environments/environment';
-import { Metadata, MetadataListResponse } from '../metadata/metadata.service';
+import { Metadata } from '../metadata/metadata.service';
 import { PartialCollectionView } from '../words/words.service';
 
 @Injectable()
 export class ImagesService {
   private imagesUrl = environment.baseAPIEndpoint + '/images';  // URL to web api
   private imagesEnrichUrl = environment.baseAPIEndpoint + '/images-enrich';
-  private headers = new Headers({
-    'Content-Type': 'application/json'
-  });
   progress;
   progressObserver;
 
@@ -23,11 +19,6 @@ export class ImagesService {
     this.progress = Observable.create(observer => {
       this.progressObserver = observer;
     }).share();
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
   }
 
   search(term: string): Observable<FoundImage[]> {
@@ -48,15 +39,9 @@ export class ImagesService {
       .map(response => response.json() as Image);
   }
 
-  getImages(): Observable<any> {
-    return this.http
-      .get(this.imagesUrl, {headers: this.headers})
-      .map((res) => res.json());
-  }
-
   getImage(id: number): Observable<Image> {
     return this.http
-      .get(this.imagesUrl + `/${id}`, {headers: this.headers})
+      .get(this.imagesUrl + `/${id}`)
       .map((res) => res.json())
       .map(imageData => {
         return new Image(imageData);
@@ -73,7 +58,7 @@ export class ImagesService {
   }
 
   remove(image: Image): Observable<Boolean> {
-    return this.http.delete(this.imagesUrl + '/' + image.id, {headers: this.headers})
+    return this.http.delete(this.imagesUrl + '/' + image.id)
       .do({
         error: console.log
       })
@@ -169,7 +154,8 @@ export class ImageListResponse {
       first: data._links.first.href,
       last: data._links.last.href,
       next: data._links.next ? data._links.next.href : null,
-      previous: data._links.previous ? data._links.previous.href : null
+      previous: data._links.previous ? data._links.previous.href : null,
+      current: data._links.self.href
     });
     this.totalItems = data.total;
   }

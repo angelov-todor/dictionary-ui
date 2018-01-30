@@ -1,6 +1,5 @@
 import { AuthHttp } from 'angular2-jwt';
 import { Injectable } from '@angular/core';
-import { Headers } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { PartialCollectionView } from '../words/words.service';
@@ -8,9 +7,6 @@ import { PartialCollectionView } from '../words/words.service';
 @Injectable()
 export class MetadataService {
   private metadataUrl = environment.baseAPIEndpoint + '/metadata';
-  private headers = new Headers({
-    'Content-Type': 'application/json'
-  });
 
   constructor(private http: AuthHttp) {
   }
@@ -43,20 +39,20 @@ export class MetadataService {
 
   create(metadata: any): Observable<Metadata> {
     return this.http
-      .post(this.metadataUrl, metadata, {headers: this.headers})
+      .post(this.metadataUrl, metadata)
       .map(res => res.json() as Metadata);
   }
 
   update(metadata: any): Observable<Metadata> {
     const url = `${this.metadataUrl}/${metadata.id}`;
     return this.http
-      .put(url, metadata, {headers: this.headers})
+      .put(url, metadata)
       .map(res => res.json() as Metadata);
   }
 
   remove(id: number): Observable<boolean> {
     const url = `${this.metadataUrl}/${id}`;
-    return this.http.delete(url, {headers: this.headers})
+    return this.http.delete(url)
       .do({
         error: console.log
       })
@@ -83,7 +79,8 @@ export class MetadataListResponse {
       first: data._links.first.href,
       last: data._links.last.href,
       next: data._links.next ? data._links.next.href : null,
-      previous: data._links.previous ? data._links.previous.href : null
+      previous: data._links.previous ? data._links.previous.href : null,
+      current: data._links.self.href
     });
     this.totalItems = data.total;
   }
