@@ -13,6 +13,7 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 import { UnitsModule } from './units/units.module';
 import { ToolsModule } from './tools/tools.module';
 import { CognitiveTypesModule } from './cognitive-types/cognitive-types.module';
+import { TestsModule } from './tests/tests.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CognitiveTypesModule } from './cognitive-types/cognitive-types.module';
     UnitsModule.forRoot(),
     ToolsModule.forRoot(),
     CognitiveTypesModule.forRoot(),
+    TestsModule.forRoot(),
     //  should be last in order to catch not found
     DashboardModule.forRoot()
   ],
