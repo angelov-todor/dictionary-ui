@@ -78,6 +78,10 @@
         <source>Generate</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="766427ec94438008fa8ca29c257b9f226e938a16" datatype="html">
+        <source>Cognitive Types</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="d20ef216628af1ed06cd9541aa71258f9e1031ce" datatype="html">
         <source>Dictionaries</source>
         <target><!-- put translation here --></target>
@@ -270,6 +274,10 @@
         <source>View</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="563a6ce1c91313269219f1b78e4b1714d23e8c8f" datatype="html">
+        <source>Cognitive type</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="e0b996bf8fdc049279ea410a0d3955f732731e41" datatype="html">
         <source>Grid</source>
         <target><!-- put translation here --></target>
@@ -312,6 +320,10 @@
       </trans-unit>
       <trans-unit id="212c51f2a168657821e5979aefcab7b3121061d5" datatype="html">
         <source>Rhymes</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="b493c44486c386d91d2f825a1929ed99a6c5ac93" datatype="html">
+        <source>Cognitive types</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">
