@@ -3,6 +3,9 @@ import { Unit, UnitImage, UnitsService } from '../units.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Image } from '../../images/images.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CognitiveType, CognitiveTypeService } from '../../cognitive-types/cognitive-type.service';
+import { concat } from 'rxjs/observable/concat';
+import { of } from 'rxjs/observable/of';
 
 @Component({
   selector: 'app-unit-view',
@@ -15,13 +18,20 @@ export class UnitViewComponent implements OnInit {
   images;
   updateForm: FormGroup;
   selected: UnitImage;
+  allCognitiveTypes: CognitiveType[];
+  cognitiveTypes: CognitiveType[];
+  cognitiveSubTypes: CognitiveType[];
 
   constructor(private unitsService: UnitsService,
               private route: ActivatedRoute,
               private router: Router,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private cognitiveTypeService: CognitiveTypeService) {
     this.updateForm = fb.group({
-      text: [null, [Validators.required]]
+      text: [null, [Validators.required]],
+      cognitive_type_id: [null, [Validators.required]],
+      cognitive_subtype_id: [null],
+      type: [null]
     });
   }
 
@@ -42,9 +52,36 @@ export class UnitViewComponent implements OnInit {
             });
           }
           this.images = images;
-          this.updateForm.reset(unit);
+          this.updateForm.reset({
+            cognitive_type_id: this.unit.cognitive_type.id, text: this.unit.text
+          });
         }
       );
+    this.cognitiveTypeService.getCognitiveTypesList()
+      .switchMap(cognitiveTypesListResponse => {
+        return concat(
+          of(cognitiveTypesListResponse),
+          ...(
+            // given `page=1` is loaded, for the rest of `pagesToLoad=[2,3,4,...]`
+            (Array.from(Array(cognitiveTypesListResponse.view.pages &&
+              (cognitiveTypesListResponse.view.pages - 1)).keys()).map((i) => i + 2))
+            // do a sequential request for each page of Properties
+              .map(() => this.cognitiveTypeService.getCognitiveTypesList(cognitiveTypesListResponse.view.next))
+          )
+        );
+      })
+      .subscribe(cognitiveTypesListResponse => {
+        this.allCognitiveTypes = (this.allCognitiveTypes || []).concat(
+          cognitiveTypesListResponse.cognitive_types
+        );
+        this.cognitiveTypes = (this.cognitiveTypes || []).concat(
+          cognitiveTypesListResponse.cognitive_types.filter((ct) => !ct.parent)
+        );
+      });
+
+    this.updateForm.get('cognitive_type_id').valueChanges.subscribe(p => {
+      this.cognitiveSubTypes = (this.allCognitiveTypes || []).filter(ct => ct.parent && ct.parent.id === p);
+    });
   }
 
   onImageSelect(image: Image) {
@@ -61,6 +98,5 @@ export class UnitViewComponent implements OnInit {
 
   onSubmit() {
     console.log(this.updateForm.value);
-    console.log(this.unit);
   }
 }

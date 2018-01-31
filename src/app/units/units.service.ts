@@ -4,6 +4,7 @@ import { AuthHttp } from 'angular2-jwt';
 import { Observable } from 'rxjs/Observable';
 import { Image } from '../images/images.service';
 import { PartialCollectionView } from '../words/words.service';
+import { CognitiveType } from '../cognitive-types/cognitive-type.service';
 
 @Injectable()
 export class UnitsService {
@@ -61,11 +62,15 @@ export class Unit {
   public rows: number;
   public cols: number;
   public unit_images: UnitImage[];
+  public cognitive_type: CognitiveType;
 
   constructor(data?: Partial<Unit>) {
     Object.assign(this, data || {});
     if (this.unit_images) {
       this.unit_images = this.unit_images.map((unitImageData) => new UnitImage(unitImageData));
+    }
+    if (this.cognitive_type) {
+      this.cognitive_type = new CognitiveType(this.cognitive_type);
     }
   }
 }

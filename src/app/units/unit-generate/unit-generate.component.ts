@@ -26,7 +26,7 @@ export class UnitGenerateComponent implements OnInit {
       cols: [null, [Validators.required]],
       incorrect: [0, [Validators.required, Validators.min(0), Validators.max(5)]],
       criteria: [null, [Validators.required]],
-      cognitive_type: [null, Validators.required]
+      cognitive_type_id: [null, Validators.required]
     });
   }
 
@@ -57,6 +57,7 @@ export class UnitGenerateComponent implements OnInit {
       console.log(this.generateForm);
       return;
     }
+
     this.unitsService.generate(this.generateForm.value)
       .subscribe(
         (unit) => this.router.navigate(['/units/view', unit.id])

@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { PartialCollectionView } from '../words/words.service';
+import { concat } from 'rxjs/observable/concat';
+import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class CognitiveTypeService {

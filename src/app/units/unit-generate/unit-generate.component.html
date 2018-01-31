@@ -14,11 +14,11 @@
     <div class="col-md-8">
       <select id="cognitive_type"
               class="form-control mb-2 mr-sm-2 mb-sm-0"
-              formControlName="cognitive_type">
+              formControlName="cognitive_type_id">
         <option *ngFor="let cognitiveType of cognitiveTypes" [value]="cognitiveType.id">{{cognitiveType.name}}</option>
       </select>
       <div class="form-control-feedback"
-           *ngIf="generateForm.get('cognitive_type').touched && generateForm.get('cognitive_type').hasError('required')"
+           *ngIf="generateForm.get('cognitive_type_id').touched && generateForm.get('cognitive_type_id').hasError('required')"
            i18n>This field is required</div>
     </div>
   </div>
