@@ -1,43 +1,51 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Unit, UnitImage, UnitsService } from '../units.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Image } from '../../images/images.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CognitiveType, CognitiveTypeService } from '../../cognitive-types/cognitive-type.service';
 import { concat } from 'rxjs/observable/concat';
 import { of } from 'rxjs/observable/of';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-unit-view',
   templateUrl: './unit-view.component.html',
   styleUrls: ['./unit-view.component.scss']
 })
-export class UnitViewComponent implements OnInit {
+export class UnitViewComponent implements OnInit, OnDestroy {
 
   unit: Unit;
   images;
-  updateForm: FormGroup;
+  updateForm: FormGroup = this.fb.group({
+    text: [null, [Validators.required]],
+    cognitive_type_id: [null, [Validators.required]],
+    cognitive_subtype_id: [null],
+    type: [null]
+  });
   selected: UnitImage;
   allCognitiveTypes: CognitiveType[];
   cognitiveTypes: CognitiveType[];
-  cognitiveSubTypes: CognitiveType[];
+  ctSubscription: Subscription;
+
+  get cognitiveSubTypesOfSelectedCognitiveType() {
+    const selectedCognitiveType = this.updateForm.get('cognitive_type_id').value;
+    return selectedCognitiveType && this.allCognitiveTypes && this.allCognitiveTypes.filter((cognitiveType) => {
+      return cognitiveType.parent && cognitiveType.parent.id === selectedCognitiveType;
+    });
+  }
 
   constructor(private unitsService: UnitsService,
               private route: ActivatedRoute,
               private router: Router,
               private fb: FormBuilder,
               private cognitiveTypeService: CognitiveTypeService) {
-    this.updateForm = fb.group({
-      text: [null, [Validators.required]],
-      cognitive_type_id: [null, [Validators.required]],
-      cognitive_subtype_id: [null],
-      type: [null]
-    });
   }
 
   ngOnInit() {
     this.route.params
-      .switchMap((params: Params) => this.unitsService.getUnit(params.id))
+      .map(({id}) => ({id}))
+      .switchMap(({id}) => this.unitsService.getUnit(id))
       .subscribe((unit: Unit) => {
           this.unit = unit;
           const images = [];
@@ -53,19 +61,18 @@ export class UnitViewComponent implements OnInit {
           }
           this.images = images;
           this.updateForm.reset({
-            cognitive_type_id: this.unit.cognitive_type.id, text: this.unit.text
+            cognitive_type_id: this.unit.cognitive_type.id,
+            text: this.unit.text
           });
         }
       );
-    this.cognitiveTypeService.getCognitiveTypesList()
+    this.ctSubscription = this.cognitiveTypeService.getCognitiveTypesList()
       .switchMap(cognitiveTypesListResponse => {
         return concat(
           of(cognitiveTypesListResponse),
           ...(
-            // given `page=1` is loaded, for the rest of `pagesToLoad=[2,3,4,...]`
             (Array.from(Array(cognitiveTypesListResponse.view.pages &&
               (cognitiveTypesListResponse.view.pages - 1)).keys()).map((i) => i + 2))
-            // do a sequential request for each page of Properties
               .map(() => this.cognitiveTypeService.getCognitiveTypesList(cognitiveTypesListResponse.view.next))
           )
         );
@@ -78,10 +85,13 @@ export class UnitViewComponent implements OnInit {
           cognitiveTypesListResponse.cognitive_types.filter((ct) => !ct.parent)
         );
       });
+  }
 
-    this.updateForm.get('cognitive_type_id').valueChanges.subscribe(p => {
-      this.cognitiveSubTypes = (this.allCognitiveTypes || []).filter(ct => ct.parent && ct.parent.id === p);
-    });
+  ngOnDestroy() {
+    if (this.ctSubscription) {
+      this.ctSubscription.unsubscribe();
+      this.ctSubscription = undefined;
+    }
   }
 
   onImageSelect(image: Image) {

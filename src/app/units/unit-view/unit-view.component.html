@@ -46,7 +46,7 @@
       <select id="cognitive_subtype_id"
               class="form-control mb-2 mr-sm-2 mb-sm-0"
               formControlName="cognitive_subtype_id">
-        <option *ngFor="let cognitiveType of cognitiveSubTypes" [value]="cognitiveType.id">{{cognitiveType.name}}</option>
+        <option *ngFor="let cognitiveType of cognitiveSubTypesOfSelectedCognitiveType" [value]="cognitiveType.id">{{cognitiveType.name}}</option>
       </select>
     </div>
   </div>

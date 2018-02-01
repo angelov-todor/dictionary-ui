@@ -70,12 +70,24 @@
         <source>Upload</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="f7d23d230ec3d16d53090a647009463879b507a1" datatype="html">
+        <source>Units and Tests</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="be537f4ddb09e1a2856314f2cbe84063ab6b4170" datatype="html">
         <source>Units</source>
         <target><!-- put translation here --></target>
       </trans-unit>
-      <trans-unit id="1b258b258b4cc475ceb2871305b61756b0134f4a" datatype="html">
-        <source>Generate</source>
+      <trans-unit id="891ddeb61503b1fe2d09192d5572eb169c631321" datatype="html">
+        <source>Generate unit</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="be8e1a199c0f65656ec614786777a1552a968979" datatype="html">
+        <source>Tests</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="6f4773a5e340dfb53d497d3c5d1d24854d6ce920" datatype="html">
+        <source>Generate test</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="766427ec94438008fa8ca29c257b9f226e938a16" datatype="html">
@@ -298,6 +310,14 @@
         <source>Criteria</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="1b258b258b4cc475ceb2871305b61756b0134f4a" datatype="html">
+        <source>Generate</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="ddbd474487abb3cfa7c7ab4e57cb096977cdf0ed" datatype="html">
+        <source>Cognitive subtype</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="24f0e8a639c5f56010899209edf271a084fe3a26" datatype="html">
         <source>Syllables</source>
         <target><!-- put translation here --></target>
@@ -324,6 +344,42 @@
       </trans-unit>
       <trans-unit id="b493c44486c386d91d2f825a1929ed99a6c5ac93" datatype="html">
         <source>Cognitive types</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="5682d7ab3d0af02c240ea82600a53d7ac5b244b0" datatype="html">
+        <source>Cognitive skill</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="d63b333716373eba84dbdbc9c3162a640968d862" datatype="html">
+        <source>Methodology</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="2e6be334a2152f179a557167f98ce4459ff9a2f9" datatype="html">
+        <source>Age</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="9abcd7c82643d60c22733470463f74e4a54bc069" datatype="html">
+        <source>Min</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="c3ced4d162a0a55ee233a187ce7208ba5e922418" datatype="html">
+        <source>Max</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="82ee36a56f75194f62d6dae674a4f098cbaa7584" datatype="html">
+        <source>Points required</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="806ab7d0d68031585939a1de9d5e3947de9c0937" datatype="html">
+        <source>Grading scale</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="8c59a49024d1317c19e1f7bc57561e4e5f776bea" datatype="html">
+        <source>Time to conduct</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="fcde58253a4cfd52c228eebdae74e1be7a1ab714" datatype="html">
+        <source>Notes</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">

@@ -1,0 +1,91 @@
+<h4 i18n>Generate test</h4>
+<form action="post" class="mx-auto" [formGroup]="generateForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group row no-gutters">
+    <label class="col-md-2 control-label" for="name" i18n>Text</label>
+    <div class="col-md-6">
+      <input type="text" name="name" class="form-control" id="name" formControlName="name">
+      <div class="form-control-feedback"
+           *ngIf="generateForm.get('name').touched && generateForm.get('name').hasError('required')"
+           i18n>This field is required</div>
+    </div>
+  </div>
+
+  <div class="form-group row no-gutters">
+    <label class="col-md-2 control-label" for="cognitive_skill_id" i18n>Cognitive skill</label>
+    <div class="col-md-6">
+      <select id="cognitive_skill_id"
+              class="form-control mb-2 mr-sm-2 mb-sm-0"
+              formControlName="cognitive_skill_id">
+
+      </select>
+      <div class="form-control-feedback"
+           *ngIf="generateForm.get('cognitive_skill_id').touched && generateForm.get('cognitive_skill_id').hasError('required')"
+           i18n>This field is required</div>
+    </div>
+  </div>
+
+  <div class="form-group row no-gutters">
+    <label class="col-md-2 control-label" for="methodology" i18n>Methodology</label>
+    <div class="col-md-6">
+      <input type="text" name="methodology" class="form-control" id="methodology" formControlName="methodology">
+    </div>
+  </div>
+
+  <div class="form-group row no-gutters">
+    <label class="col-md-2 control-label" i18n>Age</label>
+    <div class="col-md-6">
+      <div class="row">
+        <label class="col-md-2 control-label" for="min_age" i18n>Min</label>
+        <div class="col-md-4">
+          <input type="number" name="min_age" max="100" min="1" class="form-control" id="min_age"
+                 formControlName="min_age">
+        </div>
+        <label class="col-md-2 control-label" for="max_age" i18n>Max</label>
+        <div class="col-md-4">
+          <input type="number" name="max_age" max="100" min="1" class="form-control" id="max_age"
+                 formControlName="max_age">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row no-gutters">
+    <label class="col-md-2 control-label" for="points_required" i18n>Points required</label>
+    <div class="col-md-6">
+      <input type="number" name="points_required" class="form-control" id="points_required"
+             formControlName="points_required">
+    </div>
+  </div>
+
+  <div class="form-group row no-gutters">
+    <label class="col-md-2 control-label" for="grading_scale" i18n>Grading scale</label>
+    <div class="col-md-6">
+      <input type="text" name="grading_scale" class="form-control" id="grading_scale"
+             formControlName="grading_scale">
+    </div>
+  </div>
+
+  <div class="form-group row no-gutters">
+    <label class="col-md-2 control-label" for="time_to_conduct" i18n>Time to conduct</label>
+    <div class="col-md-6">
+      <input type="text" name="time_to_conduct" class="form-control" id="time_to_conduct"
+             formControlName="time_to_conduct">
+    </div>
+  </div>
+
+  <div class="form-group row no-gutters">
+    <label class="col-md-2 control-label" for="notes" i18n>Notes</label>
+    <div class="col-md-6">
+      <textarea name="notes" class="form-control" id="notes"
+                formControlName="notes"></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="text-center col-sm-7">
+      <button class="btn btn-primary" type="submit" i18n>Generate</button>
+    </div>
+  </div>
+</form>

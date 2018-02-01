@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TestsService } from './tests.service';
 import { TestListComponent } from './test-list/test-list.component';
 import { TestsRoutingModule } from './tests-routing.module';
+import { TestRootComponent } from './test-root/test-root.component';
+import { TestGenerateComponent } from './test-generate/test-generate.component';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { TestsRoutingModule } from './tests-routing.module';
     ModalModule
   ],
   declarations: [
-    TestListComponent
+    TestRootComponent,
+    TestListComponent,
+    TestGenerateComponent
   ],
   providers: [TestsService]
 })
