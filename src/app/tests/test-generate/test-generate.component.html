@@ -2,13 +2,13 @@
 <form action="post" class="mx-auto" [formGroup]="generateForm" (ngSubmit)="onSubmit()">
 
   <div class="form-group row no-gutters">
-    <label class="col-md-2 control-label" for="name" i18n>Text</label>
+    <label class="col-md-2 control-label" for="name" i18n>Name</label>
     <div class="col-md-6">
       <input type="text" name="name" class="form-control" id="name" formControlName="name">
-      <div class="form-control-feedback"
-           *ngIf="generateForm.get('name').touched && generateForm.get('name').hasError('required')"
-           i18n>This field is required</div>
     </div>
+    <div class="form-control-feedback col-md-2"
+         *ngIf="generateForm.get('name').touched && generateForm.get('name').hasError('required')"
+         i18n>This field is required</div>
   </div>
 
   <div class="form-group row no-gutters">
@@ -19,10 +19,10 @@
               formControlName="cognitive_skill_id">
 
       </select>
-      <div class="form-control-feedback"
-           *ngIf="generateForm.get('cognitive_skill_id').touched && generateForm.get('cognitive_skill_id').hasError('required')"
-           i18n>This field is required</div>
     </div>
+    <div class="col-md-2 form-control-feedback"
+         *ngIf="generateForm.get('cognitive_skill_id').touched && generateForm.get('cognitive_skill_id').hasError('required')"
+         i18n>This field is required</div>
   </div>
 
   <div class="form-group row no-gutters">
