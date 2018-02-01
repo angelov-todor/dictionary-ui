@@ -7,6 +7,8 @@ import { TestListComponent } from './test-list/test-list.component';
 import { TestsRoutingModule } from './tests-routing.module';
 import { TestRootComponent } from './test-root/test-root.component';
 import { TestGenerateComponent } from './test-generate/test-generate.component';
+import { MethodologiesService } from './methodologies.service';
+import { MethodologyAddComponent } from './methodology-add/methodology-add.component';
 
 @NgModule({
   imports: [
@@ -18,9 +20,10 @@ import { TestGenerateComponent } from './test-generate/test-generate.component';
   declarations: [
     TestRootComponent,
     TestListComponent,
+    MethodologyAddComponent,
     TestGenerateComponent
   ],
-  providers: [TestsService]
+  providers: [TestsService, MethodologiesService]
 })
 export class TestsModule {
   static forRoot(): ModuleWithProviders {

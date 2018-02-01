@@ -1,0 +1,14 @@
+@import "~scss/variables";
+
+.info {
+  color: $blue;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.remove {
+  cursor: pointer;
+  color: $red !important;
+}

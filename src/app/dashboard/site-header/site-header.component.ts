@@ -9,7 +9,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 })
 export class SiteHeaderComponent {
 
-    isActive: boolean = true;
+    isActive: boolean;
 
     constructor(private userAuth: AuthService) {
     }

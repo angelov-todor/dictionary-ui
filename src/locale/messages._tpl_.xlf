@@ -94,6 +94,10 @@
         <source>Cognitive Types</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="986cd7282365721a99e76b73d41ca830143de6a8" datatype="html">
+        <source>Cognitive Skills</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="d20ef216628af1ed06cd9541aa71258f9e1031ce" datatype="html">
         <source>Dictionaries</source>
         <target><!-- put translation here --></target>
@@ -346,6 +350,14 @@
         <source>Cognitive types</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="8e3b390c1bacc9f8a466ab3e3dc4a3f9bb22bda9" datatype="html">
+        <source>Cognitive skills</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="b9e565aa557114bad6792d12ec7d1e231f289474" datatype="html">
+        <source>Add new methodology</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="5682d7ab3d0af02c240ea82600a53d7ac5b244b0" datatype="html">
         <source>Cognitive skill</source>
         <target><!-- put translation here --></target>
@@ -358,12 +370,12 @@
         <source>Age</source>
         <target><!-- put translation here --></target>
       </trans-unit>
-      <trans-unit id="9abcd7c82643d60c22733470463f74e4a54bc069" datatype="html">
-        <source>Min</source>
+      <trans-unit id="d5e0dbc9fd4651759df915cdc6ba26fe3f17475f" datatype="html">
+        <source>From</source>
         <target><!-- put translation here --></target>
       </trans-unit>
-      <trans-unit id="c3ced4d162a0a55ee233a187ce7208ba5e922418" datatype="html">
-        <source>Max</source>
+      <trans-unit id="63c9c3aa536dbd11120ae8feab62186c47838028" datatype="html">
+        <source>To</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="82ee36a56f75194f62d6dae674a4f098cbaa7584" datatype="html">
