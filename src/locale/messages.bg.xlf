@@ -90,13 +90,13 @@
         <source>Generate test</source>
         <target>Генериране на тест</target>
       </trans-unit>
-      <trans-unit id="766427ec94438008fa8ca29c257b9f226e938a16" datatype="html">
-        <source>Cognitive Types</source>
+      <trans-unit id="b493c44486c386d91d2f825a1929ed99a6c5ac93" datatype="html">
+        <source>Cognitive types</source>
         <target>Когнитивни типове</target>
       </trans-unit>
-      <trans-unit id="986cd7282365721a99e76b73d41ca830143de6a8" datatype="html">
-        <source>Cognitive Skills</source>
-        <target>Когнитивни Умения</target>
+      <trans-unit id="8e3b390c1bacc9f8a466ab3e3dc4a3f9bb22bda9" datatype="html">
+        <source>Cognitive skills</source>
+        <target>Когнитивни умения</target>
       </trans-unit>
       <trans-unit id="d20ef216628af1ed06cd9541aa71258f9e1031ce" datatype="html">
         <source>Dictionaries</source>
@@ -346,14 +346,6 @@
         <source>Rhymes</source>
         <target>Рими</target>
       </trans-unit>
-      <trans-unit id="b493c44486c386d91d2f825a1929ed99a6c5ac93" datatype="html">
-        <source>Cognitive types</source>
-        <target>Когнитивни типове</target>
-      </trans-unit>
-      <trans-unit id="8e3b390c1bacc9f8a466ab3e3dc4a3f9bb22bda9" datatype="html">
-        <source>Cognitive skills</source>
-        <target>Когнитивни умения</target>
-      </trans-unit>
       <trans-unit id="b9e565aa557114bad6792d12ec7d1e231f289474" datatype="html">
         <source>Add new methodology</source>
         <target>Добавяне на нова методика</target>
@@ -393,6 +385,22 @@
       <trans-unit id="fcde58253a4cfd52c228eebdae74e1be7a1ab714" datatype="html">
         <source>Notes</source>
         <target>Доп. бележки</target>
+      </trans-unit>
+      <trans-unit id="b67d5346026e31e77afe3bdc85822620fde6959e" datatype="html">
+        <source>Test: <x id="INTERPOLATION" equiv-text="{{test.name}}"/></source>
+        <target>Тест: <x id="INTERPOLATION" equiv-text="{{test.name}}"/></target>
+      </trans-unit>
+      <trans-unit id="19cecd49046d686211736257fe7f109ae9c4f46a" datatype="html">
+        <source>from</source>
+        <target>от</target>
+      </trans-unit>
+      <trans-unit id="e04356b41e0d85f3e2f7ebc72a3f75c6e1147663" datatype="html">
+        <source>to</source>
+        <target>до</target>
+      </trans-unit>
+      <trans-unit id="f3c099188655275d86864f40158bc16720c7c140" datatype="html">
+        <source>Generate test unit</source>
+        <target>Генериране на тестова единица</target>
       </trans-unit>
       <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">
         <source>System for automated generation of cognitive test units</source>
