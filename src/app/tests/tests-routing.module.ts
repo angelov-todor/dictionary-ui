@@ -4,6 +4,7 @@ import { AuthGuardService } from '../auth/auth-guard.service';
 import { TestListComponent } from './test-list/test-list.component';
 import { UnitRootComponent } from '../units/unit-root/unit-root.component';
 import { TestGenerateComponent } from './test-generate/test-generate.component';
+import { TestViewComponent } from './test-view/test-view.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: 'list', pathMatch: 'full'},
       {path: 'list', component: TestListComponent},
-      {path: 'generate', component: TestGenerateComponent}
+      {path: 'generate', component: TestGenerateComponent},
+      {path: 'view/:id', component: TestViewComponent}
     ]
   }
 ];

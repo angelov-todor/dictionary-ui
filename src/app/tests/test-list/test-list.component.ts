@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Test, TestsService } from '../tests.service';
+import { PartialCollectionView } from '../../words/words.service';
+import { CognitiveSkill } from '../../cognitive-skills/cognitive-skill.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-test-list',
@@ -7,9 +11,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestListComponent implements OnInit {
 
-  constructor() { }
+  tests: Test[];
+  collectionView: PartialCollectionView;
 
-  ngOnInit() {
+  constructor(private testsService: TestsService,
+              private router: Router) {
   }
 
+  ngOnInit() {
+    this.getTests();
+  }
+
+  getTests(page?: string): void {
+    this.testsService.getTestsList(page)
+      .subscribe(
+        (testsResponse) => {
+          this.tests = testsResponse.tests;
+          this.collectionView = testsResponse.view;
+        }
+      );
+  }
+
+  edit(test: Test): void {
+    this.router.navigate(['/tests/view', test.id]);
+  }
+
+  remove(test: Test): void {
+    this.testsService
+      .remove(test.id)
+      .subscribe(
+        () => {
+          this.tests = this.tests.filter(h => h !== test);
+        },
+        (error) => console.log(error)
+      );
+  }
+
+  setPage(page: string) {
+    this.getTests(page);
+  }
 }

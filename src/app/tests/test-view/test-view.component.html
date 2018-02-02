@@ -1,0 +1,116 @@
+<div class="row">
+  <div class="col-md-6">
+    <h4 *ngIf="test" i18n>Test: {{test.name}}</h4>
+    <form action="post" class="mx-auto" [formGroup]="testForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group row no-gutters">
+        <label class="col-md-3 control-label" for="name" i18n>Name</label>
+        <div class="col-md-9">
+          <input type="text" name="name" class="form-control" id="name" formControlName="name">
+        </div>
+        <div class="form-control-feedback col-md-2"
+             *ngIf="testForm.get('name').touched && testForm.get('name').hasError('required')"
+             i18n>This field is required</div>
+      </div>
+
+      <div class="form-group row no-gutters">
+        <label class="col-md-3 control-label" for="cognitive_skill_id" i18n>Cognitive skill</label>
+        <div class="col-md-9">
+          <select id="cognitive_skill_id"
+                  class="form-control mb-2 mr-sm-2 mb-sm-0"
+                  formControlName="cognitive_skill_id">
+            <option *ngFor="let cognitiveSkill of cognitiveSkills" [value]="cognitiveSkill.id">{{cognitiveSkill.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2 form-control-feedback"
+             *ngIf="testForm.get('cognitive_skill_id').touched && testForm.get('cognitive_skill_id').hasError('required')"
+             i18n>This field is required</div>
+      </div>
+
+      <div class="form-group row no-gutters">
+        <label class="col-md-3 control-label" for="methodology_id" i18n>Methodology</label>
+        <div class="col-md-8">
+          <select id="methodology_id"
+                  class="form-control mb-2 mr-sm-2 mb-sm-0"
+                  formControlName="methodology_id">
+            <option *ngFor="let methodology of methodologies" [value]="methodology.id">{{methodology.name}}</option>
+          </select>
+        </div>
+        <div class="col-md-1 pl-2 pt-1 text-right">
+          <button type="button" class="btn btn-sm btn-secondary pointer" (click)="onMethodologyCreate($event)"><i
+            class="fa fa-plus"></i></button>
+        </div>
+      </div>
+
+      <div class="form-group row no-gutters">
+        <label class="col-md-3 control-label" i18n>Age</label>
+        <div class="col-md-9">
+          <div class="row">
+            <label class="col-md-2 control-label" for="min_age" i18n>from</label>
+            <div class="col-md-4">
+              <input type="number" name="min_age" max="100" min="1" class="form-control" id="min_age"
+                     formControlName="min_age">
+            </div>
+            <label class="col-md-2 control-label" for="max_age" i18n>to</label>
+            <div class="col-md-4">
+              <input type="number" name="max_age" max="100" min="1" class="form-control" id="max_age"
+                     formControlName="max_age">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row no-gutters">
+        <label class="col-md-3 control-label" for="points_required" i18n>Points required</label>
+        <div class="col-md-9">
+          <input type="number" name="points_required" class="form-control" id="points_required"
+                 formControlName="points_required">
+        </div>
+      </div>
+
+      <div class="form-group row no-gutters">
+        <label class="col-md-3 control-label" for="grading_scale" i18n>Grading scale</label>
+        <div class="col-md-9">
+          <input type="text" name="grading_scale" class="form-control" id="grading_scale"
+                 formControlName="grading_scale">
+        </div>
+      </div>
+
+      <div class="form-group row no-gutters">
+        <label class="col-md-3 control-label" for="time_to_conduct" i18n>Time to conduct</label>
+        <div class="col-md-9">
+          <input type="number" min="1" max="200" name="time_to_conduct" class="form-control" id="time_to_conduct"
+                 formControlName="time_to_conduct">
+        </div>
+      </div>
+
+      <div class="form-group row no-gutters">
+        <label class="col-md-3 control-label" for="notes" i18n>Notes</label>
+        <div class="col-md-9">
+          <textarea name="notes" class="form-control" id="notes" formControlName="notes"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="text-right col-sm-12">
+          <button class="btn btn-primary" type="submit" i18n>Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-lg-6">
+    <h4 i18n>Units</h4>
+
+    <div class="row">
+      <div class="col text-right">
+        <a class="btn btn-primary btn-sm" routerLink="/units/generate"
+           routerLinkActive="active-nav-link"
+           i18n>Generate test unit</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-methodology-add [methodology]="newMethodology"
+                     (onCompleted)="onMethodologyCreateCompleted($event)"></app-methodology-add>

@@ -93,6 +93,10 @@ export class Metadata {
   public parent?: Metadata;
   public values?: string;
 
+  get parent_id() {
+    return this.parent && this.parent.id;
+  }
+
   constructor(data?: Partial<Metadata>) {
     Object.assign(this, data || {});
   }

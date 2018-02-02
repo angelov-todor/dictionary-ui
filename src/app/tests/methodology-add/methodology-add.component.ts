@@ -23,6 +23,7 @@ export class MethodologyAddComponent implements OnInit {
   set methodology(value: Methodology | null) {
     this._methodology = value;
     if (value) {
+      this.addForm.reset();
       this.methodologyViewModal.show();
     } else {
       this.methodologyViewModal.hide();

@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CognitiveSkill, CognitiveSkillService } from '../../cognitive-skills/cognitive-skill.service';
 import { MethodologiesService, Methodology } from '../methodologies.service';
-import { TestsService } from '../tests.service';
-import { Router } from '@angular/router';
+import { CognitiveSkill, CognitiveSkillService } from '../../cognitive-skills/cognitive-skill.service';
+import { Test, TestsService } from '../tests.service';
 
 @Component({
-  selector: 'app-test-generate',
-  templateUrl: './test-generate.component.html',
-  styleUrls: ['./test-generate.component.scss']
+  selector: 'app-test-view',
+  templateUrl: './test-view.component.html',
+  styleUrls: ['./test-view.component.scss']
 })
-export class TestGenerateComponent implements OnInit {
-
-  generateForm: FormGroup;
+export class TestViewComponent implements OnInit {
+  testForm: FormGroup;
   cognitiveSkills: CognitiveSkill[];
 
+  test: Test;
   get methodologies() {
     return this._methodologies;
   }
@@ -26,8 +26,9 @@ export class TestGenerateComponent implements OnInit {
               private cognitiveSkillService: CognitiveSkillService,
               private methodologiesService: MethodologiesService,
               private testsService: TestsService,
-              private router: Router) {
-    this.generateForm = fb.group({
+              private router: Router,
+              private route: ActivatedRoute) {
+    this.testForm = fb.group({
       name: [null, [Validators.required]],
       cognitive_skill_id: [null, [Validators.required]],
       methodology_id: [null],
@@ -41,6 +42,14 @@ export class TestGenerateComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.params
+      .map(({id}) => ({id}))
+      .switchMap(({id}) => this.testsService.getTest(id))
+      .subscribe((test: Test) => {
+          this.test = test;
+          this.testForm.reset(test);
+        }
+      );
     this.cognitiveSkillService.getCognitiveSkillsList()
       .subscribe(
         (cognitiveSkillsListResponse) => {
@@ -57,9 +66,7 @@ export class TestGenerateComponent implements OnInit {
   }
 
   onSubmit() {
-    this.testsService.create(this.generateForm.value).subscribe((test) => {
-      this.router.navigate(['/tests/view', test.id]);
-    });
+
   }
 
   onMethodologyCreateCompleted(createdMethodology: Methodology | false) {
@@ -73,4 +80,5 @@ export class TestGenerateComponent implements OnInit {
     e.preventDefault();
     this.newMethodology = new Methodology();
   }
+
 }

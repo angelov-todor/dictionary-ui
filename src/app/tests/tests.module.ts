@@ -9,6 +9,7 @@ import { TestRootComponent } from './test-root/test-root.component';
 import { TestGenerateComponent } from './test-generate/test-generate.component';
 import { MethodologiesService } from './methodologies.service';
 import { MethodologyAddComponent } from './methodology-add/methodology-add.component';
+import { TestViewComponent } from './test-view/test-view.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { MethodologyAddComponent } from './methodology-add/methodology-add.compo
     TestRootComponent,
     TestListComponent,
     MethodologyAddComponent,
-    TestGenerateComponent
+    TestGenerateComponent,
+    TestViewComponent
   ],
   providers: [TestsService, MethodologiesService]
 })

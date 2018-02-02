@@ -23,18 +23,7 @@ export class MetadataEditComponent implements OnInit {
   set metadata(value: Metadata | null) {
     this._metadata = value;
     if (value) {
-      const data = {
-        id: this._metadata.id,
-        name: this._metadata.name,
-        type: this._metadata.type,
-        values: this._metadata.values
-      };
-
-      if (this._metadata.parent) {
-        data['parent'] = this._metadata.parent.id;
-      }
-
-      this.editForm.reset(data);
+      this.editForm.reset(this._metadata);
       this.onViewWordModalOpen();
     } else {
       this.wordViewModal.hide();
@@ -60,7 +49,7 @@ export class MetadataEditComponent implements OnInit {
       id: [null, Validators.required],
       name: [null, [Validators.required]],
       type: ['text', Validators.required],
-      parent: [null], // TODO: fix the parent, it is an object
+      parent_id: [null],
       values: [null]
     });
   }
