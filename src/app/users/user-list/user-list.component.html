@@ -1,0 +1,43 @@
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th colspan="3" class="text-center" i18n>Users</th>
+    </tr>
+    <tr>
+      <th i18n>Email</th>
+      <th i18n>Roles</th>
+      <th i18n>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.email}}</td>
+      <td>{{user.roles.join('')}}</td>
+      <td>
+      </td>
+    </tr>
+    <tr *ngIf="!users?.length">
+      <td colspan="4" class="text-center" i18n>No results found</td>
+    </tr>
+    </tbody>
+  </table>
+  <nav *ngIf="collectionView">
+    <ul class="pagination justify-content-center">
+      <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView.current == collectionView.first}"
+          class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.first)" i18n>First</a>
+      </li>
+      <li *ngIf="collectionView.previous" class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.previous)" i18n>Previous</a>
+      </li>
+      <li *ngIf="collectionView.next" class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.next)" i18n>Next</a>
+      </li>
+      <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView.current == collectionView.last}"
+          class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.last)" i18n>Last</a>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -2,11 +2,10 @@
   <table class="table">
     <thead>
     <tr>
-      <th colspan="5" class="text-center" i18n>Metadata</th>
+      <th colspan="4" class="text-center" i18n>Metadata</th>
     </tr>
     <tr>
       <th i18n>Name</th>
-      <th i18n>Type</th>
       <th i18n>Parent</th>
       <th i18n>Values</th>
       <th i18n>Actions</th>
@@ -23,11 +22,9 @@
       <td></td>
       <td></td>
       <td></td>
-      <td></td>
     </tr>
     <tr *ngFor="let meta of metadata">
       <td>{{meta.name}}</td>
-      <td>{{meta.type}}</td>
       <td>{{meta.parent?.name}}</td>
       <td>{{meta.values}}</td>
       <td>
@@ -60,37 +57,36 @@
   </nav>
   <hr/>
   <div class="row justify-content-md-center">
-    <div class="col-md-auto">
-      <form action="post" class="form-inline mx-auto" [formGroup]="createForm" (submit)="onSubmit()">
-        <label class="sr-only" for="name">Name</label>
+    <div class="col-md-12">
+      <form action="post" class="form-inline mx-auto row" [formGroup]="createForm" (submit)="onSubmit()">
         <input id="name"
-               class="form-control mb-2 mr-sm-2 mb-sm-0"
+               class="form-control mb-2 mr-sm-2 mb-sm-0 col-md-2"
                type="text"
                placeholder="Name"
                formControlName="name"
                i18n-placeholder/>
-        <label class="sr-only" for="type" i18n>Type</label>
         <select id="type"
-                class="form-control mb-2 mr-sm-2 mb-sm-0"
+                class="form-control mb-2 mr-sm-2 mb-sm-0 col-md-2"
                 formControlName="type">
           <option *ngFor="let type of types.types;" [value]="type.type">{{type.label}}</option>
         </select>
 
-        <label class="sr-only" for="parent" i18n>Parent</label>
         <select id="parent"
-                class="form-control mb-2 mr-sm-2 mb-sm-0"
+                class="form-control mb-2 mr-sm-2 mb-sm-0 col-md-3"
                 formControlName="parent">
           <option selected value="null">-</option>
           <option *ngFor="let meta of allMetadata" [value]="meta.id">{{meta.name}}</option>
         </select>
-        <label class="sr-only" for="values">Values</label>
+
         <input id="values"
-               class="form-control mb-2 mr-sm-2 mb-sm-0"
+               class="form-control mb-2 mr-sm-2 mb-sm-0 col-md-3"
                type="text"
                placeholder="Values"
                formControlName="values"
                i18n-placeholder/>
-        <button class="btn btn-primary" type="submit" i18n>Add</button>
+        <div class="col-md-1">
+          <button class="btn btn-primary" type="submit" i18n>Add</button>
+        </div>
       </form>
     </div>
   </div>

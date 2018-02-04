@@ -15,6 +15,7 @@ import { ToolsModule } from './tools/tools.module';
 import { CognitiveTypesModule } from './cognitive-types/cognitive-types.module';
 import { TestsModule } from './tests/tests.module';
 import { CognitiveSkillsModule } from './cognitive-skills/cognitive-skills.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CognitiveSkillsModule } from './cognitive-skills/cognitive-skills.modul
     CognitiveTypesModule.forRoot(),
     CognitiveSkillsModule.forRoot(),
     TestsModule.forRoot(),
+    UsersModule.forRoot(),
     //  should be last in order to catch not found
     DashboardModule.forRoot()
   ],
