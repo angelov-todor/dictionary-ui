@@ -22,6 +22,7 @@ export class UnitViewComponent implements OnInit, OnDestroy {
     text: [null, [Validators.required]],
     cognitive_type_id: [null, [Validators.required]],
     cognitive_subtype_id: [null],
+    time_to_conduct: [0, [Validators.required]],
     type: [null]
   });
   selected: UnitImage;
@@ -105,6 +106,11 @@ export class UnitViewComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    console.log(this.updateForm.value);
+    if (!this.updateForm.valid) {
+      console.log(this.updateForm.value);
+      return;
+    }
+    this.unitsService.update(this.unit, this.updateForm.value)
+      .subscribe(() => true);
   }
 }

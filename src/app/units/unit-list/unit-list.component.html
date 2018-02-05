@@ -3,18 +3,20 @@
     <thead>
     <tr>
       <th>#</th>
-      <th i18n>Text</th>
+      <th i18n>Name</th>
       <th i18n>Number of images</th>
       <th i18n>Cognitive type</th>
+      <th i18n>Cognitive subtype</th>
       <th></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let unit of units;let i = index;">
       <th scope="row">{{i+1}}</th>
-      <td>{{unit.text}}</td>
+      <td>{{unit.name}}</td>
       <td>{{unit.unit_images.length}}</td>
       <td>{{unit.cognitive_type?.name}}</td>
+      <td>{{unit.cognitive_subtype?.name}}</td>
       <td *ngIf="!test"><a [routerLink]="['/units/view', unit.id]" class="btn btn-small" title="View" i18n-title
                            i18n>View</a>
         <a class="pointer fa fa-trash" aria-hidden="true" (click)="removeUnit(unit)" title="Remove" i18n-title></a></td>

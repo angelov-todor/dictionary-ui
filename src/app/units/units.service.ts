@@ -41,6 +41,12 @@ export class UnitsService {
       });
   }
 
+  update(unit: Unit, data: any): Observable<boolean> {
+    return this.http
+      .put(this.unitsUrl + `/${unit.id}`, data)
+      .map(() => true);
+  }
+
   deleteUnit(unit: Unit): Observable<boolean> {
     return this.http
       .delete(this.unitsUrl + `/${unit.id}`)
@@ -64,9 +70,14 @@ export class Unit {
   public cols: number;
   public unit_images: UnitImage[];
   public cognitive_type: CognitiveType;
+  public cognitive_subtype: CognitiveType;
 
   get cognitive_type_id() {
     return this.cognitive_type && this.cognitive_type.id;
+  }
+
+  get cognitive_subtype_id() {
+    return this.cognitive_subtype && this.cognitive_subtype.id;
   }
 
   constructor(data?: Partial<Unit>) {
@@ -76,6 +87,9 @@ export class Unit {
     }
     if (this.cognitive_type) {
       this.cognitive_type = new CognitiveType(this.cognitive_type);
+    }
+    if (this.cognitive_subtype) {
+      this.cognitive_subtype = new CognitiveType(this.cognitive_subtype);
     }
   }
 }
