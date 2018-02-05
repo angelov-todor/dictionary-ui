@@ -54,6 +54,38 @@
         <source>Last</source>
         <target>Последна</target>
       </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>Name</source>
+        <target>Име</target>
+      </trans-unit>
+      <trans-unit id="a71ddb57c68ee19272ab2df27e666d3586d0e1ed" datatype="html">
+        <source>Number of images</source>
+        <target>Брой изображения</target>
+      </trans-unit>
+      <trans-unit id="563a6ce1c91313269219f1b78e4b1714d23e8c8f" datatype="html">
+        <source>Cognitive type</source>
+        <target>Когнитивен тип</target>
+      </trans-unit>
+      <trans-unit id="ddbd474487abb3cfa7c7ab4e57cb096977cdf0ed" datatype="html">
+        <source>Cognitive subtype</source>
+        <target>Когнитивен подтип</target>
+      </trans-unit>
+      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
+        <source>View</source>
+        <target>Прегледай</target>
+      </trans-unit>
+      <trans-unit id="019d4bd6a5690f0cfa0ecf346a4e6bf7f0d8debb" datatype="html">
+        <source>Remove</source>
+        <target>Изтрий</target>
+      </trans-unit>
+      <trans-unit id="b12fe30fbba99d3920bd9e7b7c19284a1d1da5e2" datatype="html">
+        <source>Assign to test</source>
+        <target>Добави към теста</target>
+      </trans-unit>
+      <trans-unit id="f871b41bfbdb193507cce2cd848c2d02bde77a03" datatype="html">
+        <source>No results found</source>
+        <target>Няма намерени резултати</target>
+      </trans-unit>
       <trans-unit id="f65253954b66e929a8b4d5ecaf61f9129f8cec64" datatype="html">
         <source>Dashboard</source>
         <target>Работен плот</target>
@@ -162,14 +194,6 @@
         <source>Signup</source>
         <target>Регистрация</target>
       </trans-unit>
-      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
-        <source>Name</source>
-        <target>Име</target>
-      </trans-unit>
-      <trans-unit id="f61c6867295f3b53d23557021f2f4e0aa1d0b8fc" datatype="html">
-        <source>Type</source>
-        <target>Тип</target>
-      </trans-unit>
       <trans-unit id="3a4c2a9e76634ff14a60d52a718296f722d47c67" datatype="html">
         <source>Parent</source>
         <target>Родител</target>
@@ -190,17 +214,13 @@
         <source>Edit</source>
         <target>Редактирай</target>
       </trans-unit>
-      <trans-unit id="019d4bd6a5690f0cfa0ecf346a4e6bf7f0d8debb" datatype="html">
-        <source>Remove</source>
-        <target>Изтрий</target>
-      </trans-unit>
-      <trans-unit id="f871b41bfbdb193507cce2cd848c2d02bde77a03" datatype="html">
-        <source>No results found</source>
-        <target>Няма намерени резултати</target>
-      </trans-unit>
       <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9" datatype="html">
         <source>Add</source>
         <target>Добави</target>
+      </trans-unit>
+      <trans-unit id="f61c6867295f3b53d23557021f2f4e0aa1d0b8fc" datatype="html">
+        <source>Type</source>
+        <target>Тип</target>
       </trans-unit>
       <trans-unit id="047f50bc5b5d17b5bec0196355953e1a5c590ddb" datatype="html">
         <source>Update</source>
@@ -282,18 +302,6 @@
         <source>Text</source>
         <target>Текст</target>
       </trans-unit>
-      <trans-unit id="a71ddb57c68ee19272ab2df27e666d3586d0e1ed" datatype="html">
-        <source>Number of images</source>
-        <target>Брой изображения</target>
-      </trans-unit>
-      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
-        <source>View</source>
-        <target>Прегледай</target>
-      </trans-unit>
-      <trans-unit id="563a6ce1c91313269219f1b78e4b1714d23e8c8f" datatype="html">
-        <source>Cognitive type</source>
-        <target>Когнитивен тип</target>
-      </trans-unit>
       <trans-unit id="e0b996bf8fdc049279ea410a0d3955f732731e41" datatype="html">
         <source>Grid</source>
         <target>Таблица</target>
@@ -306,6 +314,10 @@
         <source>Cols</source>
         <target>Колони</target>
       </trans-unit>
+      <trans-unit id="8c59a49024d1317c19e1f7bc57561e4e5f776bea" datatype="html">
+        <source>Time to conduct</source>
+        <target>Време за провеждане</target>
+      </trans-unit>
       <trans-unit id="3ce7a71ef2484b0fd193518178d6dacb0ff6054f" datatype="html">
         <source>Number incorrect answers</source>
         <target>Брой неверни отговори</target>
@@ -317,10 +329,6 @@
       <trans-unit id="1b258b258b4cc475ceb2871305b61756b0134f4a" datatype="html">
         <source>Generate</source>
         <target>Генерирай</target>
-      </trans-unit>
-      <trans-unit id="ddbd474487abb3cfa7c7ab4e57cb096977cdf0ed" datatype="html">
-        <source>Cognitive subtype</source>
-        <target>Когнитивен подтип</target>
       </trans-unit>
       <trans-unit id="24f0e8a639c5f56010899209edf271a084fe3a26" datatype="html">
         <source>Syllables</source>
@@ -378,10 +386,6 @@
         <source>Grading scale</source>
         <target>Скала на оценяване</target>
       </trans-unit>
-      <trans-unit id="8c59a49024d1317c19e1f7bc57561e4e5f776bea" datatype="html">
-        <source>Time to conduct</source>
-        <target>Време за провеждане</target>
-      </trans-unit>
       <trans-unit id="fcde58253a4cfd52c228eebdae74e1be7a1ab714" datatype="html">
         <source>Notes</source>
         <target>Доп. бележки</target>
@@ -398,9 +402,33 @@
         <source>to</source>
         <target>до</target>
       </trans-unit>
+      <trans-unit id="16435efd39cf0d984d88775c41c1d008f66032cb" datatype="html">
+        <source>Units count</source>
+        <target>Брой КТЕ</target>
+      </trans-unit>
+      <trans-unit id="d19ef274bf7120fc8cf9cce5cb65034537cb87a6" datatype="html">
+        <source>Images count</source>
+        <target>Брой изобр.</target>
+      </trans-unit>
+      <trans-unit id="762d06190d74cc8f74624d97e6d415d0137fbcde" datatype="html">
+        <source>Remove from test</source>
+        <target>Премахни от теста</target>
+      </trans-unit>
       <trans-unit id="f3c099188655275d86864f40158bc16720c7c140" datatype="html">
         <source>Generate test unit</source>
         <target>Генериране на тестова единица</target>
+      </trans-unit>
+      <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
+        <source>Users</source>
+        <target>Потребители</target>
+      </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source>
+        <target>Поща</target>
+      </trans-unit>
+      <trans-unit id="9610487cbeb5796d34d8601b5ac0c0a65f9e1d19" datatype="html">
+        <source>Roles</source>
+        <target>Роли</target>
       </trans-unit>
       <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">
         <source>System for automated generation of cognitive test units</source>

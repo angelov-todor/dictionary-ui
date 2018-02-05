@@ -100,6 +100,7 @@ export class Test {
   public name: string;
   public methodology: Methodology;
   public cognitive_skill: CognitiveSkill;
+  public units;
 
   get methodology_id() {
     return this.methodology.id;
