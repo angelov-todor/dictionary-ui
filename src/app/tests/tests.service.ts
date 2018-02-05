@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 import { PartialCollectionView } from '../words/words.service';
 import { Methodology } from './methodologies.service';
 import { CognitiveSkill } from '../cognitive-skills/cognitive-skill.service';
+import { Unit } from '../units/units.service';
 
 @Injectable()
 export class TestsService {
@@ -41,6 +42,12 @@ export class TestsService {
       .map(() => true);
   }
 
+  update(test: Test, data: any): Observable<boolean> {
+    return this.http
+      .put(this.serviceUrl + `/${test.id}`, data)
+      .map(res => true);
+  }
+
   getTest(id: string): Observable<Test> {
     return this.http
       .get(this.serviceUrl + `/${id}`)
@@ -48,6 +55,13 @@ export class TestsService {
       .map(testData => {
         return new Test(testData);
       });
+  }
+
+  assignUnit(test: Test, unit: Unit): Observable<Test> {
+    const url = `${this.serviceUrl}/${test.id}/units`;
+    return this.http
+      .post(url, {unit_id: unit.id})
+      .map(res => res.json() as Test);
   }
 }
 

@@ -18,6 +18,7 @@ export class UnitViewComponent implements OnInit, OnDestroy {
   unit: Unit;
   images;
   updateForm: FormGroup = this.fb.group({
+    name: [null, [Validators.required]],
     text: [null, [Validators.required]],
     cognitive_type_id: [null, [Validators.required]],
     cognitive_subtype_id: [null],
@@ -60,10 +61,7 @@ export class UnitViewComponent implements OnInit, OnDestroy {
             });
           }
           this.images = images;
-          this.updateForm.reset({
-            cognitive_type_id: this.unit.cognitive_type.id,
-            text: this.unit.text
-          });
+          this.updateForm.reset(this.unit);
         }
       );
     this.ctSubscription = this.cognitiveTypeService.getCognitiveTypesList()

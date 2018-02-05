@@ -21,11 +21,13 @@ export class UnitGenerateComponent implements OnInit {
               private router: Router,
               private cognitiveTypeService: CognitiveTypeService) {
     this.generateForm = fb.group({
+      name: [null, [Validators.required]],
       text: [null, [Validators.required]],
       rows: [null, [Validators.required]],
       cols: [null, [Validators.required]],
       incorrect: [0, [Validators.required, Validators.min(0), Validators.max(5)]],
       criteria: [null, [Validators.required]],
+      time_to_conduct: [null, Validators.required],
       cognitive_type_id: [null, Validators.required]
     });
   }
@@ -36,7 +38,6 @@ export class UnitGenerateComponent implements OnInit {
         return concat(
           of(cognitiveTypesListResponse),
           ...(
-            // given `page=1` is loaded, for the rest of `pagesToLoad=[2,3,4,...]`
             (Array.from(Array(cognitiveTypesListResponse.view.pages &&
               (cognitiveTypesListResponse.view.pages - 1)).keys()).map((i) => i + 2))
             // do a sequential request for each page of Properties

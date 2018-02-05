@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UnitsService } from './units.service';
 import { UnitViewComponent } from './unit-view/unit-view.component';
 import { ImagesModule } from '../images/images.module';
+import { UnitListPageComponent } from './unit-list-page/unit-list-page.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,11 @@ import { ImagesModule } from '../images/images.module';
     UnitRootComponent,
     UnitListComponent,
     UnitGenerateComponent,
-    UnitViewComponent
+    UnitViewComponent,
+    UnitListPageComponent
+  ],
+  exports: [
+    UnitListComponent
   ]
 })
 export class UnitsModule {

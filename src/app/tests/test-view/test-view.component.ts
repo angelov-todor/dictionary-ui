@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MethodologiesService, Methodology } from '../methodologies.service';
 import { CognitiveSkill, CognitiveSkillService } from '../../cognitive-skills/cognitive-skill.service';
 import { Test, TestsService } from '../tests.service';
+import { Unit } from '../../units/units.service';
 
 @Component({
   selector: 'app-test-view',
@@ -15,6 +16,7 @@ export class TestViewComponent implements OnInit {
   cognitiveSkills: CognitiveSkill[];
 
   test: Test;
+
   get methodologies() {
     return this._methodologies;
   }
@@ -66,7 +68,10 @@ export class TestViewComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.testsService.update(this.test, this.testForm.value)
+      .subscribe(
+        () => true
+      );
   }
 
   onMethodologyCreateCompleted(createdMethodology: Methodology | false) {
@@ -79,6 +84,15 @@ export class TestViewComponent implements OnInit {
   onMethodologyCreate(e: Event) {
     e.preventDefault();
     this.newMethodology = new Methodology();
+  }
+
+  assignUnit(unit: Unit) {
+    this.testsService.assignUnit(this.test, unit)
+      .subscribe(test => this.test = test);
+  }
+
+  removeFromTest(unit: Unit) {
+    console.log('remove', unit);
   }
 
 }

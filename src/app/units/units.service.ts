@@ -59,10 +59,15 @@ export class UnitsService {
 export class Unit {
   public id: string;
   public text: string;
+  public name: string;
   public rows: number;
   public cols: number;
   public unit_images: UnitImage[];
   public cognitive_type: CognitiveType;
+
+  get cognitive_type_id() {
+    return this.cognitive_type && this.cognitive_type.id;
+  }
 
   constructor(data?: Partial<Unit>) {
     Object.assign(this, data || {});

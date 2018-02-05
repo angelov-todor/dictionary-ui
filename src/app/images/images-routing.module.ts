@@ -11,21 +11,11 @@ const routes: Routes = [
   {
     path: 'images', component: ImageRootComponent, canActivate: [AuthGuardService],
     children: [
-      {
-        path: '', redirectTo: 'list', pathMatch: 'full'
-      },
-      {
-        path: 'list', component: ImageListPageComponent
-      },
-      {
-        path: 'search', component: ImageSearchComponent
-      },
-      {
-        path: 'upload', component: ImageUploadComponent
-      },
-      {
-        path: 'view/:id', component: ImageViewComponent
-      }
+      {path: '', redirectTo: 'list', pathMatch: 'full'},
+      {path: 'list', component: ImageListPageComponent},
+      {path: 'search', component: ImageSearchComponent},
+      {path: 'upload', component: ImageUploadComponent},
+      {path: 'view/:id', component: ImageViewComponent}
     ]
   }
 ];

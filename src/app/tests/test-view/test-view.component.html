@@ -10,7 +10,8 @@
         </div>
         <div class="form-control-feedback col-md-2"
              *ngIf="testForm.get('name').touched && testForm.get('name').hasError('required')"
-             i18n>This field is required</div>
+             i18n>This field is required
+        </div>
       </div>
 
       <div class="form-group row no-gutters">
@@ -25,7 +26,8 @@
         </div>
         <div class="col-md-2 form-control-feedback"
              *ngIf="testForm.get('cognitive_skill_id').touched && testForm.get('cognitive_skill_id').hasError('required')"
-             i18n>This field is required</div>
+             i18n>This field is required
+        </div>
       </div>
 
       <div class="form-group row no-gutters">
@@ -101,7 +103,24 @@
   </div>
   <div class="col-lg-6">
     <h4 i18n>Units</h4>
+    <div class="row">
 
+        <table class="table col">
+          <tr>
+            <th i18n>Name</th>
+            <th i18n>Cognitive type</th>
+            <th i18n>Images count</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let unit of test?.units">
+            <td >{{unit.text}}</td>
+            <td >{{unit.cognitive_type?.name}}</td>
+            <td >{{unit.unit_images.length}}</td>
+            <td><a class="pointer fa fa-download" title="Remove from test" i18n-title aria-hidden="true" (click)="removeFromTest(unit)"></a></td>
+          </tr>
+        </table>
+
+    </div>
     <div class="row">
       <div class="col text-right">
         <a class="btn btn-primary btn-sm" routerLink="/units/generate"
@@ -109,6 +128,12 @@
            i18n>Generate test unit</a>
       </div>
     </div>
+  </div>
+</div>
+<hr/>
+<div class="row" *ngIf="test">
+  <div class="col-md-12 text-center">
+    <app-unit-list [test]="test" (onAssignUnit)="assignUnit($event)"></app-unit-list>
   </div>
 </div>
 

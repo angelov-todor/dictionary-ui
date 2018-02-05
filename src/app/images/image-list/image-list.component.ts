@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Image, ImageListResponse, ImagesService } from '../images.service';
 import { PartialCollectionView } from '../../words/words.service';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './image-list.component.html',
   styleUrls: ['./image-list.component.scss']
 })
-export class ImageListComponent implements OnInit {
+export class ImageListComponent implements OnInit, OnDestroy {
 
   @Output() onImageClicked = new EventEmitter<Image>();
   images: Image[];
@@ -38,6 +38,13 @@ export class ImageListComponent implements OnInit {
           this.collectionView = imagesResponse.view;
         }
       );
+  }
+
+  ngOnDestroy() {
+    if (this.imagesSubscription) {
+      this.imagesSubscription.unsubscribe();
+      this.imagesSubscription = undefined;
+    }
   }
 
   onClick(image: Image) {

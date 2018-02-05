@@ -10,13 +10,15 @@ import { TestGenerateComponent } from './test-generate/test-generate.component';
 import { MethodologiesService } from './methodologies.service';
 import { MethodologyAddComponent } from './methodology-add/methodology-add.component';
 import { TestViewComponent } from './test-view/test-view.component';
+import { UnitsModule } from '../units/units.module';
 
 @NgModule({
   imports: [
     CommonModule,
     TestsRoutingModule,
     ReactiveFormsModule,
-    ModalModule
+    ModalModule,
+    UnitsModule
   ],
   declarations: [
     TestRootComponent,

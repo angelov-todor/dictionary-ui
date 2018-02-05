@@ -1,22 +1,48 @@
-<table class="table">
-  <thead>
-  <tr>
-    <th>#</th>
-    <th i18n>Text</th>
-    <th i18n>Number of images</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let unit of units;let i = index;">
-    <th scope="row">{{i+1}}</th>
-    <td>{{unit.text}}</td>
-    <td>{{unit.unit_images.length}}</td>
-    <td><a [routerLink]="['/units/view', unit.id]" class="btn btn-small" i18n>View</a>
-      <a class="remove fa fa-trash" aria-hidden="true" (click)="removeUnit(unit)"></a></td>
-  </tr>
-  <tr *ngIf="!units?.length">
-    <td colspan="6" class="text-center" i18n>No results found</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th i18n>Text</th>
+      <th i18n>Number of images</th>
+      <th i18n>Cognitive type</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let unit of units;let i = index;">
+      <th scope="row">{{i+1}}</th>
+      <td>{{unit.text}}</td>
+      <td>{{unit.unit_images.length}}</td>
+      <td>{{unit.cognitive_type?.name}}</td>
+      <td *ngIf="!test"><a [routerLink]="['/units/view', unit.id]" class="btn btn-small" title="View" i18n-title
+                           i18n>View</a>
+        <a class="pointer fa fa-trash" aria-hidden="true" (click)="removeUnit(unit)" title="Remove" i18n-title></a></td>
+      <td *ngIf="test"><a class="pointer fa fa-upload" title="Assign to test" i18n-title
+                          aria-hidden="true"
+                          (click)="assignToTest(unit)"></a></td>
+    </tr>
+    <tr *ngIf="!units?.length">
+      <td colspan="5" class="text-center" i18n>No results found</td>
+    </tr>
+    </tbody>
+  </table>
+  <nav *ngIf="collectionView">
+    <ul class="pagination justify-content-center">
+      <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView.current == collectionView.first}"
+          class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.first)" i18n>First</a>
+      </li>
+      <li *ngIf="collectionView.previous" class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.previous)" i18n>Previous</a>
+      </li>
+      <li *ngIf="collectionView.next" class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.next)" i18n>Next</a>
+      </li>
+      <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView.current == collectionView.last}"
+          class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.last)" i18n>Last</a>
+      </li>
+    </ul>
+  </nav>
+</div>
