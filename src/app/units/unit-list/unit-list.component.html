@@ -17,12 +17,12 @@
       <td>{{unit.unit_images.length}}</td>
       <td>{{unit.cognitive_type?.name}}</td>
       <td>{{unit.cognitive_subtype?.name}}</td>
-      <td *ngIf="!test"><a [routerLink]="['/units/view', unit.id]" class="btn btn-small" title="View" i18n-title
-                           i18n>View</a>
-        <a class="pointer fa fa-trash" aria-hidden="true" (click)="removeUnit(unit)" title="Remove" i18n-title></a></td>
-      <td *ngIf="test"><a class="pointer fa fa-upload" title="Assign to test" i18n-title
-                          aria-hidden="true"
-                          (click)="assignToTest(unit)"></a></td>
+      <td><a [routerLink]="['/units/view', unit.id]" class="pointer fa fa-eye" title="View" i18n-title></a>
+        <a *ngIf="!test" class="pointer fa fa-trash" aria-hidden="true" (click)="removeUnit(unit)" title="Remove"
+           i18n-title></a>
+        <a *ngIf="test" class="pointer fa fa-upload" title="Assign to test" i18n-title
+           aria-hidden="true"
+           (click)="assignToTest(unit)"></a></td>
     </tr>
     <tr *ngIf="!units?.length">
       <td colspan="5" class="text-center" i18n>No results found</td>

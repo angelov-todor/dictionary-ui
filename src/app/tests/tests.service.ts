@@ -63,6 +63,13 @@ export class TestsService {
       .post(url, {unit_id: unit.id})
       .map(res => res.json() as Test);
   }
+
+  removeUnit(test: Test, unit: Unit): Observable<Test> {
+    const url = `${this.serviceUrl}/${test.id}/units/${unit.id}`;
+    return this.http
+      .delete(url)
+      .map(res => res.json() as Test);
+  }
 }
 
 export class TestsListResponse {

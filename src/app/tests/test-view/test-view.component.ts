@@ -91,8 +91,21 @@ export class TestViewComponent implements OnInit {
       .subscribe(test => this.test = test);
   }
 
+  get units_time_to_conduct() {
+    let sum = 0;
+    if (this.test) {
+      this.test.units.forEach((unit) => {
+        if (unit.time_to_conduct) {
+          sum += unit.time_to_conduct
+        }
+      });
+    }
+    return sum;
+  }
+
   removeFromTest(unit: Unit) {
-    console.log('remove', unit);
+    this.testsService.removeUnit(this.test, unit)
+      .subscribe(test => this.test = test);
   }
 
 }

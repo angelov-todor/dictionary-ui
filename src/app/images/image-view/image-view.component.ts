@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Image, ImageMetadata, ImagesService } from '../images.service';
 import { Metadata, MetadataService } from '../../metadata/metadata.service';
@@ -6,18 +6,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ImagesMetadataService } from '../images-metadata.service';
 import { concat } from 'rxjs/observable/concat';
 import { of } from 'rxjs/observable/of';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-image-view',
   templateUrl: './image-view.component.html',
   styleUrls: ['./image-view.component.scss']
 })
-export class ImageViewComponent implements OnInit {
+export class ImageViewComponent implements OnInit, OnDestroy {
   metadataForm: FormGroup;
   id: string;
   currentImage: Image;
   allMetadata: Metadata[];
   placeholder = '';
+  metadataSubscription: Subscription;
 
   constructor(private imagesService: ImagesService,
               private metadataService: MetadataService,
@@ -42,7 +44,7 @@ export class ImageViewComponent implements OnInit {
         }
       );
 
-    this.metadataService.getMetadataList()
+    this.metadataSubscription = this.metadataService.getMetadataList()
       .switchMap(metadataListResponse => {
         return concat(
           of(metadataListResponse),
@@ -75,6 +77,13 @@ export class ImageViewComponent implements OnInit {
         console.log(this.placeholder);
       }
     );
+  }
+
+  ngOnDestroy() {
+    if (this.metadataSubscription) {
+      this.metadataSubscription.unsubscribe();
+      this.metadataSubscription = undefined;
+    }
   }
 
   onSubmit() {

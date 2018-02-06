@@ -1,82 +1,96 @@
 <div class="unit-container">
   <div class="image-container" *ngFor="let rows of images">
     <div class="image-item" *ngFor="let unit_image of rows"
-         [ngClass]="{selected: selected === unit_image}">
+         [ngClass]="{selected: selected === unit_image, 'correct': unit_image.is_correct, 'incorrect': !unit_image.is_correct}">
       <img [src]="unit_image.image.thumb"
            (click)="changeSelected(unit_image)">
     </div>
   </div>
 </div>
 <hr/>
-<form action="post" class="mx-auto" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-  <div class="form-group row no-gutters">
-    <label class="col-md-2 control-label" for="name" i18n>Name</label>
-    <div class="col-md-6">
-      <input type="text" name="name" class="form-control" id="name" formControlName="name">
-    </div>
-    <div class="form-control-feedback col-md-2"
-         *ngIf="updateForm.get('name').touched && updateForm.get('name').hasError('required')"
-         i18n>This field is required</div>
-  </div>
-  <div class="form-group row no-gutters">
-    <label class="col-md-2 control-label" for="text" i18n>Text</label>
-    <div class="col-md-6">
-      <input type="text" name="text" class="form-control" id="text" formControlName="text">
-    </div>
-  </div>
-  <div class="form-group row no-gutters">
-    <label class="col-md-2 control-label" for="type" i18n>Type</label>
-    <div class="col-md-6">
-      <select id="type"
-              class="form-control mb-2 mr-sm-2 mb-sm-0"
-              formControlName="type">
-      </select>
-    </div>
-    <div class="form-control-feedback col-md-2"
-         *ngIf="updateForm.get('type').touched && updateForm.get('type').hasError('required')"
-         i18n>This field is required</div>
-  </div>
-  <div class="form-group row no-gutters">
-    <label class="col-md-2 control-label" for="cognitive_type_id" i18n>Cognitive type</label>
-    <div class="col-md-6">
-      <select id="cognitive_type_id"
-              class="form-control mb-2 mr-sm-2 mb-sm-0"
-              formControlName="cognitive_type_id">
-        <option *ngFor="let cognitiveType of cognitiveTypes" [value]="cognitiveType.id">{{cognitiveType.name}}</option>
-      </select>
-    </div>
-    <div class="form-control-feedback col-md-2"
-         *ngIf="updateForm.get('cognitive_type_id').touched && updateForm.get('cognitive_type_id').hasError('required')"
-         i18n>This field is required</div>
-  </div>
-  <div class="form-group row no-gutters">
-    <label class="col-md-2 control-label" for="cognitive_subtype_id" i18n>Cognitive subtype</label>
-    <div class="col-md-6">
-      <select id="cognitive_subtype_id"
-              class="form-control mb-2 mr-sm-2 mb-sm-0"
-              formControlName="cognitive_subtype_id">
-        <option *ngFor="let cognitiveType of cognitiveSubTypesOfSelectedCognitiveType" [value]="cognitiveType.id">{{cognitiveType.name}}</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group row no-gutters">
-    <label class="col-md-2 control-label" for="time_to_conduct" i18n>Time to conduct</label>
-    <div class="col-md-6">
-      <input type="number" min="1" max="200" name="time_to_conduct" class="form-control" id="time_to_conduct"
-             formControlName="time_to_conduct">
-    </div>
-    <div class="form-control-feedback col-md-2"
-         *ngIf="updateForm.get('cognitive_type_id').touched && updateForm.get('cognitive_type_id').hasError('required')"
-         i18n>This field is required</div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4"></div>
-      <div class="text-center col-sm-8">
-        <button class="btn btn-primary" type="submit" i18n>Save</button>
+<div class="row">
+  <div class="col-md-9">
+    <form action="post" class="mx-auto" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <div class="form-group row no-gutters">
+        <label class="col-md-2 control-label" for="name" i18n>Name</label>
+        <div class="col-md-8">
+          <input type="text" name="name" class="form-control" id="name" formControlName="name">
+        </div>
+        <div class="form-control-feedback col-md-2"
+             *ngIf="updateForm.get('name').touched && updateForm.get('name').hasError('required')"
+             i18n>This field is required</div>
       </div>
+      <div class="form-group row no-gutters">
+        <label class="col-md-2 control-label" for="text" i18n>Text</label>
+        <div class="col-md-8">
+          <input type="text" name="text" class="form-control" id="text" formControlName="text">
+        </div>
+      </div>
+      <div class="form-group row no-gutters">
+        <label class="col-md-2 control-label" for="type" i18n>Type</label>
+        <div class="col-md-8">
+          <select id="type"
+                  class="form-control mb-2 mr-sm-2 mb-sm-0"
+                  formControlName="type">
+          </select>
+        </div>
+        <div class="form-control-feedback col-md-2"
+             *ngIf="updateForm.get('type').touched && updateForm.get('type').hasError('required')"
+             i18n>This field is required</div>
+      </div>
+      <div class="form-group row no-gutters">
+        <label class="col-md-2 control-label" for="cognitive_type_id" i18n>Cognitive type</label>
+        <div class="col-md-8">
+          <select id="cognitive_type_id"
+                  class="form-control mb-2 mr-sm-2 mb-sm-0"
+                  formControlName="cognitive_type_id">
+            <option *ngFor="let cognitiveType of cognitiveTypes" [value]="cognitiveType.id">{{cognitiveType.name}}</option>
+          </select>
+        </div>
+        <div class="form-control-feedback col-md-2"
+             *ngIf="updateForm.get('cognitive_type_id').touched && updateForm.get('cognitive_type_id').hasError('required')"
+             i18n>This field is required</div>
+      </div>
+      <div class="form-group row no-gutters">
+        <label class="col-md-2 control-label" for="cognitive_subtype_id" i18n>Cognitive subtype</label>
+        <div class="col-md-8">
+          <select id="cognitive_subtype_id"
+                  class="form-control mb-2 mr-sm-2 mb-sm-0"
+                  formControlName="cognitive_subtype_id">
+            <option *ngFor="let cognitiveType of cognitiveSubTypesOfSelectedCognitiveType" [value]="cognitiveType.id">{{cognitiveType.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row no-gutters">
+        <label class="col-md-2 control-label" for="time_to_conduct" i18n>Time to conduct</label>
+        <div class="col-md-8">
+          <input type="number" min="1" max="200" name="time_to_conduct" class="form-control" id="time_to_conduct"
+                 formControlName="time_to_conduct">
+        </div>
+        <div class="form-control-feedback col-md-2"
+             *ngIf="updateForm.get('cognitive_type_id').touched && updateForm.get('cognitive_type_id').hasError('required')"
+             i18n>This field is required</div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="text-center col-sm-8">
+            <button class="btn btn-primary" type="submit" i18n>Save</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-3" *ngIf="selected">
+    <h5 class="text-center" i18n>Settings</h5>
+    <div class="row" *ngIf="!selected.is_correct">
+      <a class="col pointer btn btn-sm btn-success" (click)="changeCorrect(this.selected, true)" i18n>Mark as correct</a>
+    </div>
+    <div class="row"  *ngIf="selected.is_correct">
+      <a class="col pointer btn btn-sm btn-danger" (click)="changeCorrect(this.selected, false)" i18n>Mark as incorrect</a>
     </div>
   </div>
-</form>
+</div>
+
 <hr/>
 <app-image-list (onImageClicked)="onImageSelect($event)"></app-image-list>

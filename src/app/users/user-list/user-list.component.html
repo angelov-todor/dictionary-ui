@@ -13,7 +13,7 @@
     <tbody>
     <tr *ngFor="let user of users">
       <td>{{user.email}}</td>
-      <td>{{user.roles.join('')}}</td>
+      <td>{{user.roles?.join('')}}</td>
       <td>
       </td>
     </tr>

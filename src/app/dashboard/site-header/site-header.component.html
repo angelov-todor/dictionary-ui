@@ -77,6 +77,10 @@
                         </div>
                     </div>
                 </li>
+              <li class="nav-item" *ngIf="isAdmin()">
+                <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active-nav-link"
+                   i18n>Users</a>
+              </li>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:" (click)="onLogout()" i18n>Log Out</a>
                 </li>

@@ -1,5 +1,5 @@
 .selected.image-item {
-  border: 2px solid #06d652;
+  border: 2px solid #3c0f0b;
 }
 
 .image-item {
@@ -38,4 +38,12 @@
 
 .pointer {
   cursor: pointer;
+}
+
+.correct {
+  border: 1px solid greenyellow;
+}
+
+.incorrect {
+  border: 1px solid indianred;
 }

@@ -99,6 +99,13 @@
         </div>
       </div>
 
+      <div class="form-group row no-gutters">
+        <label class="col-md-3 control-label" for="units_time_to_conduct" i18n>Units time to conduct</label>
+        <div class="col-md-9">
+          <input type="number" name="units_time_to_conduct" class="form-control" id="units_time_to_conduct" value="{{units_time_to_conduct}}" disabled>
+        </div>
+      </div>
+
       <div class="row">
         <div class="text-right col-sm-12">
           <button class="btn btn-primary" type="submit" i18n>Save</button>
@@ -118,7 +125,7 @@
             <th></th>
           </tr>
           <tr *ngFor="let unit of test?.units">
-            <td >{{unit.text}}</td>
+            <td >{{unit.name}}</td>
             <td >{{unit.cognitive_type?.name}}</td>
             <td >{{unit.unit_images.length}}</td>
             <td><a class="pointer fa fa-download" title="Remove from test" i18n-title aria-hidden="true" (click)="removeFromTest(unit)"></a></td>

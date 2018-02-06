@@ -60,6 +60,14 @@ export class UnitsService {
       .put(url, {image: image})
       .map(() => true);
   }
+
+  changeCorrect(unitImage: UnitImage, correct: boolean): Observable<boolean> {
+    const url = environment.baseAPIEndpoint + `/unit_images/${unitImage.id}/correct`;
+
+    return this.http
+      .put(url, {correct: correct})
+      .map(() => true);
+  }
 }
 
 export class Unit {
@@ -98,6 +106,7 @@ export class UnitImage {
   public id: string;
   public position: Position;
   public image: Image;
+  public is_correct: boolean;
 
   constructor(data?: Partial<UnitImage>) {
     Object.assign(this, data || {});

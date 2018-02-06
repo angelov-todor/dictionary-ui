@@ -113,4 +113,9 @@ export class UnitViewComponent implements OnInit, OnDestroy {
     this.unitsService.update(this.unit, this.updateForm.value)
       .subscribe(() => true);
   }
+
+  changeCorrect(unitImage: UnitImage, is_correct: boolean) {
+    this.unitsService.changeCorrect(unitImage, is_correct)
+      .subscribe(() => this.selected.is_correct = is_correct);
+  }
 }
