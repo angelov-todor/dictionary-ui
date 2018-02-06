@@ -253,7 +253,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cognitive-types/cognitive-type-list/cognitive-type-list.component.ts</context>
@@ -277,11 +277,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/methodology-add/methodology-add.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/methodology-add/methodology-add.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-generate/test-generate.component.ts</context>
@@ -293,7 +293,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">115</context>
+          <context context-type="linenumber">122</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a71ddb57c68ee19272ab2df27e666d3586d0e1ed" datatype="html">
@@ -315,11 +315,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">42</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">116</context>
+          <context context-type="linenumber">123</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ddbd474487abb3cfa7c7ab4e57cb096977cdf0ed" datatype="html">
@@ -330,15 +330,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
         <source>View</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
           <context context-type="linenumber">20</context>
@@ -348,7 +344,7 @@
         <source>Remove</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-list/unit-list.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
@@ -480,7 +476,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">110</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="891ddeb61503b1fe2d09192d5572eb169c631321" datatype="html">
@@ -562,32 +558,43 @@
           <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
+        <source>Users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="d0227a069d21cc5c6951d829cbf135be5b5bc767" datatype="html">
         <source>Log Out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
         <source>Login</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">85</context>
+          <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8403f1596e641a1747cad977fab09ee8a77d894e" datatype="html">
         <source>bg</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">93</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e4caa85607483a250cf6eb521bc21e561b9829f1" datatype="html">
         <source>en</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="linenumber">94</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dcd47f4d6b26b045a1b041b2fc73123bc0cfc118" datatype="html">
@@ -789,7 +796,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/methodology-add/methodology-add.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f61c6867295f3b53d23557021f2f4e0aa1d0b8fc" datatype="html">
@@ -800,7 +807,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="047f50bc5b5d17b5bec0196355953e1a5c590ddb" datatype="html">
@@ -839,11 +846,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">78</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f79611b9cc78f612ae8cc2cce08ff9f14581aeb3" datatype="html">
@@ -877,19 +884,19 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">52</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-generate/test-generate.component.ts</context>
@@ -1096,7 +1103,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e0b996bf8fdc049279ea410a0d3955f732731e41" datatype="html">
@@ -1128,7 +1135,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">65</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-generate/test-generate.component.ts</context>
@@ -1162,6 +1169,27 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-generate/test-generate.component.ts</context>
           <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
+        <source>Settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="44cb35fc57e3e34d4ee078bccf87292c7d2a98a7" datatype="html">
+        <source>Mark as correct</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5afb86d3a2fb1310f2a99c433065b29dfb5ca37f" datatype="html">
+        <source>Mark as incorrect</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
+          <context context-type="linenumber">90</context>
         </context-group>
       </trans-unit>
       <trans-unit id="24f0e8a639c5f56010899209edf271a084fe3a26" datatype="html">
@@ -1341,32 +1369,32 @@
           <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="d47264bd6e35f871a4be6064ad88b6f796042173" datatype="html">
+        <source>Units time to conduct</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="d19ef274bf7120fc8cf9cce5cb65034537cb87a6" datatype="html">
         <source>Images count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">124</context>
         </context-group>
       </trans-unit>
       <trans-unit id="762d06190d74cc8f74624d97e6d415d0137fbcde" datatype="html">
         <source>Remove from test</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">124</context>
+          <context context-type="linenumber">131</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f3c099188655275d86864f40158bc16720c7c140" datatype="html">
         <source>Generate test unit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">133</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
-        <source>Users</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="linenumber">140</context>
         </context-group>
       </trans-unit>
       <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">

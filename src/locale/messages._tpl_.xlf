@@ -146,6 +146,10 @@
         <source>Tools</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
+        <source>Users</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="d0227a069d21cc5c6951d829cbf135be5b5bc767" datatype="html">
         <source>Log Out</source>
         <target><!-- put translation here --></target>
@@ -330,6 +334,18 @@
         <source>Generate</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
+        <source>Settings</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="44cb35fc57e3e34d4ee078bccf87292c7d2a98a7" datatype="html">
+        <source>Mark as correct</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="5afb86d3a2fb1310f2a99c433065b29dfb5ca37f" datatype="html">
+        <source>Mark as incorrect</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="24f0e8a639c5f56010899209edf271a084fe3a26" datatype="html">
         <source>Syllables</source>
         <target><!-- put translation here --></target>
@@ -406,6 +422,10 @@
         <source>Units count</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="d47264bd6e35f871a4be6064ad88b6f796042173" datatype="html">
+        <source>Units time to conduct</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="d19ef274bf7120fc8cf9cce5cb65034537cb87a6" datatype="html">
         <source>Images count</source>
         <target><!-- put translation here --></target>
@@ -416,10 +436,6 @@
       </trans-unit>
       <trans-unit id="f3c099188655275d86864f40158bc16720c7c140" datatype="html">
         <source>Generate test unit</source>
-        <target><!-- put translation here --></target>
-      </trans-unit>
-      <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
-        <source>Users</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
