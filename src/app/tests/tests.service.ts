@@ -107,7 +107,8 @@ export class Test {
   public name: string;
   public methodology: Methodology;
   public cognitive_skill: CognitiveSkill;
-  public units;
+  public units: Unit[];
+  public time_to_conduct: number;
 
   get methodology_id() {
     return this.methodology.id;
@@ -119,5 +120,8 @@ export class Test {
 
   constructor(data?: Partial<Test>) {
     Object.assign(this, data || {});
+    if (this.units) {
+      this.units = this.units.map((unit_data) => new Unit(unit_data));
+    }
   }
 }

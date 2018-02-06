@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Test, TestsService } from '../tests.service';
 import { PartialCollectionView } from '../../words/words.service';
-import { CognitiveSkill } from '../../cognitive-skills/cognitive-skill.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-test-list',
@@ -14,8 +12,7 @@ export class TestListComponent implements OnInit {
   tests: Test[];
   collectionView: PartialCollectionView;
 
-  constructor(private testsService: TestsService,
-              private router: Router) {
+  constructor(private testsService: TestsService) {
   }
 
   ngOnInit() {
@@ -30,10 +27,6 @@ export class TestListComponent implements OnInit {
           this.collectionView = testsResponse.view;
         }
       );
-  }
-
-  edit(test: Test): void {
-    this.router.navigate(['/tests/view', test.id]);
   }
 
   remove(test: Test): void {

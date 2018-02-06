@@ -6,14 +6,17 @@
     </tr>
     <tr>
       <th i18n>Name</th>
+      <th i18n>Units count</th>
       <th i18n>Actions</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let test of tests">
       <td>{{test.name}}</td>
+      <td>{{test.units?.length}}</td>
       <td>
-        <a i18n-title title="Edit" (click)="edit(test)" class="edit fa fa-edit pointer"></a>
+        <a *ngIf="test.units?.length" i18n-title title="Start" [routerLink]="['/tests/start', test.id]" class="edit fa fa-play pointer"></a>
+        <a i18n-title title="Edit" [routerLink]="['/tests/view', test.id]" class="edit fa fa-edit pointer"></a>
         <a i18n-title title="Remove" (click)="remove(test)" class="remove fa fa-trash"></a>
       </td>
     </tr>

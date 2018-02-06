@@ -1,0 +1,40 @@
+<div class="container" *ngIf="test">
+  <div class="text-center">
+    <h1 i18n>Test: {{test.name}}</h1>
+    <h5 i18n>Methodology: {{test.methodology?.name}}</h5>
+    <h5 i18n>Units count: {{test.units.length}}</h5>
+  </div>
+
+  <div class="row" *ngIf="currentIndex < 0">
+    <a class="col-md-6 offset-3 btn btn-primary" (click)="nextUnit()" i18n>Start</a>
+  </div>
+
+  <div class="row" *ngIf="currentIndex >= 0">
+    <a *ngIf="currentIndex > 0 && currentIndex <= maxIndex" class="col-md-5 btn btn-primary" (click)="prevUnit()" i18n>Previous</a>
+    <div *ngIf="currentIndex === 0" class="col-md-5"></div>
+    <a *ngIf="currentIndex < maxIndex" class="col-md-5 offset-2 btn btn-primary" (click)="nextUnit()" i18n>Next</a>
+    <a *ngIf="currentIndex === maxIndex" class="col-md-5 offset-2 btn btn-primary" (click)="finishTest()"
+       i18n>Finish</a>
+  </div>
+
+  <hr/>
+
+  <ng-container *ngIf="currentUnit">
+    <div class="row text-center">
+      <div class="col"> {{currentUnit.text}}</div>
+    </div>
+    <div class="unit-container">
+      <div class="image-container" *ngFor="let rows of images">
+        <div class="image-item" *ngFor="let unit_image of rows"
+             [ngClass]="{selected: selected === unit_image, 'correct': unit_image.is_correct, 'incorrect': !unit_image.is_correct}">
+          <img [src]="unit_image.image.thumb"
+               (click)="changeSelected(unit_image)">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <div *ngIf="correct" class="text-center row">
+    <div class="col" i18n>You have {{correct}} correct of {{test.units.length}} possible!</div>
+  </div>
+
+</div>

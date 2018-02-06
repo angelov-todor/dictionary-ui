@@ -79,6 +79,7 @@ export class Unit {
   public unit_images: UnitImage[];
   public cognitive_type: CognitiveType;
   public cognitive_subtype: CognitiveType;
+  public time_to_conduct: number;
 
   get cognitive_type_id() {
     return this.cognitive_type && this.cognitive_type.id;

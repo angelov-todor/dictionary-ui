@@ -5,6 +5,7 @@ import { TestListComponent } from './test-list/test-list.component';
 import { UnitRootComponent } from '../units/unit-root/unit-root.component';
 import { TestGenerateComponent } from './test-generate/test-generate.component';
 import { TestViewComponent } from './test-view/test-view.component';
+import { TestStartComponent } from './test-start/test-start.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
       {path: '', redirectTo: 'list', pathMatch: 'full'},
       {path: 'list', component: TestListComponent},
       {path: 'generate', component: TestGenerateComponent},
-      {path: 'view/:id', component: TestViewComponent}
+      {path: 'view/:id', component: TestViewComponent},
+      {path: 'start/:id', component: TestStartComponent}
     ]
   }
 ];

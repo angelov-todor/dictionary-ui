@@ -1,32 +1,34 @@
-<div *ngIf="enrichment" class="app-enrichment-component">
-  <ng-container *ngIf="enrichment.image.id && enrichment.metadata">
-    <img class="mx-auto d-block img-fluid img-thumbnail" [src]="enrichment.image.large"/>
+<div *ngIf="enrichment && enrichment.image.id && enrichment.metadata" class="app-enrichment-component">
 
-    <br/>
-    <form class="d-flex mx-auto form-inline" [formGroup]="metadataForm" (submit)="submit()">
-      <input type="hidden" value="{{enrichment.image.id}}" id="image" formControlName="image"/>
-      <input type="hidden" value="{{enrichment.metadata.id}}" id="metadata" formControlName="metadata"/>
+  <div class="text-center">
+    <img class="current-image" [src]="enrichment.image.large"/>
+  </div>
 
-      <ng-container *ngIf="enrichment.metadata.type == 'bool'">
-        <div class="p-2 mx-auto" i18n>Is this an '{{enrichment.metadata.name}}' ?</div>
-        <div class="p-2">
-          <button class="btn btn-success btn-sm" type="button" i18n (click)="submit('1')">Yes</button>
-          <button class="btn btn-danger  btn-sm" type="button" i18n (click)="submit('0')">No</button>
-        </div>
-      </ng-container>
+  <form class="form" [formGroup]="metadataForm" (submit)="submit()">
+    <input type="hidden" value="{{enrichment.image.id}}" id="image" formControlName="image"/>
+    <input type="hidden" value="{{enrichment.metadata.id}}" id="metadata" formControlName="metadata"/>
 
-      <ng-container *ngIf="enrichment.metadata.type == 'text'">
-        <div class="p-2 mx-auto" i18n>What '{{enrichment.metadata.name}}' is on the image?</div>
-
-        <div class="p-2 mx-auto">
-          <input type="text" class="form-control form-control-sm" id="value" formControlName="value">
-          <button class="btn btn-success btn-sm" type="button" i18n (click)="submit()">OK</button>
-        </div>
-      </ng-container>
-
-      <div class="p-2">
-        <button class="btn btn-primary btn-sm" i18n type="button" (click)="next()">Skip</button>
+    <ng-container *ngIf="enrichment.metadata.type == 'bool'">
+      <div class="row my-2 mx-1" i18n>Is this an '{{enrichment.metadata.name}}' ?</div>
+      <div class="row my-2 mx-1">
+        <button class="btn btn-success btn-sm col-md-2" type="button" i18n (click)="submit('1')">Yes</button>
+        <button class="btn btn-danger  btn-sm col-md-2 offset-1" type="button" i18n (click)="submit('0')">No</button>
       </div>
-    </form>
-  </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="enrichment.metadata.type == 'text'">
+      <div class="row my-2 mx-1" i18n>What '{{enrichment.metadata.name}}' is on the image?</div>
+
+      <div class="row my-2 mx-1">
+        <input type="text" class="col-md-8 form-control form-control-sm" id="value" formControlName="value">
+        <button class="col-md-2 offset-2 btn btn-success btn-sm" title="Save" i18n-title type="button"
+                (click)="submit()" i18n>Save</button>
+      </div>
+    </ng-container>
+  </form>
+
+  <div class="row my-2 mx-1">
+    <button class="col-md-1 offset-11 btn btn-primary btn-sm" type="button" title="Next" i18n-title (click)="next()"><i
+      class="fa fa-fast-forward"></i></button>
+  </div>
 </div>

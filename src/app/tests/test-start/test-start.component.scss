@@ -1,0 +1,36 @@
+.selected.image-item {
+  border: 2px solid #3c0f0b;
+}
+
+.image-item {
+  width: 120px;
+  height: 120px;
+  font-size: 30px;
+  line-height: 120px;
+  text-align: center;
+  margin: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+.image-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: center;
+}
+
+.unit-container {
+  justify-content: center;
+}
+
+/*
+.correct {
+  border: 1px solid greenyellow;
+}
+
+.incorrect {
+  border: 1px solid indianred;
+}
+*/
