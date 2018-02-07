@@ -33,7 +33,7 @@
       </div>
     </div>
   </ng-container>
-  <div *ngIf="correct" class="text-center row">
+  <div *ngIf="correct >=0" class="text-center row">
     <div class="col" i18n>You have {{correct}} correct of {{test.units.length}} possible!</div>
   </div>
 

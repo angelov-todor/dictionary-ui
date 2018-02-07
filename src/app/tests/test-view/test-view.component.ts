@@ -12,9 +12,19 @@ import { Unit } from '../../units/units.service';
   styleUrls: ['./test-view.component.scss']
 })
 export class TestViewComponent implements OnInit {
-  testForm: FormGroup;
-  cognitiveSkills: CognitiveSkill[];
+  testForm: FormGroup = this.fb.group({
+    name: [null, [Validators.required]],
+    cognitive_skill_id: [null, [Validators.required]],
+    methodology_id: [null],
+    min_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
+    max_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
+    points_required: [null, [Validators.required]],
+    grading_scale: [null, Validators.required],
+    time_to_conduct: [null, Validators.required],
+    notes: [null, Validators.required]
+  });
 
+  cognitiveSkills: CognitiveSkill[];
   test: Test;
 
   get methodologies() {
@@ -24,23 +34,12 @@ export class TestViewComponent implements OnInit {
   _methodologies: Methodology[];
   newMethodology: Methodology = null;
 
-  constructor(fb: FormBuilder,
+  constructor(private fb: FormBuilder,
               private cognitiveSkillService: CognitiveSkillService,
               private methodologiesService: MethodologiesService,
               private testsService: TestsService,
               private router: Router,
               private route: ActivatedRoute) {
-    this.testForm = fb.group({
-      name: [null, [Validators.required]],
-      cognitive_skill_id: [null, [Validators.required]],
-      methodology_id: [null],
-      min_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
-      max_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
-      points_required: [null, [Validators.required]],
-      grading_scale: [null, Validators.required],
-      time_to_conduct: [null, Validators.required],
-      notes: [null, Validators.required]
-    });
   }
 
   ngOnInit() {
@@ -93,7 +92,7 @@ export class TestViewComponent implements OnInit {
 
   get units_time_to_conduct() {
     let sum = 0;
-    if (this.test) {
+    if (this.test && this.test.units) {
       this.test.units.forEach((unit) => {
         if (unit.time_to_conduct) {
           sum += unit.time_to_conduct
@@ -105,7 +104,9 @@ export class TestViewComponent implements OnInit {
 
   removeFromTest(unit: Unit) {
     this.testsService.removeUnit(this.test, unit)
-      .subscribe(test => this.test = test);
+      .subscribe(() => {
+        this.test.units.splice(this.test.units.indexOf(unit), 1);
+      });
   }
 
 }

@@ -17,7 +17,7 @@ export class TestStartComponent implements OnInit {
   maxIndex: number;
   selected: UnitImage;
   answers = [];
-  correct: number;
+  correct = -1;
 
   constructor(private testsService: TestsService,
               private route: ActivatedRoute) {

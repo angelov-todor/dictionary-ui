@@ -18,7 +18,10 @@ export class TestsService {
   create(cognitiveType: any): Observable<Test> {
     return this.http
       .post(this.serviceUrl, cognitiveType)
-      .map(res => res.json() as Test);
+      .map(res => res.json())
+      .map(testData => {
+        return new Test(testData);
+      });
   }
 
 
@@ -61,14 +64,18 @@ export class TestsService {
     const url = `${this.serviceUrl}/${test.id}/units`;
     return this.http
       .post(url, {unit_id: unit.id})
-      .map(res => res.json() as Test);
+      .map(res => res.json())
+      .map(testData => {
+        return new Test(testData);
+      });
   }
 
-  removeUnit(test: Test, unit: Unit): Observable<Test> {
+  removeUnit(test: Test, unit: Unit): Observable<boolean> {
     const url = `${this.serviceUrl}/${test.id}/units/${unit.id}`;
     return this.http
       .delete(url)
-      .map(res => res.json() as Test);
+      .map(res => res.json())
+      .map(() => true);
   }
 }
 
@@ -82,8 +89,6 @@ export class TestsListResponse {
       this.tests = data._embedded.tests.map(
         (test) => new Test(test)
       );
-    } else {
-      this.tests = [];
     }
 
     this.view = new PartialCollectionView({
@@ -107,8 +112,22 @@ export class Test {
   public name: string;
   public methodology: Methodology;
   public cognitive_skill: CognitiveSkill;
-  public units: Unit[];
+  public notes: string;
   public time_to_conduct: number;
+  public grading_scale: string;
+  public max_age: number;
+  public min_age: number;
+  protected _units: Unit[];
+  get units() {
+    return this._units;
+  }
+
+  set units(units: Unit[]) {
+    if (units && !(units[0] instanceof Unit)) {
+      units = units.map((unit_data) => new Unit(unit_data));
+    }
+    this._units = units;
+  }
 
   get methodology_id() {
     return this.methodology.id;
@@ -120,8 +139,5 @@ export class Test {
 
   constructor(data?: Partial<Test>) {
     Object.assign(this, data || {});
-    if (this.units) {
-      this.units = this.units.map((unit_data) => new Unit(unit_data));
-    }
   }
 }
