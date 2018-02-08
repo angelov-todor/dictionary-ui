@@ -6,15 +6,23 @@
     </tr>
     <tr>
       <th i18n>Email</th>
-      <th i18n>Roles</th>
+      <th i18n>Role</th>
       <th i18n>Actions</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let user of users">
       <td>{{user.email}}</td>
-      <td>{{user.roles?.join('')}}</td>
       <td>
+        <ng-container [ngSwitch]="user.role">
+          <ng-container *ngSwitchCase="'ROLE_USER'" i18n>User</ng-container>
+          <ng-container *ngSwitchCase="'ROLE_CREATOR'" i18n>Creator</ng-container>
+          <ng-container *ngSwitchCase="'ROLE_ADMIN'" i18n>Administrator</ng-container>
+          <ng-container *ngSwitchDefault i18n>undefined</ng-container>
+        </ng-container>
+      </td>
+      <td>
+        <a i18n-title title="Edit" (click)="edit(user)" class="edit fa fa-edit pointer"></a>
       </td>
     </tr>
     <tr *ngIf="!users?.length">
@@ -41,3 +49,4 @@
     </ul>
   </nav>
 </div>
+<app-user-edit [user]="selectedUser" (onCompleted)="onCompleted()"></app-user-edit>

@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
 import { UsersService } from './users.service';
 import { UsersRoutingModule } from './users-routing.module';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { UsersRoutingModule } from './users-routing.module';
     ModalModule
   ],
   declarations: [
-    UserListComponent
+    UserListComponent,
+    UserEditComponent
   ],
   providers: [UsersService]
 })

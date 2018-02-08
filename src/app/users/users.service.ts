@@ -3,16 +3,17 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { PartialCollectionView } from '../words/words.service';
+import { Metadata } from '../metadata/metadata.service';
 
 @Injectable()
 export class UsersService {
-  private usersUrl = environment.baseAPIEndpoint + '/users';
+  private serviceUrl = environment.baseAPIEndpoint + '/users';
 
   constructor(private http: AuthHttp) {
   }
 
   getUsersList(page?: string): Observable<UsersListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.usersUrl;
+    const url = page ? environment.baseAPIEndpoint + page : this.serviceUrl;
 
     return this.http.get(url)
       .map(res => res.json())
@@ -20,6 +21,14 @@ export class UsersService {
         usersResponse = new UsersListResponse(usersResponse);
         return usersResponse;
       });
+  }
+
+  update(user: User): Observable<boolean> {
+    const url = `${this.serviceUrl}/${user.id}`;
+    return this.http
+      .put(url, user)
+      .map(res => res.json())
+      .map(() => true);
   }
 }
 
@@ -52,7 +61,13 @@ export class UsersListResponse {
 export class User {
   public id: number;
   public email: string;
-  public roles: string;
+  public role: string;
+
+  set roles(roles) {
+    if (roles) {
+      this.role = roles[0];
+    }
+  }
 
   constructor(data?: Partial<User>) {
     Object.assign(this, data || {});

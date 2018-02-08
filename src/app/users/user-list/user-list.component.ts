@@ -11,6 +11,7 @@ export class UserListComponent implements OnInit {
 
   users: User[];
   collectionView: PartialCollectionView;
+  selectedUser: User = null;
 
   constructor(private usersService: UsersService) {
 
@@ -28,6 +29,15 @@ export class UserListComponent implements OnInit {
           this.collectionView = usersListResponse.view;
         }
       );
+  }
+
+  onCompleted() {
+    this.selectedUser = null;
+    this.getUsers();
+  }
+
+  edit(user: User): void {
+    this.selectedUser = user;
   }
 
   setPage(page: string) {

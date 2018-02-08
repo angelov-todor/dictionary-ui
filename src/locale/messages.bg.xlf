@@ -454,9 +454,25 @@
         <source>Email</source>
         <target>Поща</target>
       </trans-unit>
-      <trans-unit id="9610487cbeb5796d34d8601b5ac0c0a65f9e1d19" datatype="html">
-        <source>Roles</source>
-        <target>Роли</target>
+      <trans-unit id="c36a66f2107e8da5371ebc9d15c2008dff567f46" datatype="html">
+        <source>Role</source>
+        <target>Роля</target>
+      </trans-unit>
+      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
+        <source>User</source>
+        <target>Потребител</target>
+      </trans-unit>
+      <trans-unit id="a20424156b8816671f61879f0574a4f27d7b16b9" datatype="html">
+        <source>Creator</source>
+        <target>Автор</target>
+      </trans-unit>
+      <trans-unit id="ca2283fc765b9f44b69f0175d685dc2443da6011" datatype="html">
+        <source>Administrator</source>
+        <target>Администратор</target>
+      </trans-unit>
+      <trans-unit id="b73464cedbe87ffb5c1aba746b7a61f1180d7cf1" datatype="html">
+        <source>undefined</source>
+        <target>неопределен</target>
       </trans-unit>
       <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">
         <source>System for automated generation of cognitive test units</source>
