@@ -70,12 +70,16 @@ export class UnitsService {
   }
 }
 
+export type UnitType = 'select' | 'multi_select' | 'essay' | 'short_answer' | 'boolean' ;
+
 export class Unit {
+  static TYPE_SELECT = 'select';
   public id: string;
   public text: string;
   public name: string;
   public rows: number;
   public cols: number;
+  public type: UnitType;
   public unit_images: UnitImage[];
   public cognitive_type: CognitiveType;
   public cognitive_subtype: CognitiveType;

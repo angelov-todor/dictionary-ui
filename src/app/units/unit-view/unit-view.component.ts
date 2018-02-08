@@ -115,7 +115,28 @@ export class UnitViewComponent implements OnInit, OnDestroy {
   }
 
   changeCorrect(unitImage: UnitImage, is_correct: boolean) {
-    this.unitsService.changeCorrect(unitImage, is_correct)
-      .subscribe(() => this.selected.is_correct = is_correct);
+    if (this.unit.type === Unit.TYPE_SELECT) {
+      if (is_correct === false) {
+        let hasCorrect = false;
+        this.unit.unit_images.forEach((unitUnitImage) => {
+          if (unitUnitImage.is_correct && unitImage.id !== unitUnitImage.id) {
+            hasCorrect = true;
+          }
+        });
+        if (!hasCorrect) {
+          return;
+        }
+      }
+
+      // change all others to incorrect
+      this.unit.unit_images.forEach((unitUnitImage) => {
+        if (unitUnitImage.is_correct) {
+          this.unitsService.changeCorrect(unitUnitImage, false)
+            .subscribe(() => unitUnitImage.is_correct = false);
+        }
+      });
+      this.unitsService.changeCorrect(unitImage, is_correct)
+        .subscribe(() => this.selected.is_correct = is_correct);
+    }
   }
 }

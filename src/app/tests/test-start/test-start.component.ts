@@ -103,5 +103,6 @@ export class TestStartComponent implements OnInit {
       }
     }
     this.correct = correct;
+    console.log(this.answers);
   }
 }
