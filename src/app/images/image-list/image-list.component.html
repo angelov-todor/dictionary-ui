@@ -18,7 +18,7 @@
   <div class="col-md-12" i18n>No images found</div>
 </div>
 
-<nav *ngIf="collectionView">
+<nav *ngIf="collectionView && collectionView.pages">
   <ul class="pagination justify-content-center">
     <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView.current == collectionView.first}"
         class="page-item">

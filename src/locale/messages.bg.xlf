@@ -298,6 +298,26 @@
         <source>Text</source>
         <target>Текст</target>
       </trans-unit>
+      <trans-unit id="9ca82952a6bc860b5391d5975322d8af8ceddfa4" datatype="html">
+        <source>Select</source>
+        <target>Избор</target>
+      </trans-unit>
+      <trans-unit id="b59d746870b55982982b824bc577b17e2812149b" datatype="html">
+        <source>Multi select</source>
+        <target>Множ. избор</target>
+      </trans-unit>
+      <trans-unit id="e60350ece81e5e478a18558ce97b120a79a08f79" datatype="html">
+        <source>Boolean</source>
+        <target>Булев</target>
+      </trans-unit>
+      <trans-unit id="cd0ccbcf1a0cf157a88ce996ce88327751f9df7a" datatype="html">
+        <source>Essay</source>
+        <target>Есе</target>
+      </trans-unit>
+      <trans-unit id="2173a57b8c4ff77c22a9ea6133ae8f5bb680338e" datatype="html">
+        <source>Short answer</source>
+        <target>Кратък отговор</target>
+      </trans-unit>
       <trans-unit id="e0b996bf8fdc049279ea410a0d3955f732731e41" datatype="html">
         <source>Grid</source>
         <target>Таблица</target>
@@ -313,10 +333,6 @@
       <trans-unit id="8c59a49024d1317c19e1f7bc57561e4e5f776bea" datatype="html">
         <source>Time to conduct</source>
         <target>Време за провеждане</target>
-      </trans-unit>
-      <trans-unit id="3ce7a71ef2484b0fd193518178d6dacb0ff6054f" datatype="html">
-        <source>Number incorrect answers</source>
-        <target>Брой неверни отговори</target>
       </trans-unit>
       <trans-unit id="3afbf0e268816db2bcc70638d61281e6c8b39a5d" datatype="html">
         <source>Criteria</source>
@@ -338,13 +354,13 @@
         <source>Mark as incorrect</source>
         <target>Маркирай като невярно</target>
       </trans-unit>
+      <trans-unit id="4d200b711dfd151dbe647dee5f41db1699661411" datatype="html">
+        <source>Word processing tools</source>
+        <target>Реализирани алгоритми</target>
+      </trans-unit>
       <trans-unit id="24f0e8a639c5f56010899209edf271a084fe3a26" datatype="html">
         <source>Syllables</source>
         <target>Срички</target>
-      </trans-unit>
-      <trans-unit id="71c77bb8cecdf11ec3eead24dd1ba506573fa9cd" datatype="html">
-        <source>Submit</source>
-        <target>Генерирай</target>
       </trans-unit>
       <trans-unit id="dab04351553f0fd240c448ce3f45c530c40b4f1e" datatype="html">
         <source>Transcription</source>
@@ -361,6 +377,10 @@
       <trans-unit id="212c51f2a168657821e5979aefcab7b3121061d5" datatype="html">
         <source>Rhymes</source>
         <target>Рими</target>
+      </trans-unit>
+      <trans-unit id="ad817cf4269e54829d82b4224d36766ad5f0b3e6" datatype="html">
+        <source>Check</source>
+        <target>Провери</target>
       </trans-unit>
       <trans-unit id="16435efd39cf0d984d88775c41c1d008f66032cb" datatype="html">
         <source>Units count</source>

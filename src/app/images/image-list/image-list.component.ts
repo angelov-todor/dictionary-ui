@@ -29,10 +29,7 @@ export class ImageListComponent implements OnInit, OnDestroy {
       .switchMap(term => term
         ? this.imageService.filterByTerm(term)
         : this.imageService.getImagesList()
-      ).catch((error, caught) => {
-        return caught;
-      })
-      .subscribe(
+      ).subscribe(
         (imagesResponse: ImageListResponse) => {
           this.images = imagesResponse.images;
           this.collectionView = imagesResponse.view;

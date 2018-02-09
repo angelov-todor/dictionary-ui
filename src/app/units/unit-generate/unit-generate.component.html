@@ -20,6 +20,24 @@
   </div>
 
   <div class="form-group row no-gutters">
+    <label class="col-md-2 control-label" for="type" i18n>Type</label>
+    <div class="col-md-6">
+      <select id="type"
+              class="form-control mb-2 mr-sm-2 mb-sm-0"
+              formControlName="type">
+        <option value="select" i18n>Select</option>
+        <option value="multi_select" i18n disabled>Multi select</option>
+        <option value="boolean" i18n disabled>Boolean</option>
+        <option value="essay" i18n disabled>Essay</option>
+        <option value="short_answer" i18n disabled>Short answer</option>
+      </select>
+    </div>
+    <div class="form-control-feedback col-md-2"
+         *ngIf="generateForm.get('type').touched && generateForm.get('type').hasError('required')"
+         i18n>This field is required</div>
+  </div>
+
+  <div class="form-group row no-gutters">
     <label class="col-md-2 control-label" for="cognitive_type" i18n>Cognitive type</label>
     <div class="col-md-6">
       <select id="cognitive_type"
@@ -56,13 +74,6 @@
     <div class="col-md-6">
       <input type="number" min="1" max="200" name="time_to_conduct" class="form-control" id="time_to_conduct"
              formControlName="time_to_conduct">
-    </div>
-  </div>
-
-  <div class="form-group row no-gutters">
-    <label class="col-md-2 control-label" for="incorrect" i18n>Number incorrect answers</label>
-    <div class="col-md-6">
-      <input type="number" name="incorrect" class="form-control" id="incorrect" formControlName="incorrect">
     </div>
   </div>
 
