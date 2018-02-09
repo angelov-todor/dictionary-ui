@@ -77,6 +77,21 @@ export class TestsService {
       .map(res => res.json())
       .map(() => true);
   }
+
+  saveAnswers(test: Test, answers: any): Observable<boolean> {
+    const url = `${this.serviceUrl}/${test.id}/answers`;
+    return this.http
+      .post(url, {answers: answers})
+      .map(res => res.json())
+      .map(() => true);
+  }
+
+  getTestResults(id: string): Observable<any> {
+    const url = `${this.serviceUrl}/${id}/answers`;
+    return this.http
+      .get(url)
+      .map(res => res.json());
+  }
 }
 
 export class TestsListResponse {
@@ -138,6 +153,17 @@ export class Test {
   }
 
   constructor(data?: Partial<Test>) {
+    Object.assign(this, data || {});
+  }
+}
+
+export class Answer {
+  public unit_id: string;
+  public unit_image_id: string;
+  public is_correct: boolean;
+  public type: string;
+
+  constructor(data?: Partial<Answer>) {
     Object.assign(this, data || {});
   }
 }

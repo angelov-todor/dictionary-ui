@@ -5,3 +5,16 @@
 .selected-image {
   margin-left: 29%;
 }
+
+.content {
+  column-count: 5;
+  -moz-column-count: 5;
+  -webkit-column-count: 5;
+  column-gap: 15px;
+  -moz-column-gap: 15px;
+  -webkit-column-gap: 15px;
+}
+
+.content-image {
+  height: 150px;
+}

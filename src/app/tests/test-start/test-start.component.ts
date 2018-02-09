@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Test, TestsService } from '../tests.service';
+import { Answer, Test, TestsService } from '../tests.service';
 import { ActivatedRoute } from '@angular/router';
 import { Unit, UnitImage } from '../../units/units.service';
 
@@ -16,7 +16,7 @@ export class TestStartComponent implements OnInit {
   currentIndex = -1;
   maxIndex: number;
   selected: UnitImage;
-  answers = [];
+  answers: Answer[] = [];
   correct = -1;
 
   constructor(private testsService: TestsService,
@@ -46,10 +46,19 @@ export class TestStartComponent implements OnInit {
       // no answer selected
       return;
     }
-    this.answers[this.currentUnit.id] = {
+    const index = this.answers.findIndex(x => x.unit_id === this.currentUnit.id);
+    if (index >= 0) {
+      this.answers[index].is_correct = this.selected.is_correct;
+      this.answers[index].unit_image_id = this.selected.id;
+      return;
+    }
+
+    this.answers.push(new Answer({
+      unit_id: this.currentUnit.id,
       is_correct: this.selected.is_correct,
-      id: this.selected.id
-    };
+      unit_image_id: this.selected.id,
+      type: this.currentUnit.type
+    }));
   }
 
   prevUnit() {
@@ -70,8 +79,11 @@ export class TestStartComponent implements OnInit {
         if (unitImage.position.row === i) {
           images[i][unitImage.position.column] = unitImage;
         }
-        if (this.answers[unit.id]) {
-          if (this.answers[unit.id].id === unitImage.id) {
+
+        const index = this.answers.findIndex(x => x.unit_id === unit.id);
+        // check if answered before
+        if (index >= 0) {
+          if (this.answers[index].unit_image_id === unitImage.id) {
             selected = unitImage;
           }
         }
@@ -90,19 +102,23 @@ export class TestStartComponent implements OnInit {
   finishTest() {
     this.saveAnswer();
     this.currentIndex++;
+
     this.currentUnit = null;
     this.selected = null;
     this.images = null;
 
     let correct = 0;
-    for (const answer in this.answers) {
-      if (this.answers.hasOwnProperty(answer)) {
-        if (this.answers[answer].is_correct) {
-          correct++;
-        }
+
+    this.answers.forEach(answer => {
+      if (answer.is_correct) {
+        correct++;
       }
-    }
+    });
+
     this.correct = correct;
-    console.log(this.answers);
+    if (this.answers.length) {
+      this.testsService.saveAnswers(this.test, this.answers)
+        .subscribe(() => true);
+    }
   }
 }

@@ -57,7 +57,7 @@ export class ImageSearchComponent implements OnInit, OnDestroy {
     this.searchTerms.next(term);
   }
 
-  save(): void {
+  upload(): void {
     this.imagesService.uploadFoundImage(this.selectedImage)
       .subscribe((image) => {
         this.router.navigate(['/images/view', image.id]);

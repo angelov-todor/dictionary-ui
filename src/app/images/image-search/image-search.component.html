@@ -5,18 +5,16 @@
       <input type="text" class="form-control" #searchBox id="search-box" (keyup)="search(searchBox.value)"/>
     </div>
     <div class="col-md-4">
-      <button *ngIf="selectedImage" type="button" class="btn btn-primary" (click)="save()">
-        <i class="fa fa-american-sign-language-interpreting" aria-hidden="true"></i>
-        <ng-container i18n>Save</ng-container>
+      <button *ngIf="selectedImage" type="button" class="btn btn-primary" (click)="upload()">
+        <i class="fa fa-upload" aria-hidden="true"></i> <span i18n>Upload</span>
       </button>
     </div>
   </div>
+  <hr/>
 
-  <hr class="clearfix"/>
-
-  <div class="row align-items-center">
-    <div *ngFor="let image of images;let i = index;" class="search-result mx-auto col-xs-4 m-2">
-      <div class="img-thumbnail">
+  <div class="content">
+    <div *ngFor="let image of images" class="content-image">
+      <div class="img-thumbnail text-center">
         <img class="img-fluid"
              [src]="image.image.thumbnailLink"
              (click)="select(image)"
