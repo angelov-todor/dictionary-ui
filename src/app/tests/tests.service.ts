@@ -6,6 +6,7 @@ import { PartialCollectionView } from '../words/words.service';
 import { Methodology } from './methodologies.service';
 import { CognitiveSkill } from '../cognitive-skills/cognitive-skill.service';
 import { Unit } from '../units/units.service';
+import { User } from '../users/users.service';
 
 @Injectable()
 export class TestsService {
@@ -48,7 +49,7 @@ export class TestsService {
   update(test: Test, data: any): Observable<boolean> {
     return this.http
       .put(this.serviceUrl + `/${test.id}`, data)
-      .map(res => true);
+      .map(() => true);
   }
 
   getTest(id: string): Observable<Test> {
@@ -86,11 +87,13 @@ export class TestsService {
       .map(() => true);
   }
 
-  getTestResults(id: string): Observable<any> {
-    const url = `${this.serviceUrl}/${id}/answers`;
+  getTestResults(id: string, page?: string, params?: { user, unit }): Observable<ResultListResponse> {
+    const url = page ? environment.baseAPIEndpoint + page : `${this.serviceUrl}/${id}/answers`;
+
     return this.http
-      .get(url)
-      .map(res => res.json());
+      .get(url, {params: params})
+      .map(res => res.json())
+      .map(result => new ResultListResponse(result));
   }
 }
 
@@ -165,5 +168,44 @@ export class Answer {
 
   constructor(data?: Partial<Answer>) {
     Object.assign(this, data || {});
+  }
+}
+
+export class Result {
+  public user: User;
+  public answer: Answer;
+  public unit: Unit;
+  public occurred_at: Date;
+
+  constructor(data?: Partial<Result>) {
+    Object.assign(this, data || {});
+  }
+}
+
+export class ResultListResponse {
+  public results: Result[];
+  public view: PartialCollectionView;
+  public totalItems: number;
+
+  constructor(data?: Partial<any>) {
+    if (data._embedded.answers) {
+      this.results = data._embedded.answers.map(
+        (result) => new Result(result)
+      );
+    }
+
+    this.view = new PartialCollectionView({
+      count: data.count,
+      limit: data.limit,
+      page: data.page,
+      pages: data.pages,
+      total: data.total,
+      first: data._links.first.href,
+      last: data._links.last.href,
+      next: data._links.next ? data._links.next.href : null,
+      previous: data._links.previous ? data._links.previous.href : null,
+      current: data._links.self.href
+    });
+    this.totalItems = data.total;
   }
 }

@@ -390,6 +390,10 @@
         <source>Start</source>
         <target>Започни</target>
       </trans-unit>
+      <trans-unit id="80ed5b776a26a78099e230e0e89d96c33ba44e24" datatype="html">
+        <source>Results</source>
+        <target>Резултати</target>
+      </trans-unit>
       <trans-unit id="b9e565aa557114bad6792d12ec7d1e231f289474" datatype="html">
         <source>Add new methodology</source>
         <target>Добавяне на нова методика</target>
@@ -470,6 +474,30 @@
         <source>You have <x id="INTERPOLATION" equiv-text="{{correct}}"/> correct of <x id="INTERPOLATION_1" equiv-text="{{test.units.length}}"/> possible!</source>
         <target>Имате <x id="INTERPOLATION" equiv-text="{{correct}}"/> верни от <x id="INTERPOLATION_1" equiv-text="{{test.units.length}}"/> възможни!</target>
       </trans-unit>
+      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
+        <source>User</source>
+        <target>Потребител</target>
+      </trans-unit>
+      <trans-unit id="409298ae1ed9a7fcd9c3e773e2cac56206faf2ff" datatype="html">
+        <source>Unit name</source>
+        <target>Име единица</target>
+      </trans-unit>
+      <trans-unit id="bdbcfd1f7592eb5b8823a0c63d66d87492261c1c" datatype="html">
+        <source>Unit text</source>
+        <target>Условие</target>
+      </trans-unit>
+      <trans-unit id="bee8a3f051307ad624cd393ca9b09f83faa3f108" datatype="html">
+        <source>Is correct</source>
+        <target>Вярно/Невярно</target>
+      </trans-unit>
+      <trans-unit id="2f933b826a570836cab04f683970a2d22068458c" datatype="html">
+        <source>Date</source>
+        <target>Дата</target>
+      </trans-unit>
+      <trans-unit id="f5e8239c4b997b54a03d60673c4420f602c0855e" datatype="html">
+        <source>unit</source>
+        <target>единица</target>
+      </trans-unit>
       <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
         <source>Email</source>
         <target>Поща</target>
@@ -477,10 +505,6 @@
       <trans-unit id="c36a66f2107e8da5371ebc9d15c2008dff567f46" datatype="html">
         <source>Role</source>
         <target>Роля</target>
-      </trans-unit>
-      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
-        <source>User</source>
-        <target>Потребител</target>
       </trans-unit>
       <trans-unit id="a20424156b8816671f61879f0574a4f27d7b16b9" datatype="html">
         <source>Creator</source>

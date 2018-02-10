@@ -41,10 +41,6 @@
           <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-        <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-view/unit-view.component.ts</context>
           <context context-type="linenumber">83</context>
         </context-group>
@@ -89,11 +85,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-list/test-list.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-start/test-start.component.ts</context>
           <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">62</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
@@ -157,7 +157,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-list/test-list.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">56</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
@@ -196,11 +200,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-list/test-list.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-start/test-start.component.ts</context>
           <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">59</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
@@ -239,7 +247,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-list/test-list.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">66</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
@@ -408,7 +420,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-list/test-list.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b12fe30fbba99d3920bd9e7b7c19284a1d1da5e2" datatype="html">
@@ -446,7 +458,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-list/test-list.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
@@ -507,6 +523,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
           <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f7d23d230ec3d16d53090a647009463879b507a1" datatype="html">
@@ -781,6 +801,10 @@
           <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
           <context context-type="linenumber">16</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
         <source>Edit</source>
@@ -879,7 +903,7 @@
         <source>Selected</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5e6548eb9cbb0467c307b4079bc989cd21f44355" datatype="html">
@@ -1269,6 +1293,17 @@
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="80ed5b776a26a78099e230e0e89d96c33ba44e24" datatype="html">
+        <source>Results</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-list/test-list.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="b9e565aa557114bad6792d12ec7d1e231f289474" datatype="html">
         <source>Add new methodology</source>
         <context-group purpose="location">
@@ -1366,6 +1401,10 @@
           <context context-type="sourcefile">app/tests/test-start/test-start.component.ts</context>
           <context context-type="linenumber">3</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="19cecd49046d686211736257fe7f109ae9c4f46a" datatype="html">
         <source>from</source>
@@ -1415,11 +1454,19 @@
           <context context-type="sourcefile">app/tests/test-start/test-start.component.ts</context>
           <context context-type="linenumber">4</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="05de70fa44f8442268f957991ab15f108a29c34d" datatype="html">
         <source>Units count: <x id="INTERPOLATION" equiv-text="{{test.units.length}}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-start/test-start.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -1435,6 +1482,56 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-start/test-start.component.ts</context>
           <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
+        <source>User</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/users/user-edit/user-edit.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="409298ae1ed9a7fcd9c3e773e2cac56206faf2ff" datatype="html">
+        <source>Unit name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bdbcfd1f7592eb5b8823a0c63d66d87492261c1c" datatype="html">
+        <source>Unit text</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bee8a3f051307ad624cd393ca9b09f83faa3f108" datatype="html">
+        <source>Is correct</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f933b826a570836cab04f683970a2d22068458c" datatype="html">
+        <source>Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f5e8239c4b997b54a03d60673c4420f602c0855e" datatype="html">
+        <source>unit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
@@ -1461,17 +1558,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/users/user-edit/user-edit.component.ts</context>
           <context context-type="linenumber">36</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
-        <source>User</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/users/user-edit/user-edit.component.ts</context>
-          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a20424156b8816671f61879f0574a4f27d7b16b9" datatype="html">

@@ -4,4 +4,68 @@
     <h5 i18n>Methodology: {{test.methodology?.name}}</h5>
     <h5 i18n>Units count: {{test.units.length}}</h5>
   </div>
+  <div class="text-center">
+    <h1 i18n>Results</h1>
+  </div>
+  <form class="mx-auto" [formGroup]="filterForm" (submit)="onSubmit()">
+    <table class="table">
+      <thead>
+      <tr>
+        <th i18n>User</th>
+        <th i18n>Unit name</th>
+        <th i18n>Unit text</th>
+        <th i18n>Is correct</th>
+        <th i18n>Date</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="col">
+            <input class="form-control form-control-sm" id="user-filter"
+                   formControlName="user" type="text" placeholder="name" i18n-placeholder>
+          </div>
+        </td>
+        <td>
+          <div class="col">
+            <input class="form-control form-control-sm" id="unit-filter"
+                   formControlName="unit" type="text" placeholder="unit" i18n-placeholder>
+          </div>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      </thead>
+      <tr *ngFor="let result of results">
+        <td>{{result.user.email}}</td>
+        <td>{{result.unit.name}}</td>
+        <td>{{result.unit.text}}</td>
+        <td class="text-center"><i class="fa"
+                                   [ngClass]="result.answer.is_correct? 'fa-check-square success': 'fa-minus-square danger'"></i>
+        </td>
+        <td>{{result.occurred_at| date:'shortDate'}}</td>
+      </tr>
+      <tr *ngIf="!results?.length">
+        <td colspan="5" class="text-center" i18n>No results found</td>
+      </tr>
+    </table>
+  </form>
+  <nav *ngIf="collectionView && collectionView.pages">
+    <ul class="pagination justify-content-center">
+      <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView.current == collectionView.first}"
+          class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.first)" i18n>First</a>
+      </li>
+      <li *ngIf="collectionView.previous" class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.previous)" i18n>Previous</a>
+      </li>
+      <li *ngIf="collectionView.next" class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.next)" i18n>Next</a>
+      </li>
+      <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView.current == collectionView.last}"
+          class="page-item">
+        <a class="page-link pointer" (click)="setPage(collectionView.last)" i18n>Last</a>
+      </li>
+    </ul>
+  </nav>
 </div>
+
