@@ -899,13 +899,6 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="f79611b9cc78f612ae8cc2cce08ff9f14581aeb3" datatype="html">
-        <source>Selected</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
-          <context context-type="linenumber">23</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="5e6548eb9cbb0467c307b4079bc989cd21f44355" datatype="html">
         <source>This field is required</source>
         <context-group purpose="location">

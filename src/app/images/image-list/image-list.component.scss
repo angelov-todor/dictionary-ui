@@ -7,9 +7,9 @@
   align-content: space-between;
   justify-content: space-between;
 }
-.item {
-  display: contents;
-}
+//.item {
+//  display: contents;
+//}
 .item > div {
   width: 120px;
   height: 120px;
@@ -21,7 +21,7 @@
   border: 1px solid #ddd;
   border-radius: 0.25rem;
 }
-.item:nth-child(3n)::after {
-  content: '';
-  width: 100%;
-}
+//.item:nth-child(5n)::after {
+//  content: '';
+//  width: 100%;
+//}

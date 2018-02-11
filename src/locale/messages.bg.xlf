@@ -238,10 +238,6 @@
         <source>Search image</source>
         <target>Търси изображение</target>
       </trans-unit>
-      <trans-unit id="f79611b9cc78f612ae8cc2cce08ff9f14581aeb3" datatype="html">
-        <source>Selected</source>
-        <target>Избрано</target>
-      </trans-unit>
       <trans-unit id="5e6548eb9cbb0467c307b4079bc989cd21f44355" datatype="html">
         <source>This field is required</source>
         <target>Полето е задължително</target>

@@ -1,26 +1,26 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <label for="search-box" class="col-2 col-form-label" i18n>Search image</label>
-    <div class="col-md-4">
+    <label for="search-box" class="col-sm-2 col-form-label" i18n>Search image</label>
+    <div class="col-sm-4">
       <input type="text" class="form-control" #searchBox id="search-box" (keyup)="search(searchBox.value)"/>
     </div>
-    <div class="col-md-4">
+    <div class="col-sm-4">
       <button *ngIf="selectedImage" type="button" class="btn btn-primary" (click)="upload()">
         <i class="fa fa-upload" aria-hidden="true"></i> <span i18n>Upload</span>
       </button>
     </div>
   </div>
   <hr/>
+</div>
 
-  <div class="content">
-    <div *ngFor="let image of images" class="content-image">
-      <div class="img-thumbnail text-center">
-        <img class="img-fluid"
-             [src]="image.image.thumbnailLink"
-             (click)="select(image)"
-             [class.selected]="image === selectedImage"/>
-      </div>
-      <span class="badge badge-success selected-image" *ngIf="image === selectedImage" i18n>Selected</span>
+<div class="image-container" *ngIf="images?.length">
+  <div *ngFor="let image of images" class="item">
+    <div class="img-thumbnail">
+      <img [src]="image.image.thumbnailLink"
+           (click)="select(image)"
+           [class.selected]="image === selectedImage"
+           class="img-fluid"/>
     </div>
   </div>
 </div>
+
