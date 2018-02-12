@@ -19,6 +19,7 @@ export class CognitiveSkillViewComponent implements OnInit {
               private route: ActivatedRoute,
               fb: FormBuilder) {
     this.editForm = fb.group({
+      id: [null, [Validators.required]],
       name: [null, [Validators.required]]
     });
   }
@@ -46,4 +47,12 @@ export class CognitiveSkillViewComponent implements OnInit {
       );
   }
 
+  onSubmit() {
+    this.editForm.markAsTouched();
+    if (!this.editForm.valid) {
+      return;
+    }
+    this.cognitiveSkillsService.update(this.editForm.value)
+      .subscribe(() => true);
+  }
 }

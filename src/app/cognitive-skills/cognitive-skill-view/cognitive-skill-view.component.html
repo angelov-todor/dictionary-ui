@@ -3,6 +3,7 @@
     <div class="col-md-6">
       <h4 i18n>Cognitive skill</h4>
       <form class="form" [formGroup]="editForm" (submit)="onSubmit()">
+        <input type="hidden" formControlName="id"/>
         <div class="form-group row">
           <label class="col-md-3 control-label" for="name">Name</label>
           <div class="col-md-9">

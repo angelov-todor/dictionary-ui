@@ -37,7 +37,7 @@ export class CognitiveSkillService {
       .map(res => res.json() as CognitiveSkill);
   }
 
-  update(cognitiveSkill: any): Observable<CognitiveSkill> {
+  update(cognitiveSkill: CognitiveSkill): Observable<CognitiveSkill> {
     const url = `${this.serviceUrl}/${cognitiveSkill.id}`;
     return this.http
       .put(url, cognitiveSkill)

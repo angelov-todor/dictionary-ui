@@ -86,6 +86,18 @@
         <source>No results found</source>
         <target>Няма намерени резултати</target>
       </trans-unit>
+      <trans-unit id="b493c44486c386d91d2f825a1929ed99a6c5ac93" datatype="html">
+        <source>Cognitive types</source>
+        <target>Когнитивни типове</target>
+      </trans-unit>
+      <trans-unit id="3a4c2a9e76634ff14a60d52a718296f722d47c67" datatype="html">
+        <source>Parent</source>
+        <target>Родител</target>
+      </trans-unit>
+      <trans-unit id="0607bcc451e0cdd0cadee60b5d38a8c69f10c4e4" datatype="html">
+        <source>Assign to cognitive skill</source>
+        <target>Добави към когнитивното умение</target>
+      </trans-unit>
       <trans-unit id="f65253954b66e929a8b4d5ecaf61f9129f8cec64" datatype="html">
         <source>Dashboard</source>
         <target>Работен плот</target>
@@ -121,10 +133,6 @@
       <trans-unit id="6f4773a5e340dfb53d497d3c5d1d24854d6ce920" datatype="html">
         <source>Generate test</source>
         <target>Генериране на тест</target>
-      </trans-unit>
-      <trans-unit id="b493c44486c386d91d2f825a1929ed99a6c5ac93" datatype="html">
-        <source>Cognitive types</source>
-        <target>Когнитивни типове</target>
       </trans-unit>
       <trans-unit id="8e3b390c1bacc9f8a466ab3e3dc4a3f9bb22bda9" datatype="html">
         <source>Cognitive skills</source>
@@ -197,10 +205,6 @@
       <trans-unit id="717a5e3574fec754fbeb348c2d5561c4d81facc4" datatype="html">
         <source>Signup</source>
         <target>Регистрация</target>
-      </trans-unit>
-      <trans-unit id="3a4c2a9e76634ff14a60d52a718296f722d47c67" datatype="html">
-        <source>Parent</source>
-        <target>Родител</target>
       </trans-unit>
       <trans-unit id="809b0c848932a41318f77a2aace904ef429c13f4" datatype="html">
         <source>Values</source>
@@ -378,6 +382,14 @@
         <source>Check</source>
         <target>Провери</target>
       </trans-unit>
+      <trans-unit id="5682d7ab3d0af02c240ea82600a53d7ac5b244b0" datatype="html">
+        <source>Cognitive skill</source>
+        <target>Когнитивно умение</target>
+      </trans-unit>
+      <trans-unit id="495bb76a1dcc587910bfde93914ba82e1f952dc5" datatype="html">
+        <source>Remove from cognitive skill</source>
+        <target>Премахни от когнитивното умение</target>
+      </trans-unit>
       <trans-unit id="16435efd39cf0d984d88775c41c1d008f66032cb" datatype="html">
         <source>Units count</source>
         <target>Брой КТЕ</target>
@@ -393,10 +405,6 @@
       <trans-unit id="b9e565aa557114bad6792d12ec7d1e231f289474" datatype="html">
         <source>Add new methodology</source>
         <target>Добавяне на нова методика</target>
-      </trans-unit>
-      <trans-unit id="5682d7ab3d0af02c240ea82600a53d7ac5b244b0" datatype="html">
-        <source>Cognitive skill</source>
-        <target>Когнитивно умение</target>
       </trans-unit>
       <trans-unit id="d63b333716373eba84dbdbc9c3162a640968d862" datatype="html">
         <source>Methodology</source>
