@@ -40,8 +40,7 @@ export class UnitGenerateComponent implements OnInit {
           ...(
             (Array.from(Array(cognitiveTypesListResponse.view.pages &&
               (cognitiveTypesListResponse.view.pages - 1)).keys()).map((i) => i + 2))
-            // do a sequential request for each page of Properties
-              .map(() => this.cognitiveTypeService.getCognitiveTypesList(cognitiveTypesListResponse.view.next))
+              .map((page) => this.cognitiveTypeService.getCognitiveTypesList(page))
           )
         );
       })

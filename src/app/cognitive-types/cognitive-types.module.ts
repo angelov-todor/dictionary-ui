@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CognitiveTypeService } from './cognitive-type.service';
 import { CognitiveTypeRoutingModule } from './cognitive-type-routing.module';
 import { CognitiveTypeListComponent } from './cognitive-type-list/cognitive-type-list.component';
+import { CognitiveTypesListPageComponent } from './cognitive-types-list-page/cognitive-types-list-page.component';
+import { CognitiveTypeAddComponent } from './cognitive-type-add/cognitive-type-add.component';
 
 @NgModule({
   imports: [
@@ -14,9 +16,14 @@ import { CognitiveTypeListComponent } from './cognitive-type-list/cognitive-type
     ModalModule
   ],
   declarations: [
-    CognitiveTypeListComponent
+    CognitiveTypeListComponent,
+    CognitiveTypesListPageComponent,
+    CognitiveTypeAddComponent
   ],
-  providers: [CognitiveTypeService]
+  providers: [CognitiveTypeService],
+  exports: [
+    CognitiveTypeListComponent
+  ]
 })
 export class CognitiveTypesModule {
   static forRoot(): ModuleWithProviders {

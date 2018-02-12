@@ -3,12 +3,21 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { PartialCollectionView } from '../words/words.service';
+import { CognitiveType } from '../cognitive-types/cognitive-type.service';
 
 @Injectable()
 export class CognitiveSkillService {
   private serviceUrl = environment.baseAPIEndpoint + '/cognitive-skill';
 
   constructor(private http: AuthHttp) {
+  }
+
+  getCognitiveSkill(id: string): Observable<CognitiveSkill> {
+    return this.http.get(this.serviceUrl + `/${id}`)
+      .map(res => res.json())
+      .map(cognitiveSkillResponse => {
+        return new CognitiveSkill(cognitiveSkillResponse);
+      });
   }
 
   getCognitiveSkillsList(page?: string): Observable<CognitiveSkillsListResponse> {
@@ -41,6 +50,24 @@ export class CognitiveSkillService {
       .do({
         error: console.log
       })
+      .map(() => true);
+  }
+
+  assignCognitiveType(cognitiveSkill: CognitiveSkill, cognitiveType: CognitiveType): Observable<CognitiveSkill> {
+    const url = `${this.serviceUrl}/${cognitiveSkill.id}/cognitive-types`;
+    return this.http
+      .post(url, {cognitive_type_id: cognitiveType.id})
+      .map(res => res.json())
+      .map(data => {
+        return new CognitiveSkill(data);
+      });
+  }
+
+  removeCognitiveType(cognitiveSkill: CognitiveSkill, cognitiveType: CognitiveType): Observable<boolean> {
+    const url = `${this.serviceUrl}/${cognitiveSkill.id}/cognitive-types/${cognitiveType.id}`;
+    return this.http
+      .delete(url)
+      .map(res => res.json())
       .map(() => true);
   }
 }
@@ -78,6 +105,7 @@ export class CognitiveSkillsListResponse {
 export class CognitiveSkill {
   public id: number;
   public name: string;
+  public cognitive_types?: CognitiveType[];
 
   constructor(data?: Partial<CognitiveSkill>) {
     Object.assign(this, data || {});

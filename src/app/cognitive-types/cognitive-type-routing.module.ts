@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from '../auth/auth-guard.service';
-import { CognitiveTypeListComponent } from './cognitive-type-list/cognitive-type-list.component';
+import { CognitiveTypesListPageComponent } from './cognitive-types-list-page/cognitive-types-list-page.component';
 
 const routes: Routes = [
   {
-    path: 'cognitive-types', component: CognitiveTypeListComponent, canActivate: [AuthGuardService]
+    path: 'cognitive-types', component: CognitiveTypesListPageComponent, canActivate: [AuthGuardService]
   }
 ];
 

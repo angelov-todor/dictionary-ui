@@ -13,10 +13,10 @@ export class CognitiveTypeService {
   constructor(private http: AuthHttp) {
   }
 
-  getCognitiveTypesList(page?: string): Observable<CognitiveTypesListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.serviceUrl;
-
-    return this.http.get(url)
+  getCognitiveTypesList(page?: number): Observable<CognitiveTypesListResponse> {
+    return this.http.get(this.serviceUrl, {
+      params: {page: page}
+    })
       .map(res => res.json())
       .map(cognitiveTypesResponse => {
         cognitiveTypesResponse = new CognitiveTypesListResponse(cognitiveTypesResponse);

@@ -20,7 +20,8 @@
       <div class="row my-2 mx-1" i18n>What '{{enrichment.metadata.name}}' is on the image?</div>
 
       <div class="row my-2 mx-1">
-        <input type="text" class="col-md-8 form-control form-control-sm" id="value" formControlName="value">
+        <input type="text" class="col-md-8 form-control form-control-sm" id="value" formControlName="value"
+        placeholder="{{enrichment.metadata.values}}">
         <button class="col-md-2 offset-2 btn btn-success btn-sm" title="Save" i18n-title type="button"
                 (click)="submit()" i18n>Save</button>
       </div>

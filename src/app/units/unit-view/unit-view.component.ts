@@ -72,7 +72,7 @@ export class UnitViewComponent implements OnInit, OnDestroy {
           ...(
             (Array.from(Array(cognitiveTypesListResponse.view.pages &&
               (cognitiveTypesListResponse.view.pages - 1)).keys()).map((i) => i + 2))
-              .map(() => this.cognitiveTypeService.getCognitiveTypesList(cognitiveTypesListResponse.view.next))
+              .map((page) => this.cognitiveTypeService.getCognitiveTypesList(page))
           )
         );
       })

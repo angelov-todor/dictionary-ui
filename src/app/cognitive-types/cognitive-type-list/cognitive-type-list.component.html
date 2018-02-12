@@ -15,8 +15,11 @@
       <td>{{cognitiveType.name}}</td>
       <td>{{cognitiveType.parent?.name}}</td>
       <td>
-        <a i18n-title title="Edit" (click)="edit(cognitiveType)" class="edit fa fa-edit pointer"></a>
-        <a i18n-title title="Remove" (click)="remove(cognitiveType)" class="remove fa fa-trash"></a>
+        <a *ngIf="!cognitiveSkill" i18n-title title="Remove" (click)="remove(cognitiveType)"
+           class="pointer remove fa fa-trash"></a>
+        <a *ngIf="cognitiveSkill" class="pointer fa fa-upload" title="Assign to cognitive skill" i18n-title
+           aria-hidden="true"
+           (click)="assignToTest(cognitiveType)"></a>
       </td>
     </tr>
     <tr *ngIf="!cognitiveTypes?.length">
@@ -28,40 +31,18 @@
     <ul class="pagination justify-content-center">
       <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView.current == collectionView.first}"
           class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.first)" i18n>First</a>
+        <a class="page-link pointer" (click)="setPage(1)" i18n>First</a>
       </li>
       <li *ngIf="collectionView.previous" class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.previous)" i18n>Previous</a>
+        <a class="page-link pointer" (click)="setPage(collectionView.page-1)" i18n>Previous</a>
       </li>
       <li *ngIf="collectionView.next" class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.next)" i18n>Next</a>
+        <a class="page-link pointer" (click)="setPage(collectionView.page+1)" i18n>Next</a>
       </li>
       <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView.current == collectionView.last}"
           class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.last)" i18n>Last</a>
+        <a class="page-link pointer" (click)="setPage(collectionView.pages)" i18n>Last</a>
       </li>
     </ul>
   </nav>
-  <hr/>
-  <div class="row justify-content-md-center">
-    <div class="col-md-auto">
-      <form action="post" class="form-inline mx-auto" [formGroup]="createForm" (submit)="onSubmit()">
-        <label class="sr-only" for="name">Name</label>
-        <input id="name"
-               class="form-control mb-2 mr-sm-2 mb-sm-0"
-               type="text"
-               placeholder="Name"
-               formControlName="name"
-               i18n-placeholder/>
-        <label class="sr-only" for="parent" i18n>Parent</label>
-        <select id="parent"
-                class="form-control mb-2 mr-sm-2 mb-sm-0"
-                formControlName="parent">
-          <option selected value="null">-</option>
-          <option *ngFor="let cognitiveType of allCognitiveTypes" [value]="cognitiveType.id">{{cognitiveType.name}}</option>
-        </select>
-        <button class="btn btn-primary" type="submit" i18n>Add</button>
-      </form>
-    </div>
-  </div>
 </div>

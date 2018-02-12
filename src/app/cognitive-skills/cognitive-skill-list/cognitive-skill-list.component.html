@@ -13,7 +13,8 @@
     <tr *ngFor="let cognitiveSkill of cognitiveSkills">
       <td>{{cognitiveSkill.name}}</td>
       <td>
-        <a i18n-title title="Edit" (click)="edit(cognitiveSkill)" class="edit fa fa-edit pointer"></a>
+        <a i18n-title title="Edit" [routerLink]="['/cognitive-skills',cognitiveSkill.id]"
+           class="edit fa fa-edit pointer"></a>
         <a i18n-title title="Remove" (click)="remove(cognitiveSkill)" class="remove fa fa-trash"></a>
       </td>
     </tr>

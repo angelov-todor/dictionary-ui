@@ -10,7 +10,6 @@ import { PartialCollectionView } from '../../words/words.service';
 })
 export class CognitiveSkillListComponent implements OnInit {
 
-  selectedCognitiveSkill: CognitiveSkill = null;
   cognitiveSkills: CognitiveSkill[];
   createForm: FormGroup;
   collectionView: PartialCollectionView;
@@ -57,11 +56,6 @@ export class CognitiveSkillListComponent implements OnInit {
         },
         (error) => console.log(error)
       );
-  }
-
-
-  edit(cognitiveSkill: CognitiveSkill): void {
-    this.selectedCognitiveSkill = cognitiveSkill;
   }
 
   setPage(page: string) {

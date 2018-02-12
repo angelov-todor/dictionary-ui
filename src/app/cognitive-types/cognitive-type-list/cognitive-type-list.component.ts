@@ -1,76 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { concat } from 'rxjs/observable/concat';
-import { of } from 'rxjs/observable/of';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { CognitiveType, CognitiveTypeService } from '../cognitive-type.service';
 import { PartialCollectionView } from '../../words/words.service';
+import { CognitiveSkill } from '../../cognitive-skills/cognitive-skill.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-cognitive-type-list',
   templateUrl: './cognitive-type-list.component.html',
   styleUrls: ['./cognitive-type-list.component.scss']
 })
-export class CognitiveTypeListComponent implements OnInit {
+export class CognitiveTypeListComponent implements OnInit, OnDestroy {
 
-  selectedCognitiveType: CognitiveType = null;
   cognitiveTypes: CognitiveType[];
-  allCognitiveTypes: CognitiveType[];
-  createForm: FormGroup;
   collectionView: PartialCollectionView;
+  ctSubscription: Subscription;
+  @Input() cognitiveSkill: CognitiveSkill;
+  @Output() onAssignToCognitiveSkill = new EventEmitter<CognitiveType>();
 
-  constructor(private cognitiveTypeService: CognitiveTypeService,
-              private fb: FormBuilder) {
-    this.createForm = fb.group({
-      name: [null, [Validators.required]],
-      parent: [null]
-    });
+  constructor(private cognitiveTypeService: CognitiveTypeService) {
   }
 
   ngOnInit(): void {
     this.getCognitiveTypes();
-    this.getAllCognitiveTypes();
   }
 
-  getCognitiveTypes(page?: string): void {
-    this.cognitiveTypeService.getCognitiveTypesList(page)
+  getCognitiveTypes(page?: number): void {
+    this.ctSubscription = this.cognitiveTypeService.getCognitiveTypesList(page)
       .subscribe(
         (cognitiveTypesListResponse) => {
           this.cognitiveTypes = cognitiveTypesListResponse.cognitive_types;
           this.collectionView = cognitiveTypesListResponse.view;
         }
       );
-  }
-
-  getAllCognitiveTypes() {
-    this.cognitiveTypeService.getCognitiveTypesList()
-      .switchMap(cognitiveTypesListResponse => {
-        return concat(
-          of(cognitiveTypesListResponse),
-          ...(
-            // given `page=1` is loaded, for the rest of `pagesToLoad=[2,3,4,...]`
-            (Array.from(Array(cognitiveTypesListResponse.view.pages &&
-              (cognitiveTypesListResponse.view.pages - 1)).keys()).map((i) => i + 2))
-            // do a sequential request for each page of Properties
-              .map(() => this.cognitiveTypeService.getCognitiveTypesList(cognitiveTypesListResponse.view.next))
-          )
-        );
-      })
-      .subscribe(cognitiveTypesListResponse => {
-        this.allCognitiveTypes = (this.allCognitiveTypes || []).concat(
-          cognitiveTypesListResponse.cognitive_types.filter((ct) => !ct.parent)
-        );
-      });
-  }
-
-  onSubmit() {
-    this.createForm.markAsTouched();
-    if (!this.createForm.valid) {
-      return;
-    }
-    this.cognitiveTypeService.create(this.createForm.value)
-      .subscribe(() => {
-        this.createForm.reset();
-      });
   }
 
   remove(cognitiveType: CognitiveType): void {
@@ -84,12 +45,18 @@ export class CognitiveTypeListComponent implements OnInit {
       );
   }
 
-
-  edit(cognitiveType: CognitiveType): void {
-    this.selectedCognitiveType = cognitiveType;
+  assignToTest(cognitiveType: CognitiveType) {
+    this.onAssignToCognitiveSkill.emit(cognitiveType);
   }
 
-  setPage(page: string) {
+  setPage(page: number) {
     this.getCognitiveTypes(page);
+  }
+
+  ngOnDestroy() {
+    if (this.ctSubscription) {
+      this.ctSubscription.unsubscribe();
+      this.ctSubscription = undefined;
+    }
   }
 }
