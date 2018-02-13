@@ -34,8 +34,6 @@ export class TestGenerateComponent implements OnInit {
       min_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
       max_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
       points_required: [null, [Validators.required]],
-      grading_scale: [null, Validators.required],
-      time_to_conduct: [null, Validators.required],
       notes: [null, Validators.required]
     });
   }
@@ -57,6 +55,10 @@ export class TestGenerateComponent implements OnInit {
   }
 
   onSubmit() {
+    this.generateForm.markAsTouched({onlySelf: false});
+    if (!this.generateForm.valid) {
+      return;
+    }
     this.testsService.create(this.generateForm.value).subscribe((test) => {
       this.router.navigate(['/tests/view', test.id]);
     });

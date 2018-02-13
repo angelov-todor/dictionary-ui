@@ -19,8 +19,6 @@ export class TestViewComponent implements OnInit {
     min_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
     max_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
     points_required: [null, [Validators.required]],
-    grading_scale: [null, Validators.required],
-    time_to_conduct: [null, Validators.required],
     notes: [null, Validators.required]
   });
 

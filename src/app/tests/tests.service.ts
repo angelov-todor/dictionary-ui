@@ -141,8 +141,6 @@ export class Test {
   public methodology: Methodology;
   public cognitive_skill: CognitiveSkill;
   public notes: string;
-  public time_to_conduct: number;
-  public grading_scale: string;
   public max_age: number;
   public min_age: number;
   protected _units: Unit[];
