@@ -95,6 +95,16 @@ export class TestsService {
       .map(res => res.json())
       .map(result => new ResultListResponse(result));
   }
+
+  addRandomUnits(test: Test, count: number): Observable<Test> {
+    const url = this.serviceUrl + `/${test.id}/random-units`;
+
+    return this.http
+      .post(url, {count: count})
+      .map(res => res.json())
+      .map((testData) => new Test(testData));
+
+  }
 }
 
 export class TestsListResponse {

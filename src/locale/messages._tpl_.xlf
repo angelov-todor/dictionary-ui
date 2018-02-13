@@ -446,20 +446,24 @@
         <source>to</source>
         <target><!-- put translation here --></target>
       </trans-unit>
-      <trans-unit id="d47264bd6e35f871a4be6064ad88b6f796042173" datatype="html">
-        <source>Units time to conduct</source>
-        <target><!-- put translation here --></target>
-      </trans-unit>
-      <trans-unit id="d19ef274bf7120fc8cf9cce5cb65034537cb87a6" datatype="html">
-        <source>Images count</source>
+      <trans-unit id="d80ce5487a8c41b04ad7d6c4b25868c98f21b030" datatype="html">
+        <source>Units in the test</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="762d06190d74cc8f74624d97e6d415d0137fbcde" datatype="html">
         <source>Remove from test</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="707d97b9ed4b493440aaadb1318fef0ef80e54d9" datatype="html">
+        <source>Add to test</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="f3c099188655275d86864f40158bc16720c7c140" datatype="html">
         <source>Generate test unit</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="963a265836610c5942d88f279e41d5ad61963886" datatype="html">
+        <source>There are not enough units for the related cognitive skill</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="81c9cc89ab76b26df4aaa1d7aff075894a2b5310" datatype="html">
@@ -496,6 +500,10 @@
       </trans-unit>
       <trans-unit id="2f933b826a570836cab04f683970a2d22068458c" datatype="html">
         <source>Date</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="0b15bf6fa1e5bdabc9fde97a14bee63a5d5e62f6" datatype="html">
+        <source>email</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="f5e8239c4b997b54a03d60673c4420f602c0855e" datatype="html">

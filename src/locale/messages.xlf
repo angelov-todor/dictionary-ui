@@ -338,7 +338,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">121</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a71ddb57c68ee19272ab2df27e666d3586d0e1ed" datatype="html">
@@ -368,7 +368,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">123</context>
+          <context context-type="linenumber">122</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ddbd474487abb3cfa7c7ab4e57cb096977cdf0ed" datatype="html">
@@ -518,10 +518,6 @@
           <context context-type="sourcefile">app/cognitive-types/cognitive-type-add/cognitive-type-add.component.ts</context>
           <context context-type="linenumber">11</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/cognitive-skills/cognitive-skill-view/cognitive-skill-view.component.ts</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="0607bcc451e0cdd0cadee60b5d38a8c69f10c4e4" datatype="html">
         <source>Assign to cognitive skill</source>
@@ -570,6 +566,10 @@
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="4b3972c3e9485218508a95f7a4ce7758e3f09ced" datatype="html">
         <source>Upload</source>
@@ -605,7 +605,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
+          <context context-type="linenumber">156</context>
         </context-group>
       </trans-unit>
       <trans-unit id="891ddeb61503b1fe2d09192d5572eb169c631321" datatype="html">
@@ -831,10 +835,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/words/dictionary/dictionary.component.ts</context>
           <context context-type="linenumber">16</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
-          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
@@ -1202,6 +1202,10 @@
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
           <context context-type="linenumber">81</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="3afbf0e268816db2bcc70638d61281e6c8b39a5d" datatype="html">
         <source>Criteria</source>
@@ -1310,7 +1314,7 @@
         <source>Remove from cognitive skill</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cognitive-skills/cognitive-skill-view/cognitive-skill-view.component.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="16435efd39cf0d984d88775c41c1d008f66032cb" datatype="html">
@@ -1318,10 +1322,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-list/test-list.component.ts</context>
           <context context-type="linenumber">9</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8434d4a28744d7df82cd39ef8da4266fcbc40064" datatype="html">
@@ -1451,32 +1451,39 @@
           <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="d47264bd6e35f871a4be6064ad88b6f796042173" datatype="html">
-        <source>Units time to conduct</source>
+      <trans-unit id="d80ce5487a8c41b04ad7d6c4b25868c98f21b030" datatype="html">
+        <source>Units in the test</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">103</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="d19ef274bf7120fc8cf9cce5cb65034537cb87a6" datatype="html">
-        <source>Images count</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">124</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="762d06190d74cc8f74624d97e6d415d0137fbcde" datatype="html">
         <source>Remove from test</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">131</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="707d97b9ed4b493440aaadb1318fef0ef80e54d9" datatype="html">
+        <source>Add to test</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
+          <context context-type="linenumber">140</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f3c099188655275d86864f40158bc16720c7c140" datatype="html">
         <source>Generate test unit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
-          <context context-type="linenumber">140</context>
+          <context context-type="linenumber">145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="963a265836610c5942d88f279e41d5ad61963886" datatype="html">
+        <source>There are not enough units for the related cognitive skill</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
+          <context context-type="linenumber">149</context>
         </context-group>
       </trans-unit>
       <trans-unit id="81c9cc89ab76b26df4aaa1d7aff075894a2b5310" datatype="html">
@@ -1556,6 +1563,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
           <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0b15bf6fa1e5bdabc9fde97a14bee63a5d5e62f6" datatype="html">
+        <source>email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/tests/test-results/test-results.component.ts</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f5e8239c4b997b54a03d60673c4420f602c0855e" datatype="html">

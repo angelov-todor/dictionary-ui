@@ -26,6 +26,7 @@ export class TestViewComponent implements OnInit {
 
   cognitiveSkills: CognitiveSkill[];
   test: Test;
+  addRandomError = false;
 
   get methodologies() {
     return this._methodologies;
@@ -107,6 +108,20 @@ export class TestViewComponent implements OnInit {
       .subscribe(() => {
         this.test.units.splice(this.test.units.indexOf(unit), 1);
       });
+  }
+
+
+  addRandomUnits(count: number) {
+    this.addRandomError = false;
+    this.testsService.addRandomUnits(this.test, count)
+      .subscribe(
+        test => {
+          this.test = test
+        }, error => {
+          if (error.status === 422) {
+            this.addRandomError = true;
+          }
+        });
   }
 
 }
