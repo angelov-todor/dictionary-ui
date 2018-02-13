@@ -30,12 +30,10 @@
         <table class="table col">
           <tr>
             <th i18n>Cognitive type</th>
-            <th i18n>Parent</th>
             <th></th>
           </tr>
           <tr *ngFor="let cognitiveType of cognitiveSkill?.cognitive_types">
             <td>{{cognitiveType.name}}</td>
-            <td>{{cognitiveType.parent?.name}}</td>
             <td><a i18n-title title="Remove from cognitive skill" (click)="removeFromCognitiveSkill(cognitiveType)"
                    class="pointer fa fa-download"></a></td>
           </tr>
