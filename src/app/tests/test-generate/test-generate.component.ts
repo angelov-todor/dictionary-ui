@@ -4,6 +4,7 @@ import { CognitiveSkill, CognitiveSkillService } from '../../cognitive-skills/co
 import { MethodologiesService, Methodology } from '../methodologies.service';
 import { TestsService } from '../tests.service';
 import { Router } from '@angular/router';
+import { markFormControlAsTouched } from '../../shared/utils/markFormControlAsTouched';
 
 @Component({
   selector: 'app-test-generate',
@@ -33,8 +34,8 @@ export class TestGenerateComponent implements OnInit {
       methodology_id: [null],
       min_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
       max_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
-      points_required: [null, [Validators.required]],
-      notes: [null, Validators.required]
+      points_required: [0, [Validators.required]],
+      notes: ['']
     });
   }
 
@@ -55,7 +56,7 @@ export class TestGenerateComponent implements OnInit {
   }
 
   onSubmit() {
-    this.generateForm.markAsTouched({onlySelf: false});
+    markFormControlAsTouched(this.generateForm);
     if (!this.generateForm.valid) {
       return;
     }

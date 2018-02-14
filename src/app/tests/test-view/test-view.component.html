@@ -70,16 +70,16 @@
       </div>
 
       <div class="form-group row no-gutters">
-        <label class="col-md-3 control-label" for="grading" i18n>Grading</label>
+        <label class="col-md-3 control-label" for="notes" i18n>Notes</label>
         <div class="col-md-9">
-          <input type="text" name="grading" class="form-control" id="grading" disabled>
+          <textarea name="notes" class="form-control" id="notes" formControlName="notes"></textarea>
         </div>
       </div>
 
       <div class="form-group row no-gutters">
-        <label class="col-md-3 control-label" for="notes" i18n>Notes</label>
+        <label class="col-md-3 control-label" for="grading" i18n>Grading</label>
         <div class="col-md-9">
-          <textarea name="notes" class="form-control" id="notes" formControlName="notes"></textarea>
+          <input type="text" name="grading" class="form-control" id="grading" disabled>
         </div>
       </div>
 
@@ -122,7 +122,7 @@
           </tr>
         </table>
     </div>
-    <div class="row mt-2 justify-content-center">
+    <div class="border p-1 rounded row mt-2 justify-content-center">
       <div class="col-sm-4">
         <input type="number" id="numUnits" #numUnits class="form-control form-control-sm" min="1" max="20">
       </div>

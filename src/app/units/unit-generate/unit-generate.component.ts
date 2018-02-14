@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { CognitiveType, CognitiveTypeService } from '../../cognitive-types/cognitive-type.service';
 import { concat } from 'rxjs/observable/concat';
 import { of } from 'rxjs/observable/of';
+import { markFormControlAsTouched } from '../../shared/utils/markFormControlAsTouched';
 
 @Component({
   selector: 'app-unit-generate',
@@ -23,11 +24,11 @@ export class UnitGenerateComponent implements OnInit {
     this.generateForm = fb.group({
       name: [null, [Validators.required]],
       text: [null, [Validators.required]],
-      rows: [null, [Validators.required]],
-      cols: [null, [Validators.required]],
+      rows: [0],
+      cols: [0],
       type: ['select', [Validators.required]],
-      criteria: [null, [Validators.required]],
-      time_to_conduct: [null, Validators.required],
+      criteria: [null],
+      time_to_conduct: [0, Validators.required],
       cognitive_type_id: [null, Validators.required]
     });
   }
@@ -52,7 +53,7 @@ export class UnitGenerateComponent implements OnInit {
   }
 
   onSubmit() {
-    this.generateForm.markAsTouched();
+    markFormControlAsTouched(this.generateForm);
     if (!this.generateForm.valid) {
       console.log(this.generateForm);
       return;

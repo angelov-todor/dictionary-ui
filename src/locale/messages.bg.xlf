@@ -426,10 +426,6 @@
         <source>Points required</source>
         <target>Нужни точни</target>
       </trans-unit>
-      <trans-unit id="806ab7d0d68031585939a1de9d5e3947de9c0937" datatype="html">
-        <source>Grading scale</source>
-        <target>Скала на оценяване</target>
-      </trans-unit>
       <trans-unit id="fcde58253a4cfd52c228eebdae74e1be7a1ab714" datatype="html">
         <source>Notes</source>
         <target>Доп. бележки</target>
@@ -445,6 +441,10 @@
       <trans-unit id="e04356b41e0d85f3e2f7ebc72a3f75c6e1147663" datatype="html">
         <source>to</source>
         <target>до</target>
+      </trans-unit>
+      <trans-unit id="0e9a87ddf5af4d066fba95503256d60d7e278d5f" datatype="html">
+        <source>Grading</source>
+        <target>Оценяване</target>
       </trans-unit>
       <trans-unit id="d80ce5487a8c41b04ad7d6c4b25868c98f21b030" datatype="html">
         <source>Units in the test</source>

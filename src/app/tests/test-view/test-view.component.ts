@@ -14,7 +14,7 @@ import { Unit } from '../../units/units.service';
 export class TestViewComponent implements OnInit {
   testForm: FormGroup = this.fb.group({
     name: [null, [Validators.required]],
-    cognitive_skill_id: [null, [Validators.required]],
+    cognitive_skill_id: [{value: null, disabled: true}, [Validators.required]],
     methodology_id: [null],
     min_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
     max_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
@@ -48,6 +48,7 @@ export class TestViewComponent implements OnInit {
       .subscribe((test: Test) => {
           this.test = test;
           this.testForm.reset(test);
+          this.manageCognitiveSkillState();
         }
       );
     this.cognitiveSkillService.getCognitiveSkillsList()
@@ -72,6 +73,14 @@ export class TestViewComponent implements OnInit {
       );
   }
 
+  manageCognitiveSkillState() {
+    if (!this.test.units.length) {
+      this.testForm.get('cognitive_skill_id').enable();
+    } else {
+      this.testForm.get('cognitive_skill_id').disable();
+    }
+  }
+
   onMethodologyCreateCompleted(createdMethodology: Methodology | false) {
     if (createdMethodology) {
       this.methodologies.push(createdMethodology);
@@ -86,7 +95,10 @@ export class TestViewComponent implements OnInit {
 
   assignUnit(unit: Unit) {
     this.testsService.assignUnit(this.test, unit)
-      .subscribe(test => this.test = test);
+      .subscribe(test => {
+        this.test = test;
+        this.manageCognitiveSkillState();
+      });
   }
 
   get units_time_to_conduct() {
@@ -105,6 +117,7 @@ export class TestViewComponent implements OnInit {
     this.testsService.removeUnit(this.test, unit)
       .subscribe(() => {
         this.test.units.splice(this.test.units.indexOf(unit), 1);
+        this.manageCognitiveSkillState();
       });
   }
 
@@ -114,7 +127,8 @@ export class TestViewComponent implements OnInit {
     this.testsService.addRandomUnits(this.test, count)
       .subscribe(
         test => {
-          this.test = test
+          this.test = test;
+          this.manageCognitiveSkillState();
         }, error => {
           if (error.status === 422) {
             this.addRandomError = true;

@@ -7,6 +7,7 @@ import { CognitiveType, CognitiveTypeService } from '../../cognitive-types/cogni
 import { concat } from 'rxjs/observable/concat';
 import { of } from 'rxjs/observable/of';
 import { Subscription } from 'rxjs/Subscription';
+import { markFormControlAsTouched } from '../../shared/utils/markFormControlAsTouched';
 
 @Component({
   selector: 'app-unit-view',
@@ -23,7 +24,7 @@ export class UnitViewComponent implements OnInit, OnDestroy {
     cognitive_type_id: [null, [Validators.required]],
     cognitive_subtype_id: [null],
     time_to_conduct: [0, [Validators.required]],
-    type: [null]
+    type: [null, [Validators.required]]
   });
   selected: UnitImage;
   allCognitiveTypes: CognitiveType[];
@@ -106,6 +107,7 @@ export class UnitViewComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+    markFormControlAsTouched(this.updateForm);
     if (!this.updateForm.valid) {
       console.log(this.updateForm.value);
       return;

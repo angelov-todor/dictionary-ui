@@ -55,6 +55,9 @@
         </div>
       </div>
     </div>
+    <div class="form-control-feedback col-md-2"
+         *ngIf="generateForm.get('min_age').touched && generateForm.get('min_age').hasError('required') || generateForm.get('max_age').touched && generateForm.get('max_age').hasError('required')"
+         i18n>This field is required</div>
   </div>
 
   <div class="form-group row no-gutters">
@@ -63,6 +66,9 @@
       <input type="number" name="points_required" class="form-control" id="points_required"
              formControlName="points_required">
     </div>
+    <div class="col-md-2 form-control-feedback"
+         *ngIf="generateForm.get('points_required').touched && generateForm.get('points_required').hasError('required')"
+         i18n>This field is required</div>
   </div>
 
   <div class="form-group row no-gutters">

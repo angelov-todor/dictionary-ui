@@ -37,7 +37,7 @@ export class TestsService {
       });
   }
 
-  remove(id: number): Observable<boolean> {
+  remove(id: string): Observable<boolean> {
     const url = `${this.serviceUrl}/${id}`;
     return this.http.delete(url)
       .do({
@@ -136,7 +136,7 @@ export class TestsListResponse {
 }
 
 export class Test {
-  public id: number;
+  public id: string;
   public name: string;
   public methodology: Methodology;
   public cognitive_skill: CognitiveSkill;

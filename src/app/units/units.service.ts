@@ -5,17 +5,17 @@ import { Observable } from 'rxjs/Observable';
 import { Image } from '../images/images.service';
 import { PartialCollectionView } from '../words/words.service';
 import { CognitiveType } from '../cognitive-types/cognitive-type.service';
+import { Test } from '../tests/tests.service';
 
 @Injectable()
 export class UnitsService {
-  private unitsUrl = environment.baseAPIEndpoint + '/units';  // URL to web api
+  private serviceUrl = environment.baseAPIEndpoint + '/units';  // URL to web api
 
   constructor(private http: AuthHttp) {
   }
 
-  getUnits(page?: string): Observable<UnitListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.unitsUrl;
-    return this.http.get(url)
+  getUnits(page?: number, test_id?: string): Observable<UnitListResponse> {
+    return this.http.get(this.serviceUrl, {params: {page, test_id}})
       .map(res => res.json())
       .map(unitsResponse => {
         unitsResponse = new UnitListResponse(unitsResponse);
@@ -24,7 +24,7 @@ export class UnitsService {
   }
 
   generate(data: any): Observable<Unit> {
-    return this.http.post(this.unitsUrl, data)
+    return this.http.post(this.serviceUrl, data)
       .map(res => res.json())
       .map(unitsResponse => {
         unitsResponse = new Unit(unitsResponse);
@@ -34,7 +34,7 @@ export class UnitsService {
 
   getUnit(id: string): Observable<Unit> {
     return this.http
-      .get(this.unitsUrl + `/${id}`)
+      .get(this.serviceUrl + `/${id}`)
       .map((res) => res.json())
       .map(unitData => {
         return new Unit(unitData);
@@ -43,13 +43,13 @@ export class UnitsService {
 
   update(unit: Unit, data: any): Observable<boolean> {
     return this.http
-      .put(this.unitsUrl + `/${unit.id}`, data)
+      .put(this.serviceUrl + `/${unit.id}`, data)
       .map(() => true);
   }
 
   deleteUnit(unit: Unit): Observable<boolean> {
     return this.http
-      .delete(this.unitsUrl + `/${unit.id}`)
+      .delete(this.serviceUrl + `/${unit.id}`)
       .map(() => true);
   }
 

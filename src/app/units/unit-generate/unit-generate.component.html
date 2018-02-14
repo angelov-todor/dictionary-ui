@@ -75,6 +75,9 @@
       <input type="number" min="1" max="200" name="time_to_conduct" class="form-control" id="time_to_conduct"
              formControlName="time_to_conduct">
     </div>
+    <div class="form-control-feedback col-md-2"
+         *ngIf="generateForm.get('time_to_conduct').touched && generateForm.get('time_to_conduct').hasError('required')"
+         i18n>This field is required</div>
   </div>
 
   <div class="form-group row no-gutters">
