@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { markFormControlAsTouched } from '../../shared/utils/markFormControlAsTouched';
 
 @Component({
   selector: 'app-signup-page',
@@ -17,8 +18,8 @@ export class SignupPageComponent {
               private router: Router,
               fb: FormBuilder) {
     this.signupForm = fb.group({
-      username: [null, [Validators.required, Validators.email]],
-      password: [null, Validators.required]
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required, Validators.minLength(6)]]
     });
 
     this.signupForm.valueChanges.subscribe(() => {
@@ -27,14 +28,23 @@ export class SignupPageComponent {
   }
 
   onSubmit() {
-    this.signupForm.markAsTouched({onlySelf: true});
+    markFormControlAsTouched(this.signupForm);
+
     if (!this.signupForm.valid) {
       return;
     }
-    this.userAuth.signup(this.signupForm.value.username, this.signupForm.value.password)
+    this.userAuth.signup(this.signupForm.value.email, this.signupForm.value.password)
       .subscribe(
         () => {
-          this.router.navigate(['/dashboard']);
+          this.userAuth.login(this.signupForm.value.email, this.signupForm.value.password)
+            .subscribe(
+              () => {
+                this.router.navigate(['/dashboard']);
+              },
+              (error) => {
+                this.serverError = error;
+              }
+            );
         },
         (error) => {
           this.serverError = error;

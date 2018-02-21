@@ -1,29 +1,46 @@
 <main role="main">
   <form action="post" class="login mx-auto" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <h2 i18n>Signup</h2>
+    <div class="row">
+      <h2 class="col-sm-4 offset-2" i18n>Signup</h2>
+    </div>
     <div class="form-group row no-gutters">
-      <label class="col-sm-4 control-label" for="username" i18n>Username</label>
-      <div class="col-sm-8">
-        <input type="email" name="username" class="form-control" id="username" formControlName="username">
+      <label class="offset-2 col-sm-2 control-label" for="email" i18n>Email</label>
+      <div class="col-sm-4">
+        <input type="email" name="email" class="form-control" id="email" formControlName="email">
+      </div>
+      <div class="col-sm-2 form-control-feedback" *ngIf="signupForm.get('email').touched">
+        <span *ngIf="signupForm.get('email').hasError('required')" i18n>This field is required.</span>
+        <span *ngIf="signupForm.get('email').hasError('email')" i18n>Invalid email address.</span>
       </div>
     </div>
     <div class="form-group row no-gutters">
-      <label class="col-sm-4 control-label" for="password" i18n>Password</label>
-      <div class="col-sm-8">
+      <label class="offset-2 col-sm-2 control-label" for="password" i18n>Password</label>
+      <div class="col-sm-4">
         <input type="password" name="password" class="form-control" id="password" formControlName="password">
       </div>
-    </div>
-    <div class="alert alert-danger" *ngIf="serverError">
-      <ng-container [ngSwitch]="serverError.status">
-        <ng-container *ngSwitchCase="404" i18n>Invalid username or password</ng-container>
-        <ng-container *ngSwitchDefault i18n>An error occurred</ng-container>
-      </ng-container>
+      <div class="col-sm-2 form-control-feedback" *ngIf="signupForm.get('password').touched">
+        <span *ngIf="signupForm.get('password').hasError('required')" i18n>This field is required.</span>
+        <span *ngIf="signupForm.get('password').hasError('minlength')" i18n>The password should be at lease 6 characters.</span>
+      </div>
     </div>
     <div class="row">
-      <div class="col-sm-4"></div>
-      <div class="text-center col-sm-8">
+      <div class="offset-1 col-9 alert alert-danger" *ngIf="serverError">
+        <ng-container [ngSwitch]="serverError.status">
+          <ng-container *ngSwitchCase="404" i18n>Invalid email or password</ng-container>
+          <ng-container *ngSwitchCase="409" i18n>Email already registered</ng-container>
+          <ng-container *ngSwitchDefault i18n>An error occurred</ng-container>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="text-center col-sm-4 offset-5">
         <button class="btn btn-primary" type="submit" i18n>Signup</button>
       </div>
     </div>
   </form>
+
+  <div class="text-center user-options">
+    <ng-container i18n>Already have an account?</ng-container> <a [routerLink]="['/login']" i18n>Login now</a>
+  </div>
 </main>

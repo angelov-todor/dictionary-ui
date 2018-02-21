@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-site-header',
@@ -13,11 +14,12 @@ export class SiteHeaderComponent {
   jwtHelper: JwtHelper = new JwtHelper();
 
 
-  constructor(private userAuth: AuthService) {
+  constructor(private userAuth: AuthService, private router: Router) {
   }
 
   onLogout() {
     this.userAuth.logout();
+    this.router.navigate(['/login']);
   }
 
   isValid() {

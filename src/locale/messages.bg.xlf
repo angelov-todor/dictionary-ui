@@ -178,17 +178,29 @@
         <source>Log In</source>
         <target>Вход</target>
       </trans-unit>
-      <trans-unit id="08c74dc9762957593b91f6eb5d65efdfc975bf48" datatype="html">
-        <source>Username</source>
-        <target>Потр. име</target>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source>
+        <target>Поща</target>
+      </trans-unit>
+      <trans-unit id="7cbdabcece469fab89cfa687ab152bca18b97498" datatype="html">
+        <source>This field is required.</source>
+        <target>Полето е задължително</target>
+      </trans-unit>
+      <trans-unit id="9f570852b4343bc0de0105a0c5f7521678da29d7" datatype="html">
+        <source>Invalid email address.</source>
+        <target>Невалиден имейл</target>
       </trans-unit>
       <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
         <source>Password</source>
         <target>Парола</target>
       </trans-unit>
-      <trans-unit id="1546199512c2ad8ec5849473f1a9e2d4a617fcc0" datatype="html">
-        <source>Invalid username or password</source>
-        <target>Невалиндо потр. име или парола</target>
+      <trans-unit id="c8a8675f260cab63eecdd3f847c13c8fd5f039ff" datatype="html">
+        <source>The password should be at lease 6 characters.</source>
+        <target>Паролата трябва да е поне 6 символа</target>
+      </trans-unit>
+      <trans-unit id="a6097058ba35aadc7423a71272927fd5d73cebba" datatype="html">
+        <source>Invalid email or password</source>
+        <target>Невалиден имейл и/или парола</target>
       </trans-unit>
       <trans-unit id="30e58483e7549a0b896bd69dcdffce7c15074644" datatype="html">
         <source>An error occurred</source>
@@ -205,6 +217,18 @@
       <trans-unit id="717a5e3574fec754fbeb348c2d5561c4d81facc4" datatype="html">
         <source>Signup</source>
         <target>Регистрация</target>
+      </trans-unit>
+      <trans-unit id="96125a7f9e35e54560d16f391be03dd1c2856e85" datatype="html">
+        <source>Email already registered</source>
+        <target>Вече има регистрация с този имейл</target>
+      </trans-unit>
+      <trans-unit id="a21b4e4b7c48dc611c3774abf8d163519991638d" datatype="html">
+        <source>Already have an account?</source>
+        <target>Вече имате регистрация?</target>
+      </trans-unit>
+      <trans-unit id="b7467019d65ac199bef6a8c377d61f7fc487f6e4" datatype="html">
+        <source>Login now</source>
+        <target>Влезте сега</target>
       </trans-unit>
       <trans-unit id="809b0c848932a41318f77a2aace904ef429c13f4" datatype="html">
         <source>Values</source>
@@ -237,6 +261,10 @@
       <trans-unit id="7af2d60f6a2be5d23acc6df1df3a8681dc51c6be" datatype="html">
         <source>Choose multiple images</source>
         <target>Избери множество изображения</target>
+      </trans-unit>
+      <trans-unit id="c145a34359b00a08aef9bf3fdf35a985aea25c8c" datatype="html">
+        <source>Invalid</source>
+        <target>Невалидно</target>
       </trans-unit>
       <trans-unit id="d9b8309be7e20ac8088e562c6937ee70d1897819" datatype="html">
         <source>Search image</source>
@@ -509,10 +537,6 @@
       <trans-unit id="f5e8239c4b997b54a03d60673c4420f602c0855e" datatype="html">
         <source>unit</source>
         <target>единица</target>
-      </trans-unit>
-      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
-        <source>Email</source>
-        <target>Поща</target>
       </trans-unit>
       <trans-unit id="c36a66f2107e8da5371ebc9d15c2008dff567f46" datatype="html">
         <source>Role</source>

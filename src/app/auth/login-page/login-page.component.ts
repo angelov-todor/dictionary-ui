@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { markFormControlAsTouched } from '../../shared/utils/markFormControlAsTouched';
 
 @Component({
   selector: 'app-login-page',
@@ -16,8 +17,8 @@ export class LoginPageComponent {
               private router: Router,
               fb: FormBuilder) {
     this.loginForm = fb.group({
-      username: [null, [Validators.required, Validators.email]],
-      password: [null, Validators.required]
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required, Validators.minLength(6)]]
     });
     this.loginForm.valueChanges.subscribe(() => {
       this.serverError = null;
@@ -25,11 +26,11 @@ export class LoginPageComponent {
   }
 
   onSubmit() {
-    this.loginForm.markAsTouched({onlySelf: true});
+    markFormControlAsTouched(this.loginForm);
     if (!this.loginForm.valid) {
       return;
     }
-    this.userAuth.login(this.loginForm.value.username, this.loginForm.value.password)
+    this.userAuth.login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe(
         () => {
           this.router.navigate(['/dashboard']);
