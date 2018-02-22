@@ -3,6 +3,8 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { markFormControlAsTouched } from '../../shared/utils/markFormControlAsTouched';
+import { ToastrService } from 'ngx-toastr';
+import { LocalizedMessages } from '../../shared/localized-messages/localized-messages';
 
 @Component({
   selector: 'app-signup-page',
@@ -16,7 +18,8 @@ export class SignupPageComponent {
 
   constructor(private userAuth: AuthService,
               private router: Router,
-              fb: FormBuilder) {
+              fb: FormBuilder,
+              private toastr: ToastrService) {
     this.signupForm = fb.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(6)]]
@@ -34,17 +37,13 @@ export class SignupPageComponent {
       return;
     }
     this.userAuth.signup(this.signupForm.value.email, this.signupForm.value.password)
+      .switchMap(() => {
+        return this.userAuth.login(this.signupForm.value.email, this.signupForm.value.password);
+      })
       .subscribe(
         () => {
-          this.userAuth.login(this.signupForm.value.email, this.signupForm.value.password)
-            .subscribe(
-              () => {
-                this.router.navigate(['/dashboard']);
-              },
-              (error) => {
-                this.serverError = error;
-              }
-            );
+          this.router.navigate(['/dashboard']).then(() => this.toastr.success(LocalizedMessages.signup));
+
         },
         (error) => {
           this.serverError = error;

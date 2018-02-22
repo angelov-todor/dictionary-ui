@@ -16,15 +16,20 @@ import { CognitiveTypesModule } from './cognitive-types/cognitive-types.module';
 import { TestsModule } from './tests/tests.module';
 import { CognitiveSkillsModule } from './cognitive-skills/cognitive-skills.module';
 import { UsersModule } from './users/users.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocalizedMessagesComponent } from './shared/localized-messages/localized-messages.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LocalizedMessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     AuthModule.forRoot(),
@@ -37,6 +42,7 @@ import { UsersModule } from './users/users.module';
     CognitiveSkillsModule.forRoot(),
     TestsModule.forRoot(),
     UsersModule.forRoot(),
+    ToastrModule.forRoot(),
     //  should be last in order to catch not found
     DashboardModule.forRoot()
   ],

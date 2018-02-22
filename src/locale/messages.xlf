@@ -719,6 +719,13 @@
           <context context-type="linenumber">94</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="common.signup" datatype="html">
+        <source>You have successfully signed up</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="dcd47f4d6b26b045a1b041b2fc73123bc0cfc118" datatype="html">
         <source>Log In</source>
         <context-group purpose="location">
