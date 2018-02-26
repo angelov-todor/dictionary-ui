@@ -1,0 +1,3 @@
+<ul class="tree-view-container" *ngIf="tree">
+  <app-node [node]="tree" (clicked)="nodeClicked($event)"></app-node>
+</ul>

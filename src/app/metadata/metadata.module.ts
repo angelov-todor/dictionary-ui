@@ -6,13 +6,15 @@ import { MetadataListComponent } from './metadata-list/metadata-list.component';
 import { MetadataService } from './metadata.service';
 import { MetadataEditComponent } from './metadata-edit/metadata-edit.component';
 import { ModalModule } from 'ngx-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     MetadataRoutingModule,
     ReactiveFormsModule,
-    ModalModule
+    ModalModule,
+    SharedModule
   ],
   declarations: [
     MetadataListComponent,

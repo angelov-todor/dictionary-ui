@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CognitiveTypeListComponent } from './cognitive-type-list.component';
+import { CognitiveSkillListComponent } from './cognitive-skill-list.component';
 
-describe('CognitiveTypeListComponent', () => {
-  let component: CognitiveTypeListComponent;
-  let fixture: ComponentFixture<CognitiveTypeListComponent>;
+describe('CognitiveSkillListComponent', () => {
+  let component: CognitiveSkillListComponent;
+  let fixture: ComponentFixture<CognitiveSkillListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CognitiveTypeListComponent ]
-    })
-    .compileComponents();
+      declarations: [CognitiveSkillListComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CognitiveTypeListComponent);
+    fixture = TestBed.createComponent(CognitiveSkillListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

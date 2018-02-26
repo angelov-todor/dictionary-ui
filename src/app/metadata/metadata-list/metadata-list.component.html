@@ -95,3 +95,5 @@
 <app-metadata-edit [metadataList]="allMetadata"
                    [metadata]="selectedMetadata"
                    (onCompleted)="selectedMetadata = null"></app-metadata-edit>
+<hr />
+<app-tree-view [tree]="tree" (onChange)="clickNode($event)" [keyboardWatch]=true></app-tree-view>

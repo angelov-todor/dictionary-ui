@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { PartialCollectionView } from '../words/words.service';
+import { TreeNodeParams } from '../shared/tree-node';
 
 @Injectable()
 export class MetadataService {
@@ -50,7 +51,7 @@ export class MetadataService {
       .map(res => res.json() as Metadata);
   }
 
-  remove(id: number): Observable<boolean> {
+  remove(id: string): Observable<boolean> {
     const url = `${this.metadataUrl}/${id}`;
     return this.http.delete(url)
       .do({
@@ -86,12 +87,13 @@ export class MetadataListResponse {
   }
 }
 
-export class Metadata {
-  public id: number;
+export class Metadata implements TreeNodeParams {
+  public id: string;
   public name: string;
   public type: string;
   public parent?: Metadata;
   public values?: string;
+  public children?: Metadata[];
 
   get parent_id() {
     return this.parent && this.parent.id;

@@ -19,6 +19,7 @@ import { UsersModule } from './users/users.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocalizedMessagesComponent } from './shared/localized-messages/localized-messages.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { LocalizedMessagesComponent } from './shared/localized-messages/localize
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     AuthModule.forRoot(),
+    SharedModule.forRoot(),
     MetadataModule.forRoot(),
     ImagesModule.forRoot(),
     WordsModule.forRoot(),

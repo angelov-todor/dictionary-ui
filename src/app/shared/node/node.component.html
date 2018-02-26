@@ -1,0 +1,23 @@
+<li *ngIf="isExpandable()" class="all-item">
+  <a (click)="clickNode(node)" class="folder-item" [ngClass]="{focus: node._focus}">
+    <div class="folder-item-container">
+      <span (click)="expandFolder()">
+        <i class="fa fa-plus text-secondary" *ngIf="!isExpanded()" aria-hidden="true"></i>
+        <i class="fa fa-minus text-secondary" *ngIf="isExpanded()" aria-hidden="true"></i>
+      </span>
+      <!--<i class="fa fa-window-maximize text-secondary" *ngIf="!isExpanded()" aria-hidden="true"></i>-->
+      <!--<i class="fa fa-window-restore text-secondary" *ngIf="isExpanded()" aria-hidden="true"></i>-->
+      <span>{{ node.name }}</span>
+    </div>
+  </a>
+  <ul *ngIf="isExpanded()" class="children-items">
+    <app-node *ngFor="let n of node.children" [node]="n" (clicked)="propagate($event)"></app-node>
+  </ul>
+</li>
+<li *ngIf="!isExpandable()" class="all-item">
+  <a (click)="clickNode(node)" class="file-item" [ngClass]="{focus: node._focus}">
+    <div class="folder-item-container">
+      <i class="fa fa-minus text-secondary" aria-hidden="true"></i> {{ node.name }}
+    </div>
+  </a>
+</li>

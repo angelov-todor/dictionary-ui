@@ -1,0 +1,24 @@
+.all-item {
+  list-style-type: none;
+  display: inline;
+  cursor: pointer;
+}
+
+.folder-item {
+}
+
+.file-item {
+  padding-left: 0;
+}
+
+.children-items {
+  padding-left: 35px;
+}
+
+.focus {
+  color: steelblue
+}
+
+.folder-item-container {
+  white-space: nowrap
+}

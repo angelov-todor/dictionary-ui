@@ -1,18 +1,20 @@
 import { Metadata, MetadataListResponse, MetadataService, MetadataTypes } from '../metadata.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PartialCollectionView } from '../../words/words.service';
 import { Subscription } from 'rxjs/Subscription';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { concat } from 'rxjs/observable/concat';
 import { of } from 'rxjs/observable/of';
+import { IEmployee } from '../../shared/employee';
+import { TreeNode, TreeNodeParams } from '../../shared/tree-node';
 
 @Component({
   selector: 'app-metadata-list',
   templateUrl: './metadata-list.component.html',
   styleUrls: ['./metadata-list.component.scss']
 })
-export class MetadataListComponent implements OnInit {
+export class MetadataListComponent implements OnInit, OnDestroy {
 
   private nameFilter = new BehaviorSubject<string>('');
   private metadataSubscription: Subscription;
@@ -22,6 +24,28 @@ export class MetadataListComponent implements OnInit {
   createForm: FormGroup;
   public types = MetadataTypes;
   collectionView: PartialCollectionView;
+  topEmployee: IEmployee = {
+    name: 'Janis Martin',
+    children: []
+  };
+
+  tree = new TreeNode(<TreeNodeParams>{
+    'name': 'photos',
+    'children': [
+      {
+        'name': 'summer',
+        'children': [
+          {
+            'name': 'june',
+            'children': [
+              {
+                'name': 'windsurf.jpg'
+              }]
+          }
+        ]
+      }
+    ]
+  });
 
   constructor(private metadataService: MetadataService,
               private fb: FormBuilder) {
@@ -53,6 +77,13 @@ export class MetadataListComponent implements OnInit {
       );
   }
 
+  ngOnDestroy(): void {
+    if (this.metadataSubscription) {
+      this.metadataSubscription.unsubscribe();
+      this.metadataSubscription = undefined;
+    }
+  }
+
   getAllMetadata() {
     this.metadataService.getMetadataList()
       .switchMap(metadataListResponse => {
@@ -67,10 +98,14 @@ export class MetadataListComponent implements OnInit {
         );
       })
       .subscribe(metadataListResponse => {
-        // this.allMetadata = metadataListResponse.metadata;
         this.allMetadata = (this.allMetadata || []).concat(
           metadataListResponse.metadata
         );
+        this.tree = new TreeNode(<TreeNodeParams>{
+          id: '',
+          name: '.',
+          children: this.allMetadata
+        });
       });
   }
 
@@ -92,8 +127,7 @@ export class MetadataListComponent implements OnInit {
       .subscribe(
         () => {
           this.metadata = this.metadata.filter(h => h !== meta);
-        },
-        (error) => console.log(error)
+        }
       );
   }
 
@@ -116,6 +150,13 @@ export class MetadataListComponent implements OnInit {
 
   filterByName(term: string): void {
     this.nameFilter.next(term);
+  }
+
+  clickNode(fileNode: TreeNode): void {
+    console.log(fileNode);
+
+    // Get full file path
+    console.log(fileNode.getFullPath())
   }
 }
 
