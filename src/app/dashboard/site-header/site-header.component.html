@@ -8,7 +8,6 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <ng-container *ngIf="isValid(); then authTokenValid else authTokenInvalid"></ng-container>
       <ng-template #authTokenValid>
-
         <li class="nav-item">
           <a class="nav-link" routerLink="/dashboard" routerLinkActive="active-nav-link" i18n>Dashboard</a>
         </li>

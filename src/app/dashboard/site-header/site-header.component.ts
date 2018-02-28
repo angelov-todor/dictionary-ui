@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SiteHeaderComponent {
 
-  isActive: boolean;
+  isActive = true;
   jwtHelper: JwtHelper = new JwtHelper();
 
 
