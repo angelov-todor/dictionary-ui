@@ -1,5 +1,5 @@
 <li *ngIf="isExpandable()" class="all-item">
-  <a (click)="clickNode(node)" class="folder-item" [ngClass]="{focus: node._focus}">
+  <a (click)="clickNode(node)" class="folder-item" [ngClass]="{focus: node.isFocused}">
     <div class="folder-item-container">
       <span (click)="expandFolder()">
         <i class="fa fa-plus text-secondary" *ngIf="!isExpanded()" aria-hidden="true"></i>

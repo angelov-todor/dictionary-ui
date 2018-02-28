@@ -1,97 +1,113 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light bg-faded sticky-top">
-    <a class="navbar-brand" href="#">System</a>
-    <button class="navbar-toggler" type="button" (click)="isActive = !isActive" data-toggle="collapse"
-            data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isActive">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <ng-container *ngIf="isValid(); then authTokenValid else authTokenInvalid"></ng-container>
-            <ng-template #authTokenValid>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/dashboard" routerLinkActive="active-nav-link" i18n>Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link" routerLink="/metadata" routerLinkActive="active-nav-link"
-                       i18n>Metadata</a>
-                </li>
-                <li class="nav-item">
-                    <div class="nav-item dropdown" dropdown>
-                        <a dropdownToggle class="nav-link dropdown-toggle" id="imagesNavbarDropdown"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Images</a>
-                        <div *dropdownMenu class="dropdown-menu" aria-labelledby="imagesNavbarDropdown">
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/images/list"
-                               routerLinkActive="active-nav-link"
-                               i18n>Images</a>
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/images/search"
-                               routerLinkActive="active-nav-link"
-                               i18n>Search</a>
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/images/upload"
-                               routerLinkActive="active-nav-link"
-                               i18n>Upload</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="nav-item dropdown" dropdown>
-                        <a dropdownToggle class="nav-link dropdown-toggle" id="unitsNavbarDropdown"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Units and Tests</a>
-                        <div *dropdownMenu class="dropdown-menu" aria-labelledby="unitsNavbarDropdown">
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/units/list"
-                               routerLinkActive="active-nav-link"
-                               i18n>Units</a>
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/units/generate"
-                               routerLinkActive="active-nav-link"
-                               i18n>Generate unit</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/tests/list"
-                               routerLinkActive="active-nav-link"
-                               i18n>Tests</a>
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/tests/generate"
-                               routerLinkActive="active-nav-link"
-                               i18n>Generate test</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/cognitive-types"
-                               routerLinkActive="active-nav-link"
-                               i18n>Cognitive types</a>
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/cognitive-skills"
-                               routerLinkActive="active-nav-link"
-                               i18n>Cognitive skills</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="nav-item dropdown" dropdown>
-                        <a dropdownToggle class="nav-link dropdown-toggle" id="wordsNavbarDropdown"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Dictionaries</a>
-                        <div *dropdownMenu class="dropdown-menu" aria-labelledby="wordsNavbarDropdown">
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/dictionary"
-                               routerLinkActive="active-nav-link" i18n>Dictionary 1</a>
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/words"
-                               routerLinkActive="active-nav-link" i18n>Dictionary 2</a>
-                            <a class="nav-item nav-link dropdown-item pl-2" routerLink="/tools"
-                               routerLinkActive="active-nav-link" i18n>Tools</a>
-                        </div>
-                    </div>
-                </li>
-              <li class="nav-item" *ngIf="isAdmin()">
-                <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active-nav-link"
-                   i18n>Users</a>
-              </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:" (click)="onLogout()" i18n>Log Out</a>
-                </li>
-            </ng-template>
-            <ng-template #authTokenInvalid>
-                <a class="nav-item nav-link float-right" routerLink="/login" routerLinkActive="active-nav-link" i18n>Login</a>
-            </ng-template>
-        </ul>
-        <div class="my-2 my-lg-0">
-            <a href="/bg/" class="badge nav-item nav-link text-primary" aria-hidden="true" i18n>bg</a>
-            <a href="/en/" class="badge nav-item nav-link text-danger" aria-hidden="true" i18n>en</a>
-        </div>
+  <a class="navbar-brand" href="#"><i class="fa fa-spin fa-cog"></i></a>
+  <button class="navbar-toggler" type="button" (click)="isActive = !isActive" data-toggle="collapse"
+          data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isActive">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <ng-container *ngIf="isValid(); then authTokenValid else authTokenInvalid"></ng-container>
+      <ng-template #authTokenValid>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active-nav-link" i18n>Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <div class="nav-item dropdown" dropdown>
+            <a dropdownToggle class="nav-link dropdown-toggle" id="metadataNavbarDropdown"
+               data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Metadata</a>
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="metadataNavbarDropdown">
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/metadata"
+                 routerLinkActive="active-nav-link"
+                 i18n>Images metadata</a>
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/cognitive-types"
+                 routerLinkActive="active-nav-link"
+                 i18n>Cognitive types</a>
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/cognitive-skills"
+                 routerLinkActive="active-nav-link"
+                 i18n>Cognitive skills</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-item dropdown" dropdown>
+            <a dropdownToggle class="nav-link dropdown-toggle" id="imagesNavbarDropdown"
+               data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Images</a>
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="imagesNavbarDropdown">
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/images/list"
+                 routerLinkActive="active-nav-link"
+                 i18n>Images list</a>
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/images/search"
+                 routerLinkActive="active-nav-link"
+                 i18n>Search image</a>
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/images/upload"
+                 routerLinkActive="active-nav-link"
+                 i18n>Upload image</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item dropdown" dropdown>
+            <a dropdownToggle class="nav-link dropdown-toggle" id="unitsNavbarDropdown"
+               data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Generate</a>
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="unitsNavbarDropdown">
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/units/generate"
+                 routerLinkActive="active-nav-link"
+                 i18n>Cognitive unit</a>
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/tests/generate"
+                 routerLinkActive="active-nav-link"
+                 i18n>Cognitive test</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item dropdown" dropdown>
+            <a dropdownToggle class="nav-link dropdown-toggle" id="resourcesNavbarDropdown"
+               data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Resources</a>
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="resourcesNavbarDropdown">
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/units/list"
+                 routerLinkActive="active-nav-link"
+                 i18n>Cognitive units</a>
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/tests/list"
+                 routerLinkActive="active-nav-link"
+                 i18n>Cognitive tests</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item dropdown" dropdown>
+            <a dropdownToggle class="nav-link dropdown-toggle" id="wordsNavbarDropdown"
+               data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Dictionaries</a>
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="wordsNavbarDropdown">
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/dictionary"
+                 routerLinkActive="active-nav-link" i18n>Dictionary 1</a>
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/words"
+                 routerLinkActive="active-nav-link" i18n>Dictionary 2</a>
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/tools"
+                 routerLinkActive="active-nav-link" i18n>Tools</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active-nav-link"
+             i18n>Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:" (click)="onLogout()" i18n>Log Out</a>
+        </li>
+      </ng-template>
+      <ng-template #authTokenInvalid>
+        <a class="nav-item nav-link float-right" routerLink="/login" routerLinkActive="active-nav-link" i18n>Login</a>
+      </ng-template>
+    </ul>
+    <div class="my-2 my-lg-0">
+      <a href="/bg/" class="badge nav-item nav-link text-primary" aria-hidden="true" i18n>bg</a>
+      <a href="/en/" class="badge nav-item nav-link text-danger" aria-hidden="true" i18n>en</a>
     </div>
+  </div>
 </nav>

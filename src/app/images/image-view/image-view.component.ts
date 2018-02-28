@@ -49,10 +49,8 @@ export class ImageViewComponent implements OnInit, OnDestroy {
         return concat(
           of(metadataListResponse),
           ...(
-            // given `page=1` is loaded, for the rest of `pagesToLoad=[2,3,4,...]`
             (Array.from(Array(metadataListResponse.view.pages && (metadataListResponse.view.pages - 1)).keys()).map((i) => i + 2))
-            // do a sequential request for each page of Properties
-              .map((page) => this.metadataService.getMetadataList(metadataListResponse.view.next))
+              .map((page) => this.metadataService.getMetadataList(page))
           )
         );
       })
@@ -67,9 +65,8 @@ export class ImageViewComponent implements OnInit, OnDestroy {
       (metadata) => {
         this.placeholder = '';
         if (metadata) {
-          console.log(metadata);
           this.allMetadata.forEach((meta) => {
-            if (meta.id === +metadata) {
+            if (meta.id === metadata) {
               this.placeholder = meta.values;
             }
           });

@@ -1,11 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PartialCollectionView, Word, WordListResponse, WordsService } from '../words.service';
+import { PartialCollectionView, Word, WordsService } from '../words.service';
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
-import { Observable } from 'rxjs/Observable';
-// Observable class extensions
 import 'rxjs/add/observable/from';
-// Observable operators
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -61,7 +58,7 @@ export class WordsListComponent implements OnInit, OnDestroy {
     this.selectedWord = word;
   }
 
-  setPage(page: string) {
+  setPage(page: number) {
     this.wordsService.getWords(page).subscribe(
       (wordsResponse) => {
         this.words = wordsResponse.words;

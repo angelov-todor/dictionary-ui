@@ -6,8 +6,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { concat } from 'rxjs/observable/concat';
 import { of } from 'rxjs/observable/of';
-import { IEmployee } from '../../shared/employee';
-import { TreeNode, TreeNodeParams } from '../../shared/tree-node';
 
 @Component({
   selector: 'app-metadata-list',
@@ -24,35 +22,13 @@ export class MetadataListComponent implements OnInit, OnDestroy {
   createForm: FormGroup;
   public types = MetadataTypes;
   collectionView: PartialCollectionView;
-  topEmployee: IEmployee = {
-    name: 'Janis Martin',
-    children: []
-  };
-
-  tree = new TreeNode(<TreeNodeParams>{
-    'name': 'photos',
-    'children': [
-      {
-        'name': 'summer',
-        'children': [
-          {
-            'name': 'june',
-            'children': [
-              {
-                'name': 'windsurf.jpg'
-              }]
-          }
-        ]
-      }
-    ]
-  });
 
   constructor(private metadataService: MetadataService,
               private fb: FormBuilder) {
     this.createForm = fb.group({
       name: [null, [Validators.required]],
       type: ['text', Validators.required],
-      parent: [null],
+      parent_id: [null],
       values: [null]
     });
   }
@@ -93,7 +69,7 @@ export class MetadataListComponent implements OnInit, OnDestroy {
             // given `page=1` is loaded, for the rest of `pagesToLoad=[2,3,4,...]`
             (Array.from(Array(metadataListResponse.view.pages && (metadataListResponse.view.pages - 1)).keys()).map((i) => i + 2))
             // do a sequential request for each page of Properties
-              .map(() => this.metadataService.getMetadataList(metadataListResponse.view.next))
+              .map((page) => this.metadataService.getMetadataList(page))
           )
         );
       })
@@ -101,11 +77,6 @@ export class MetadataListComponent implements OnInit, OnDestroy {
         this.allMetadata = (this.allMetadata || []).concat(
           metadataListResponse.metadata
         );
-        this.tree = new TreeNode(<TreeNodeParams>{
-          id: '',
-          name: '.',
-          children: this.allMetadata
-        });
       });
   }
 
@@ -131,7 +102,7 @@ export class MetadataListComponent implements OnInit, OnDestroy {
       );
   }
 
-  getMetadata(page?: string): void {
+  getMetadata(page?: number): void {
     this.metadataService.getMetadataList(page).subscribe(
       (metadataListResponse) => {
         this.metadata = metadataListResponse.metadata;
@@ -144,19 +115,12 @@ export class MetadataListComponent implements OnInit, OnDestroy {
     this.selectedMetadata = metadata;
   }
 
-  setPage(page: string) {
+  setPage(page: number) {
     this.getMetadata(page);
   }
 
   filterByName(term: string): void {
     this.nameFilter.next(term);
-  }
-
-  clickNode(fileNode: TreeNode): void {
-    console.log(fileNode);
-
-    // Get full file path
-    console.log(fileNode.getFullPath())
   }
 }
 

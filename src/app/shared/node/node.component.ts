@@ -20,7 +20,7 @@ export class NodeComponent {
   }
 
   isExpandable(): boolean {
-    return this.node.isDir();
+    return this.node.isParent();
   }
 
   isExpanded(): boolean {

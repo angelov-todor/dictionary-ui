@@ -1,0 +1,9 @@
+<ng-container *ngIf="!treeView">
+  <button class="btn btn-sm" (click)="treeView = true" i18n>TreeView</button>
+  <app-metadata-list></app-metadata-list>
+</ng-container>
+<ng-container *ngIf="treeView">
+  <button class="btn btn-sm" (click)="treeView = false" i18n>TableView</button>
+  <app-metadata-tree-view></app-metadata-tree-view>
+</ng-container>
+

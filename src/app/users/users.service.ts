@@ -12,10 +12,8 @@ export class UsersService {
   constructor(private http: AuthHttp) {
   }
 
-  getUsersList(page?: string): Observable<UsersListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.serviceUrl;
-
-    return this.http.get(url)
+  getUsersList(page?: number): Observable<UsersListResponse> {
+    return this.http.get(this.serviceUrl, {params: {page}})
       .map(res => res.json())
       .map(usersResponse => {
         usersResponse = new UsersListResponse(usersResponse);

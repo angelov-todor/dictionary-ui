@@ -13,6 +13,7 @@ import { TestViewComponent } from './test-view/test-view.component';
 import { UnitsModule } from '../units/units.module';
 import { TestStartComponent } from './test-start/test-start.component';
 import { TestResultsComponent } from './test-results/test-results.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { TestResultsComponent } from './test-results/test-results.component';
     TestsRoutingModule,
     ReactiveFormsModule,
     ModalModule,
-    UnitsModule
+    UnitsModule,
+    SharedModule
   ],
   declarations: [
     TestRootComponent,

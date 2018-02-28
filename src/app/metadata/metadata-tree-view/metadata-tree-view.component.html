@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <app-tree-view [tree]="tree" (onChange)="clickNode($event)" [keyboardWatch]=true></app-tree-view>
+    </div>
+    <div class="col-5">
+      <div class="row mb-3">
+        <div class="col text-right">
+          <button title="Add child metadata"
+                  class="btn btn-sm btn-primary"
+                  type="button"
+                  (click)="createChild()" i18n-title i18n>Add child</button>
+        </div>
+      </div>
+      <form class="mx-auto" [formGroup]="editForm" (submit)="onSubmit()" *ngIf="metadata">
+        <div class="form-group row">
+          <input type="hidden" formControlName="id"/>
+          <label for="name" class="col-4 col-form-label" i18n>Name</label>
+          <div class="col-8">
+            <input id="name"
+                   class="form-control mb-2 mr-sm-2 mb-sm-0"
+                   [class.border-danger]="editForm.get('name').touched && editForm.get('name').hasError('required')"
+                   type="text"
+                   placeholder="Name"
+                   formControlName="name"
+                   i18n-placeholder/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="type" i18n class="col-4 col-form-label">Type</label>
+          <div class="col-8">
+            <select id="type"
+                    class="form-control mb-2 mr-sm-2 mb-sm-0"
+                    formControlName="type">
+              <option *ngFor="let type of types.types;" [value]="type.type">{{type.label}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="parent" class="col-4 col-form-label" i18n>Parent</label>
+          <div class="col-8">
+            <input type="hidden" id="parent_id" formControlName="parent_id">
+            <input id="parent" type="text" value="{{metadata.parent?.name}}"
+                   class="form-control mb-2 mr-sm-2 mb-sm-0" disabled>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="values" class="col-4 col-form-label" i18n>Ex. values</label>
+          <div class="col-8">
+            <input id="values"
+                   class="form-control mb-2 mr-sm-2 mb-sm-0"
+                   type="text"
+                   placeholder="Example values"
+                   formControlName="values"
+                   i18n-placeholder/>
+          </div>
+        </div>
+        <div class="form-group text-right">
+          <button title="Update" i18n-title class="btn btn-sm btn-primary" type="submit" i18n>Update</button>
+          <button title="Remove" i18n-title class="btn btn-sm" type="button" (click)="removeMetadata()" i18n><i
+            class="fa fa-minus-circle text-danger"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-metadata-add [metadata]="child" (onCompleted)="onChildAdded($event)"></app-metadata-add>
+

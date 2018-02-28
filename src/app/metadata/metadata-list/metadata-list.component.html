@@ -7,7 +7,7 @@
     <tr>
       <th i18n>Name</th>
       <th i18n>Parent</th>
-      <th i18n>Values</th>
+      <th i18n>Example values</th>
       <th i18n>Actions</th>
     </tr>
     </thead>
@@ -37,28 +37,12 @@
     </tr>
     </tbody>
   </table>
-  <nav *ngIf="collectionView && collectionView.pages">
-    <ul class="pagination justify-content-center">
-      <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView.current == collectionView.first}"
-          class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.first)" i18n>First</a>
-      </li>
-      <li *ngIf="collectionView.previous" class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.previous)" i18n>Previous</a>
-      </li>
-      <li *ngIf="collectionView.next" class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.next)" i18n>Next</a>
-      </li>
-      <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView.current == collectionView.last}"
-          class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.last)" i18n>Last</a>
-      </li>
-    </ul>
-  </nav>
+  <app-pager [collectionView]="collectionView" (onPageChanged)="setPage($event)"></app-pager>
+
   <hr/>
   <div class="row justify-content-md-center">
     <div class="col-md-12">
-      <form action="post" class="form-inline mx-auto row" [formGroup]="createForm" (submit)="onSubmit()">
+      <form class="form-inline mx-auto row" [formGroup]="createForm" (submit)="onSubmit()">
         <input id="name"
                class="form-control mb-2 mr-sm-2 mb-sm-0 col-md-2"
                type="text"
@@ -71,9 +55,9 @@
           <option *ngFor="let type of types.types;" [value]="type.type">{{type.label}}</option>
         </select>
 
-        <select id="parent"
+        <select id="parent_id"
                 class="form-control mb-2 mr-sm-2 mb-sm-0 col-md-3"
-                formControlName="parent">
+                formControlName="parent_id">
           <option selected value="null">-</option>
           <option *ngFor="let meta of allMetadata" [value]="meta.id">{{meta.name}}</option>
         </select>
@@ -95,5 +79,3 @@
 <app-metadata-edit [metadataList]="allMetadata"
                    [metadata]="selectedMetadata"
                    (onCompleted)="selectedMetadata = null"></app-metadata-edit>
-<hr />
-<app-tree-view [tree]="tree" (onChange)="clickNode($event)" [keyboardWatch]=true></app-tree-view>

@@ -46,8 +46,7 @@ export class TestResultsComponent implements OnInit {
       });
   }
 
-  getResults(page?: string, params?: { user, unit }) {
-    console.log(params);
+  getResults(page?: number, params?: { user, unit }) {
     this.testsService.getTestResults(this.id, page, params)
       .subscribe((results) => {
         this.results = results.results;
@@ -55,7 +54,7 @@ export class TestResultsComponent implements OnInit {
       });
   }
 
-  setPage(page: string) {
+  setPage(page: number) {
     this.getResults(page);
   }
 

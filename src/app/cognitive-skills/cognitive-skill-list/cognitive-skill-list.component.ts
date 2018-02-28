@@ -25,7 +25,7 @@ export class CognitiveSkillListComponent implements OnInit {
     this.getCognitiveSkills();
   }
 
-  getCognitiveSkills(page?: string): void {
+  getCognitiveSkills(page?: number): void {
     this.cognitiveSkillService.getCognitiveSkillsList(page)
       .subscribe(
         (cognitiveSkillsListResponse) => {
@@ -58,7 +58,7 @@ export class CognitiveSkillListComponent implements OnInit {
       );
   }
 
-  setPage(page: string) {
+  setPage(page: number) {
     this.getCognitiveSkills(page);
   }
 }

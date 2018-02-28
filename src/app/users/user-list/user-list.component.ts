@@ -21,7 +21,7 @@ export class UserListComponent implements OnInit {
     this.getUsers();
   }
 
-  getUsers(page?: string): void {
+  getUsers(page?: number): void {
     this.usersService.getUsersList(page)
       .subscribe(
         (usersListResponse) => {
@@ -40,7 +40,7 @@ export class UserListComponent implements OnInit {
     this.selectedUser = user;
   }
 
-  setPage(page: string) {
+  setPage(page: number) {
     this.getUsers(page);
   }
 }

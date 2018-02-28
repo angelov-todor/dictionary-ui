@@ -35,14 +35,14 @@
           <tr *ngFor="let cognitiveType of cognitiveSkill?.cognitive_types">
             <td>{{cognitiveType.name}}</td>
             <td><a i18n-title title="Remove from cognitive skill" (click)="removeFromCognitiveSkill(cognitiveType)"
-                   class="pointer fa fa-download"></a></td>
+                   class="pointer fa fa-download text-danger"></a></td>
           </tr>
         </table>
       </div>
     </div>
   </div>
   <hr />
-  <div class="row">
+  <div class="row justify-content-center">
     <app-cognitive-type-list [cognitiveSkill]="cognitiveSkill"
                              (onAssignToCognitiveSkill)="assignCognitiveType($event)"></app-cognitive-type-list>
   </div>

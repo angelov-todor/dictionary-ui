@@ -19,7 +19,7 @@ export class TestListComponent implements OnInit {
     this.getTests();
   }
 
-  getTests(page?: string): void {
+  getTests(page?: number): void {
     this.testsService.getTestsList(page)
       .subscribe(
         (testsResponse) => {
@@ -40,7 +40,7 @@ export class TestListComponent implements OnInit {
       );
   }
 
-  setPage(page: string) {
+  setPage(page: number) {
     this.getTests(page);
   }
 }

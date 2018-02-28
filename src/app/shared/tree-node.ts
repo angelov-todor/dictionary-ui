@@ -1,12 +1,6 @@
-export enum FileType {
-  file,
-  dir
-}
-
 export interface TreeNodeParams {
   id: string
   name: string
-  nodeType?: FileType
   children?: Array<TreeNodeParams>
   focus?: boolean
 }
@@ -14,7 +8,6 @@ export interface TreeNodeParams {
 export class TreeNode {
   public id: string;
   public name: string;
-  public type: FileType;
   public children: Array<TreeNode>;
 
   // Full file path from root node
@@ -24,18 +17,20 @@ export class TreeNode {
   private parentNode: TreeNode;
 
   private _isFocused: boolean;
+  get isFocused(): boolean {
+    return this._isFocused;
+  }
+
   private _isExpanded: boolean;
 
   constructor(params: TreeNodeParams, parent: TreeNode = null) {
     this.id = params.id;
     this.name = params.name;
-    this.type = params.nodeType || FileType.file;
     this.children = [];
 
     // update private values
     this.parentNode = parent;
     this._isFocused = params.focus || false;
-    this._isExpanded = this.type === FileType.dir || this.children.length > 0;
 
     if (parent !== null) {
       const parentPath: string = this.parentNode.getFullPath();
@@ -53,17 +48,17 @@ export class TreeNode {
         (fileNodeParams) => this.children.push(new TreeNode(fileNodeParams, this))
       );
     }
+
+    this._isExpanded = this.children.length > 0;
   }
 
   getFullPath(): string {
     return this.filePath;
   }
 
-  public isDir(): boolean {
-    return this.type === FileType.dir ||
-      this.children.length > 0;
+  public isParent(): boolean {
+    return this.children.length > 0;
   }
-
 
   public getParentNode(): TreeNode {
     return this.parentNode

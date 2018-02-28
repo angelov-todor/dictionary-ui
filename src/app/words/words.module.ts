@@ -9,13 +9,15 @@ import { WordViewComponent } from './word-view/word-view.component';
 import { ModalModule } from 'ngx-bootstrap';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { DictionaryService } from './dictionary.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     WordsRoutingModule,
     ReactiveFormsModule,
-    ModalModule
+    ModalModule,
+    SharedModule
   ],
   declarations: [
     WordsRootComponent,

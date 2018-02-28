@@ -9,13 +9,15 @@ import { UnitsService } from './units.service';
 import { UnitViewComponent } from './unit-view/unit-view.component';
 import { ImagesModule } from '../images/images.module';
 import { UnitListPageComponent } from './unit-list-page/unit-list-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     UnitsRoutingModule,
-    ImagesModule
+    ImagesModule,
+    SharedModule
   ],
   declarations: [
     UnitRootComponent,

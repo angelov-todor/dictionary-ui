@@ -5,14 +5,13 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class WordsService {
-  private wordsUrl = environment.baseAPIEndpoint + '/words';  // URL to web api
+  private serviceUrl = environment.baseAPIEndpoint + '/words';  // URL to web api
 
   constructor(private http: AuthHttp) {
   }
 
-  getWords(page?: string): Observable<WordListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.wordsUrl;
-    return this.http.get(url)
+  getWords(page?: number): Observable<WordListResponse> {
+    return this.http.get(this.serviceUrl, {params: {page}})
       .map(res => res.json())
       .map(wordsResponse => {
         wordsResponse = new WordListResponse(wordsResponse);
@@ -21,7 +20,7 @@ export class WordsService {
   }
 
   filterByName(name: string): Observable<WordListResponse> {
-    const url = this.wordsUrl;
+    const url = this.serviceUrl;
     return this.http.get(url,
       {
         params: {
@@ -36,7 +35,7 @@ export class WordsService {
   }
 
   getWord(id: number): Observable<Word> {
-    const url = this.wordsUrl + `/${id}`;
+    const url = this.serviceUrl + `/${id}`;
     return this.http.get(url)
       .map(res => res.json())
       .map(wordResponse => {

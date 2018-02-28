@@ -3,19 +3,17 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { PartialCollectionView } from '../words/words.service';
-import { TreeNodeParams } from '../shared/tree-node';
+import { TreeNode, TreeNodeParams } from '../shared/tree-node';
 
 @Injectable()
 export class MetadataService {
-  private metadataUrl = environment.baseAPIEndpoint + '/metadata';
+  private serviceUrl = environment.baseAPIEndpoint + '/metadata';
 
   constructor(private http: AuthHttp) {
   }
 
-  getMetadataList(page?: string): Observable<MetadataListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.metadataUrl;
-
-    return this.http.get(url)
+  getMetadataList(page?: number): Observable<MetadataListResponse> {
+    return this.http.get(this.serviceUrl, {params: {page}})
       .map(res => res.json())
       .map(metadataResponse => {
         metadataResponse = new MetadataListResponse(metadataResponse);
@@ -23,8 +21,16 @@ export class MetadataService {
       });
   }
 
+  get(id: string): Observable<Metadata> {
+    const url = `${this.serviceUrl}/${id}`;
+    return this.http
+      .get(url)
+      .map(res => res.json())
+      .map(data => new Metadata(data));
+  }
+
   filterByName(name: string): Observable<MetadataListResponse> {
-    const url = this.metadataUrl;
+    const url = this.serviceUrl;
     return this.http.get(url,
       {
         params: {
@@ -38,21 +44,36 @@ export class MetadataService {
       });
   }
 
+  filterByParent(parent?: any): Observable<MetadataListResponse> {
+    const url = this.serviceUrl;
+    return this.http.get(url,
+      {
+        params: {
+          parent,
+          limit: 100
+        }
+      })
+      .map(res => res.json())
+      .map(metadataResponse => {
+        return new MetadataListResponse(metadataResponse);
+      });
+  }
+
   create(metadata: any): Observable<Metadata> {
     return this.http
-      .post(this.metadataUrl, metadata)
+      .post(this.serviceUrl, metadata)
       .map(res => res.json() as Metadata);
   }
 
   update(metadata: any): Observable<Metadata> {
-    const url = `${this.metadataUrl}/${metadata.id}`;
+    const url = `${this.serviceUrl}/${metadata.id}`;
     return this.http
       .put(url, metadata)
       .map(res => res.json() as Metadata);
   }
 
   remove(id: string): Observable<boolean> {
-    const url = `${this.metadataUrl}/${id}`;
+    const url = `${this.serviceUrl}/${id}`;
     return this.http.delete(url)
       .do({
         error: console.log
@@ -109,10 +130,8 @@ export class MetadataTypes {
     {
       type: 'text',
       label: 'Text'
-    }, {
-      type: 'bool',
-      label: 'Boolean'
-    }, {
+    },
+    {
       type: 'number',
       label: 'Number'
     }

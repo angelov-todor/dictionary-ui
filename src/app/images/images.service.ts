@@ -9,7 +9,7 @@ import { PartialCollectionView } from '../words/words.service';
 
 @Injectable()
 export class ImagesService {
-  private imagesUrl = environment.baseAPIEndpoint + '/images';  // URL to web api
+  private serviceUrl = environment.baseAPIEndpoint + '/images';  // URL to web api
   private imagesEnrichUrl = environment.baseAPIEndpoint + '/images-enrich';
   progress;
   progressObserver;
@@ -23,25 +23,25 @@ export class ImagesService {
 
   search(term: string): Observable<FoundImage[]> {
     return this.http
-      .get(`${this.imagesUrl}/search?term=${term}`)
+      .get(`${this.serviceUrl}/search?term=${term}`)
       .map(response => response.json().items as FoundImage[]);
   }
 
   uploadFoundImage(req): Observable<Image> {
     return this.http
-      .post(`${this.imagesUrl}-upload-external`, req)
+      .post(`${this.serviceUrl}-upload-external`, req)
       .map(response => response.json() as Image);
   }
 
   upload(req): Observable<Image> {
     return this.http
-      .post(`${this.imagesUrl}-upload`, JSON.stringify(req))
+      .post(`${this.serviceUrl}-upload`, JSON.stringify(req))
       .map(response => response.json() as Image);
   }
 
   getImage(id: number): Observable<Image> {
     return this.http
-      .get(this.imagesUrl + `/${id}`)
+      .get(this.serviceUrl + `/${id}`)
       .map((res) => res.json())
       .map(imageData => {
         return new Image(imageData);
@@ -58,17 +58,15 @@ export class ImagesService {
   }
 
   remove(image: Image): Observable<Boolean> {
-    return this.http.delete(this.imagesUrl + '/' + image.id)
+    return this.http.delete(this.serviceUrl + '/' + image.id)
       .do({
         error: console.log
       })
       .map(() => true);
   }
 
-  getImagesList(page?: string): Observable<ImageListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.imagesUrl;
-
-    return this.http.get(url)
+  getImagesList(page?: number): Observable<ImageListResponse> {
+    return this.http.get(this.serviceUrl, {params: {page}})
       .map(res => res.json())
       .map(imageResponse => {
         imageResponse = new ImageListResponse(imageResponse);
@@ -77,7 +75,7 @@ export class ImagesService {
   }
 
   filterByTerm(term: string): Observable<ImageListResponse> {
-    const url = this.imagesUrl;
+    const url = this.serviceUrl;
     return this.http.get(url,
       {
         params: {

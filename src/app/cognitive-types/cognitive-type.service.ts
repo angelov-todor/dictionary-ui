@@ -12,9 +12,7 @@ export class CognitiveTypeService {
   }
 
   getCognitiveTypesList(page?: number): Observable<CognitiveTypesListResponse> {
-    return this.http.get(this.serviceUrl, {
-      params: {page: page}
-    })
+    return this.http.get(this.serviceUrl, {params: {page}})
       .map(res => res.json())
       .map(cognitiveTypesResponse => {
         cognitiveTypesResponse = new CognitiveTypesListResponse(cognitiveTypesResponse);

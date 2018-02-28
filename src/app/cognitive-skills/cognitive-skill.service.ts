@@ -20,10 +20,8 @@ export class CognitiveSkillService {
       });
   }
 
-  getCognitiveSkillsList(page?: string): Observable<CognitiveSkillsListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.serviceUrl;
-
-    return this.http.get(url)
+  getCognitiveSkillsList(page?: number): Observable<CognitiveSkillsListResponse> {
+    return this.http.get(this.serviceUrl, {params: {page}})
       .map(res => res.json())
       .map(cognitiveSkillsResponse => {
         cognitiveSkillsResponse = new CognitiveSkillsListResponse(cognitiveSkillsResponse);

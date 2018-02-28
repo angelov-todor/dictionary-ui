@@ -30,23 +30,6 @@
     </tr>
     </tbody>
   </table>
-  <nav *ngIf="collectionView">
-    <ul class="pagination justify-content-center">
-      <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView.current == collectionView.first}"
-          class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.first)" i18n>First</a>
-      </li>
-      <li *ngIf="collectionView.previous" class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.previous)" i18n>Previous</a>
-      </li>
-      <li *ngIf="collectionView.next" class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.next)" i18n>Next</a>
-      </li>
-      <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView.current == collectionView.last}"
-          class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.last)" i18n>Last</a>
-      </li>
-    </ul>
-  </nav>
+  <app-pager [collectionView]="collectionView" (onPageChanged)="setPage($event)"></app-pager>
 </div>
 <app-user-edit [user]="selectedUser" (onCompleted)="onCompleted()"></app-user-edit>

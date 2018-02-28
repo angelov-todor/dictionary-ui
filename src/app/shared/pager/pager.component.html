@@ -1,0 +1,34 @@
+<nav aria-label="Navigation" *ngIf="collectionView && collectionView.pages">
+  <ul class="pagination pagination-sm justify-content-center">
+    <li class="page-item" [class.disabled]="collectionView.page == 1">
+      <a class="page-link" href="#" (click)="setPage(1); false" i18n>First</a>
+    </li>
+    <li class="page-item d-none d-md-block" [class.disabled]="collectionView.page - 1 < 1">
+      <a class="page-link" href="#" tabindex="-1" (click)="setPage(collectionView.page - 1); false" i18n>Previous</a>
+    </li>
+    <li class="page-item" *ngIf="collectionView.page - 2 >= 1"><a
+      class="page-link"
+      href="#"
+      (click)="setPage(collectionView.page - 2); false">{{collectionView.page - 2}}</a></li>
+    <li class="page-item" *ngIf="collectionView.page - 1 >= 1"><a
+      class="page-link"
+      href="#"
+      (click)="setPage(collectionView.page - 1); false">{{collectionView.page - 1}}</a></li>
+    <li class="page-item active"><a class="page-link" href="#" (click)="false">{{collectionView.page}}</a></li>
+    <li class="page-item" *ngIf="collectionView.page + 1 <= collectionView.pages"><a
+      class="page-link"
+      href="#"
+      (click)="setPage(collectionView.page + 1); false">{{collectionView.page +1}}</a></li>
+    <li class="page-item" *ngIf="collectionView.page + 2 <= collectionView.pages"><a
+      class="page-link"
+      href="#"
+      (click)="setPage(collectionView.page + 2); false">{{collectionView.page + 2}}</a></li>
+    <li class="page-item hidden-xs-down" [class.disabled]="collectionView.page + 1 > collectionView.pages">
+      <a class="page-link" href="#" (click)="setPage(collectionView.page + 1); false" i18n>Next</a>
+    </li>
+    <li class="page-item" [class.disabled]="collectionView.page == collectionView.pages">
+      <a class="page-link" href="#" (click)="setPage(collectionView.pages); false" i18n>Last</a>
+    </li>
+    <li class="page-item d-none d-md-block"><span class="total-items" i18n>Total items: {{collectionView.total}}</span></li>
+  </ul>
+</nav>

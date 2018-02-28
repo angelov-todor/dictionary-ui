@@ -48,7 +48,7 @@ export class ImageListComponent implements OnInit, OnDestroy {
     this.onImageClicked.emit(image);
   }
 
-  getImages(page?: string): void {
+  getImages(page?: number): void {
     this.imageService.getImagesList(page).subscribe(
       (imagesListResponse) => {
         this.images = imagesListResponse.images;
@@ -57,7 +57,7 @@ export class ImageListComponent implements OnInit, OnDestroy {
     );
   }
 
-  setPage(page: string) {
+  setPage(page: number) {
     this.getImages(page);
   }
 

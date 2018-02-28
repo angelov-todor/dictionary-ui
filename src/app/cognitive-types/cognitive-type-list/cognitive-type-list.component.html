@@ -17,7 +17,7 @@
       <td>
         <a *ngIf="!cognitiveSkill" i18n-title title="Remove" (click)="remove(cognitiveType)"
            class="pointer remove fa fa-trash"></a>
-        <a *ngIf="cognitiveSkill" class="pointer fa fa-upload" title="Assign to cognitive skill" i18n-title
+        <a *ngIf="cognitiveSkill" class="pointer fa fa-upload text-success" title="Assign to cognitive skill" i18n-title
            aria-hidden="true"
            (click)="assignToTest(cognitiveType)"></a>
       </td>
@@ -27,22 +27,5 @@
     </tr>
     </tbody>
   </table>
-  <nav *ngIf="collectionView">
-    <ul class="pagination justify-content-center">
-      <li *ngIf="collectionView.first" [ngClass]="{'active disabled': collectionView.current == collectionView.first}"
-          class="page-item">
-        <a class="page-link pointer" (click)="setPage(1)" i18n>First</a>
-      </li>
-      <li *ngIf="collectionView.previous" class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.page-1)" i18n>Previous</a>
-      </li>
-      <li *ngIf="collectionView.next" class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.page+1)" i18n>Next</a>
-      </li>
-      <li *ngIf="collectionView.last" [ngClass]="{'active disabled': collectionView.current == collectionView.last}"
-          class="page-item">
-        <a class="page-link pointer" (click)="setPage(collectionView.pages)" i18n>Last</a>
-      </li>
-    </ul>
-  </nav>
+  <app-pager [collectionView]="collectionView" (onPageChanged)="setPage($event)"></app-pager>
 </div>

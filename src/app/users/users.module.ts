@@ -6,13 +6,15 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UsersService } from './users.service';
 import { UsersRoutingModule } from './users-routing.module';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     UsersRoutingModule,
     ReactiveFormsModule,
-    ModalModule
+    ModalModule,
+    SharedModule
   ],
   declarations: [
     UserListComponent,

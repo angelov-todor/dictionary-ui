@@ -7,13 +7,15 @@ import { CognitiveTypeRoutingModule } from './cognitive-type-routing.module';
 import { CognitiveTypeListComponent } from './cognitive-type-list/cognitive-type-list.component';
 import { CognitiveTypesListPageComponent } from './cognitive-types-list-page/cognitive-types-list-page.component';
 import { CognitiveTypeAddComponent } from './cognitive-type-add/cognitive-type-add.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     CognitiveTypeRoutingModule,
     ReactiveFormsModule,
-    ModalModule
+    ModalModule,
+    SharedModule
   ],
   declarations: [
     CognitiveTypeListComponent,

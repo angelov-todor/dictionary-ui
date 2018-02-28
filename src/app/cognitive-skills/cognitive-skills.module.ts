@@ -8,6 +8,7 @@ import { CognitiveSkillListComponent } from './cognitive-skill-list/cognitive-sk
 import { CognitiveSkillViewComponent } from './cognitive-skill-view/cognitive-skill-view.component';
 import { CognitiveSkillsRootComponent } from './cognitive-skills-root/cognitive-skills-root.component';
 import { CognitiveTypesModule } from '../cognitive-types/cognitive-types.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { CognitiveTypesModule } from '../cognitive-types/cognitive-types.module'
     CognitiveSkillRoutingModule,
     ReactiveFormsModule,
     ModalModule,
-    CognitiveTypesModule
+    CognitiveTypesModule,
+    SharedModule
   ],
   declarations: [
     CognitiveSkillListComponent,

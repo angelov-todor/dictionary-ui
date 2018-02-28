@@ -7,6 +7,9 @@ import { MetadataService } from './metadata.service';
 import { MetadataEditComponent } from './metadata-edit/metadata-edit.component';
 import { ModalModule } from 'ngx-bootstrap';
 import { SharedModule } from '../shared/shared.module';
+import { MetadataListPageComponent } from './metadata-list-page/metadata-list-page.component';
+import { MetadataTreeViewComponent } from './metadata-tree-view/metadata-tree-view.component';
+import { MetadataAddComponent } from './metadata-add/metadata-add.component';
 
 @NgModule({
   imports: [
@@ -18,7 +21,10 @@ import { SharedModule } from '../shared/shared.module';
   ],
   declarations: [
     MetadataListComponent,
-    MetadataEditComponent
+    MetadataEditComponent,
+    MetadataListPageComponent,
+    MetadataTreeViewComponent,
+    MetadataAddComponent
   ],
   providers: [MetadataService]
 })

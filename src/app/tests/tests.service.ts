@@ -25,11 +25,8 @@ export class TestsService {
       });
   }
 
-
-  getTestsList(page?: string): Observable<TestsListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.serviceUrl;
-
-    return this.http.get(url)
+  getTestsList(page?: number): Observable<TestsListResponse> {
+    return this.http.get(this.serviceUrl, {params: {page}})
       .map(res => res.json())
       .map(testsResponse => {
         testsResponse = new TestsListResponse(testsResponse);
@@ -87,11 +84,11 @@ export class TestsService {
       .map(() => true);
   }
 
-  getTestResults(id: string, page?: string, params?: { user, unit }): Observable<ResultListResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : `${this.serviceUrl}/${id}/answers`;
+  getTestResults(id: string, page?: number, params?: { user, unit }): Observable<ResultListResponse> {
+    const url = `${this.serviceUrl}/${id}/answers`;
 
     return this.http
-      .get(url, {params: params})
+      .get(url, {params: {page, ...params}})
       .map(res => res.json())
       .map(result => new ResultListResponse(result));
   }

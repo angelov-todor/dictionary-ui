@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { EventEmitter } from '@angular/core'
-import { SimpleChanges } from '@angular/core'
 import { Input } from '@angular/core'
 import { Output } from '@angular/core'
-import { OnChanges } from '@angular/core'
 import { TreeNode } from '../tree-node';
 
 @Component({
@@ -11,7 +9,7 @@ import { TreeNode } from '../tree-node';
   templateUrl: './tree-view.component.html',
   styleUrls: ['./tree-view.component.scss']
 })
-export class TreeViewComponent implements OnInit, OnChanges {
+export class TreeViewComponent {
 
   @Input() tree: TreeNode;
   @Input() keyboardWatch: boolean;
@@ -22,14 +20,6 @@ export class TreeViewComponent implements OnInit, OnChanges {
   constructor() {
     this.onChange = new EventEmitter();
     this.keyboardWatch = false
-  }
-
-  ngOnInit() {
-
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-
   }
 
   nodeClicked(nextNode: TreeNode) {
@@ -50,7 +40,7 @@ export class TreeViewComponent implements OnInit, OnChanges {
         this.onChange.emit(this.currFocusNode);
         break;
       case 37: // left
-        if (this.currFocusNode.isDir()
+        if (this.currFocusNode.isParent()
           && this.currFocusNode.isExpanded) {
           this.currFocusNode.fold();
           return
@@ -64,7 +54,7 @@ export class TreeViewComponent implements OnInit, OnChanges {
         // Move to upper item
         break;
       case 39: // Right
-        if (!this.currFocusNode.isDir()) {
+        if (!this.currFocusNode.isParent()) {
           return;
         }
         if (!this.currFocusNode.isExpanded) {
@@ -74,7 +64,7 @@ export class TreeViewComponent implements OnInit, OnChanges {
         }
         break;
       case 40: // Down
-        if (this.currFocusNode.isDir()
+        if (this.currFocusNode.isParent()
           && this.currFocusNode.isExpanded
           && this.currFocusNode.children.length > 0) {
           // first child

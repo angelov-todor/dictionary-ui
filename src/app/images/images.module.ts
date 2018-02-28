@@ -11,12 +11,14 @@ import { ImageViewComponent } from './image-view/image-view.component';
 import { ImagesMetadataService } from './images-metadata.service';
 import { ImageEnrichComponent } from './image-enrich/image-enrich.component';
 import { ImageListPageComponent } from './image-list-page/image-list-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ImagesRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   declarations: [
     ImageUploadComponent,

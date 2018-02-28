@@ -7,15 +7,13 @@ import { PartialCollectionView } from './words.service';
 @Injectable()
 export class DictionaryService {
 
-  private dictionaryURL = environment.baseAPIEndpoint + '/dictionary';
+  private serviceUrl = environment.baseAPIEndpoint + '/dictionary';
 
   constructor(private http: AuthHttp) {
   }
 
-  getDictionary(page?: string): Observable<DictionaryResponse> {
-    const url = page ? environment.baseAPIEndpoint + page : this.dictionaryURL;
-
-    return this.http.get(url)
+  getDictionary(page?: number): Observable<DictionaryResponse> {
+    return this.http.get(this.serviceUrl, {params: {page}})
       .map(res => res.json())
       .map(dictionaryResponse => {
         dictionaryResponse = new DictionaryResponse(dictionaryResponse);
@@ -24,7 +22,7 @@ export class DictionaryService {
   }
 
   filterByName(name: string): Observable<DictionaryResponse> {
-    return this.http.get(this.dictionaryURL, {params: {name}})
+    return this.http.get(this.serviceUrl, {params: {name}})
       .map(res => res.json())
       .map(wordsResponse => {
         wordsResponse = new DictionaryResponse(wordsResponse);

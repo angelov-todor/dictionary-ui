@@ -50,7 +50,7 @@ export class DictionaryComponent implements OnInit, OnDestroy {
     this.subscription = null;
   }
 
-  setPage(page: string) {
+  setPage(page: number) {
     this.dictionaryService.getDictionary(page).subscribe(
       (dictionaryResponse) => {
         this.words = dictionaryResponse.words;
