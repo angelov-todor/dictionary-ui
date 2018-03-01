@@ -109,6 +109,10 @@ export class FoundImage {
   };
 }
 
+export class ImageTypes {
+  static types = ['.jpg', '.jpeg', '.bmp', '.gif', '.png'];
+}
+
 export class Image {
   public id: number;
   public src: string;

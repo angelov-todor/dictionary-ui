@@ -1,46 +1,40 @@
 <div class="row">
   <div class="col">
-    <input id="input-file" type="file" #file class="inputfile" (change)="changeSelected(file.files.item(0))"/>
+    <input id="input-file" accept="image/*" type="file" #file class="inputfile" multiple (change)="changeSelected(file.files)"/>
   </div>
 
-  <label *ngIf="!selected" for="input-file" class="btn btn-primary col col-form-label" i18n>Choose an image</label>
-  <label *ngIf="selected" for="input-file" class="btn btn-primary col col-form-label">{{selected}}</label>
+  <label *ngIf="selected === 0" for="input-file" class="btn btn-primary col col-form-label" i18n>Choose image/s</label>
+  <label *ngIf="selected === 1" for="input-file" class="btn btn-primary col col-form-label">{{selectedName}}</label>
+  <label *ngIf="selected > 1" for="input-file" class="btn btn-primary col col-form-label" i18n>{{selected}} files selected</label>
   <div class="col">
-    <button type="button" [ngClass]="{disabled:!isSelectedSingle}" class="btn btn-primary"
-            (click)="upload(file.files.item(0))">
+    <button type="button" [ngClass]="{disabled:!selected}" class="btn btn-primary"
+            (click)="upload(file.files)">
       <i class="fa fa-upload" aria-hidden="true"></i> <span i18n>Upload</span>
     </button>
   </div>
 </div>
-<hr/>
-<div class="row">
+<div class="row mt-3">
   <div class="col">
-    <input id="input-files" type="file" #files class="inputfile" multiple (change)="changeSelectedFiles(files.files)"/>
-  </div>
-
-  <label *ngIf="!selectedFiles" for="input-files" class="btn btn-primary col col-form-label" i18n>Choose multiple images</label>
-  <label *ngIf="selectedFiles" for="input-files" class="btn btn-primary col col-form-label">{{selectedFiles}}</label>
-  <div class="col">
-    <button type="button" [ngClass]="{disabled:!isSelectedMultiple}" class="btn btn-primary"
-            (click)="uploadBulk(files.files)">
-      <i class="fa fa-upload" aria-hidden="true"></i> <span i18n>Upload</span>
-    </button>
-  </div>
-</div>
-<div class="row">
-  <div class="col">
-    <div class="alert alert-danger" *ngIf="serverError">
+    <div class="alert alert-danger text-center" *ngIf="serverError">
       <ng-container [ngSwitch]="serverError.status">
+        <ng-container *ngSwitchCase="400" i18n>Invalid, allowed extensions are: '.jpg', '.jpeg', '.bmp', '.gif', '.png'</ng-container>
         <ng-container *ngSwitchCase="404" i18n>Invalid</ng-container>
         <ng-container *ngSwitchDefault i18n>An error occurred</ng-container>
       </ng-container>
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row mt-3">
+  <div class="col">
+    <div class="alert alert-success text-center" *ngIf="uploaded">
+      <span>{{uploaded}}</span><span i18n> image/s uploaded</span>
+    </div>
+  </div>
+</div>
+<div class="row mt-3">
   <div class="col">
     <div class="text-center" *ngIf="targetResult">
-      <img id="your_image" [src]="targetResult" class="rounded"/>
+      <img id="your_image" [src]="targetResult" class="rounded img-fluid  uploaded-image"/>
     </div>
   </div>
 </div>

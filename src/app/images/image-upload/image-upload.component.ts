@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ImagesService } from '../images.service';
+import { Component } from '@angular/core';
+import { ImagesService, ImageTypes } from '../images.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
@@ -8,27 +8,30 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './image-upload.component.html',
   styleUrls: ['./image-upload.component.scss']
 })
-export class ImageUploadComponent implements OnInit {
+export class ImageUploadComponent {
 
-  public selected: string;
-  public selectedFiles: string;
-  public isSelectedSingle = false;
-  public isSelectedMultiple = false;
+  public selected = 0;
+  public selectedName: string;
   public targetResult = '';
   public serverError: any;
+  public uploaded = 0;
 
   constructor(private imagesService: ImagesService,
               private router: Router) {
   }
 
-  ngOnInit() {
-  }
-
-  uploadBulk(files: FileList): void {
-    if (!files) {
+  upload(files: FileList): void {
+    const filesCount = files.length;
+    if (filesCount <= 0) {
       return;
     }
-    for (let i = 0; i < files.length; i++) {
+    if (!this.isValid(files)) {
+      this.serverError = {
+        status: 400
+      };
+      return;
+    }
+    for (let i = 0; i < filesCount; i++) {
       const file = files.item(i);
       const reader = new FileReader();
       Observable.create((observer: any) => {
@@ -36,13 +39,20 @@ export class ImageUploadComponent implements OnInit {
           observer.next(e.target.result);
           observer.complete();
         };
+      }).switchMap((m) => {
+        return this.imagesService.upload({'filename': file.name, 'data': m})
       }).subscribe(
-        (m) => {
-          this.imagesService.upload({'filename': file.name, 'data': m})
-            .subscribe(() => console.log(file.name));
+        (image) => {
+          if (filesCount === 1) {
+            this.router.navigate(['/images/view', image.id]);
+            return;
+          }
+          this.uploaded++;
+          if (this.uploaded === filesCount) {
+            this.router.navigate(['/images/list']);
+          }
         },
         (e) => {
-          console.log('error: ', e);
           this.serverError = e;
         }
       );
@@ -51,40 +61,62 @@ export class ImageUploadComponent implements OnInit {
     }
   }
 
-  upload(file?: File): void {
-    if (!file) {
-      return;
-    }
-    const reader = new FileReader();
-    Observable.create((observer: any) => {
-      reader.onload = function (e: any) {
-        observer.next(e.target.result);
-        observer.complete();
-      };
-    }).subscribe(
-      (m) => {
-        this.imagesService.upload({'filename': file.name, 'data': m})
-          .subscribe((image) => {
-            this.router.navigate(['/images/view', image.id]);
-          });
-      },
-      (e) => {
-        console.log('error: ', e);
-        this.serverError = e;
-      }
-    );
+  private isValid(files: FileList): boolean {
+    const length = files.length;
 
-    reader.readAsDataURL(file);
+    for (let i = 0; i < length; i++) {
+      const file = files.item(i);
+      const sFileName = file.name;
+
+      if (sFileName) {
+        let blnValid = false;
+        for (let j = 0; j < ImageTypes.types.length; j++) {
+          const sCurExtension = ImageTypes.types[j];
+          if (sFileName.substr(
+              sFileName.length - sCurExtension.length,
+              sCurExtension.length
+            ).toLowerCase() === sCurExtension.toLowerCase()) {
+            blnValid = true;
+            break;
+          }
+        }
+
+        if (!blnValid) {
+          this.serverError = {
+            status: 400
+          };
+          return false;
+        }
+      }
+
+    }
+    return true;
   }
 
-  changeSelected(file?: File): void {
-    this.isSelectedSingle = true;
-    if (!file) {
-      this.isSelectedSingle = false;
+  changeSelected(files?: FileList) {
+    this.selected = 0;
+    this.selectedName = '';
+    this.targetResult = '';
+    this.serverError = null;
+    const length = files.length;
+
+    if (!this.isValid(files)) {
+      this.serverError = {
+        status: 400
+      };
+      return false;
+    }
+
+    if (!length) {
       return;
     }
-    this.isSelectedMultiple = false;
-    this.selected = file.name;
+    this.selected = length;
+    if (length > 1) {
+      return;
+    }
+    const fileToShow = files[0];
+    this.selectedName = fileToShow.name;
+
     const reader = new FileReader();
     Observable.create((observer: any) => {
       reader.onload = function (e: any) {
@@ -100,19 +132,6 @@ export class ImageUploadComponent implements OnInit {
       }
     );
 
-    reader.readAsDataURL(file);
-  }
-
-  changeSelectedFiles(files?: FileList): void {
-    this.isSelectedMultiple = true;
-    if (!files) {
-      this.isSelectedMultiple = false;
-      return;
-    }
-    this.isSelectedSingle = false;
-    this.selected = '';
-    this.targetResult = '';
-    const length = files.length;
-    this.selectedFiles = length + ' selected';
+    reader.readAsDataURL(fileToShow);
   }
 }

@@ -1,7 +1,12 @@
 <div *ngIf="enrichment && enrichment.image.id && enrichment.metadata" class="app-enrichment-component">
+  <div class="row text-center">
+    <p class="col-12 h5" i18n>Images metadata enrichment</p>
+  </div>
 
-  <div class="text-center">
-    <img class="current-image" [src]="enrichment.image.large"/>
+  <div class="row">
+    <div class="col-12">
+      <img class="img-fluid" [src]="enrichment.image.large"/>
+    </div>
   </div>
 
   <form class="form" [formGroup]="metadataForm" (submit)="submit()">
@@ -20,10 +25,21 @@
       <div class="row my-2 mx-1" i18n>What '{{enrichment.metadata.name}}' is on the image?</div>
 
       <div class="row my-2 mx-1">
-        <input type="text" class="col-md-8 form-control form-control-sm" id="value" formControlName="value"
-        placeholder="{{enrichment.metadata.values}}">
-        <button class="col-md-2 offset-2 btn btn-success btn-sm" title="Save" i18n-title type="button"
-                (click)="submit()" i18n>Save</button>
+        <input type="text" class="col-md-8 form-control form-control-sm" formControlName="value"
+               placeholder="{{enrichment.metadata.values}}">
+        <button class="col-md-2 offset-2 btn btn-success btn-sm"
+                title="Save" i18n-title type="button" (click)="submit()" i18n>Save</button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="enrichment.metadata.type == 'number'">
+      <div class="row my-2 mx-1" i18n>How much '{{enrichment.metadata.name}}' are on the image?</div>
+
+      <div class="row my-2 mx-1">
+        <input type="number" class="col-md-8 form-control form-control-sm" formControlName="value"
+               placeholder="{{enrichment.metadata.values}}">
+        <button class="col-md-2 offset-2 btn btn-success btn-sm"
+                title="Save" i18n-title type="button" (click)="submit()" i18n>Save</button>
       </div>
     </ng-container>
   </form>

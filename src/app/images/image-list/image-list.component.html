@@ -8,8 +8,8 @@
 
 <div class="container" *ngIf="images?.length">
   <div *ngFor="let image of images" class="item">
-    <div class="img-thumbnail">
-      <img class="img-fluid" [src]="image.thumb" (click)="onClick(image)"/>
+    <div class="img-thumbnail pointer">
+      <img class="img-fluid" [src]="image.thumb" (click)="onClick(image)" title="View image" i18n-title/>
     </div>
   </div>
 </div>

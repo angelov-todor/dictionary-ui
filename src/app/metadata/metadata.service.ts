@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { PartialCollectionView } from '../words/words.service';
-import { TreeNode, TreeNodeParams } from '../shared/tree-node';
+import { TreeNodeParams } from '../shared/tree-node';
 
 @Injectable()
 export class MetadataService {
