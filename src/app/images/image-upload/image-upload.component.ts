@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
-import { ImagesService, ImageTypes } from '../images.service';
+import { Image, ImagesService, ImageTypes } from '../images.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+
+import 'rxjs/add/operator/combineAll';
+import 'rxjs/add/observable/forkJoin';
+import 'rxjs/add/observable/merge';
+import 'rxjs/add/observable/zip';
 
 @Component({
   selector: 'app-image-upload',
@@ -31,34 +36,34 @@ export class ImageUploadComponent {
       };
       return;
     }
-    for (let i = 0; i < filesCount; i++) {
-      const file = files.item(i);
-      const reader = new FileReader();
-      Observable.create((observer: any) => {
-        reader.onload = function (e: any) {
-          observer.next(e.target.result);
-          observer.complete();
-        };
-      }).switchMap((m) => {
-        return this.imagesService.upload({'filename': file.name, 'data': m})
-      }).subscribe(
-        (image) => {
-          if (filesCount === 1) {
-            this.router.navigate(['/images/view', image.id]);
-            return;
-          }
-          this.uploaded++;
-          if (this.uploaded === filesCount) {
-            this.router.navigate(['/images/list']);
-          }
-        },
-        (e) => {
-          this.serverError = e;
+
+    const filesUploads = Array.prototype.map
+      .call(files, (f) => {
+          return Observable.create((observer: any) => {
+            const reader = new FileReader();
+            reader.onload = function (e: any) {
+              observer.next({file: f, data: e.target.result});
+              observer.complete();
+            };
+            reader.readAsDataURL(f);
+          }).switchMap(({file, data}) => {
+            return this.imagesService.upload({'filename': file.name, 'data': data})
+          }).do(() => {
+            this.uploaded++;
+          });
         }
       );
 
-      reader.readAsDataURL(file);
-    }
+    Observable.forkJoin(filesUploads)
+      .subscribe(
+        (images: Image[]) => {
+          if (images.length === 1) {
+            this.router.navigate(['/images/view', images[0].id]);
+            return;
+          }
+          this.router.navigate(['/images/list']);
+        }
+      );
   }
 
   private isValid(files: FileList): boolean {

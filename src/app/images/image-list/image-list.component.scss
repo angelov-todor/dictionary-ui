@@ -2,8 +2,9 @@
   display: flex;
   flex-flow: row wrap;
   align-content: space-between;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
+
 //.item {
 //  display: contents;
 //}
@@ -18,6 +19,7 @@
   border: 1px solid #ddd;
   border-radius: 0.25rem;
 }
+
 //.item:nth-child(5n)::after {
 //  content: '';
 //  width: 100%;

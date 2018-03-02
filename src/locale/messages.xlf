@@ -28,7 +28,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-start/test-start.component.ts</context>
@@ -49,43 +49,58 @@
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="a0486f028a241aff5f9c30b53d77f36e8cfe6ad1" datatype="html">
+        <source>Images metadata enrichment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="0493e3cc3a5682d971ef1a6eb735364d6997d044" datatype="html">
         <source>Is this an &apos;<x id="INTERPOLATION" equiv-text="{{enrichment.metadata.name}}"/>&apos; ?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4f20f2d5a6882190892e58b85f6ccbedfa737952" datatype="html">
         <source>Yes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3d3ae7deebc5949b0c1c78b9847886a94321d9fd" datatype="html">
         <source>No</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="24a33789a7f3f1c315670f9251088be26a32bb6b" datatype="html">
         <source>What &apos;<x id="INTERPOLATION" equiv-text="{{enrichment.metadata.name}}"/>&apos; is on the image?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
         <source>Save</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">42</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-add/metadata-add.component.ts</context>
@@ -108,6 +123,13 @@
           <context context-type="linenumber">102</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="6d49f70f8abc3a4a6613b53947bc4b7600c40d24" datatype="html">
+        <source>How much &apos;<x id="INTERPOLATION" equiv-text="{{enrichment.metadata.name}}"/>&apos; are on the image?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-enrich/image-enrich.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
         <source>Search</source>
         <context-group purpose="location">
@@ -120,6 +142,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
           <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8445b95584f4f1817f62cfb29e29c1ed961c41e7" datatype="html">
+        <source>View image</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-list/image-list.component.ts</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1ad7d3c6ff8e7bff86588a8d0cda23dec7ae91ad" datatype="html">
@@ -380,7 +409,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cognitive-skills/cognitive-skill-view/cognitive-skill-view.component.ts</context>
@@ -425,7 +454,7 @@
         <source>Dashboard</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/dashboard.component.ts</context>
@@ -436,7 +465,7 @@
         <source>Metadata</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/metadata/metadata-list/metadata-list.component.ts</context>
@@ -455,14 +484,14 @@
         <source>Images metadata</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8e3b390c1bacc9f8a466ab3e3dc4a3f9bb22bda9" datatype="html">
         <source>Cognitive skills</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">28</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/cognitive-skills/cognitive-skill-list/cognitive-skill-list.component.ts</context>
@@ -473,7 +502,7 @@
         <source>Images</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/tests/test-view/test-view.component.ts</context>
@@ -484,14 +513,14 @@
         <source>Images list</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d9b8309be7e20ac8088e562c6937ee70d1897819" datatype="html">
         <source>Search image</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">43</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
@@ -502,14 +531,14 @@
         <source>Upload image</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1b258b258b4cc475ceb2871305b61756b0134f4a" datatype="html">
         <source>Generate</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">54</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/units/unit-generate/unit-generate.component.ts</context>
@@ -524,70 +553,70 @@
         <source>Cognitive unit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d7fa1ef52b814887c4d623b538d8bae9e95d9d3f" datatype="html">
         <source>Cognitive test</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="452ef1b96854fe05618303ee601f8fed3b866c9f" datatype="html">
         <source>Resources</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6205bc86fa139eb1f1c8aa1f97558bbf24d92dff" datatype="html">
         <source>Cognitive units</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="902219a9827e22e50ba89037dbce0ce9429547e7" datatype="html">
         <source>Cognitive tests</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d20ef216628af1ed06cd9541aa71258f9e1031ce" datatype="html">
         <source>Dictionaries</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">85</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d6fe1a1e0553a0e9d463bf1d04f46514b08c04d9" datatype="html">
         <source>Dictionary 1</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c6601e6402bcb87d073fef00c17a714fad0c09e8" datatype="html">
         <source>Dictionary 2</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fefee13017c2b85143cd131ee253e327a14053a0" datatype="html">
         <source>Tools</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
         <source>Users</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">97</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
@@ -598,28 +627,28 @@
         <source>Log Out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">101</context>
+          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
         <source>Login</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">105</context>
+          <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8403f1596e641a1747cad977fab09ee8a77d894e" datatype="html">
         <source>bg</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">109</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e4caa85607483a250cf6eb521bc21e561b9829f1" datatype="html">
         <source>en</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/site-header/site-header.component.ts</context>
-          <context context-type="linenumber">110</context>
+          <context context-type="linenumber">109</context>
         </context-group>
       </trans-unit>
       <trans-unit id="common.signup" datatype="html">
@@ -629,26 +658,48 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">
+        <source>System for automated generation of cognitive test units</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="49cab47c634d4d27a6b410755a763fa91488864a" datatype="html">
+        <source>to proceed please login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="dcd47f4d6b26b045a1b041b2fc73123bc0cfc118" datatype="html">
         <source>Log In</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
         <source>Email</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
@@ -667,56 +718,45 @@
         <source>This field is required.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">28</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9f570852b4343bc0de0105a0c5f7521678da29d7" datatype="html">
         <source>Invalid email address.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
         <source>Password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="c8a8675f260cab63eecdd3f847c13c8fd5f039ff" datatype="html">
-        <source>The password should be at lease 6 characters.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="a6097058ba35aadc7423a71272927fd5d73cebba" datatype="html">
-        <source>Invalid email or password</source>
+      <trans-unit id="c8a8675f260cab63eecdd3f847c13c8fd5f039ff" datatype="html">
+        <source>The password should be at lease 6 characters.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
           <context context-type="linenumber">30</context>
@@ -726,65 +766,86 @@
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="a6097058ba35aadc7423a71272927fd5d73cebba" datatype="html">
+        <source>Invalid email or password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="30e58483e7549a0b896bd69dcdffce7c15074644" datatype="html">
         <source>An error occurred</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">37</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">37</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3bb93d5b02f1f29b3940d4608c8289fff5a82220" datatype="html">
         <source>Don&apos;t have an account?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ff0fc5962df9e787394142819d9655647922432b" datatype="html">
         <source>Sign up now</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login-page/login-page.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="717a5e3574fec754fbeb348c2d5561c4d81facc4" datatype="html">
-        <source>Signup</source>
+      <trans-unit id="cbb4d530661c19b472166ee722040b6bae2bb810" datatype="html">
+        <source>to proceed please sign up</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">6</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="c40c132843f349c3aa49730405de1d0ca733aef6" datatype="html">
+        <source>Sign up</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="96125a7f9e35e54560d16f391be03dd1c2856e85" datatype="html">
         <source>Email already registered</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="717a5e3574fec754fbeb348c2d5561c4d81facc4" datatype="html">
+        <source>Signup</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a21b4e4b7c48dc611c3774abf8d163519991638d" datatype="html">
         <source>Already have an account?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b7467019d65ac199bef6a8c377d61f7fc487f6e4" datatype="html">
         <source>Login now</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/signup-page/signup-page.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e0f4af4d22e7f2ec72bad44b0b850dd852a5e2f7" datatype="html">
@@ -957,40 +1018,50 @@
           <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="c84903b02fcad0b9ab897b080e38e0bddc2b1aa7" datatype="html">
-        <source>Choose an image</source>
+      <trans-unit id="cad5fc0528b45c2849bbeb0aedbdfa980dfa2b56" datatype="html">
+        <source>Choose image/s</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
           <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d9ca195616b85bc8582875345d71399de74e149d" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{selected}}"/> files selected</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4b3972c3e9485218508a95f7a4ce7758e3f09ced" datatype="html">
         <source>Upload</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-search/image-search.component.ts</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7af2d60f6a2be5d23acc6df1df3a8681dc51c6be" datatype="html">
-        <source>Choose multiple images</source>
+      <trans-unit id="624c64a80ac109763fae3869613832873edf7a75" datatype="html">
+        <source>Invalid, allowed extensions are: &apos;.jpg&apos;, &apos;.jpeg&apos;, &apos;.bmp&apos;, &apos;.gif&apos;, &apos;.png&apos;</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c145a34359b00a08aef9bf3fdf35a985aea25c8c" datatype="html">
         <source>Invalid</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9ad83c36bbc5f8fac10b0ca10702a6d723c88e1c" datatype="html">
+        <source> image/s uploaded</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/images/image-upload/image-upload.component.ts</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5e6548eb9cbb0467c307b4079bc989cd21f44355" datatype="html">
@@ -1713,13 +1784,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/users/user-list/user-list.component.ts</context>
           <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">
-        <source>System for automated generation of cognitive test units</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/dashboard/dashboard.component.ts</context>
-          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
       <trans-unit id="03354b2489337882c5a4fd033fec9b9f4b8d109f" datatype="html">

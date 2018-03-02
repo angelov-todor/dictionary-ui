@@ -22,6 +22,10 @@
         <source>Total items: <x id="INTERPOLATION" equiv-text="{{collectionView.total}}"/></source>
         <target>Общ брой: <x id="INTERPOLATION" equiv-text="{{collectionView.total}}"/></target>
       </trans-unit>
+      <trans-unit id="a0486f028a241aff5f9c30b53d77f36e8cfe6ad1" datatype="html">
+        <source>Images metadata enrichment</source>
+        <target>Добавяне на метаданни към изображения</target>
+      </trans-unit>
       <trans-unit id="0493e3cc3a5682d971ef1a6eb735364d6997d044" datatype="html">
         <source>Is this an '<x id="INTERPOLATION" equiv-text="{{enrichment.metadata.name}}"/>' ?</source>
         <target>Може ли изображението да се оприличи като '<x id="INTERPOLATION"/>' ?</target>
@@ -42,6 +46,10 @@
         <source>Save</source>
         <target>Запиши</target>
       </trans-unit>
+      <trans-unit id="6d49f70f8abc3a4a6613b53947bc4b7600c40d24" datatype="html">
+        <source>How much '<x id="INTERPOLATION" equiv-text="{{enrichment.metadata.name}}"/>' are on the image?</source>
+        <target>Колко '<x id="INTERPOLATION" equiv-text="{{enrichment.metadata.name}}"/>' са на изображението?</target>
+      </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
         <source>Search</source>
         <target>Търси</target>
@@ -49,6 +57,10 @@
       <trans-unit id="1126c186e965afd51aab45b4a0a37e75ebb60f0c" datatype="html">
         <source>term</source>
         <target>критерий</target>
+      </trans-unit>
+      <trans-unit id="8445b95584f4f1817f62cfb29e29c1ed961c41e7" datatype="html">
+        <source>View image</source>
+        <target>Виж изображението</target>
       </trans-unit>
       <trans-unit id="1ad7d3c6ff8e7bff86588a8d0cda23dec7ae91ad" datatype="html">
         <source>No images found</source>
@@ -198,6 +210,14 @@
         <source>You have successfully signed up</source>
         <target>Вие се регистрирахте успешно</target>
       </trans-unit>
+      <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">
+        <source>System for automated generation of cognitive test units</source>
+        <target>Система за автоматизирано генериране на когнитивни тестови единици</target>
+      </trans-unit>
+      <trans-unit id="49cab47c634d4d27a6b410755a763fa91488864a" datatype="html">
+        <source>to proceed please login</source>
+        <target>за да продължите моля влезте</target>
+      </trans-unit>
       <trans-unit id="dcd47f4d6b26b045a1b041b2fc73123bc0cfc118" datatype="html">
         <source>Log In</source>
         <target>Вход</target>
@@ -238,13 +258,21 @@
         <source>Sign up now</source>
         <target>Регистрирайте се</target>
       </trans-unit>
-      <trans-unit id="717a5e3574fec754fbeb348c2d5561c4d81facc4" datatype="html">
-        <source>Signup</source>
+      <trans-unit id="cbb4d530661c19b472166ee722040b6bae2bb810" datatype="html">
+        <source>to proceed please sign up</source>
+        <target>за да продължите се регистрирайте</target>
+      </trans-unit>
+      <trans-unit id="c40c132843f349c3aa49730405de1d0ca733aef6" datatype="html">
+        <source>Sign up</source>
         <target>Регистрация</target>
       </trans-unit>
       <trans-unit id="96125a7f9e35e54560d16f391be03dd1c2856e85" datatype="html">
         <source>Email already registered</source>
         <target>Вече има регистрация с този имейл</target>
+      </trans-unit>
+      <trans-unit id="717a5e3574fec754fbeb348c2d5561c4d81facc4" datatype="html">
+        <source>Signup</source>
+        <target>Регистрация</target>
       </trans-unit>
       <trans-unit id="a21b4e4b7c48dc611c3774abf8d163519991638d" datatype="html">
         <source>Already have an account?</source>
@@ -310,21 +338,29 @@
         <source>Most commonly used values</source>
         <target>Най-често използвани стойности</target>
       </trans-unit>
-      <trans-unit id="c84903b02fcad0b9ab897b080e38e0bddc2b1aa7" datatype="html">
-        <source>Choose an image</source>
-        <target>Избери изображение</target>
+      <trans-unit id="cad5fc0528b45c2849bbeb0aedbdfa980dfa2b56" datatype="html">
+        <source>Choose image/s</source>
+        <target>Изберете изображение/я</target>
+      </trans-unit>
+      <trans-unit id="d9ca195616b85bc8582875345d71399de74e149d" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{selected}}"/> files selected</source>
+        <target><x id="INTERPOLATION" equiv-text="{{selected}}"/> файл/а избрани</target>
       </trans-unit>
       <trans-unit id="4b3972c3e9485218508a95f7a4ce7758e3f09ced" datatype="html">
         <source>Upload</source>
         <target>Качи</target>
       </trans-unit>
-      <trans-unit id="7af2d60f6a2be5d23acc6df1df3a8681dc51c6be" datatype="html">
-        <source>Choose multiple images</source>
-        <target>Избери множество изображения</target>
+      <trans-unit id="624c64a80ac109763fae3869613832873edf7a75" datatype="html">
+        <source>Invalid, allowed extensions are: '.jpg', '.jpeg', '.bmp', '.gif', '.png'</source>
+        <target>Невалидно, позволение разширения са: '.jpg', '.jpeg', '.bmp', '.gif', '.png'</target>
       </trans-unit>
       <trans-unit id="c145a34359b00a08aef9bf3fdf35a985aea25c8c" datatype="html">
         <source>Invalid</source>
         <target>Невалидно</target>
+      </trans-unit>
+      <trans-unit id="9ad83c36bbc5f8fac10b0ca10702a6d723c88e1c" datatype="html">
+        <source> image/s uploaded</source>
+        <target> изображение/я качени</target>
       </trans-unit>
       <trans-unit id="5e6548eb9cbb0467c307b4079bc989cd21f44355" datatype="html">
         <source>This field is required</source>
@@ -621,10 +657,6 @@
       <trans-unit id="b73464cedbe87ffb5c1aba746b7a61f1180d7cf1" datatype="html">
         <source>undefined</source>
         <target>неопределен</target>
-      </trans-unit>
-      <trans-unit id="e648e049ca87276acf2bb28dcf1190fe362042ea" datatype="html">
-        <source>System for automated generation of cognitive test units</source>
-        <target>Система за автоматизирано генериране на когнитивни тестови единици</target>
       </trans-unit>
       <trans-unit id="03354b2489337882c5a4fd033fec9b9f4b8d109f" datatype="html">
         <source>Page Not Found</source>
