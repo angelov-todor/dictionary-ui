@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { PartialCollectionView } from '../words/words.service';
-import { Metadata } from '../metadata/metadata.service';
 
 @Injectable()
 export class UsersService {
@@ -13,7 +12,7 @@ export class UsersService {
   }
 
   getUsersList(page?: number): Observable<UsersListResponse> {
-    return this.http.get(this.serviceUrl, {params: {page}})
+    return this.http.get(this.serviceUrl, { params: { page } })
       .map(res => res.json())
       .map(usersResponse => {
         usersResponse = new UsersListResponse(usersResponse);

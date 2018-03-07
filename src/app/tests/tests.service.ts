@@ -4,9 +4,9 @@ import { AuthHttp } from 'angular2-jwt';
 import { environment } from '../../environments/environment';
 import { PartialCollectionView } from '../words/words.service';
 import { Methodology } from './methodologies.service';
-import { CognitiveSkill } from '../cognitive-skills/cognitive-skill.service';
 import { Unit } from '../units/units.service';
 import { User } from '../users/users.service';
+import { CognitiveSkill } from '../cognitive-skills/cognitive-skill.models';
 
 @Injectable()
 export class TestsService {

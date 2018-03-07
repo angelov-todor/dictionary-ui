@@ -17,7 +17,7 @@ export class MetadataTreeViewComponent implements OnInit {
   public types = MetadataTypes;
   public tree: TreeNode;
 
-  constructor(private metadataService: MetadataService, private fb: FormBuilder) {
+  constructor(private metadataService: MetadataService, fb: FormBuilder) {
     this.editForm = fb.group({
       id: [null, Validators.required],
       name: [null, [Validators.required]],
@@ -36,7 +36,7 @@ export class MetadataTreeViewComponent implements OnInit {
     if (fileNode.id) {
       this.metadataService.get(fileNode.id).subscribe((metadata) => {
         this.metadata = metadata;
-        this.editForm.reset(this.metadata)
+        this.editForm.reset(this.metadata);
       });
     }
   }
@@ -52,10 +52,10 @@ export class MetadataTreeViewComponent implements OnInit {
   }
 
   createChild() {
-    this.child = new Metadata({parent: this.metadata, type: 'text'});
+    this.child = new Metadata({ parent: this.metadata, type: 'text' });
   }
 
-  onChildAdded($event): void {
+  onChildAdded(): void {
     this.child = null;
     this.showTreeView();
   }

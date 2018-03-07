@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { Metadata, MetadataService, MetadataTypes } from '../../metadata/metadata.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalDirective } from 'ngx-bootstrap';
 import { User, UsersService } from '../users.service';
@@ -35,7 +34,7 @@ export class UserEditComponent implements OnInit {
   editForm: FormGroup;
   protected _user: User;
 
-  constructor(private fb: FormBuilder, private usersService: UsersService) {
+  constructor(fb: FormBuilder, private usersService: UsersService) {
     this.editForm = fb.group({
       id: [null, Validators.required],
       email: [null, [Validators.required]],

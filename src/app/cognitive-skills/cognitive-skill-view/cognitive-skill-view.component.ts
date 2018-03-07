@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CognitiveSkill, CognitiveSkillService } from '../cognitive-skill.service';
-import { Test } from '../../tests/tests.service';
+import { CognitiveSkillService } from '../cognitive-skill.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CognitiveType } from '../../cognitive-types/cognitive-type.service';
+import { CognitiveSkill } from '../cognitive-skill.models';
+import { CognitiveType } from '../../cognitive-types/cognitive-types.models';
 
 @Component({
   selector: 'app-cognitive-skill-view',
@@ -26,8 +26,8 @@ export class CognitiveSkillViewComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-      .map(({id}) => ({id}))
-      .switchMap(({id}) => this.cognitiveSkillsService.getCognitiveSkill(id))
+      .map(({ id }) => ({ id }))
+      .switchMap(({ id }) => this.cognitiveSkillsService.getCognitiveSkill(id))
       .subscribe((cognitiveSkill: CognitiveSkill) => {
           this.cognitiveSkill = cognitiveSkill;
           this.editForm.reset(this.cognitiveSkill);

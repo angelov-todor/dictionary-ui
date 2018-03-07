@@ -24,7 +24,7 @@ export class MetadataListComponent implements OnInit, OnDestroy {
   collectionView: PartialCollectionView;
 
   constructor(private metadataService: MetadataService,
-              private fb: FormBuilder) {
+              fb: FormBuilder) {
     this.createForm = fb.group({
       name: [null, [Validators.required]],
       type: ['text', Validators.required],

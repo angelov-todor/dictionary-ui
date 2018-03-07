@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CognitiveSkill, CognitiveSkillService } from '../cognitive-skill.service';
+import { CognitiveSkillService } from '../cognitive-skill.service';
 import { PartialCollectionView } from '../../words/words.service';
+import { CognitiveSkill } from '../cognitive-skill.models';
 
 @Component({
   selector: 'app-cognitive-skill-list',
@@ -15,7 +16,7 @@ export class CognitiveSkillListComponent implements OnInit {
   collectionView: PartialCollectionView;
 
   constructor(private cognitiveSkillService: CognitiveSkillService,
-              private fb: FormBuilder) {
+              fb: FormBuilder) {
     this.createForm = fb.group({
       name: [null, [Validators.required]]
     });

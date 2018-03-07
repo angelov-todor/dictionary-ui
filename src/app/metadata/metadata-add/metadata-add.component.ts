@@ -35,7 +35,7 @@ export class MetadataAddComponent {
   public types = MetadataTypes;
   protected _metadata: Metadata;
 
-  constructor(private fb: FormBuilder, private metadataService: MetadataService) {
+  constructor(fb: FormBuilder, private metadataService: MetadataService) {
     this.metadataForm = fb.group({
       name: [null, [Validators.required]],
       type: ['text', Validators.required],

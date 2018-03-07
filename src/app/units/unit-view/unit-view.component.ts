@@ -3,11 +3,12 @@ import { Unit, UnitImage, UnitsService } from '../units.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Image } from '../../images/images.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CognitiveType, CognitiveTypeService } from '../../cognitive-types/cognitive-type.service';
+import { CognitiveTypeService } from '../../cognitive-types/cognitive-type.service';
 import { concat } from 'rxjs/observable/concat';
 import { of } from 'rxjs/observable/of';
 import { Subscription } from 'rxjs/Subscription';
 import { markFormControlAsTouched } from '../../shared/utils/markFormControlAsTouched';
+import { CognitiveType } from '../../cognitive-types/cognitive-types.models';
 
 @Component({
   selector: 'app-unit-view',
@@ -40,15 +41,15 @@ export class UnitViewComponent implements OnInit, OnDestroy {
 
   constructor(private unitsService: UnitsService,
               private route: ActivatedRoute,
-              private router: Router,
+              router: Router,
               private fb: FormBuilder,
               private cognitiveTypeService: CognitiveTypeService) {
   }
 
   ngOnInit() {
     this.route.params
-      .map(({id}) => ({id}))
-      .switchMap(({id}) => this.unitsService.getUnit(id))
+      .map(({ id }) => ({ id }))
+      .switchMap(({ id }) => this.unitsService.getUnit(id))
       .subscribe((unit: Unit) => {
           this.unit = unit;
           const images = [];

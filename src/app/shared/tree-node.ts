@@ -1,8 +1,8 @@
 export interface TreeNodeParams {
-  id: string
-  name: string
-  children?: Array<TreeNodeParams>
-  focus?: boolean
+  id: string;
+  name: string;
+  children?: Array<TreeNodeParams>;
+  focus?: boolean;
 }
 
 export class TreeNode {
@@ -61,31 +61,31 @@ export class TreeNode {
   }
 
   public getParentNode(): TreeNode {
-    return this.parentNode
+    return this.parentNode;
   }
 
   public isExpanded(): boolean {
-    return this._isExpanded
+    return this._isExpanded;
   }
 
   public expand(): void {
-    this._isExpanded = true
+    this._isExpanded = true;
   }
 
   public fold(): void {
-    this._isExpanded = false
+    this._isExpanded = false;
   }
 
   public hasParent(): boolean {
-    return this.getParentNode !== null
+    return this.getParentNode !== null;
   }
 
   public focus(): void {
-    this._isFocused = true
+    this._isFocused = true;
   }
 
   public blur(): void {
-    this._isFocused = false
+    this._isFocused = false;
   }
 
   public stringify() {
@@ -93,7 +93,7 @@ export class TreeNode {
       if (key.includes('_')) {
         return;
       }
-      return value
-    })
+      return value;
+    });
   }
 }

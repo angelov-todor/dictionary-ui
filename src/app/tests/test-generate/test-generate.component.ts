@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CognitiveSkill, CognitiveSkillService } from '../../cognitive-skills/cognitive-skill.service';
+import { CognitiveSkillService } from '../../cognitive-skills/cognitive-skill.service';
 import { MethodologiesService, Methodology } from '../methodologies.service';
 import { TestsService } from '../tests.service';
 import { Router } from '@angular/router';
 import { markFormControlAsTouched } from '../../shared/utils/markFormControlAsTouched';
+import { CognitiveSkill } from '../../cognitive-skills/cognitive-skill.models';
 
 @Component({
   selector: 'app-test-generate',

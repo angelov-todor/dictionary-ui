@@ -18,11 +18,11 @@ export class UnitListComponent implements OnInit, OnDestroy {
   testSubscription: Subscription;
 
   @Input() set test(test) {
-    this.hasTest$.next(test)
-  };
+    this.hasTest$.next(test);
+  }
 
   get test() {
-    return this.hasTest$.value
+    return this.hasTest$.value;
   }
 
   @Output() onAssignUnit = new EventEmitter<Unit>();

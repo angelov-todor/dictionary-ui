@@ -9,3 +9,11 @@ h3 {
 .pointer {
   cursor: pointer;
 }
+
+.app-processing-spinner {
+  display: none;
+  .processing & {
+    margin: 0 6px 0 0;
+    display: inline-block;
+  }
+}

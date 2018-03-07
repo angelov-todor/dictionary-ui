@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { CognitiveType, CognitiveTypeService } from '../cognitive-type.service';
+import { CognitiveTypeService } from '../cognitive-type.service';
 import { PartialCollectionView } from '../../words/words.service';
-import { CognitiveSkill } from '../../cognitive-skills/cognitive-skill.service';
 import { Subscription } from 'rxjs/Subscription';
+import { CognitiveSkill } from '../../cognitive-skills/cognitive-skill.models';
+import { CognitiveType } from '../cognitive-types.models';
 
 @Component({
   selector: 'app-cognitive-type-list',

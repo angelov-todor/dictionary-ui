@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MethodologiesService, Methodology } from '../methodologies.service';
-import { CognitiveSkill, CognitiveSkillService } from '../../cognitive-skills/cognitive-skill.service';
+import { CognitiveSkillService } from '../../cognitive-skills/cognitive-skill.service';
 import { Test, TestsService } from '../tests.service';
 import { Unit } from '../../units/units.service';
+import { CognitiveSkill } from '../../cognitive-skills/cognitive-skill.models';
 
 @Component({
   selector: 'app-test-view',
@@ -14,7 +15,7 @@ import { Unit } from '../../units/units.service';
 export class TestViewComponent implements OnInit {
   testForm: FormGroup = this.fb.group({
     name: [null, [Validators.required]],
-    cognitive_skill_id: [{value: null, disabled: true}, [Validators.required]],
+    cognitive_skill_id: [{ value: null, disabled: true }, [Validators.required]],
     methodology_id: [null],
     min_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
     max_age: [0, [Validators.required, Validators.min(0), Validators.max(100)]],
@@ -37,14 +38,13 @@ export class TestViewComponent implements OnInit {
               private cognitiveSkillService: CognitiveSkillService,
               private methodologiesService: MethodologiesService,
               private testsService: TestsService,
-              private router: Router,
               private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.route.params
-      .map(({id}) => ({id}))
-      .switchMap(({id}) => this.testsService.getTest(id))
+      .map(({ id }) => ({ id }))
+      .switchMap(({ id }) => this.testsService.getTest(id))
       .subscribe((test: Test) => {
           this.test = test;
           this.testForm.reset(test);
@@ -106,7 +106,7 @@ export class TestViewComponent implements OnInit {
     if (this.test && this.test.units) {
       this.test.units.forEach((unit) => {
         if (unit.time_to_conduct) {
-          sum += unit.time_to_conduct
+          sum += unit.time_to_conduct;
         }
       });
     }

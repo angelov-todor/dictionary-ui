@@ -20,3 +20,9 @@ services:
       - ./:/srv/app
     working_dir: /srv/app
     command: /bin/sh -c "yarn install && yarn xi18n"
+  dev_run:
+    build: .
+    volumes:
+      - ./:/srv/app
+    working_dir: /srv/app
+    command: /bin/sh -c "yarn install && yarn start"

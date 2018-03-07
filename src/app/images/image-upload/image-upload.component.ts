@@ -20,20 +20,24 @@ export class ImageUploadComponent {
   public targetResult = '';
   public serverError: any;
   public uploaded = 0;
+  public processing = false;
 
   constructor(private imagesService: ImagesService,
               private router: Router) {
   }
 
   upload(files: FileList): void {
+    this.processing = true;
     const filesCount = files.length;
     if (filesCount <= 0) {
+      this.processing = false;
       return;
     }
     if (!this.isValid(files)) {
       this.serverError = {
         status: 400
       };
+      this.processing = false;
       return;
     }
 
@@ -42,12 +46,12 @@ export class ImageUploadComponent {
           return Observable.create((observer: any) => {
             const reader = new FileReader();
             reader.onload = function (e: any) {
-              observer.next({file: f, data: e.target.result});
+              observer.next({ file: f, data: e.target.result });
               observer.complete();
             };
             reader.readAsDataURL(f);
-          }).switchMap(({file, data}) => {
-            return this.imagesService.upload({'filename': file.name, 'data': data})
+          }).switchMap(({ file, data }) => {
+            return this.imagesService.upload({ 'filename': file.name, 'data': data });
           }).do(() => {
             this.uploaded++;
           });
@@ -57,6 +61,7 @@ export class ImageUploadComponent {
     Observable.forkJoin(filesUploads)
       .subscribe(
         (images: Image[]) => {
+          this.processing = false;
           if (images.length === 1) {
             this.router.navigate(['/images/view', images[0].id]);
             return;

@@ -33,7 +33,7 @@ export class MethodologyAddComponent implements OnInit {
   addForm: FormGroup;
   protected _methodology: Methodology;
 
-  constructor(private fb: FormBuilder,
+  constructor(fb: FormBuilder,
               private methodologiesService: MethodologiesService) {
     this.addForm = fb.group({
       name: [null, [Validators.required]]

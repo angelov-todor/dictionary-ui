@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UnitsService } from '../units.service';
 import { Router } from '@angular/router';
-import { CognitiveType, CognitiveTypeService } from '../../cognitive-types/cognitive-type.service';
+import { CognitiveTypeService } from '../../cognitive-types/cognitive-type.service';
 import { concat } from 'rxjs/observable/concat';
 import { of } from 'rxjs/observable/of';
 import { markFormControlAsTouched } from '../../shared/utils/markFormControlAsTouched';
+import { CognitiveType } from '../../cognitive-types/cognitive-types.models';
 
 @Component({
   selector: 'app-unit-generate',

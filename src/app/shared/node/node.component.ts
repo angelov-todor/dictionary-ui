@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { Input } from '@angular/core'
-import { Output } from '@angular/core'
-import { EventEmitter } from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TreeNode } from '../tree-node';
 
 @Component({
@@ -24,23 +21,23 @@ export class NodeComponent {
   }
 
   isExpanded(): boolean {
-    return this.node.isExpanded()
+    return this.node.isExpanded();
   }
 
   expandFolder(): void {
     if (this.node.isExpanded()) {
-      this.node.fold()
+      this.node.fold();
     } else {
-      this.node.expand()
+      this.node.expand();
     }
   }
 
   clickNode(node: TreeNode) {
-    this.clicked.emit(node)
+    this.clicked.emit(node);
   }
 
   propagate(node: TreeNode) {
-    this.clicked.emit(node)
+    this.clicked.emit(node);
   }
 
 }

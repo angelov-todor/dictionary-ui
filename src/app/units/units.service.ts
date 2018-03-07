@@ -4,8 +4,7 @@ import { AuthHttp } from 'angular2-jwt';
 import { Observable } from 'rxjs/Observable';
 import { Image } from '../images/images.service';
 import { PartialCollectionView } from '../words/words.service';
-import { CognitiveType } from '../cognitive-types/cognitive-type.service';
-import { Test } from '../tests/tests.service';
+import { CognitiveType } from '../cognitive-types/cognitive-types.models';
 
 @Injectable()
 export class UnitsService {
@@ -15,7 +14,7 @@ export class UnitsService {
   }
 
   getUnits(page?: number, test_id?: string): Observable<UnitListResponse> {
-    return this.http.get(this.serviceUrl, {params: {page, test_id}})
+    return this.http.get(this.serviceUrl, { params: { page, test_id } })
       .map(res => res.json())
       .map(unitsResponse => {
         unitsResponse = new UnitListResponse(unitsResponse);
@@ -57,7 +56,7 @@ export class UnitsService {
     const url = environment.baseAPIEndpoint + `/unit_images/${unitImage.id}`;
 
     return this.http
-      .put(url, {image: image})
+      .put(url, { image: image })
       .map(() => true);
   }
 
@@ -65,7 +64,7 @@ export class UnitsService {
     const url = environment.baseAPIEndpoint + `/unit_images/${unitImage.id}/correct`;
 
     return this.http
-      .put(url, {correct: correct})
+      .put(url, { correct: correct })
       .map(() => true);
   }
 }

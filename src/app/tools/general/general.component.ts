@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ToolsService } from '../tools.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {Component} from '@angular/core';
+import {ToolsService} from '../tools.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {markFormControlAsTouched} from '../../shared/utils/markFormControlAsTouched';
 
 @Component({
   selector: 'app-general',
   templateUrl: './general.component.html',
   styleUrls: ['./general.component.scss']
 })
-export class GeneralComponent implements OnInit {
+export class GeneralComponent {
 
   result: any;
 
@@ -20,12 +21,8 @@ export class GeneralComponent implements OnInit {
               private fb: FormBuilder) {
   }
 
-  ngOnInit() {
-
-  }
-
   showOutput() {
-    this.commonForm.markAsTouched();
+    markFormControlAsTouched(this.commonForm);
     if (!this.commonForm.valid) {
       return;
     }

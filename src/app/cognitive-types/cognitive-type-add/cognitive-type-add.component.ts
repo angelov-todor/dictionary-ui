@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CognitiveType, CognitiveTypeService } from '../cognitive-type.service';
+import { CognitiveTypeService } from '../cognitive-type.service';
 import { concat } from 'rxjs/observable/concat';
 import { of } from 'rxjs/observable/of';
 import { Subscription } from 'rxjs/Subscription';
+import { CognitiveType } from '../cognitive-types.models';
 
 @Component({
   selector: 'app-cognitive-type-add',

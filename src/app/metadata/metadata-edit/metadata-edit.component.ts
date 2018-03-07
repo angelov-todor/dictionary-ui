@@ -44,7 +44,7 @@ export class MetadataEditComponent implements OnInit {
   protected _metadataList: Metadata[];
   protected _metadata: Metadata;
 
-  constructor(private fb: FormBuilder, private metadataService: MetadataService) {
+  constructor(fb: FormBuilder, private metadataService: MetadataService) {
     this.editForm = fb.group({
       id: [null, Validators.required],
       name: [null, [Validators.required]],

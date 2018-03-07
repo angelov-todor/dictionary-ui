@@ -5,6 +5,7 @@
     <div class="col-auto">
       <div class="input-group mb-2 mb-sm-0">
         <input type="text" class="form-control" id="word" formControlName="word" placeholder="Word"
+               [class.is-invalid]="commonForm.get('word').touched && commonForm.get('word').hasError('required')"
                i18n-placeholder>
       </div>
     </div>
@@ -28,9 +29,10 @@
 
   <hr/>
 
-  <div class="mx-auto row" *ngIf="result">
+  <div class="mx-auto row" *ngIf="result;else no_result">
     <div class="col text-center">
       {{result}}
     </div>
   </div>
+  <ng-template #no_result>No result</ng-template>
 </div>
