@@ -483,8 +483,8 @@ export class Game {
 
     this.imageRepository.loadContent();
     this.map.loadMap(level);
-
-    document.sokoban = this;
+    const doc = <any>document;
+    doc.sokoban = this;
     document.addEventListener('keyup', this.keyUpHandler);
 
     this.initialUpdateDraw = setInterval(this.initialUpdateRun, this.checkInterval);
@@ -498,18 +498,20 @@ export class Game {
   }
 
   keyUpHandler(event) {
-    const sokoban = document.sokoban;
+    const doc = <any>document;
+    const sokoban = doc.sokoban;
     sokoban.update(event);
     sokoban.draw();
   }
 
   initialUpdateRun(ev) {
-    const game = document.sokoban;
+    const doc = <any>document;
+    const game = doc.sokoban;
     if (game.map.loaded && game.imageRepository.loaded()) {
       game.update(ev);
       game.draw();
       // we don't need timer anymore
-      clearInterval(document.sokoban.initialUpdateDraw);
+      clearInterval(game.initialUpdateDraw);
     }
   }
 
@@ -530,7 +532,7 @@ export class Game {
       }
       // TODO: show success
       console.log('success, move to next level');
-      localStorage.setItem('sokoban', this.map.number + 1);
+      localStorage.setItem('sokoban', String(this.map.number + 1));
       this.loadContent();
     }
   }
