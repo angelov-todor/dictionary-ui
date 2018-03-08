@@ -9,7 +9,7 @@
           <button title="Add child metadata"
                   class="btn btn-sm btn-primary"
                   type="button"
-                  (click)="createChild()" i18n-title i18n><ng-containera Add child</button>
+                  (click)="createChild()" i18n-title><ng-container i18n>Add child</ng-container></button>
         </div>
       </div>
       <form class="mx-auto" [formGroup]="editForm" (submit)="onSubmit()" *ngIf="metadata">
