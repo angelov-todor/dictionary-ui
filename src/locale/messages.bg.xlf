@@ -186,6 +186,14 @@
         <source>Tools</source>
         <target>Инструменти</target>
       </trans-unit>
+      <trans-unit id="71249314fa72f5f9e0d93b8c59f9e148e0ff617f" datatype="html">
+        <source>Games</source>
+        <target>Игри</target>
+      </trans-unit>
+      <trans-unit id="1b83ee8050c2da53cf45de56348c04f998bd80e7" datatype="html">
+        <source>Sokoban</source>
+        <target>Сокобан</target>
+      </trans-unit>
       <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
         <source>Users</source>
         <target>Потребители</target>
