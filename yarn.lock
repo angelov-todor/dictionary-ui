@@ -33,9 +33,9 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/cli@^1.7.0":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.7.1.tgz#3a9d0b8314d4c54226f941beeb53071385c294e0"
+"@angular/cli@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.7.2.tgz#7539285cb83f33cc1b34aec47a5ef6e8656c8450"
   dependencies:
     "@angular-devkit/build-optimizer" "0.3.2"
     "@angular-devkit/core" "0.3.2"
@@ -131,9 +131,9 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/http@^5.2.5":
-  version "5.2.6"
-  resolved "https://registry.yarnpkg.com/@angular/http/-/http-5.2.6.tgz#4fa92e61b9848f8571c61ae9ad32af27cd71b043"
+"@angular/http@^5.2.6":
+  version "5.2.7"
+  resolved "https://registry.yarnpkg.com/@angular/http/-/http-5.2.7.tgz#a163f6958f12d2665419123861b0d613c1c82afb"
   dependencies:
     tslib "^1.7.1"
 

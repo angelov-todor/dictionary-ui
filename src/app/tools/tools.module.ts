@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToolsRoutingModule } from './tools-routing.module';
 import { ToolsService } from './tools.service';
 import {SharedModule} from '../shared/shared.module';
+import { SokobanGameComponent } from './sokoban-game/sokoban-game.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import {SharedModule} from '../shared/shared.module';
     ToolsRoutingModule,
     SharedModule
   ],
-  declarations: [ToolsRootComponent, GeneralComponent]
+  declarations: [ToolsRootComponent, GeneralComponent, SokobanGameComponent]
 })
 export class ToolsModule {
   static forRoot(): ModuleWithProviders {

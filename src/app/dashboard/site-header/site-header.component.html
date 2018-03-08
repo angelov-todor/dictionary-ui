@@ -92,6 +92,18 @@
             </div>
           </div>
         </li>
+        <li>
+          <div class="nav-item dropdown" dropdown>
+            <a dropdownToggle class="nav-link dropdown-toggle" id="gamesNavbarDropdown"
+               data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" href="javascript:" i18n>Games</a>
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="resourcesNavbarDropdown">
+              <a class="nav-item nav-link dropdown-item pl-2" routerLink="/games/sokoban"
+                 routerLinkActive="active-nav-link"
+                 i18n>Sokoban</a>
+            </div>
+          </div>
+        </li>
         <li class="nav-item" *ngIf="isAdmin()">
           <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active-nav-link"
              i18n>Users</a>

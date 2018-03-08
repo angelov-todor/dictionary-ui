@@ -24,7 +24,7 @@
     "@angular/animations": "^5.2.6",
     "@angular/core": "^5.2.6",
     "@angular/forms": "^5.2.6",
-    "@angular/http": "^5.2.5",
+    "@angular/http": "^5.2.6",
     "@angular/platform-browser": "^5.2.6",
     "@angular/platform-browser-dynamic": "^5.2.6",
     "@angular/router": "^5.2.6",
@@ -37,7 +37,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "^1.7.0",
+    "@angular/cli": "^1.7.2",
     "@angular/compiler-cli": "^5.2.6",
     "@types/jasmine": "ts2.6",
     "@types/node": "ts2.6",
