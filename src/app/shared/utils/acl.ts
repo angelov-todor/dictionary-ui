@@ -23,7 +23,3 @@ export class Acl {
     return tokenData.roles.indexOf('ROLE_USER') >= 0;
   }
 }
-
-export function aclFactory(): Acl {
-  return new Acl();
-}
