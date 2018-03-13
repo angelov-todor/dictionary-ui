@@ -16,9 +16,9 @@
       <td>{{test.units?.length}}</td>
       <td>
         <a *ngIf="test.units?.length" i18n-title title="Start" [routerLink]="['/tests/start', test.id]" class="edit fa fa-play pointer"></a>
-        <a i18n-title title="Edit" [routerLink]="['/tests/view', test.id]" class="edit fa fa-edit pointer"></a>
-        <a i18n-title title="Results" [routerLink]="['/tests/results', test.id]" class="results fa fa-bar-chart pointer"></a>
-        <a i18n-title title="Remove" (click)="remove(test)" class="remove fa fa-trash"></a>
+        <a *ngIf="acl.isCreator() ||acl.isAdmin()" i18n-title title="Edit" [routerLink]="['/tests/view', test.id]" class="edit fa fa-edit pointer"></a>
+        <a *ngIf="acl.isCreator() ||acl.isAdmin()" i18n-title title="Results" [routerLink]="['/tests/results', test.id]" class="results fa fa-bar-chart pointer"></a>
+        <a *ngIf="acl.isAdmin()" i18n-title title="Remove" (click)="remove(test)" class="remove fa fa-trash"></a>
       </td>
     </tr>
     <tr *ngIf="!tests?.length">

@@ -118,6 +118,18 @@
         <source>Dashboard</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="be8e1a199c0f65656ec614786777a1552a968979" datatype="html">
+        <source>Tests</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="71249314fa72f5f9e0d93b8c59f9e148e0ff617f" datatype="html">
+        <source>Games</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="1b83ee8050c2da53cf45de56348c04f998bd80e7" datatype="html">
+        <source>Sokoban</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="f721a500a68c357e8f2a01e60510f6a01e4ba529" datatype="html">
         <source>Metadata</source>
         <target><!-- put translation here --></target>
@@ -184,14 +196,6 @@
       </trans-unit>
       <trans-unit id="fefee13017c2b85143cd131ee253e327a14053a0" datatype="html">
         <source>Tools</source>
-        <target><!-- put translation here --></target>
-      </trans-unit>
-      <trans-unit id="71249314fa72f5f9e0d93b8c59f9e148e0ff617f" datatype="html">
-        <source>Games</source>
-        <target><!-- put translation here --></target>
-      </trans-unit>
-      <trans-unit id="1b83ee8050c2da53cf45de56348c04f998bd80e7" datatype="html">
-        <source>Sokoban</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
@@ -510,16 +514,20 @@
         <source>Check</source>
         <target><!-- put translation here --></target>
       </trans-unit>
+      <trans-unit id="c096ec3aac5c378d0d75cfd5828fa48b63a95eb2" datatype="html">
+        <source>Hint:</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
+      <trans-unit id="48ac31d74f0540a1fc8cf27e44c3bda2bb3e7748" datatype="html">
+        <source>use 'W', 'A', 'S', 'D' to move</source>
+        <target><!-- put translation here --></target>
+      </trans-unit>
       <trans-unit id="5682d7ab3d0af02c240ea82600a53d7ac5b244b0" datatype="html">
         <source>Cognitive skill</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="495bb76a1dcc587910bfde93914ba82e1f952dc5" datatype="html">
         <source>Remove from cognitive skill</source>
-        <target><!-- put translation here --></target>
-      </trans-unit>
-      <trans-unit id="be8e1a199c0f65656ec614786777a1552a968979" datatype="html">
-        <source>Tests</source>
         <target><!-- put translation here --></target>
       </trans-unit>
       <trans-unit id="16435efd39cf0d984d88775c41c1d008f66032cb" datatype="html">

@@ -3,7 +3,7 @@
   <p class="col-12 font-weight-bold h3" i18n>System for automated generation of cognitive test units</p>
 </div>
 <div class="row">
-  <div class="col border">
+  <div class="col border" *ngIf="acl.isAdmin()">
     <app-image-enrich></app-image-enrich>
   </div>
   <div class="col">

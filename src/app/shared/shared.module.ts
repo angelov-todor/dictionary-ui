@@ -4,7 +4,7 @@ import { TreeViewComponent } from './tree-view/tree-view.component';
 import { NodeComponent } from './node/node.component';
 import { PagerComponent } from './pager/pager.component';
 import { ProcessingDirective } from './directives/processing.directive';
-
+import { Acl, aclFactory } from './utils/acl';
 
 @NgModule({
   imports: [
@@ -17,7 +17,10 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: []
+      providers: [{
+        provide: Acl,
+        useFactory: aclFactory
+      }]
     };
   }
 }

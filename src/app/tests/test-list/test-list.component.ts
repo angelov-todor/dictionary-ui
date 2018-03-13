@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Test, TestsService } from '../tests.service';
 import { PartialCollectionView } from '../../words/words.service';
+import { Acl } from '../../shared/utils/acl';
 
 @Component({
   selector: 'app-test-list',
@@ -12,7 +13,7 @@ export class TestListComponent implements OnInit {
   tests: Test[];
   collectionView: PartialCollectionView;
 
-  constructor(private testsService: TestsService) {
+  constructor(private testsService: TestsService, public acl: Acl) {
   }
 
   ngOnInit() {
